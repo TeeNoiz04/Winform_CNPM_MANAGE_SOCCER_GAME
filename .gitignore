@@ -14,7 +14,7 @@ obj/
 *.tmp
 
 # Auto-generated files
-*.designer.cs
+
 *.cache
 *.dbmdl
 
@@ -23,7 +23,7 @@ obj/
 
 # Các file khác không cần thiết
 *.exe
-*.dll
+
 *.pdb
 *.TestResults/
 TestResults/
