@@ -1,0 +1,29 @@
+# Thư mục build
+bin/
+obj/
+
+# Visual Studio folder
+.vs/
+
+# User-specific files
+*.user
+*.suo
+
+# Các tệp tạm
+*.log
+*.tmp
+
+# Auto-generated files
+*.designer.cs
+*.cache
+*.dbmdl
+
+# VS Code settings (nếu dùng VS Code)
+.vscode/
+
+# Các file khác không cần thiết
+*.exe
+*.dll
+*.pdb
+*.TestResults/
+TestResults/
