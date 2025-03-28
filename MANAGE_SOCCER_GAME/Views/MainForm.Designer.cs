@@ -28,85 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnContent1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             pnContent2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             pnContent4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             pnContent3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            pnContent1.SuspendLayout();
             SuspendLayout();
             // 
             // pnContent1
             // 
             pnContent1.BackColor = SystemColors.Control;
-            pnContent1.Controls.Add(guna2Button1);
-            pnContent1.CustomizableEdges = customizableEdges3;
+            pnContent1.CustomizableEdges = customizableEdges1;
             pnContent1.Dock = DockStyle.Top;
             pnContent1.FillColor = Color.FromArgb(255, 128, 128);
             pnContent1.Location = new Point(0, 0);
             pnContent1.Name = "pnContent1";
-            pnContent1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            pnContent1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             pnContent1.Size = new Size(960, 150);
             pnContent1.TabIndex = 0;
             pnContent1.Visible = false;
             // 
-            // guna2Button1
-            // 
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.Font = new Font("Segoe UI", 9F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(1407, 4);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(30, 30);
-            guna2Button1.TabIndex = 0;
-            guna2Button1.Text = "X";
-            // 
             // pnContent2
             // 
-            pnContent2.CustomizableEdges = customizableEdges5;
+            pnContent2.CustomizableEdges = customizableEdges3;
             pnContent2.Dock = DockStyle.Left;
             pnContent2.FillColor = Color.Lime;
             pnContent2.Location = new Point(0, 150);
             pnContent2.Name = "pnContent2";
-            pnContent2.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            pnContent2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             pnContent2.Size = new Size(300, 390);
             pnContent2.TabIndex = 1;
             pnContent2.Visible = false;
             // 
             // pnContent4
             // 
-            pnContent4.CustomizableEdges = customizableEdges7;
+            pnContent4.CustomizableEdges = customizableEdges5;
             pnContent4.Dock = DockStyle.Right;
             pnContent4.FillColor = Color.FromArgb(255, 128, 255);
             pnContent4.Location = new Point(760, 150);
             pnContent4.Name = "pnContent4";
-            pnContent4.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            pnContent4.ShadowDecoration.CustomizableEdges = customizableEdges6;
             pnContent4.Size = new Size(200, 390);
             pnContent4.TabIndex = 2;
             pnContent4.Visible = false;
             // 
             // pnContent3
             // 
-            pnContent3.CustomizableEdges = customizableEdges9;
+            pnContent3.CustomizableEdges = customizableEdges7;
             pnContent3.FillColor = Color.FromArgb(128, 128, 255);
             pnContent3.Location = new Point(180, 0);
             pnContent3.Name = "pnContent3";
-            pnContent3.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            pnContent3.ShadowDecoration.CustomizableEdges = customizableEdges8;
             pnContent3.Size = new Size(600, 540);
             pnContent3.TabIndex = 3;
             // 
@@ -123,7 +102,6 @@
             Name = "MainForm";
             Text = "MainForm";
             WindowState = FormWindowState.Maximized;
-            pnContent1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -133,6 +111,5 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnContent2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnContent4;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnContent3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

@@ -22,7 +22,7 @@ namespace MANAGE_SOCCER_GAME.Views
             InitializeComponent();
             _router = new Router();
             _curentButton = btnHome;
-            
+
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -36,42 +36,58 @@ namespace MANAGE_SOCCER_GAME.Views
             }
         }
 
-        private void btnGames_Click(object sender, EventArgs e)
+        private void btnShowPnAccount_Click(object sender, EventArgs e)
         {
-            if (!btnGames.Checked)
-            {
-                _curentButton.Checked = false;
-                btnGames.Checked = true;
-                _curentButton = btnGames;
-                //_router.LoadGames();
-            }
+            //_router.LoadAccount();
         }
 
-        private void btnApps_Click(object sender, EventArgs e)
+        private void btnTeam_Click(object sender, EventArgs e)
         {
-            if (!btnApps.Checked)
+            if (!btnTeam.Checked)
             {
                 _curentButton.Checked = false;
-                btnApps.Checked = true;
-                _curentButton = btnApps;
+                btnTeam.Checked = true;
+                _curentButton = btnTeam;
                 _router.LoadMTP();
             }
         }
 
-        private void btnShop_Click(object sender, EventArgs e)
+        private void btnSchedule_Click(object sender, EventArgs e)
         {
-            if (!btnShop.Checked)
+            if (!btnSchedule.Checked)
             {
                 _curentButton.Checked = false;
-                btnShop.Checked = true;
-                _curentButton = btnShop;
-                //_router.LoadShop();
+                btnSchedule.Checked = true;
+                _curentButton = btnSchedule;
+                _router.LoadSchedule();
             }
         }
 
-        private void btnShowPnAccount_Click(object sender, EventArgs e)
+        private void btnResultRanking_Click(object sender, EventArgs e)
         {
-            //_router.LoadAccount();
+            if (!btnResultRanking.Checked)
+            {
+                _curentButton.Checked = false;
+                btnResultRanking.Checked = true;
+                _curentButton = btnResultRanking;
+                _router.LoadResult();
+            }
+        }
+
+        private void btnOrganizer_Click(object sender, EventArgs e)
+        {
+            if (!btnOrganizer.Checked)
+            {
+                _curentButton.Checked = false;
+                btnOrganizer.Checked = true;
+                _curentButton = btnOrganizer;
+                _router.LoadOrganizer();
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

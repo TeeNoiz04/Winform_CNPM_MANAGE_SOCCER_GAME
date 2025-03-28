@@ -1,4 +1,6 @@
 ﻿using MANAGE_SOCCER_GAME.Views;
+using MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers;
+using MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings;
 using MANAGE_SOCCER_GAME.Views.Management_Team_Players;
 using MANAGE_SOCCER_GAME.Views.Schedule_Management;
 using MANAGE_SOCCER_GAME.Views.SignInSignUp;
@@ -183,19 +185,56 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
         public void LoadMTP()
         {
             _Control1.Visible = true;
-            _Control2.Visible = true;
+            _Control2.Visible = false;
             _Control3.Visible = true;
-            //_Control4.Visible = true;
+            _Control4.Visible = false;
 
             _Control3.Dock = DockStyle.Fill;
 
-            //LoadForm1(new MenuForm());
-            LoadForm2(new SidebarMTPForm());
+            //LoadForm2(new SidebarMTPForm());
             //LoadForm3(new TeamListForm());
-            //LoadForm3(new TeamDetailForm());
+            LoadForm3(new TeamDetailForm());
             //LoadForm3(new PlayerDetailForm());
-            LoadForm3(new MatchScheduleForm());
-            //LoadForm4(new CartAppsForm());
+        }
+
+        public void LoadSchedule()
+        {
+            _Control1.Visible = true;
+            _Control2.Visible = false;
+            _Control3.Visible = true;
+            _Control4.Visible = false;
+
+            _Control3.Dock = DockStyle.Fill;
+
+            //LoadForm2(new SidebarMTPForm());
+            //LoadForm3(new MatchScheduleForm());
+            LoadForm3(new MatchDetailForm());
+        }
+
+        public void LoadResult()
+        {
+            _Control1.Visible = true;
+            _Control2.Visible = true;
+            _Control3.Visible = true;
+            _Control4.Visible = false;
+
+            _Control3.Dock = DockStyle.Fill;
+
+            LoadForm2(new SidebarMTPForm());
+            LoadForm3(new MatchResultForm());
+        }
+
+        public void LoadOrganizer()
+        {
+            _Control1.Visible = true;
+            _Control2.Visible = true;
+            _Control3.Visible = true;
+            _Control4.Visible = false;
+
+            _Control3.Dock = DockStyle.Fill;
+
+            LoadForm2(new SidebarMTPForm());
+            LoadForm3(new AssignRefereeForm());
         }
     }
 }
