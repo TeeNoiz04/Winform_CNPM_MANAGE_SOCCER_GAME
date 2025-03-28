@@ -1,4 +1,7 @@
-﻿using MANAGE_SOCCER_GAME.Views.SignInSignUp;
+﻿using MANAGE_SOCCER_GAME.Views;
+using MANAGE_SOCCER_GAME.Views.Management_Team_Players;
+using MANAGE_SOCCER_GAME.Views.Schedule_Management;
+using MANAGE_SOCCER_GAME.Views.SignInSignUp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -146,10 +149,53 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
 
             _Control3.Dock = DockStyle.None;
             _Control3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            _Control3.Size = new System.Drawing.Size(480, 810);
-            _Control3.Location = new System.Drawing.Point(480, 0);
+            _Control3.Size = new System.Drawing.Size(600, 1080);
+            _Control3.Location = new System.Drawing.Point(660, 0);
 
             LoadForm3(new SignInForm());
+        }
+
+        public void LoadSignup()
+        {
+            _Control1.Visible = false;
+            _Control2.Visible = false;
+            _Control3.Visible = true;
+            _Control4.Visible = false;
+
+            _Control3.Dock = DockStyle.Fill;
+
+            LoadForm3(new SignUpForm());
+        }
+
+        public void LoadHome()
+        {
+            _Control1.Visible = true;
+            _Control2.Visible = false;
+            _Control3.Visible = true;
+            _Control4.Visible = false;
+
+            _Control3.Dock = DockStyle.Fill;
+
+            LoadForm1(new MenuForm());
+            LoadForm3(new HomeForm());
+        }
+
+        public void LoadMTP()
+        {
+            _Control1.Visible = true;
+            _Control2.Visible = true;
+            _Control3.Visible = true;
+            //_Control4.Visible = true;
+
+            _Control3.Dock = DockStyle.Fill;
+
+            //LoadForm1(new MenuForm());
+            LoadForm2(new SidebarMTPForm());
+            //LoadForm3(new TeamListForm());
+            //LoadForm3(new TeamDetailForm());
+            //LoadForm3(new PlayerDetailForm());
+            LoadForm3(new MatchScheduleForm());
+            //LoadForm4(new CartAppsForm());
         }
     }
 }
