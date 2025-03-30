@@ -55,15 +55,15 @@
             btnTrangKe = new Button();
             lblSoTrang = new Label();
             dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             ID = new DataGridViewTextBoxColumn();
             TimeStamp = new DataGridViewTextBoxColumn();
             PhuongThucGD = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
             Username = new DataGridViewTextBoxColumn();
-            IsCheck = new DataGridViewCheckBoxColumn();
+            KinhNghiem = new DataGridViewTextBoxColumn();
             Action = new DataGridViewButtonColumn();
             Action2 = new DataGridViewButtonColumn();
-            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -274,7 +274,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Price, Username, IsCheck, Action, Action2 });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Price, Username, KinhNghiem, Action, Action2 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -322,64 +322,6 @@
             dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
-            // ID
-            // 
-            ID.HeaderText = "Mã hóa đơn";
-            ID.Name = "ID";
-            // 
-            // TimeStamp
-            // 
-            TimeStamp.FillWeight = 66.1519F;
-            TimeStamp.HeaderText = "Ngày giao dịch";
-            TimeStamp.Name = "TimeStamp";
-            // 
-            // PhuongThucGD
-            // 
-            PhuongThucGD.FillWeight = 66.1519F;
-            PhuongThucGD.HeaderText = "Phương thức giao dịch";
-            PhuongThucGD.Name = "PhuongThucGD";
-            // 
-            // Price
-            // 
-            Price.FillWeight = 66.1519F;
-            Price.HeaderText = "Tổng tiền";
-            Price.Name = "Price";
-            // 
-            // Username
-            // 
-            Username.FillWeight = 66.1519F;
-            Username.HeaderText = "Tên khách";
-            Username.Name = "Username";
-            Username.Resizable = DataGridViewTriState.True;
-            // 
-            // IsCheck
-            // 
-            IsCheck.FillWeight = 66.1519F;
-            IsCheck.HeaderText = "Trạng thái";
-            IsCheck.Name = "IsCheck";
-            IsCheck.Resizable = DataGridViewTriState.True;
-            IsCheck.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Action
-            // 
-            Action.FillWeight = 50F;
-            Action.HeaderText = "Action";
-            Action.Name = "Action";
-            Action.Resizable = DataGridViewTriState.True;
-            Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Duyệt";
-            Action.UseColumnTextForButtonValue = true;
-            // 
-            // Action2
-            // 
-            Action2.FillWeight = 50F;
-            Action2.HeaderText = "";
-            Action2.Name = "Action2";
-            Action2.Resizable = DataGridViewTriState.True;
-            Action2.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action2.Text = "Chỉ tiết";
-            Action2.UseColumnTextForButtonValue = true;
-            // 
             // btnRefresh
             // 
             btnRefresh.BorderRadius = 5;
@@ -399,7 +341,62 @@
             btnRefresh.Text = "Refresh";
             btnRefresh.Click += btnRefresh_Click;
             // 
-            // TeamListForm
+            // ID
+            // 
+            ID.HeaderText = "Mã trọng tài";
+            ID.Name = "ID";
+            // 
+            // TimeStamp
+            // 
+            TimeStamp.FillWeight = 66.1519F;
+            TimeStamp.HeaderText = "Họ tên";
+            TimeStamp.Name = "TimeStamp";
+            // 
+            // PhuongThucGD
+            // 
+            PhuongThucGD.FillWeight = 66.1519F;
+            PhuongThucGD.HeaderText = "Ngày sinh";
+            PhuongThucGD.Name = "PhuongThucGD";
+            // 
+            // Price
+            // 
+            Price.FillWeight = 66.1519F;
+            Price.HeaderText = "Vị trí";
+            Price.Name = "Price";
+            // 
+            // Username
+            // 
+            Username.FillWeight = 66.1519F;
+            Username.HeaderText = "Quốc tịch";
+            Username.Name = "Username";
+            Username.Resizable = DataGridViewTriState.True;
+            // 
+            // KinhNghiem
+            // 
+            KinhNghiem.HeaderText = "Kinh Nghiệm";
+            KinhNghiem.Name = "KinhNghiem";
+            // 
+            // Action
+            // 
+            Action.FillWeight = 50F;
+            Action.HeaderText = "Action";
+            Action.Name = "Action";
+            Action.Resizable = DataGridViewTriState.True;
+            Action.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action.Text = "Chi tiết";
+            Action.UseColumnTextForButtonValue = true;
+            // 
+            // Action2
+            // 
+            Action2.FillWeight = 50F;
+            Action2.HeaderText = "";
+            Action2.Name = "Action2";
+            Action2.Resizable = DataGridViewTriState.True;
+            Action2.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action2.Text = "Xóa";
+            Action2.UseColumnTextForButtonValue = true;
+            // 
+            // RefereeListForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -409,7 +406,7 @@
             Controls.Add(pnHeader);
             Controls.Add(pnContent);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "TeamListForm";
+            Name = "RefereeListForm";
             Text = "OrdersForm";
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
@@ -439,13 +436,13 @@
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private System.Windows.Forms.Button btnTrangTruoc;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhuongThucGD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsCheck;
-        private System.Windows.Forms.DataGridViewButtonColumn Action;
-        private System.Windows.Forms.DataGridViewButtonColumn Action2;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn TimeStamp;
+        private DataGridViewTextBoxColumn PhuongThucGD;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewTextBoxColumn Username;
+        private DataGridViewTextBoxColumn KinhNghiem;
+        private DataGridViewButtonColumn Action;
+        private DataGridViewButtonColumn Action2;
     }
 }

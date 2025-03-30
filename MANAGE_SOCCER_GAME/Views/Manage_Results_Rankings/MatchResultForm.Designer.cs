@@ -34,12 +34,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -47,27 +47,23 @@
             lblCot = new Label();
             lblSapXep = new Label();
             cbbSapXep = new ComboBox();
+            pnLayoutMain = new FlowLayoutPanel();
+            pnLayout = new FlowLayoutPanel();
+            pnTitle = new Guna.UI2.WinForms.Guna2Panel();
+            lblRound = new Label();
             pnContent = new Guna.UI2.WinForms.Guna2Panel();
-            pnFooter = new Panel();
-            cbbSoDong = new ComboBox();
-            lblSoDong = new Label();
-            btnTrangTruoc = new Button();
-            btnTrangKe = new Button();
-            lblSoTrang = new Label();
-            dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            TimeStamp = new DataGridViewTextBoxColumn();
-            PhuongThucGD = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            IsCheck = new DataGridViewCheckBoxColumn();
-            Action = new DataGridViewButtonColumn();
-            Action2 = new DataGridViewButtonColumn();
-            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            lblResult = new Label();
+            lblTeam2 = new Label();
+            lblTeam1 = new Label();
+            picTeam2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            picTeam1 = new Guna.UI2.WinForms.Guna2PictureBox();
             pnHeader.SuspendLayout();
+            pnLayoutMain.SuspendLayout();
+            pnLayout.SuspendLayout();
+            pnTitle.SuspendLayout();
             pnContent.SuspendLayout();
-            pnFooter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picTeam2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picTeam1).BeginInit();
             SuspendLayout();
             // 
             // pnHeader
@@ -177,246 +173,135 @@
             cbbSapXep.TabIndex = 9;
             cbbSapXep.SelectedIndexChanged += cbbSapXep_SelectedIndexChanged;
             // 
+            // pnLayoutMain
+            // 
+            pnLayoutMain.AutoScroll = true;
+            pnLayoutMain.Controls.Add(pnLayout);
+            pnLayoutMain.Location = new Point(122, 63);
+            pnLayoutMain.Name = "pnLayoutMain";
+            pnLayoutMain.Size = new Size(1765, 855);
+            pnLayoutMain.TabIndex = 25;
+            // 
+            // pnLayout
+            // 
+            pnLayout.Controls.Add(pnTitle);
+            pnLayout.Controls.Add(pnContent);
+            pnLayout.Location = new Point(3, 3);
+            pnLayout.Name = "pnLayout";
+            pnLayout.Size = new Size(832, 246);
+            pnLayout.TabIndex = 27;
+            // 
+            // pnTitle
+            // 
+            pnTitle.Controls.Add(lblRound);
+            pnTitle.CustomizableEdges = customizableEdges5;
+            pnTitle.Dock = DockStyle.Top;
+            pnTitle.Location = new Point(3, 3);
+            pnTitle.Name = "pnTitle";
+            pnTitle.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            pnTitle.Size = new Size(832, 50);
+            pnTitle.TabIndex = 7;
+            // 
+            // lblRound
+            // 
+            lblRound.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRound.ForeColor = Color.White;
+            lblRound.Location = new Point(0, 0);
+            lblRound.Name = "lblRound";
+            lblRound.Size = new Size(200, 50);
+            lblRound.TabIndex = 0;
+            lblRound.Text = "ROUND 00";
+            lblRound.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // pnContent
             // 
-            pnContent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pnContent.Controls.Add(pnFooter);
-            pnContent.Controls.Add(dataGridView);
-            pnContent.CustomizableEdges = customizableEdges5;
-            pnContent.Location = new Point(50, 60);
+            pnContent.Controls.Add(lblResult);
+            pnContent.Controls.Add(lblTeam2);
+            pnContent.Controls.Add(lblTeam1);
+            pnContent.Controls.Add(picTeam2);
+            pnContent.Controls.Add(picTeam1);
+            pnContent.CustomizableEdges = customizableEdges11;
+            pnContent.Location = new Point(3, 59);
             pnContent.Name = "pnContent";
-            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            pnContent.Size = new Size(1520, 600);
-            pnContent.TabIndex = 25;
+            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            pnContent.Size = new Size(410, 60);
+            pnContent.TabIndex = 6;
             // 
-            // pnFooter
+            // lblResult
             // 
-            pnFooter.Controls.Add(cbbSoDong);
-            pnFooter.Controls.Add(lblSoDong);
-            pnFooter.Controls.Add(btnTrangTruoc);
-            pnFooter.Controls.Add(btnTrangKe);
-            pnFooter.Controls.Add(lblSoTrang);
-            pnFooter.Dock = DockStyle.Bottom;
-            pnFooter.Location = new Point(0, 560);
-            pnFooter.Name = "pnFooter";
-            pnFooter.Size = new Size(1520, 40);
-            pnFooter.TabIndex = 18;
+            lblResult.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            lblResult.ForeColor = Color.IndianRed;
+            lblResult.Location = new Point(155, 14);
+            lblResult.Name = "lblResult";
+            lblResult.Size = new Size(100, 32);
+            lblResult.TabIndex = 4;
+            lblResult.Text = "00 - 00";
+            lblResult.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // cbbSoDong
+            // lblTeam2
             // 
-            cbbSoDong.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbbSoDong.FormattingEnabled = true;
-            cbbSoDong.Items.AddRange(new object[] { "10", "20", "30", "40", "50", "60", "70", "80", "90", "100" });
-            cbbSoDong.Location = new Point(80, 7);
-            cbbSoDong.Margin = new Padding(3, 2, 3, 2);
-            cbbSoDong.Name = "cbbSoDong";
-            cbbSoDong.Size = new Size(70, 26);
-            cbbSoDong.TabIndex = 3;
-            cbbSoDong.SelectedIndexChanged += cbbSoDong_SelectedIndexChanged;
+            lblTeam2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            lblTeam2.ForeColor = Color.White;
+            lblTeam2.Location = new Point(265, 14);
+            lblTeam2.Name = "lblTeam2";
+            lblTeam2.Size = new Size(85, 32);
+            lblTeam2.TabIndex = 3;
+            lblTeam2.Text = "MMM";
+            lblTeam2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblSoDong
+            // lblTeam1
             // 
-            lblSoDong.AutoSize = true;
-            lblSoDong.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSoDong.ForeColor = Color.White;
-            lblSoDong.Location = new Point(10, 10);
-            lblSoDong.Name = "lblSoDong";
-            lblSoDong.Size = new Size(64, 18);
-            lblSoDong.TabIndex = 2;
-            lblSoDong.Text = "Số dòng";
+            lblTeam1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            lblTeam1.ForeColor = Color.White;
+            lblTeam1.Location = new Point(60, 14);
+            lblTeam1.Name = "lblTeam1";
+            lblTeam1.Size = new Size(85, 32);
+            lblTeam1.TabIndex = 2;
+            lblTeam1.Text = "MMM";
+            lblTeam1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnTrangTruoc
+            // picTeam2
             // 
-            btnTrangTruoc.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTrangTruoc.Location = new Point(156, 4);
-            btnTrangTruoc.Margin = new Padding(3, 2, 3, 2);
-            btnTrangTruoc.Name = "btnTrangTruoc";
-            btnTrangTruoc.Size = new Size(100, 30);
-            btnTrangTruoc.TabIndex = 4;
-            btnTrangTruoc.Text = "Trang Trước";
-            btnTrangTruoc.UseVisualStyleBackColor = true;
-            btnTrangTruoc.Click += btnTrangTruoc_Click;
+            picTeam2.CustomizableEdges = customizableEdges7;
+            picTeam2.ImageRotate = 0F;
+            picTeam2.Location = new Point(355, 5);
+            picTeam2.Name = "picTeam2";
+            picTeam2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            picTeam2.Size = new Size(50, 50);
+            picTeam2.TabIndex = 1;
+            picTeam2.TabStop = false;
             // 
-            // btnTrangKe
+            // picTeam1
             // 
-            btnTrangKe.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTrangKe.Location = new Point(318, 4);
-            btnTrangKe.Margin = new Padding(3, 2, 3, 2);
-            btnTrangKe.Name = "btnTrangKe";
-            btnTrangKe.Size = new Size(100, 30);
-            btnTrangKe.TabIndex = 5;
-            btnTrangKe.Text = "Trang Kế";
-            btnTrangKe.UseVisualStyleBackColor = true;
-            btnTrangKe.Click += btnTrangKe_Click;
+            picTeam1.CustomizableEdges = customizableEdges9;
+            picTeam1.ImageRotate = 0F;
+            picTeam1.Location = new Point(5, 5);
+            picTeam1.Name = "picTeam1";
+            picTeam1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            picTeam1.Size = new Size(50, 50);
+            picTeam1.TabIndex = 0;
+            picTeam1.TabStop = false;
             // 
-            // lblSoTrang
-            // 
-            lblSoTrang.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSoTrang.ForeColor = Color.White;
-            lblSoTrang.Location = new Point(262, 9);
-            lblSoTrang.Name = "lblSoTrang";
-            lblSoTrang.Size = new Size(50, 20);
-            lblSoTrang.TabIndex = 7;
-            lblSoTrang.Text = "Trang";
-            lblSoTrang.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // dataGridView
-            // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Price, Username, IsCheck, Action, Action2 });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView.Dock = DockStyle.Fill;
-            dataGridView.GridColor = Color.FromArgb(231, 229, 255);
-            dataGridView.Location = new Point(0, 0);
-            dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView.RowHeadersVisible = false;
-            dataGridView.RowTemplate.Height = 22;
-            dataGridView.Size = new Size(1520, 600);
-            dataGridView.TabIndex = 16;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dataGridView.ThemeStyle.BackColor = Color.White;
-            dataGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            dataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView.ThemeStyle.HeaderStyle.Height = 30;
-            dataGridView.ThemeStyle.ReadOnly = false;
-            dataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
-            dataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridView.ThemeStyle.RowsStyle.Height = 22;
-            dataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridView.CellContentClick += dataGridView_CellContentClick;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "Mã hóa đơn";
-            ID.Name = "ID";
-            // 
-            // TimeStamp
-            // 
-            TimeStamp.FillWeight = 66.1519F;
-            TimeStamp.HeaderText = "Ngày giao dịch";
-            TimeStamp.Name = "TimeStamp";
-            // 
-            // PhuongThucGD
-            // 
-            PhuongThucGD.FillWeight = 66.1519F;
-            PhuongThucGD.HeaderText = "Phương thức giao dịch";
-            PhuongThucGD.Name = "PhuongThucGD";
-            // 
-            // Price
-            // 
-            Price.FillWeight = 66.1519F;
-            Price.HeaderText = "Tổng tiền";
-            Price.Name = "Price";
-            // 
-            // Username
-            // 
-            Username.FillWeight = 66.1519F;
-            Username.HeaderText = "Tên khách";
-            Username.Name = "Username";
-            Username.Resizable = DataGridViewTriState.True;
-            // 
-            // IsCheck
-            // 
-            IsCheck.FillWeight = 66.1519F;
-            IsCheck.HeaderText = "Trạng thái";
-            IsCheck.Name = "IsCheck";
-            IsCheck.Resizable = DataGridViewTriState.True;
-            IsCheck.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Action
-            // 
-            Action.FillWeight = 50F;
-            Action.HeaderText = "Action";
-            Action.Name = "Action";
-            Action.Resizable = DataGridViewTriState.True;
-            Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Duyệt";
-            Action.UseColumnTextForButtonValue = true;
-            // 
-            // Action2
-            // 
-            Action2.FillWeight = 50F;
-            Action2.HeaderText = "";
-            Action2.Name = "Action2";
-            Action2.Resizable = DataGridViewTriState.True;
-            Action2.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action2.Text = "Chỉ tiết";
-            Action2.UseColumnTextForButtonValue = true;
-            // 
-            // btnRefresh
-            // 
-            btnRefresh.BorderRadius = 5;
-            btnRefresh.CustomizableEdges = customizableEdges7;
-            btnRefresh.DisabledState.BorderColor = Color.DarkGray;
-            btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnRefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnRefresh.FillColor = Color.FromArgb(60, 211, 252);
-            btnRefresh.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(50, 666);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnRefresh.Size = new Size(80, 30);
-            btnRefresh.TabIndex = 27;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.Click += btnRefresh_Click;
-            // 
-            // TeamListForm
+            // MatchResultForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(20, 44, 76);
             ClientSize = new Size(1620, 1000);
-            Controls.Add(btnRefresh);
+            Controls.Add(pnLayoutMain);
             Controls.Add(pnHeader);
-            Controls.Add(pnContent);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "TeamListForm";
+            Name = "MatchResultForm";
             Text = "OrdersForm";
+            Load += MatchResultForm_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
+            pnLayoutMain.ResumeLayout(false);
+            pnLayout.ResumeLayout(false);
+            pnTitle.ResumeLayout(false);
             pnContent.ResumeLayout(false);
-            pnFooter.ResumeLayout(false);
-            pnFooter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picTeam2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picTeam1).EndInit();
             ResumeLayout(false);
 
         }
@@ -429,23 +314,16 @@
         private System.Windows.Forms.Label lblCot;
         private System.Windows.Forms.Label lblSapXep;
         private System.Windows.Forms.ComboBox cbbSapXep;
-        private Guna.UI2.WinForms.Guna2Panel pnContent;
-        private System.Windows.Forms.Panel pnFooter;
-        private System.Windows.Forms.ComboBox cbbSoDong;
-        private System.Windows.Forms.Label lblSoDong;
-        private System.Windows.Forms.Button btnTrangKe;
-        private System.Windows.Forms.Label lblSoTrang;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridView;
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
-        private System.Windows.Forms.Button btnTrangTruoc;
-        private Guna.UI2.WinForms.Guna2Button btnRefresh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhuongThucGD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsCheck;
-        private System.Windows.Forms.DataGridViewButtonColumn Action;
-        private System.Windows.Forms.DataGridViewButtonColumn Action2;
+        private FlowLayoutPanel pnLayoutMain;
+        private FlowLayoutPanel pnLayout;
+        private Guna.UI2.WinForms.Guna2Panel pnTitle;
+        private Label lblRound;
+        private Guna.UI2.WinForms.Guna2Panel pnContent;
+        private Label lblResult;
+        private Label lblTeam2;
+        private Label lblTeam1;
+        private Guna.UI2.WinForms.Guna2PictureBox picTeam2;
+        private Guna.UI2.WinForms.Guna2PictureBox picTeam1;
     }
 }

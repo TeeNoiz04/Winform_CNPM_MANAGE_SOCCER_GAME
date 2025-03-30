@@ -40,6 +40,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,15 +55,19 @@
             cbbSapXep = new ComboBox();
             txbTeam1 = new Guna.UI2.WinForms.Guna2TextBox();
             txbTeam2 = new Guna.UI2.WinForms.Guna2TextBox();
-            panel1 = new Panel();
-            lblTitle = new Label();
             picTeam1 = new Guna.UI2.WinForms.Guna2PictureBox();
             picTeam2 = new Guna.UI2.WinForms.Guna2PictureBox();
             lblResult = new Label();
+            lblTime = new Label();
+            pnContent = new Guna.UI2.WinForms.Guna2Panel();
+            pnParticipant = new Guna.UI2.WinForms.Guna2Panel();
+            lblStatus = new Label();
+            pnTimeLine = new Guna.UI2.WinForms.Guna2Panel();
             pnHeader.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picTeam1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picTeam2).BeginInit();
+            pnContent.SuspendLayout();
+            pnParticipant.SuspendLayout();
             SuspendLayout();
             // 
             // pnHeader
@@ -167,6 +177,7 @@
             // 
             // txbTeam1
             // 
+            txbTeam1.BorderColor = Color.Transparent;
             txbTeam1.CustomizableEdges = customizableEdges5;
             txbTeam1.DefaultText = "Team 1";
             txbTeam1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -174,20 +185,22 @@
             txbTeam1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txbTeam1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txbTeam1.Enabled = false;
-            txbTeam1.FillColor = Color.IndianRed;
+            txbTeam1.FillColor = Color.FromArgb(224, 224, 224);
             txbTeam1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTeam1.Font = new Font("Segoe UI", 9F);
+            txbTeam1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txbTeam1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTeam1.Location = new Point(401, 114);
+            txbTeam1.Location = new Point(190, 60);
+            txbTeam1.Margin = new Padding(8);
             txbTeam1.Name = "txbTeam1";
             txbTeam1.PlaceholderText = "";
             txbTeam1.SelectedText = "";
             txbTeam1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txbTeam1.Size = new Size(200, 36);
+            txbTeam1.Size = new Size(350, 50);
             txbTeam1.TabIndex = 27;
             // 
             // txbTeam2
             // 
+            txbTeam2.BorderColor = Color.Transparent;
             txbTeam2.CustomizableEdges = customizableEdges7;
             txbTeam2.DefaultText = "Team 2";
             txbTeam2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -195,45 +208,28 @@
             txbTeam2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txbTeam2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txbTeam2.Enabled = false;
-            txbTeam2.FillColor = Color.IndianRed;
+            txbTeam2.FillColor = Color.FromArgb(224, 224, 224);
             txbTeam2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTeam2.Font = new Font("Segoe UI", 9F);
+            txbTeam2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txbTeam2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTeam2.Location = new Point(763, 114);
+            txbTeam2.Location = new Point(700, 60);
+            txbTeam2.Margin = new Padding(8);
             txbTeam2.Name = "txbTeam2";
             txbTeam2.PlaceholderText = "";
             txbTeam2.SelectedText = "";
             txbTeam2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txbTeam2.Size = new Size(200, 36);
+            txbTeam2.Size = new Size(350, 50);
             txbTeam2.TabIndex = 28;
             txbTeam2.TextAlign = HorizontalAlignment.Right;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(lblTitle);
-            panel1.Location = new Point(184, 186);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(955, 451);
-            panel1.TabIndex = 29;
-            // 
-            // lblTitle
-            // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(432, 9);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(128, 30);
-            lblTitle.TabIndex = 0;
-            lblTitle.Text = "Match Stats";
             // 
             // picTeam1
             // 
             picTeam1.CustomizableEdges = customizableEdges9;
             picTeam1.ImageRotate = 0F;
-            picTeam1.Location = new Point(283, 86);
+            picTeam1.Location = new Point(30, 30);
             picTeam1.Name = "picTeam1";
             picTeam1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            picTeam1.Size = new Size(97, 94);
+            picTeam1.Size = new Size(150, 150);
             picTeam1.TabIndex = 30;
             picTeam1.TabStop = false;
             // 
@@ -241,23 +237,83 @@
             // 
             picTeam2.CustomizableEdges = customizableEdges11;
             picTeam2.ImageRotate = 0F;
-            picTeam2.Location = new Point(981, 86);
+            picTeam2.Location = new Point(1060, 30);
             picTeam2.Name = "picTeam2";
             picTeam2.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            picTeam2.Size = new Size(83, 94);
+            picTeam2.Size = new Size(150, 150);
             picTeam2.TabIndex = 31;
             picTeam2.TabStop = false;
             // 
             // lblResult
             // 
-            lblResult.AutoSize = true;
-            lblResult.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblResult.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblResult.ForeColor = Color.White;
-            lblResult.Location = new Point(641, 120);
+            lblResult.Location = new Point(552, 60);
             lblResult.Name = "lblResult";
-            lblResult.Size = new Size(81, 30);
+            lblResult.Size = new Size(136, 50);
             lblResult.TabIndex = 1;
             lblResult.Text = "00 - 00";
+            lblResult.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblTime
+            // 
+            lblTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTime.ForeColor = Color.White;
+            lblTime.Location = new Point(552, 30);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new Size(136, 22);
+            lblTime.TabIndex = 1;
+            lblTime.Text = "01.01.2025 00:00";
+            lblTime.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pnContent
+            // 
+            pnContent.Controls.Add(pnParticipant);
+            pnContent.Controls.Add(pnTimeLine);
+            pnContent.CustomizableEdges = customizableEdges17;
+            pnContent.Location = new Point(340, 100);
+            pnContent.Name = "pnContent";
+            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            pnContent.Size = new Size(1240, 700);
+            pnContent.TabIndex = 32;
+            // 
+            // pnParticipant
+            // 
+            pnParticipant.Controls.Add(lblStatus);
+            pnParticipant.Controls.Add(lblTime);
+            pnParticipant.Controls.Add(txbTeam1);
+            pnParticipant.Controls.Add(lblResult);
+            pnParticipant.Controls.Add(txbTeam2);
+            pnParticipant.Controls.Add(picTeam2);
+            pnParticipant.Controls.Add(picTeam1);
+            pnParticipant.CustomizableEdges = customizableEdges13;
+            pnParticipant.Dock = DockStyle.Top;
+            pnParticipant.Location = new Point(0, 0);
+            pnParticipant.Name = "pnParticipant";
+            pnParticipant.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            pnParticipant.Size = new Size(1240, 210);
+            pnParticipant.TabIndex = 33;
+            // 
+            // lblStatus
+            // 
+            lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStatus.ForeColor = Color.White;
+            lblStatus.Location = new Point(552, 110);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(136, 22);
+            lblStatus.TabIndex = 32;
+            lblStatus.Text = "FINISHED";
+            lblStatus.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pnTimeLine
+            // 
+            pnTimeLine.CustomizableEdges = customizableEdges15;
+            pnTimeLine.Dock = DockStyle.Bottom;
+            pnTimeLine.Location = new Point(0, 210);
+            pnTimeLine.Name = "pnTimeLine";
+            pnTimeLine.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            pnTimeLine.Size = new Size(1240, 490);
+            pnTimeLine.TabIndex = 33;
             // 
             // MatchDetailForm
             // 
@@ -265,24 +321,18 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(20, 44, 76);
             ClientSize = new Size(1920, 930);
-            Controls.Add(lblResult);
-            Controls.Add(picTeam2);
-            Controls.Add(picTeam1);
-            Controls.Add(panel1);
-            Controls.Add(txbTeam2);
-            Controls.Add(txbTeam1);
+            Controls.Add(pnContent);
             Controls.Add(pnHeader);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MatchDetailForm";
             Text = "OrdersForm";
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picTeam1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picTeam2).EndInit();
+            pnContent.ResumeLayout(false);
+            pnParticipant.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
 
         }
 
@@ -297,10 +347,13 @@
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private Guna.UI2.WinForms.Guna2TextBox txbTeam1;
         private Guna.UI2.WinForms.Guna2TextBox txbTeam2;
-        private Panel panel1;
-        private Label lblTitle;
         private Guna.UI2.WinForms.Guna2PictureBox picTeam1;
         private Guna.UI2.WinForms.Guna2PictureBox picTeam2;
         private Label lblResult;
+        private Label lblTime;
+        private Guna.UI2.WinForms.Guna2Panel pnContent;
+        private Guna.UI2.WinForms.Guna2Panel pnParticipant;
+        private Guna.UI2.WinForms.Guna2Panel pnTimeLine;
+        private Label lblStatus;
     }
 }

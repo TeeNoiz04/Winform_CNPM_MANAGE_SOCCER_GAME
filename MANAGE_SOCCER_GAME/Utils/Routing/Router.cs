@@ -152,7 +152,7 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.None;
             _Control3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             _Control3.Size = new System.Drawing.Size(600, 1080);
-            _Control3.Location = new System.Drawing.Point(660, 0);
+            _Control3.Location = new System.Drawing.Point(180, 0);
 
             LoadForm3(new SignInForm());
         }
@@ -192,8 +192,8 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.Fill;
 
             //LoadForm2(new SidebarMTPForm());
-            //LoadForm3(new TeamListForm());
-            LoadForm3(new TeamDetailForm());
+            LoadForm3(new TeamListForm());
+            //LoadForm3(new TeamDetailForm());
             //LoadForm3(new PlayerDetailForm());
         }
 
@@ -207,8 +207,8 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.Fill;
 
             //LoadForm2(new SidebarMTPForm());
-            //LoadForm3(new MatchScheduleForm());
-            LoadForm3(new MatchDetailForm());
+            LoadForm3(new MatchScheduleForm());
+            //LoadForm3(new MatchDetailForm());
         }
 
         public void LoadResult()
@@ -220,8 +220,9 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
 
             _Control3.Dock = DockStyle.Fill;
 
-            LoadForm2(new SidebarMTPForm());
-            LoadForm3(new MatchResultForm());
+            LoadForm2(new SidebarMRRForm());
+            LoadForm3(new RankingForm());
+            //LoadForm3(new MatchResultForm());
         }
 
         public void LoadOrganizer()
@@ -233,8 +234,8 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
 
             _Control3.Dock = DockStyle.Fill;
 
-            LoadForm2(new SidebarMTPForm());
-            LoadForm3(new AssignRefereeForm());
+            LoadForm2(new SidebarAMOForm());
+            LoadForm3(new RefereeListForm());
         }
     }
 }

@@ -75,16 +75,16 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             }
 
             dataGridView.AutoGenerateColumns = false;
-            dataGridView.Columns["ID"].DataPropertyName = "MaHD";
-            dataGridView.Columns["TimeStamp"].DataPropertyName = "NgayGD";
-            dataGridView.Columns["PhuongThucGD"].DataPropertyName = "PhuongThucGD";
-            dataGridView.Columns["Price"].DataPropertyName = "TongTien";
-            dataGridView.Columns["Username"].DataPropertyName = "TenKH";
-            dataGridView.Columns["IsCheck"].DataPropertyName = "IsCheck";
-            dataGridView.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            dataGridView.Columns["Action"].Width = 100;
-            dataGridView.Columns["Action2"].Width = 100;
+            //dataGridView.Columns["ID"].DataPropertyName = "MaHD";
+            //dataGridView.Columns["TimeStamp"].DataPropertyName = "NgayGD";
+            //dataGridView.Columns["PhuongThucGD"].DataPropertyName = "PhuongThucGD";
+            //dataGridView.Columns["Price"].DataPropertyName = "TongTien";
+            //dataGridView.Columns["Username"].DataPropertyName = "TenKH";
+            //dataGridView.Columns["IsCheck"].DataPropertyName = "IsCheck";
+            //dataGridView.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+            //dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+            //dataGridView.Columns["Action"].Width = 100;
+            //dataGridView.Columns["Action2"].Width = 100;
             //dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); ;
 
             if (countLine > count)

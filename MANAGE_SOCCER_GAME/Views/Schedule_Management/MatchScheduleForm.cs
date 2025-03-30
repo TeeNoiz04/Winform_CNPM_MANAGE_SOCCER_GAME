@@ -67,95 +67,157 @@ namespace MANAGE_SOCCER_GAME.Views.Schedule_Management
 
         }
 
+        // Xem chi tiết trận đấu 
+        private void view_Match_Click(object sender, EventArgs e)
+        {
+            _router.LoadForm3(new MatchDetailForm());
+        }
+
         private void MatchScheduleForm_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 5; i++)
-            {
-                Guna2Panel guna2Panel1 = new Guna2Panel();
-                Label lblTime = new Label();
-                Label lblTeam1 = new Label();
-                Label lblTeam2 = new Label();
-                Guna2PictureBox guna2PictureBox1 = new Guna2PictureBox();
-                Guna2PictureBox guna2PictureBox2 = new Guna2PictureBox();
+            createRound();
+        }
 
-                Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-                Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        // Tạo từng vòng đấu
+        void createRound()
+        {
+            for (int i = 0; i < 3; i++)
+            {
                 Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+                FlowLayoutPanel layoutPanel = new FlowLayoutPanel();
+                Guna2Panel titlePanel = new Guna2Panel();
+                Label roundLabel = new Label();
+                // 
+                // pnLayout
+                // 
+                layoutPanel.Controls.Add(titlePanel);
+                layoutPanel.Location = new Point(3, 3);
+                layoutPanel.Name = "pnLayout" + i.ToString();
+                layoutPanel.Size = new Size(832, 246);
+                layoutPanel.TabIndex = 27;
+                // 
+                // pnTitle
+                // 
+                titlePanel.Controls.Add(roundLabel);
+                titlePanel.CustomizableEdges = customizableEdges17;
+                titlePanel.Dock = DockStyle.Top;
+                titlePanel.Location = new Point(3, 3);
+                titlePanel.Name = "pnTitle" + i.ToString();
+                titlePanel.ShadowDecoration.CustomizableEdges = customizableEdges18;
+                titlePanel.Size = new Size(832, 50);
+                titlePanel.TabIndex = 7;
+                // 
+                // lblRound
+                // 
+                roundLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+                roundLabel.ForeColor = Color.White;
+                roundLabel.Location = new Point(0, 0);
+                roundLabel.Name = "lblRound" + i.ToString();
+                roundLabel.Size = new Size(200, 50);
+                roundLabel.TabIndex = 0;
+                roundLabel.Text = "ROUND 00" + i.ToString();
+                roundLabel.TextAlign = ContentAlignment.MiddleLeft;
+
+                createMatch(layoutPanel);
+                pnLayoutMain.Controls.Add(layoutPanel);
+            }
+        }
+
+        // Tạo từng trận đấu
+        void createMatch(FlowLayoutPanel layout)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+                Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+                Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+                Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+                Guna2Panel contentPanel = new Guna2Panel();
+                Label resultLabel = new Label();
+                Label team1Label = new Label();
+                Label team2Label = new Label();
+                Guna2PictureBox team1Pic = new Guna2PictureBox();
+                Guna2PictureBox team2Pic = new Guna2PictureBox();
                 // 
-                // guna2Panel1
+                // pnContent
                 // 
-                guna2Panel1.Controls.Add(lblTime);
-                guna2Panel1.Controls.Add(lblTeam2);
-                guna2Panel1.Controls.Add(lblTeam1);
-                guna2Panel1.Controls.Add(guna2PictureBox2);
-                guna2Panel1.Controls.Add(guna2PictureBox1);
-                guna2Panel1.CustomizableEdges = customizableEdges21;
-                guna2Panel1.Location = new Point(16, 14 * i);
-                guna2Panel1.Name = "guna2Panel1";
-                guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
-                guna2Panel1.Size = new Size(410, 60);
-                guna2Panel1.TabIndex = 0;
+                contentPanel.Controls.Add(resultLabel);
+                contentPanel.Controls.Add(team1Label);
+                contentPanel.Controls.Add(team2Label);
+                contentPanel.Controls.Add(team1Pic);
+                contentPanel.Controls.Add(team2Pic);
+                contentPanel.CustomizableEdges = customizableEdges23;
+                contentPanel.Location = new Point(3, 59);
+                contentPanel.Name = "pnContent";
+                contentPanel.ShadowDecoration.CustomizableEdges = customizableEdges24;
+                contentPanel.Size = new Size(410, 60);
+                contentPanel.TabIndex = 6;
+                contentPanel.Click += view_Match_Click;
                 // 
-                // lblTime
+                // lblResult
                 // 
-                lblTime.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-                lblTime.ForeColor = Color.White;
-                lblTime.Location = new Point(155, 14);
-                lblTime.Name = "lblTime";
-                lblTime.Size = new Size(100, 32);
-                lblTime.TabIndex = 4;
-                lblTime.Text = "00 - " + i.ToString();
-                lblTime.TextAlign = ContentAlignment.MiddleCenter;
-                // 
-                // lblTeam2
-                // 
-                lblTeam2.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-                lblTeam2.ForeColor = Color.White;
-                lblTeam2.Location = new Point(265, 14);
-                lblTeam2.Name = "lblTeam2";
-                lblTeam2.Size = new Size(85, 32);
-                lblTeam2.TabIndex = 3;
-                lblTeam2.Text = "MMM";
-                lblTeam2.TextAlign = ContentAlignment.MiddleCenter;
+                resultLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+                resultLabel.ForeColor = Color.White;
+                resultLabel.Location = new Point(155, 14);
+                resultLabel.Name = "lblResult";
+                resultLabel.Size = new Size(100, 32);
+                resultLabel.TabIndex = 4;
+                resultLabel.Text = "00 - 00";
+                resultLabel.TextAlign = ContentAlignment.MiddleCenter;
+                resultLabel.Click += view_Match_Click;
                 // 
                 // lblTeam1
                 // 
-                lblTeam1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-                lblTeam1.ForeColor = Color.White;
-                lblTeam1.Location = new Point(60, 14);
-                lblTeam1.Name = "lblTeam1";
-                lblTeam1.Size = new Size(85, 32);
-                lblTeam1.TabIndex = 2;
-                lblTeam1.Text = "MMM";
-                lblTeam1.TextAlign = ContentAlignment.MiddleCenter;
+                team1Label.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+                team1Label.ForeColor = Color.White;
+                team1Label.Location = new Point(60, 14);
+                team1Label.Name = "lblTeam1";
+                team1Label.Size = new Size(85, 32);
+                team1Label.TabIndex = 2;
+                team1Label.Text = "MMM";
+                team1Label.TextAlign = ContentAlignment.MiddleCenter;
+                team1Label.Click += view_Match_Click;
                 // 
-                // guna2PictureBox2
+                // lblTeam2
                 // 
-                guna2PictureBox2.CustomizableEdges = customizableEdges17;
-                guna2PictureBox2.ImageRotate = 0F;
-                guna2PictureBox2.Location = new Point(355, 5);
-                guna2PictureBox2.Name = "guna2PictureBox2";
-                guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges18;
-                guna2PictureBox2.Size = new Size(50, 50);
-                guna2PictureBox2.TabIndex = 1;
-                guna2PictureBox2.TabStop = false;
+                team2Label.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+                team2Label.ForeColor = Color.White;
+                team2Label.Location = new Point(265, 14);
+                team2Label.Name = "lblTeam2";
+                team2Label.Size = new Size(85, 32);
+                team2Label.TabIndex = 3;
+                team2Label.Text = "MMM";
+                team2Label.TextAlign = ContentAlignment.MiddleCenter;
+                team2Label.Click += view_Match_Click;
                 // 
-                // guna2PictureBox1
+                // picTeam1
                 // 
-                guna2PictureBox1.CustomizableEdges = customizableEdges19;
-                guna2PictureBox1.ImageRotate = 0F;
-                guna2PictureBox1.Location = new Point(5, 5);
-                guna2PictureBox1.Name = "guna2PictureBox1";
-                guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-                guna2PictureBox1.Size = new Size(50, 50);
-                guna2PictureBox1.TabIndex = 0;
-                guna2PictureBox1.TabStop = false;
+                team1Pic.CustomizableEdges = customizableEdges21;
+                team1Pic.ImageRotate = 0F;
+                team1Pic.Location = new Point(5, 5);
+                team1Pic.Name = "picTeam1";
+                team1Pic.ShadowDecoration.CustomizableEdges = customizableEdges22;
+                team1Pic.Size = new Size(50, 50);
+                team1Pic.TabIndex = 0;
+                team1Pic.TabStop = false;
+                team1Pic.Click += view_Match_Click;
+                // 
+                // picTeam2
+                // 
+                team2Pic.CustomizableEdges = customizableEdges19;
+                team2Pic.ImageRotate = 0F;
+                team2Pic.Location = new Point(355, 5);
+                team2Pic.Name = "picTeam2";
+                team2Pic.ShadowDecoration.CustomizableEdges = customizableEdges20;
+                team2Pic.Size = new Size(50, 50);
+                team2Pic.TabIndex = 1;
+                team2Pic.TabStop = false;
+                team2Pic.Click += view_Match_Click;
 
-                pnLayout.Controls.Add(guna2Panel1);
-                //pnContent.Controls.Add(guna2Panel1);
+                layout.Controls.Add(contentPanel);
             }
         }
     }
