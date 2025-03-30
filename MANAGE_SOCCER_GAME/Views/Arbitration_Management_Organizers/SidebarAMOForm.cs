@@ -20,8 +20,23 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
         public SidebarAMOForm()
         {
             InitializeComponent();
-            _currentButton = btnRefereeList;
+            _currentButton = btnEmployee;
             _router = new Router();
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            if (sender is Guna2Button button)
+            {
+                if (!button.Checked)
+                {
+                    _currentButton.Checked = false;
+                    button.Checked = true;
+                    _currentButton = button;
+
+                    _router.LoadForm3(new EmployeeListForm());
+                }
+            }
         }
 
         private void btnRefereeList_Click(object sender, EventArgs e)

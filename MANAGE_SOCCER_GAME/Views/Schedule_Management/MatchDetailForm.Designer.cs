@@ -46,6 +46,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -63,6 +65,7 @@
             pnParticipant = new Guna.UI2.WinForms.Guna2Panel();
             lblStatus = new Label();
             pnTimeLine = new Guna.UI2.WinForms.Guna2Panel();
+            btnBack = new Guna.UI2.WinForms.Guna2Button();
             pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picTeam1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picTeam2).BeginInit();
@@ -315,12 +318,30 @@
             pnTimeLine.Size = new Size(1240, 490);
             pnTimeLine.TabIndex = 33;
             // 
+            // btnBack
+            // 
+            btnBack.CustomizableEdges = customizableEdges19;
+            btnBack.DisabledState.BorderColor = Color.DarkGray;
+            btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnBack.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnBack.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(12, 56);
+            btnBack.Name = "btnBack";
+            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnBack.Size = new Size(55, 35);
+            btnBack.TabIndex = 33;
+            btnBack.Text = "<=";
+            btnBack.Click += btnBack_Click;
+            // 
             // MatchDetailForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(20, 44, 76);
             ClientSize = new Size(1920, 930);
+            Controls.Add(btnBack);
             Controls.Add(pnContent);
             Controls.Add(pnHeader);
             FormBorderStyle = FormBorderStyle.None;
@@ -355,5 +376,6 @@
         private Guna.UI2.WinForms.Guna2Panel pnParticipant;
         private Guna.UI2.WinForms.Guna2Panel pnTimeLine;
         private Label lblStatus;
+        private Guna.UI2.WinForms.Guna2Button btnBack;
     }
 }

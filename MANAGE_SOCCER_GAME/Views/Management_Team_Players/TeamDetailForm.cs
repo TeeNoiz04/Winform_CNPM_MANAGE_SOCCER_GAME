@@ -34,6 +34,8 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 btnTrangKe.Enabled = true;
             }
 
+            dataGridView.Rows.Add("kkk", "kkk", "kkk", "kkk", "kkk", "kkk");
+
             LoadData();
         }
 
@@ -52,7 +54,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             }
 
             //var count = _viewhoadon.Count;
-            var count = 0;
+            var count = 2;
             countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
             totalPage = (float)count / countLine;
             totalPage = totalPage > (int)totalPage ? (int)totalPage + 1 : (int)totalPage;
@@ -175,9 +177,12 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 //    _entities.SaveChanges();
                 //    LoadData();
                 //}
+
+                _router.LoadForm3(new PlayerDetailForm());
+
             }
             // Chi tiết
-            if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
+            else if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
             {
                 //_action.LoadDetailOrders(id);
             }
@@ -217,6 +222,11 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            _router.LoadForm3(new TeamListForm());
         }
     }
 }

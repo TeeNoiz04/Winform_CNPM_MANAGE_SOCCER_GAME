@@ -28,300 +28,290 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.pnSocial = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnPrize = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnContentBooking = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnTopGames = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnGame6 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGame5 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGame4 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGame3 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGame2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGame1 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPlayNow = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExploreChallenges = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExploreQuests = new Guna.UI2.WinForms.Guna2Button();
-            this.ElipseGame1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ElipseGame2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ElipseGame3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ElipseGame5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ElipseGame6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ElipseGame4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lblGameName = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pnTopGames.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // pnSocial
-            // 
-            this.pnSocial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnSocial.BackColor = System.Drawing.Color.Transparent;
-            //this.pnSocial.BackgroundImage = global::AppCyberGameClient.Properties.Resources.Background;
-            this.pnSocial.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pnSocial.Location = new System.Drawing.Point(1440, 520);
-            this.pnSocial.Name = "pnSocial";
-            this.pnSocial.Size = new System.Drawing.Size(450, 380);
-            this.pnSocial.TabIndex = 0;
-            // 
-            // pnPrize
-            // 
-            this.pnPrize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pnPrize.BackColor = System.Drawing.Color.Transparent;
-            //this.pnPrize.BackgroundImage = global::AppCyberGameClient.Properties.Resources.Background;
-            this.pnPrize.Location = new System.Drawing.Point(1440, 280);
-            this.pnPrize.Name = "pnPrize";
-            this.pnPrize.Size = new System.Drawing.Size(450, 220);
-            this.pnPrize.TabIndex = 1;
-            // 
-            // pnContentBooking
-            // 
-            this.pnContentBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnContentBooking.BackColor = System.Drawing.Color.Transparent;
-            //this.pnContentBooking.BackgroundImage = global::AppCyberGameClient.Properties.Resources.Background;
-            this.pnContentBooking.Location = new System.Drawing.Point(1440, 30);
-            this.pnContentBooking.Name = "pnContentBooking";
-            this.pnContentBooking.Size = new System.Drawing.Size(450, 230);
-            this.pnContentBooking.TabIndex = 1;
+            components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            pnTopGames = new Guna.UI2.WinForms.Guna2Panel();
+            btnGame6 = new Guna.UI2.WinForms.Guna2Button();
+            btnGame5 = new Guna.UI2.WinForms.Guna2Button();
+            btnGame4 = new Guna.UI2.WinForms.Guna2Button();
+            btnGame3 = new Guna.UI2.WinForms.Guna2Button();
+            btnGame2 = new Guna.UI2.WinForms.Guna2Button();
+            btnGame1 = new Guna.UI2.WinForms.Guna2Button();
+            btnPlayNow = new Guna.UI2.WinForms.Guna2Button();
+            btnExploreChallenges = new Guna.UI2.WinForms.Guna2Button();
+            btnExploreQuests = new Guna.UI2.WinForms.Guna2Button();
+            ElipseGame1 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            ElipseGame2 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            ElipseGame3 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            ElipseGame5 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            ElipseGame6 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            ElipseGame4 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            lblGameName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pnTopGames.SuspendLayout();
+            SuspendLayout();
             // 
             // pnTopGames
             // 
-            this.pnTopGames.BackColor = System.Drawing.Color.Transparent;
-            this.pnTopGames.Controls.Add(this.btnGame6);
-            this.pnTopGames.Controls.Add(this.btnGame5);
-            this.pnTopGames.Controls.Add(this.btnGame4);
-            this.pnTopGames.Controls.Add(this.btnGame3);
-            this.pnTopGames.Controls.Add(this.btnGame2);
-            this.pnTopGames.Controls.Add(this.btnGame1);
-            this.pnTopGames.Location = new System.Drawing.Point(30, 30);
-            this.pnTopGames.Name = "pnTopGames";
-            this.pnTopGames.Size = new System.Drawing.Size(694, 236);
-            this.pnTopGames.TabIndex = 1;
+            pnTopGames.BackColor = Color.Transparent;
+            pnTopGames.Controls.Add(btnGame6);
+            pnTopGames.Controls.Add(btnGame5);
+            pnTopGames.Controls.Add(btnGame4);
+            pnTopGames.Controls.Add(btnGame3);
+            pnTopGames.Controls.Add(btnGame2);
+            pnTopGames.Controls.Add(btnGame1);
+            pnTopGames.CustomizableEdges = customizableEdges13;
+            pnTopGames.Location = new Point(30, 30);
+            pnTopGames.Name = "pnTopGames";
+            pnTopGames.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            pnTopGames.Size = new Size(694, 236);
+            pnTopGames.TabIndex = 1;
             // 
             // btnGame6
             // 
-            //this.btnGame6.BackgroundImage = global::AppCyberGameClient.Properties.Resources.Background;
-            this.btnGame6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGame6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGame6.FillColor = System.Drawing.Color.Empty;
-            this.btnGame6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGame6.ForeColor = System.Drawing.Color.White;
-            this.btnGame6.Location = new System.Drawing.Point(588, 10);
-            this.btnGame6.Name = "btnGame6";
-            this.btnGame6.Size = new System.Drawing.Size(96, 144);
-            this.btnGame6.TabIndex = 6;
-            this.btnGame6.Text = "ALL";
-            //this.btnGame6.Click += new System.EventHandler(this.btnGame6_Click);
+            btnGame6.CustomizableEdges = customizableEdges1;
+            btnGame6.DisabledState.BorderColor = Color.DarkGray;
+            btnGame6.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGame6.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGame6.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGame6.FillColor = Color.Empty;
+            btnGame6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGame6.ForeColor = Color.White;
+            btnGame6.Location = new Point(588, 10);
+            btnGame6.Name = "btnGame6";
+            btnGame6.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnGame6.Size = new Size(96, 144);
+            btnGame6.TabIndex = 6;
+            btnGame6.Text = "ALL";
             // 
             // btnGame5
             // 
-            this.btnGame5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGame5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGame5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGame5.FillColor = System.Drawing.Color.Empty;
-            this.btnGame5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnGame5.ForeColor = System.Drawing.Color.White;
-            this.btnGame5.Location = new System.Drawing.Point(482, 10);
-            this.btnGame5.Name = "btnGame5";
-            this.btnGame5.Size = new System.Drawing.Size(96, 144);
-            this.btnGame5.TabIndex = 5;
-            //this.btnGame5.Click += new System.EventHandler(this.btnGame_Click);
+            btnGame5.BackgroundImageLayout = ImageLayout.Zoom;
+            btnGame5.CustomizableEdges = customizableEdges3;
+            btnGame5.DisabledState.BorderColor = Color.DarkGray;
+            btnGame5.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGame5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGame5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGame5.FillColor = Color.Empty;
+            btnGame5.Font = new Font("Segoe UI", 9F);
+            btnGame5.ForeColor = Color.White;
+            btnGame5.Location = new Point(482, 10);
+            btnGame5.Name = "btnGame5";
+            btnGame5.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnGame5.Size = new Size(96, 144);
+            btnGame5.TabIndex = 5;
             // 
             // btnGame4
             // 
-            this.btnGame4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGame4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGame4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGame4.FillColor = System.Drawing.Color.Empty;
-            this.btnGame4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnGame4.ForeColor = System.Drawing.Color.White;
-            this.btnGame4.Location = new System.Drawing.Point(376, 10);
-            this.btnGame4.Name = "btnGame4";
-            this.btnGame4.Size = new System.Drawing.Size(96, 144);
-            this.btnGame4.TabIndex = 4;
-            //this.btnGame4.Click += new System.EventHandler(this.btnGame_Click);
+            btnGame4.BackgroundImageLayout = ImageLayout.Zoom;
+            btnGame4.CustomizableEdges = customizableEdges5;
+            btnGame4.DisabledState.BorderColor = Color.DarkGray;
+            btnGame4.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGame4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGame4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGame4.FillColor = Color.Empty;
+            btnGame4.Font = new Font("Segoe UI", 9F);
+            btnGame4.ForeColor = Color.White;
+            btnGame4.Location = new Point(376, 10);
+            btnGame4.Name = "btnGame4";
+            btnGame4.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnGame4.Size = new Size(96, 144);
+            btnGame4.TabIndex = 4;
             // 
             // btnGame3
             // 
-            this.btnGame3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGame3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGame3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGame3.FillColor = System.Drawing.Color.Empty;
-            this.btnGame3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnGame3.ForeColor = System.Drawing.Color.White;
-            this.btnGame3.Location = new System.Drawing.Point(270, 10);
-            this.btnGame3.Name = "btnGame3";
-            this.btnGame3.Size = new System.Drawing.Size(96, 144);
-            this.btnGame3.TabIndex = 3;
-            //this.btnGame3.Click += new System.EventHandler(this.btnGame_Click);
+            btnGame3.BackgroundImageLayout = ImageLayout.Zoom;
+            btnGame3.CustomizableEdges = customizableEdges7;
+            btnGame3.DisabledState.BorderColor = Color.DarkGray;
+            btnGame3.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGame3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGame3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGame3.FillColor = Color.Empty;
+            btnGame3.Font = new Font("Segoe UI", 9F);
+            btnGame3.ForeColor = Color.White;
+            btnGame3.Location = new Point(270, 10);
+            btnGame3.Name = "btnGame3";
+            btnGame3.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnGame3.Size = new Size(96, 144);
+            btnGame3.TabIndex = 3;
             // 
             // btnGame2
             // 
-            this.btnGame2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGame2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGame2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGame2.FillColor = System.Drawing.Color.Empty;
-            this.btnGame2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnGame2.ForeColor = System.Drawing.Color.White;
-            this.btnGame2.Location = new System.Drawing.Point(164, 10);
-            this.btnGame2.Name = "btnGame2";
-            this.btnGame2.Size = new System.Drawing.Size(96, 144);
-            this.btnGame2.TabIndex = 2;
-            //this.btnGame2.Click += new System.EventHandler(this.btnGame_Click);
+            btnGame2.BackgroundImageLayout = ImageLayout.Zoom;
+            btnGame2.CustomizableEdges = customizableEdges9;
+            btnGame2.DisabledState.BorderColor = Color.DarkGray;
+            btnGame2.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGame2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGame2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGame2.FillColor = Color.Empty;
+            btnGame2.Font = new Font("Segoe UI", 9F);
+            btnGame2.ForeColor = Color.White;
+            btnGame2.Location = new Point(164, 10);
+            btnGame2.Name = "btnGame2";
+            btnGame2.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnGame2.Size = new Size(96, 144);
+            btnGame2.TabIndex = 2;
             // 
             // btnGame1
             // 
-            this.btnGame1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGame1.Checked = true;
-            this.btnGame1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGame1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGame1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGame1.FillColor = System.Drawing.Color.Empty;
-            this.btnGame1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnGame1.ForeColor = System.Drawing.Color.White;
-            this.btnGame1.Location = new System.Drawing.Point(10, 10);
-            this.btnGame1.Name = "btnGame1";
-            this.btnGame1.Size = new System.Drawing.Size(144, 216);
-            this.btnGame1.TabIndex = 1;
-            //this.btnGame1.Click += new System.EventHandler(this.btnGame_Click);
+            btnGame1.BackgroundImageLayout = ImageLayout.Zoom;
+            btnGame1.Checked = true;
+            btnGame1.CustomizableEdges = customizableEdges11;
+            btnGame1.DisabledState.BorderColor = Color.DarkGray;
+            btnGame1.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGame1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGame1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGame1.FillColor = Color.Empty;
+            btnGame1.Font = new Font("Segoe UI", 9F);
+            btnGame1.ForeColor = Color.White;
+            btnGame1.Location = new Point(10, 10);
+            btnGame1.Name = "btnGame1";
+            btnGame1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnGame1.Size = new Size(144, 216);
+            btnGame1.TabIndex = 1;
             // 
             // btnPlayNow
             // 
-            this.btnPlayNow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPlayNow.BackColor = System.Drawing.Color.Transparent;
-            this.btnPlayNow.BorderRadius = 15;
-            this.btnPlayNow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPlayNow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPlayNow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPlayNow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPlayNow.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(211)))), ((int)(((byte)(252)))));
-            this.btnPlayNow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayNow.ForeColor = System.Drawing.Color.White;
-            this.btnPlayNow.Location = new System.Drawing.Point(30, 840);
-            this.btnPlayNow.Name = "btnPlayNow";
-            this.btnPlayNow.Size = new System.Drawing.Size(280, 60);
-            this.btnPlayNow.TabIndex = 2;
-            this.btnPlayNow.Text = "Play now!";
+            btnPlayNow.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnPlayNow.BackColor = Color.Transparent;
+            btnPlayNow.BorderRadius = 15;
+            btnPlayNow.CustomizableEdges = customizableEdges15;
+            btnPlayNow.DisabledState.BorderColor = Color.DarkGray;
+            btnPlayNow.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnPlayNow.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnPlayNow.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnPlayNow.FillColor = Color.FromArgb(60, 211, 252);
+            btnPlayNow.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPlayNow.ForeColor = Color.White;
+            btnPlayNow.Location = new Point(30, 840);
+            btnPlayNow.Name = "btnPlayNow";
+            btnPlayNow.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnPlayNow.Size = new Size(280, 60);
+            btnPlayNow.TabIndex = 2;
+            btnPlayNow.Text = "Play now!";
             // 
             // btnExploreChallenges
             // 
-            this.btnExploreChallenges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExploreChallenges.BackColor = System.Drawing.Color.Transparent;
-            this.btnExploreChallenges.BorderRadius = 15;
-            this.btnExploreChallenges.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExploreChallenges.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExploreChallenges.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExploreChallenges.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExploreChallenges.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
-            this.btnExploreChallenges.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExploreChallenges.ForeColor = System.Drawing.Color.White;
-            this.btnExploreChallenges.Location = new System.Drawing.Point(316, 840);
-            this.btnExploreChallenges.Name = "btnExploreChallenges";
-            this.btnExploreChallenges.Size = new System.Drawing.Size(230, 60);
-            this.btnExploreChallenges.TabIndex = 3;
-            this.btnExploreChallenges.Text = "Explore Challenges";
+            btnExploreChallenges.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnExploreChallenges.BackColor = Color.Transparent;
+            btnExploreChallenges.BorderRadius = 15;
+            btnExploreChallenges.CustomizableEdges = customizableEdges17;
+            btnExploreChallenges.DisabledState.BorderColor = Color.DarkGray;
+            btnExploreChallenges.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnExploreChallenges.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnExploreChallenges.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnExploreChallenges.FillColor = Color.FromArgb(18, 40, 69);
+            btnExploreChallenges.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExploreChallenges.ForeColor = Color.White;
+            btnExploreChallenges.Location = new Point(316, 840);
+            btnExploreChallenges.Name = "btnExploreChallenges";
+            btnExploreChallenges.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnExploreChallenges.Size = new Size(230, 60);
+            btnExploreChallenges.TabIndex = 3;
+            btnExploreChallenges.Text = "Explore Challenges";
             // 
             // btnExploreQuests
             // 
-            this.btnExploreQuests.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExploreQuests.BackColor = System.Drawing.Color.Transparent;
-            this.btnExploreQuests.BorderRadius = 15;
-            this.btnExploreQuests.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExploreQuests.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExploreQuests.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExploreQuests.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExploreQuests.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
-            this.btnExploreQuests.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExploreQuests.ForeColor = System.Drawing.Color.White;
-            this.btnExploreQuests.Location = new System.Drawing.Point(552, 840);
-            this.btnExploreQuests.Name = "btnExploreQuests";
-            this.btnExploreQuests.Size = new System.Drawing.Size(200, 60);
-            this.btnExploreQuests.TabIndex = 4;
-            this.btnExploreQuests.Text = "Explore Quests";
+            btnExploreQuests.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnExploreQuests.BackColor = Color.Transparent;
+            btnExploreQuests.BorderRadius = 15;
+            btnExploreQuests.CustomizableEdges = customizableEdges19;
+            btnExploreQuests.DisabledState.BorderColor = Color.DarkGray;
+            btnExploreQuests.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnExploreQuests.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnExploreQuests.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnExploreQuests.FillColor = Color.FromArgb(18, 40, 69);
+            btnExploreQuests.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExploreQuests.ForeColor = Color.White;
+            btnExploreQuests.Location = new Point(552, 840);
+            btnExploreQuests.Name = "btnExploreQuests";
+            btnExploreQuests.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnExploreQuests.Size = new Size(200, 60);
+            btnExploreQuests.TabIndex = 4;
+            btnExploreQuests.Text = "Explore Quests";
             // 
             // ElipseGame1
             // 
-            this.ElipseGame1.BorderRadius = 30;
-            this.ElipseGame1.TargetControl = this.btnGame1;
+            ElipseGame1.BorderRadius = 30;
+            ElipseGame1.TargetControl = btnGame1;
             // 
             // ElipseGame2
             // 
-            this.ElipseGame2.BorderRadius = 30;
-            this.ElipseGame2.TargetControl = this.btnGame2;
+            ElipseGame2.BorderRadius = 30;
+            ElipseGame2.TargetControl = btnGame2;
             // 
             // ElipseGame3
             // 
-            this.ElipseGame3.BorderRadius = 30;
-            this.ElipseGame3.TargetControl = this.btnGame3;
+            ElipseGame3.BorderRadius = 30;
+            ElipseGame3.TargetControl = btnGame3;
             // 
             // ElipseGame5
             // 
-            this.ElipseGame5.BorderRadius = 30;
-            this.ElipseGame5.TargetControl = this.btnGame5;
+            ElipseGame5.BorderRadius = 30;
+            ElipseGame5.TargetControl = btnGame5;
             // 
             // ElipseGame6
             // 
-            this.ElipseGame6.BorderRadius = 30;
-            this.ElipseGame6.TargetControl = this.btnGame6;
+            ElipseGame6.BorderRadius = 30;
+            ElipseGame6.TargetControl = btnGame6;
             // 
             // ElipseGame4
             // 
-            this.ElipseGame4.BorderRadius = 30;
-            this.ElipseGame4.TargetControl = this.btnGame4;
+            ElipseGame4.BorderRadius = 30;
+            ElipseGame4.TargetControl = btnGame4;
             // 
             // lblGameName
             // 
-            this.lblGameName.BackColor = System.Drawing.Color.Transparent;
-            this.lblGameName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameName.ForeColor = System.Drawing.Color.White;
-            this.lblGameName.Location = new System.Drawing.Point(30, 770);
-            this.lblGameName.Name = "lblGameName";
-            this.lblGameName.Size = new System.Drawing.Size(106, 44);
-            this.lblGameName.TabIndex = 5;
-            this.lblGameName.Text = "Name";
+            lblGameName.BackColor = Color.Transparent;
+            lblGameName.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblGameName.ForeColor = Color.White;
+            lblGameName.Location = new Point(30, 770);
+            lblGameName.Name = "lblGameName";
+            lblGameName.Size = new Size(106, 44);
+            lblGameName.TabIndex = 5;
+            lblGameName.Text = "Name";
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(70)))), ((int)(((byte)(121)))));
-            //this.BackgroundImage = global::AppCyberGameClient.Properties.Resources.Logo_1_1;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1920, 930);
-            this.Controls.Add(this.lblGameName);
-            this.Controls.Add(this.btnExploreQuests);
-            this.Controls.Add(this.btnExploreChallenges);
-            this.Controls.Add(this.btnPlayNow);
-            this.Controls.Add(this.pnPrize);
-            this.Controls.Add(this.pnContentBooking);
-            this.Controls.Add(this.pnTopGames);
-            this.Controls.Add(this.pnSocial);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "HomeForm";
-            this.Text = "HomeForm";
-            //this.Load += new System.EventHandler(this.HomeForm_Load);
-            this.pnTopGames.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = Color.FromArgb(31, 70, 121);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(1920, 930);
+            Controls.Add(lblGameName);
+            Controls.Add(btnExploreQuests);
+            Controls.Add(btnExploreChallenges);
+            Controls.Add(btnPlayNow);
+            Controls.Add(pnTopGames);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "HomeForm";
+            Text = "HomeForm";
+            pnTopGames.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel pnSocial;
-        private Guna.UI2.WinForms.Guna2Panel pnPrize;
-        private Guna.UI2.WinForms.Guna2Panel pnContentBooking;
         private Guna.UI2.WinForms.Guna2Panel pnTopGames;
         private Guna.UI2.WinForms.Guna2Button btnPlayNow;
         private Guna.UI2.WinForms.Guna2Button btnExploreChallenges;

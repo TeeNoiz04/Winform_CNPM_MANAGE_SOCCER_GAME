@@ -24,10 +24,7 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
         private static Control? _Control3;
         private static Control? _Control4;
 
-        public Router()
-        {
-
-        }
+        public Router() { }
 
         public Router(Control control1, Control control2, Control control3, Control control4)
         {
@@ -152,7 +149,7 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.None;
             _Control3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             _Control3.Size = new System.Drawing.Size(600, 1080);
-            _Control3.Location = new System.Drawing.Point(180, 0);
+            _Control3.Location = new System.Drawing.Point(660, 0);
 
             LoadForm3(new SignInForm());
         }
@@ -235,7 +232,8 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.Fill;
 
             LoadForm2(new SidebarAMOForm());
-            LoadForm3(new RefereeListForm());
+            LoadForm3(new EmployeeListForm());
+            //LoadForm3(new RefereeListForm());
         }
     }
 }

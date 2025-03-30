@@ -30,285 +30,316 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnFooter = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblFooter = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
-            this.txbUsername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txbPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblForgotPassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblContinue = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblAskCreate = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblCreateAccount = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnFB = new Guna.UI2.WinForms.Guna2Button();
-            this.btnApple = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGG = new Guna.UI2.WinForms.Guna2Button();
-            this.lblAsk = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pnLine = new Guna.UI2.WinForms.Guna2Panel();
-            this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pnFooter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.SuspendLayout();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            pnFooter = new Guna.UI2.WinForms.Guna2Panel();
+            lblFooter = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btnLogin = new Guna.UI2.WinForms.Guna2Button();
+            txbUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            txbPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            lblForgotPassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblContinue = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblAskCreate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblCreateAccount = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btnFB = new Guna.UI2.WinForms.Guna2Button();
+            btnApple = new Guna.UI2.WinForms.Guna2Button();
+            btnGG = new Guna.UI2.WinForms.Guna2Button();
+            lblAsk = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pnLine = new Guna.UI2.WinForms.Guna2Panel();
+            picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            pnFooter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
+            SuspendLayout();
             // 
             // pnFooter
             // 
-            this.pnFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(116)))));
-            this.pnFooter.Controls.Add(this.lblFooter);
-            this.pnFooter.Location = new System.Drawing.Point(0, 1000);
-            this.pnFooter.Name = "pnFooter";
-            this.pnFooter.Size = new System.Drawing.Size(600, 80);
-            this.pnFooter.TabIndex = 1;
+            pnFooter.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnFooter.BackColor = Color.FromArgb(52, 52, 116);
+            pnFooter.Controls.Add(lblFooter);
+            pnFooter.CustomizableEdges = customizableEdges1;
+            pnFooter.Location = new Point(0, 1000);
+            pnFooter.Name = "pnFooter";
+            pnFooter.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            pnFooter.Size = new Size(600, 80);
+            pnFooter.TabIndex = 1;
             // 
             // lblFooter
             // 
-            this.lblFooter.AutoSize = false;
-            this.lblFooter.BackColor = System.Drawing.Color.Transparent;
-            this.lblFooter.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooter.ForeColor = System.Drawing.Color.White;
-            this.lblFooter.Location = new System.Drawing.Point(246, 24);
-            this.lblFooter.Name = "lblFooter";
-            this.lblFooter.Size = new System.Drawing.Size(122, 35);
-            this.lblFooter.TabIndex = 13;
-            this.lblFooter.Text = "MAY 63";
+            lblFooter.AutoSize = false;
+            lblFooter.BackColor = Color.Transparent;
+            lblFooter.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFooter.ForeColor = Color.White;
+            lblFooter.Location = new Point(246, 24);
+            lblFooter.Name = "lblFooter";
+            lblFooter.Size = new Size(122, 35);
+            lblFooter.TabIndex = 13;
+            lblFooter.Text = "MAY 63";
             // 
             // btnLogin
             // 
-            this.btnLogin.BorderRadius = 10;
-            this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(211)))), ((int)(((byte)(252)))));
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(100, 500);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(400, 45);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Log in";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            btnLogin.BorderRadius = 10;
+            btnLogin.CustomizableEdges = customizableEdges3;
+            btnLogin.DisabledState.BorderColor = Color.DarkGray;
+            btnLogin.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLogin.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLogin.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLogin.FillColor = Color.FromArgb(60, 211, 252);
+            btnLogin.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(100, 500);
+            btnLogin.Name = "btnLogin";
+            btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnLogin.Size = new Size(400, 45);
+            btnLogin.TabIndex = 2;
+            btnLogin.Text = "Log in";
+            btnLogin.Click += btnLogin_Click;
             // 
             // txbUsername
             // 
-            this.txbUsername.AutoSize = true;
-            this.txbUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(116)))));
-            this.txbUsername.BorderRadius = 5;
-            this.txbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbUsername.DefaultText = "Email or Username";
-            this.txbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(116)))));
-            this.txbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbUsername.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUsername.ForeColor = System.Drawing.Color.Silver;
-            this.txbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbUsername.Location = new System.Drawing.Point(100, 370);
-            this.txbUsername.Margin = new System.Windows.Forms.Padding(6);
-            this.txbUsername.Name = "txbUsername";
-            this.txbUsername.PasswordChar = '\0';
-            this.txbUsername.PlaceholderText = "";
-            this.txbUsername.SelectedText = "";
-            this.txbUsername.Size = new System.Drawing.Size(400, 50);
-            this.txbUsername.TabIndex = 3;
-            this.txbUsername.Click += new System.EventHandler(this.txbUserName_Click);
-            this.txbUsername.Leave += new System.EventHandler(this.txbUsername_Leave);
-            this.txbUsername.MouseLeave += new System.EventHandler(this.txbUsername_MouseLeave);
-            this.txbUsername.MouseHover += new System.EventHandler(this.txbUsername_MouseHover);
+            txbUsername.AutoSize = true;
+            txbUsername.BorderColor = Color.FromArgb(52, 52, 116);
+            txbUsername.BorderRadius = 5;
+            txbUsername.Cursor = Cursors.IBeam;
+            txbUsername.CustomizableEdges = customizableEdges5;
+            txbUsername.DefaultText = "Email or Username";
+            txbUsername.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txbUsername.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txbUsername.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txbUsername.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txbUsername.FillColor = Color.FromArgb(52, 52, 116);
+            txbUsername.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbUsername.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbUsername.ForeColor = Color.Silver;
+            txbUsername.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbUsername.Location = new Point(100, 370);
+            txbUsername.Margin = new Padding(6);
+            txbUsername.Name = "txbUsername";
+            txbUsername.PlaceholderText = "";
+            txbUsername.SelectedText = "";
+            txbUsername.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txbUsername.Size = new Size(400, 50);
+            txbUsername.TabIndex = 3;
+            txbUsername.Click += txbUserName_Click;
+            txbUsername.Leave += txbUsername_Leave;
+            txbUsername.MouseLeave += txbUsername_MouseLeave;
+            txbUsername.MouseHover += txbUsername_MouseHover;
             // 
             // txbPassword
             // 
-            this.txbPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(116)))));
-            this.txbPassword.BorderRadius = 5;
-            this.txbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPassword.DefaultText = "Password";
-            this.txbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txbPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(116)))));
-            this.txbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbPassword.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassword.ForeColor = System.Drawing.Color.Silver;
-            this.txbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbPassword.Location = new System.Drawing.Point(100, 430);
-            this.txbPassword.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txbPassword.Name = "txbPassword";
-            this.txbPassword.PasswordChar = '\0';
-            this.txbPassword.PlaceholderText = "";
-            this.txbPassword.SelectedText = "";
-            this.txbPassword.Size = new System.Drawing.Size(400, 50);
-            this.txbPassword.TabIndex = 4;
-            this.txbPassword.Click += new System.EventHandler(this.txbPassword_Click);
-            this.txbPassword.Leave += new System.EventHandler(this.txbPassword_Leave);
-            this.txbPassword.MouseLeave += new System.EventHandler(this.txbPassword_MouseLeave);
-            this.txbPassword.MouseHover += new System.EventHandler(this.txbPassword_MouseHover);
+            txbPassword.BorderColor = Color.FromArgb(52, 52, 116);
+            txbPassword.BorderRadius = 5;
+            txbPassword.Cursor = Cursors.IBeam;
+            txbPassword.CustomizableEdges = customizableEdges7;
+            txbPassword.DefaultText = "Password";
+            txbPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txbPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txbPassword.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txbPassword.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txbPassword.FillColor = Color.FromArgb(52, 52, 116);
+            txbPassword.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbPassword.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbPassword.ForeColor = Color.Silver;
+            txbPassword.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbPassword.Location = new Point(100, 430);
+            txbPassword.Margin = new Padding(6, 5, 6, 5);
+            txbPassword.Name = "txbPassword";
+            txbPassword.PlaceholderText = "";
+            txbPassword.SelectedText = "";
+            txbPassword.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txbPassword.Size = new Size(400, 50);
+            txbPassword.TabIndex = 4;
+            txbPassword.Click += txbPassword_Click;
+            txbPassword.Leave += txbPassword_Leave;
+            txbPassword.MouseLeave += txbPassword_MouseLeave;
+            txbPassword.MouseHover += txbPassword_MouseHover;
             // 
             // lblForgotPassword
             // 
-            this.lblForgotPassword.AutoSize = false;
-            this.lblForgotPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(211)))), ((int)(((byte)(252)))));
-            this.lblForgotPassword.Location = new System.Drawing.Point(230, 575);
-            this.lblForgotPassword.Name = "lblForgotPassword";
-            this.lblForgotPassword.Size = new System.Drawing.Size(140, 19);
-            this.lblForgotPassword.TabIndex = 5;
-            this.lblForgotPassword.Text = "Forgot password?";
-            this.lblForgotPassword.MouseHover += new System.EventHandler(this.lblForgotPassword_MouseHover);
+            lblForgotPassword.AutoSize = false;
+            lblForgotPassword.BackColor = Color.Transparent;
+            lblForgotPassword.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblForgotPassword.ForeColor = Color.FromArgb(60, 211, 252);
+            lblForgotPassword.Location = new Point(230, 575);
+            lblForgotPassword.Name = "lblForgotPassword";
+            lblForgotPassword.Size = new Size(140, 19);
+            lblForgotPassword.TabIndex = 5;
+            lblForgotPassword.Text = "Forgot password?";
+            lblForgotPassword.MouseHover += lblForgotPassword_MouseHover;
             // 
             // lblContinue
             // 
-            this.lblContinue.AutoSize = false;
-            this.lblContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(44)))), ((int)(((byte)(76)))));
-            this.lblContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContinue.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblContinue.Location = new System.Drawing.Point(238, 625);
-            this.lblContinue.Name = "lblContinue";
-            this.lblContinue.Size = new System.Drawing.Size(123, 19);
-            this.lblContinue.TabIndex = 6;
-            this.lblContinue.Text = "CONTINUE WITH";
+            lblContinue.AutoSize = false;
+            lblContinue.BackColor = Color.FromArgb(20, 44, 76);
+            lblContinue.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblContinue.ForeColor = Color.DarkGray;
+            lblContinue.Location = new Point(238, 625);
+            lblContinue.Name = "lblContinue";
+            lblContinue.Size = new Size(123, 19);
+            lblContinue.TabIndex = 6;
+            lblContinue.Text = "CONTINUE WITH";
             // 
             // lblAskCreate
             // 
-            this.lblAskCreate.AutoSize = false;
-            this.lblAskCreate.BackColor = System.Drawing.Color.Transparent;
-            this.lblAskCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAskCreate.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblAskCreate.Location = new System.Drawing.Point(154, 725);
-            this.lblAskCreate.Name = "lblAskCreate";
-            this.lblAskCreate.Size = new System.Drawing.Size(181, 19);
-            this.lblAskCreate.TabIndex = 7;
-            this.lblAskCreate.Text = "Don\'t have an account yet?";
+            lblAskCreate.AutoSize = false;
+            lblAskCreate.BackColor = Color.Transparent;
+            lblAskCreate.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAskCreate.ForeColor = Color.DarkGray;
+            lblAskCreate.Location = new Point(154, 725);
+            lblAskCreate.Name = "lblAskCreate";
+            lblAskCreate.Size = new Size(181, 19);
+            lblAskCreate.TabIndex = 7;
+            lblAskCreate.Text = "Don't have an account yet?";
             // 
             // lblCreateAccount
             // 
-            this.lblCreateAccount.AutoSize = false;
-            this.lblCreateAccount.BackColor = System.Drawing.Color.Transparent;
-            this.lblCreateAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(211)))), ((int)(((byte)(252)))));
-            this.lblCreateAccount.Location = new System.Drawing.Point(341, 725);
-            this.lblCreateAccount.Name = "lblCreateAccount";
-            this.lblCreateAccount.Size = new System.Drawing.Size(104, 19);
-            this.lblCreateAccount.TabIndex = 8;
-            this.lblCreateAccount.Text = "Create account";
-            this.lblCreateAccount.Click += new System.EventHandler(this.lblCreateAccount_Click);
-            this.lblCreateAccount.MouseHover += new System.EventHandler(this.lblCreateAccount_MouseHover);
+            lblCreateAccount.AutoSize = false;
+            lblCreateAccount.BackColor = Color.Transparent;
+            lblCreateAccount.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCreateAccount.ForeColor = Color.FromArgb(60, 211, 252);
+            lblCreateAccount.Location = new Point(341, 725);
+            lblCreateAccount.Name = "lblCreateAccount";
+            lblCreateAccount.Size = new Size(104, 19);
+            lblCreateAccount.TabIndex = 8;
+            lblCreateAccount.Text = "Create account";
+            lblCreateAccount.Click += lblCreateAccount_Click;
+            lblCreateAccount.MouseHover += lblCreateAccount_MouseHover;
             // 
             // btnFB
             // 
-            this.btnFB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(44)))), ((int)(((byte)(76)))));
-            this.btnFB.BorderRadius = 10;
-            this.btnFB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(116)))));
-            this.btnFB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFB.ForeColor = System.Drawing.Color.White;
-            this.btnFB.Location = new System.Drawing.Point(100, 660);
-            this.btnFB.Name = "btnFB";
-            this.btnFB.Size = new System.Drawing.Size(120, 35);
-            this.btnFB.TabIndex = 9;
-            this.btnFB.Text = "Facebook";
+            btnFB.BackColor = Color.FromArgb(20, 44, 76);
+            btnFB.BorderRadius = 10;
+            btnFB.CustomizableEdges = customizableEdges9;
+            btnFB.DisabledState.BorderColor = Color.DarkGray;
+            btnFB.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFB.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFB.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFB.FillColor = Color.FromArgb(52, 52, 116);
+            btnFB.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFB.ForeColor = Color.White;
+            btnFB.Location = new Point(100, 660);
+            btnFB.Name = "btnFB";
+            btnFB.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnFB.Size = new Size(120, 35);
+            btnFB.TabIndex = 9;
+            btnFB.Text = "Facebook";
             // 
             // btnApple
             // 
-            this.btnApple.BorderRadius = 10;
-            this.btnApple.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnApple.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnApple.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnApple.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnApple.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(116)))));
-            this.btnApple.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApple.ForeColor = System.Drawing.Color.White;
-            this.btnApple.Location = new System.Drawing.Point(380, 660);
-            this.btnApple.Name = "btnApple";
-            this.btnApple.Size = new System.Drawing.Size(120, 35);
-            this.btnApple.TabIndex = 10;
-            this.btnApple.Text = "Apple";
+            btnApple.BorderRadius = 10;
+            btnApple.CustomizableEdges = customizableEdges11;
+            btnApple.DisabledState.BorderColor = Color.DarkGray;
+            btnApple.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnApple.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnApple.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnApple.FillColor = Color.FromArgb(52, 52, 116);
+            btnApple.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnApple.ForeColor = Color.White;
+            btnApple.Location = new Point(380, 660);
+            btnApple.Name = "btnApple";
+            btnApple.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnApple.Size = new Size(120, 35);
+            btnApple.TabIndex = 10;
+            btnApple.Text = "Apple";
             // 
             // btnGG
             // 
-            this.btnGG.BorderRadius = 10;
-            this.btnGG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGG.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(116)))));
-            this.btnGG.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGG.ForeColor = System.Drawing.Color.White;
-            this.btnGG.Location = new System.Drawing.Point(240, 660);
-            this.btnGG.Name = "btnGG";
-            this.btnGG.Size = new System.Drawing.Size(120, 35);
-            this.btnGG.TabIndex = 11;
-            this.btnGG.Text = "Google";
+            btnGG.BorderRadius = 10;
+            btnGG.CustomizableEdges = customizableEdges13;
+            btnGG.DisabledState.BorderColor = Color.DarkGray;
+            btnGG.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGG.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGG.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGG.FillColor = Color.FromArgb(52, 52, 116);
+            btnGG.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGG.ForeColor = Color.White;
+            btnGG.Location = new Point(240, 660);
+            btnGG.Name = "btnGG";
+            btnGG.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnGG.Size = new Size(120, 35);
+            btnGG.TabIndex = 11;
+            btnGG.Text = "Google";
             // 
             // lblAsk
             // 
-            this.lblAsk.AutoSize = false;
-            this.lblAsk.BackColor = System.Drawing.Color.Transparent;
-            this.lblAsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAsk.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblAsk.Location = new System.Drawing.Point(209, 330);
-            this.lblAsk.Name = "lblAsk";
-            this.lblAsk.Size = new System.Drawing.Size(181, 19);
-            this.lblAsk.TabIndex = 12;
-            this.lblAsk.Text = "Log in with your credentials";
+            lblAsk.AutoSize = false;
+            lblAsk.BackColor = Color.Transparent;
+            lblAsk.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAsk.ForeColor = Color.DarkGray;
+            lblAsk.Location = new Point(209, 330);
+            lblAsk.Name = "lblAsk";
+            lblAsk.Size = new Size(181, 19);
+            lblAsk.TabIndex = 12;
+            lblAsk.Text = "Log in with your credentials";
             // 
             // pnLine
             // 
-            this.pnLine.BorderColor = System.Drawing.Color.Gray;
-            this.pnLine.BorderThickness = 1;
-            this.pnLine.FillColor = System.Drawing.Color.Gray;
-            this.pnLine.ForeColor = System.Drawing.Color.DarkGray;
-            this.pnLine.Location = new System.Drawing.Point(100, 635);
-            this.pnLine.Name = "pnLine";
-            this.pnLine.Size = new System.Drawing.Size(400, 1);
-            this.pnLine.TabIndex = 13;
+            pnLine.BorderColor = Color.Gray;
+            pnLine.BorderThickness = 1;
+            pnLine.CustomizableEdges = customizableEdges15;
+            pnLine.FillColor = Color.Gray;
+            pnLine.ForeColor = Color.DarkGray;
+            pnLine.Location = new Point(100, 635);
+            pnLine.Name = "pnLine";
+            pnLine.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            pnLine.Size = new Size(400, 1);
+            pnLine.TabIndex = 13;
             // 
             // picLogo
             // 
-            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            //this.picLogo.Image = global::AppCyberGameClient.Properties.Resources.Logo_2;
-            this.picLogo.ImageRotate = 0F;
-            this.picLogo.Location = new System.Drawing.Point(0, 150);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(600, 140);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 0;
-            this.picLogo.TabStop = false;
+            picLogo.BackgroundImageLayout = ImageLayout.Zoom;
+            picLogo.CustomizableEdges = customizableEdges17;
+            picLogo.ImageRotate = 0F;
+            picLogo.Location = new Point(0, 150);
+            picLogo.Name = "picLogo";
+            picLogo.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            picLogo.Size = new Size(600, 140);
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogo.TabIndex = 0;
+            picLogo.TabStop = false;
             // 
-            // LoginForm
+            // SignInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = AppColors.GreenPakistan;
-            //this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(44)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(600, 1080);
-            this.Controls.Add(this.pnLine);
-            this.Controls.Add(this.lblAsk);
-            this.Controls.Add(this.btnGG);
-            this.Controls.Add(this.btnApple);
-            this.Controls.Add(this.btnFB);
-            this.Controls.Add(this.lblCreateAccount);
-            this.Controls.Add(this.lblAskCreate);
-            this.Controls.Add(this.lblContinue);
-            this.Controls.Add(this.lblForgotPassword);
-            this.Controls.Add(this.txbPassword);
-            this.Controls.Add(this.txbUsername);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.pnFooter);
-            this.Controls.Add(this.picLogo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "LoginForm";
-            this.Text = "LoginForm";
-            this.pnFooter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = Color.FromArgb(20, 44, 76);
+            ClientSize = new Size(600, 1080);
+            Controls.Add(pnLine);
+            Controls.Add(lblAsk);
+            Controls.Add(btnGG);
+            Controls.Add(btnApple);
+            Controls.Add(btnFB);
+            Controls.Add(lblCreateAccount);
+            Controls.Add(lblAskCreate);
+            Controls.Add(lblContinue);
+            Controls.Add(lblForgotPassword);
+            Controls.Add(txbPassword);
+            Controls.Add(txbUsername);
+            Controls.Add(btnLogin);
+            Controls.Add(pnFooter);
+            Controls.Add(picLogo);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "SignInForm";
+            Text = "LoginForm";
+            pnFooter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

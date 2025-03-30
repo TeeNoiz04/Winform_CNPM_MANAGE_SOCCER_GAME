@@ -42,6 +42,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -64,6 +66,7 @@
             lblAge = new Label();
             lblPosition = new Label();
             lblName = new Label();
+            btnBack = new Guna.UI2.WinForms.Guna2Button();
             pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAvatar).BeginInit();
             pnContent.SuspendLayout();
@@ -371,12 +374,30 @@
             lblName.TabIndex = 29;
             lblName.Text = "NGUYỄN TIẾN LINH";
             // 
+            // btnBack
+            // 
+            btnBack.CustomizableEdges = customizableEdges15;
+            btnBack.DisabledState.BorderColor = Color.DarkGray;
+            btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnBack.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnBack.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(12, 56);
+            btnBack.Name = "btnBack";
+            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnBack.Size = new Size(55, 35);
+            btnBack.TabIndex = 35;
+            btnBack.Text = "<=";
+            btnBack.Click += btnBack_Click;
+            // 
             // PlayerDetailForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(20, 44, 76);
             ClientSize = new Size(1920, 930);
+            Controls.Add(btnBack);
             Controls.Add(pnContent);
             Controls.Add(pnHeader);
             FormBorderStyle = FormBorderStyle.None;
@@ -415,5 +436,6 @@
         private Label lblRedCards;
         private Label lblYellowCards;
         private Guna.UI2.WinForms.Guna2Button btnRemove;
+        private Guna.UI2.WinForms.Guna2Button btnBack;
     }
 }

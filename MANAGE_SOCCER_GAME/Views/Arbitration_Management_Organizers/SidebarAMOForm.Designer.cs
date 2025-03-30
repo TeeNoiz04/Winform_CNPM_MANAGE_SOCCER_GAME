@@ -32,9 +32,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnAssignReferee = new Guna.UI2.WinForms.Guna2Button();
             lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            btnRefereeList = new Guna.UI2.WinForms.Guna2Button();
+            btnEmployee = new Guna.UI2.WinForms.Guna2Button();
+            btnReferee = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // btnAssignReferee
@@ -49,7 +52,7 @@
             btnAssignReferee.FillColor = Color.FromArgb(31, 70, 121);
             btnAssignReferee.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAssignReferee.ForeColor = Color.White;
-            btnAssignReferee.Location = new Point(30, 121);
+            btnAssignReferee.Location = new Point(30, 166);
             btnAssignReferee.Name = "btnAssignReferee";
             btnAssignReferee.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnAssignReferee.Size = new Size(235, 45);
@@ -70,27 +73,48 @@
             lblTitle.TabIndex = 21;
             lblTitle.Text = "Apps";
             // 
-            // btnRefereeList
+            // btnEmployee
             // 
-            btnRefereeList.BorderRadius = 15;
-            btnRefereeList.Checked = true;
-            btnRefereeList.CheckedState.FillColor = Color.FromArgb(60, 211, 252);
-            btnRefereeList.CustomizableEdges = customizableEdges3;
-            btnRefereeList.DisabledState.BorderColor = Color.DarkGray;
-            btnRefereeList.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnRefereeList.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnRefereeList.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnRefereeList.FillColor = Color.FromArgb(31, 70, 121);
-            btnRefereeList.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRefereeList.ForeColor = Color.White;
-            btnRefereeList.Location = new Point(30, 76);
-            btnRefereeList.Name = "btnRefereeList";
-            btnRefereeList.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnRefereeList.Size = new Size(235, 45);
-            btnRefereeList.TabIndex = 19;
-            btnRefereeList.Text = "Referee List";
-            btnRefereeList.TextAlign = HorizontalAlignment.Left;
-            btnRefereeList.Click += btnRefereeList_Click;
+            btnEmployee.BorderRadius = 15;
+            btnEmployee.Checked = true;
+            btnEmployee.CheckedState.FillColor = Color.FromArgb(60, 211, 252);
+            btnEmployee.CustomizableEdges = customizableEdges3;
+            btnEmployee.DisabledState.BorderColor = Color.DarkGray;
+            btnEmployee.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEmployee.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEmployee.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEmployee.FillColor = Color.FromArgb(31, 70, 121);
+            btnEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEmployee.ForeColor = Color.White;
+            btnEmployee.Location = new Point(30, 76);
+            btnEmployee.Name = "btnEmployee";
+            btnEmployee.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnEmployee.Size = new Size(235, 45);
+            btnEmployee.TabIndex = 19;
+            btnEmployee.Text = "Employee";
+            btnEmployee.TextAlign = HorizontalAlignment.Left;
+            btnEmployee.Click += btnEmployee_Click;
+            // 
+            // btnReferee
+            // 
+            btnReferee.BorderRadius = 15;
+            btnReferee.CheckedState.FillColor = Color.FromArgb(60, 211, 252);
+            btnReferee.CustomizableEdges = customizableEdges5;
+            btnReferee.DisabledState.BorderColor = Color.DarkGray;
+            btnReferee.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnReferee.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnReferee.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnReferee.FillColor = Color.FromArgb(31, 70, 121);
+            btnReferee.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReferee.ForeColor = Color.White;
+            btnReferee.Location = new Point(30, 121);
+            btnReferee.Name = "btnReferee";
+            btnReferee.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnReferee.Size = new Size(235, 45);
+            btnReferee.TabIndex = 24;
+            btnReferee.Text = "Referee";
+            btnReferee.TextAlign = HorizontalAlignment.Left;
+            btnReferee.Click += btnRefereeList_Click;
             // 
             // SidebarAMOForm
             // 
@@ -98,9 +122,10 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(31, 70, 121);
             ClientSize = new Size(300, 930);
+            Controls.Add(btnReferee);
             Controls.Add(btnAssignReferee);
             Controls.Add(lblTitle);
-            Controls.Add(btnRefereeList);
+            Controls.Add(btnEmployee);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SidebarAMOForm";
             Text = "SidebarAppsForm";
@@ -112,6 +137,7 @@
 
         private Guna.UI2.WinForms.Guna2Button btnAssignReferee;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
-        private Guna.UI2.WinForms.Guna2Button btnRefereeList;
+        private Guna.UI2.WinForms.Guna2Button btnEmployee;
+        private Guna.UI2.WinForms.Guna2Button btnReferee;
     }
 }

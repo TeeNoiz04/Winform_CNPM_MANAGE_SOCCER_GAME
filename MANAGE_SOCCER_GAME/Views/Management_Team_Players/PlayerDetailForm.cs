@@ -59,5 +59,10 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         private void btnRefresh_Click(object sender, EventArgs e)
         {
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            _router.LoadForm3(new TeamDetailForm());
+        }
     }
 }

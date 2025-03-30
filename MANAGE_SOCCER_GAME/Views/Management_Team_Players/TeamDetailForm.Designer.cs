@@ -48,6 +48,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -69,8 +71,11 @@
             TimeStamp = new DataGridViewTextBoxColumn();
             PhuongThucGD = new DataGridViewTextBoxColumn();
             Username = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
             ViTri = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            KienTao = new DataGridViewTextBoxColumn();
+            TheVang = new DataGridViewTextBoxColumn();
+            TheDo = new DataGridViewTextBoxColumn();
             Action = new DataGridViewButtonColumn();
             Action2 = new DataGridViewButtonColumn();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -79,6 +84,8 @@
             label3 = new Label();
             label2 = new Label();
             lblName = new Label();
+            btnBack = new Guna.UI2.WinForms.Guna2Button();
+            label1 = new Label();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -329,7 +336,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Username, Price, ViTri, Action, Action2 });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Username, ViTri, Price, KienTao, TheVang, TheDo, Action, Action2 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -397,20 +404,35 @@
             // Username
             // 
             Username.FillWeight = 66.1519F;
-            Username.HeaderText = "Quê quán";
+            Username.HeaderText = "Quốc tịch";
             Username.Name = "Username";
             Username.Resizable = DataGridViewTriState.True;
-            // 
-            // Price
-            // 
-            Price.FillWeight = 66.1519F;
-            Price.HeaderText = "Chiều cao";
-            Price.Name = "Price";
             // 
             // ViTri
             // 
             ViTri.HeaderText = "Vị trí";
             ViTri.Name = "ViTri";
+            // 
+            // Price
+            // 
+            Price.FillWeight = 66.1519F;
+            Price.HeaderText = "Bàn thắng";
+            Price.Name = "Price";
+            // 
+            // KienTao
+            // 
+            KienTao.HeaderText = "Kiến tạo";
+            KienTao.Name = "KienTao";
+            // 
+            // TheVang
+            // 
+            TheVang.HeaderText = "Thẻ vàng";
+            TheVang.Name = "TheVang";
+            // 
+            // TheDo
+            // 
+            TheDo.HeaderText = "Thẻ đỏ";
+            TheDo.Name = "TheDo";
             // 
             // Action
             // 
@@ -445,6 +467,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(label1);
             guna2Panel1.Controls.Add(guna2Button1);
             guna2Panel1.Controls.Add(label3);
             guna2Panel1.Controls.Add(label2);
@@ -454,7 +477,7 @@
             guna2Panel1.Location = new Point(50, 50);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Panel1.Size = new Size(270, 443);
+            guna2Panel1.Size = new Size(270, 490);
             guna2Panel1.TabIndex = 29;
             // 
             // guna2Button1
@@ -468,7 +491,7 @@
             guna2Button1.FillColor = Color.FromArgb(60, 211, 252);
             guna2Button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(86, 392);
+            guna2Button1.Location = new Point(95, 440);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Button1.Size = new Size(80, 30);
@@ -478,35 +501,63 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 12F);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(16, 353);
+            label3.Location = new Point(20, 360);
             label3.Name = "label3";
-            label3.Size = new Size(70, 18);
+            label3.Size = new Size(77, 20);
             label3.TabIndex = 31;
             label3.Text = "Sân nhà: ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 12F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(16, 323);
+            label2.Location = new Point(20, 325);
             label2.Name = "label2";
-            label2.Size = new Size(61, 18);
+            label2.Size = new Size(64, 20);
             label2.TabIndex = 30;
             label2.Text = "Mã đội: ";
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblName.Font = new Font("Microsoft Sans Serif", 12F);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(16, 294);
+            lblName.Location = new Point(20, 290);
             lblName.Name = "lblName";
-            lblName.Size = new Size(65, 18);
+            lblName.Size = new Size(69, 20);
             lblName.TabIndex = 29;
             lblName.Text = "Tên đội: ";
+            // 
+            // btnBack
+            // 
+            btnBack.CustomizableEdges = customizableEdges17;
+            btnBack.DisabledState.BorderColor = Color.DarkGray;
+            btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnBack.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnBack.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(5, 5);
+            btnBack.Name = "btnBack";
+            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnBack.Size = new Size(55, 35);
+            btnBack.TabIndex = 34;
+            btnBack.Text = "<=";
+            btnBack.Click += btnBack_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 12F);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(20, 395);
+            label1.Name = "label1";
+            label1.Size = new Size(49, 20);
+            label1.TabIndex = 32;
+            label1.Text = "HLV: ";
             // 
             // TeamDetailForm
             // 
@@ -514,6 +565,7 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(20, 44, 76);
             ClientSize = new Size(1920, 930);
+            Controls.Add(btnBack);
             Controls.Add(guna2Panel1);
             Controls.Add(pnHeader);
             Controls.Add(pnContent);
@@ -558,13 +610,18 @@
         private Label label3;
         private Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnBack;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn TimeStamp;
         private DataGridViewTextBoxColumn PhuongThucGD;
         private DataGridViewTextBoxColumn Username;
-        private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn ViTri;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewTextBoxColumn KienTao;
+        private DataGridViewTextBoxColumn TheVang;
+        private DataGridViewTextBoxColumn TheDo;
         private DataGridViewButtonColumn Action;
         private DataGridViewButtonColumn Action2;
+        private Label label1;
     }
 }

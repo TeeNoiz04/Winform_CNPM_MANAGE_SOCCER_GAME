@@ -1,4 +1,5 @@
 ﻿using MANAGE_SOCCER_GAME.Utils.Routing;
+using MANAGE_SOCCER_GAME.Views.Management_Team_Players;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,17 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
-namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
+namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
-    public partial class TeamListForm : Form
+    public partial class EmployeeListForm : Form
     {
         private Router _router;
         private int curentPage = 1;
         private int countLine = 0;
         private float totalPage = 0;
-        public TeamListForm()
+        public EmployeeListForm()
         {
             InitializeComponent();
             //_bookSoldService = new BookSoldService();
@@ -34,8 +34,6 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 btnTrangTruoc.Enabled = false;
                 btnTrangKe.Enabled = true;
             }
-
-            dataGridView.Rows.Add("kkk", "kkk", "kkk", "kkk");
 
             LoadData();
         }
@@ -55,7 +53,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             }
 
             //var count = _viewhoadon.Count;
-            var count = 2;
+            var count = 0;
             countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
             totalPage = (float)count / countLine;
             totalPage = totalPage > (int)totalPage ? (int)totalPage + 1 : (int)totalPage;
@@ -87,9 +85,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             //dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
             //dataGridView.Columns["Action"].Width = 100;
             //dataGridView.Columns["Action2"].Width = 100;
-            //dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); 
-
-            
+            //dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); ;
 
             if (countLine > count)
             {
@@ -168,7 +164,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         {
             DataGridViewRow row = dataGridView.Rows[e.RowIndex];
             var id = row.Cells["ID"].Value.ToString();
-            // Chi tiết
+            // Duyệt
             if (e.ColumnIndex == dataGridView.Columns["Action"].Index && e.RowIndex >= 0)
             {
                 //var hoadonDuyet = _entities.HOADONs.FirstOrDefault(n => n.MaHD == id);
@@ -180,12 +176,9 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 //    _entities.SaveChanges();
                 //    LoadData();
                 //}
-
-                _router.LoadForm3(new TeamDetailForm());
-
             }
-            // Xóa
-            else if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
+            // Chi tiết
+            if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
             {
                 //_action.LoadDetailOrders(id);
             }
@@ -227,16 +220,4 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             LoadData();
         }
     }
-
-    public class ViewHoaDon
-    {
-        public string MaHD { get; set; }
-        public System.DateTime NgayGD { get; set; }
-        public string PhuongThucGD { get; set; }
-        public double TongTien { get; set; }
-        public string TenKH { get; set; }
-        public bool IsCheck { get; set; }
-        public ViewHoaDon() { }
-    }
 }
-

@@ -81,6 +81,7 @@
             // 
             // pnContent3
             // 
+            pnContent3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pnContent3.CustomizableEdges = customizableEdges7;
             pnContent3.FillColor = Color.FromArgb(128, 128, 255);
             pnContent3.Location = new Point(180, 0);

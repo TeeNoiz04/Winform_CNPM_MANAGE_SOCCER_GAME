@@ -1,6 +1,6 @@
-﻿namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
+﻿namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
-    partial class RankingForm
+    partial class EmployeeListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -56,17 +56,11 @@
             lblSoTrang = new Label();
             dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
-            ID = new DataGridViewTextBoxColumn();
             TimeStamp = new DataGridViewTextBoxColumn();
             PhuongThucGD = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            TranHoa = new DataGridViewTextBoxColumn();
-            TranThua = new DataGridViewTextBoxColumn();
-            BanThang = new DataGridViewTextBoxColumn();
-            HieuSo = new DataGridViewTextBoxColumn();
-            Diem = new DataGridViewTextBoxColumn();
-            LichSu = new DataGridViewTextBoxColumn();
+            Action = new DataGridViewButtonColumn();
+            Action2 = new DataGridViewButtonColumn();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -277,7 +271,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Price, Username, TranHoa, TranThua, BanThang, HieuSo, Diem, LichSu });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { TimeStamp, PhuongThucGD, Price, Action, Action2 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -344,67 +338,45 @@
             btnRefresh.Text = "Refresh";
             btnRefresh.Click += btnRefresh_Click;
             // 
-            // ID
-            // 
-            ID.HeaderText = "Thứ hạng";
-            ID.Name = "ID";
-            // 
             // TimeStamp
             // 
             TimeStamp.FillWeight = 66.1519F;
-            TimeStamp.HeaderText = "Tên đội";
+            TimeStamp.HeaderText = "User name";
             TimeStamp.Name = "TimeStamp";
             // 
             // PhuongThucGD
             // 
             PhuongThucGD.FillWeight = 66.1519F;
-            PhuongThucGD.HeaderText = "Mã đội";
+            PhuongThucGD.HeaderText = "Password";
             PhuongThucGD.Name = "PhuongThucGD";
             // 
             // Price
             // 
             Price.FillWeight = 66.1519F;
-            Price.HeaderText = "Số trận";
+            Price.HeaderText = "Role";
             Price.Name = "Price";
             // 
-            // Username
+            // Action
             // 
-            Username.FillWeight = 66.1519F;
-            Username.HeaderText = "Trận thắng";
-            Username.Name = "Username";
-            Username.Resizable = DataGridViewTriState.True;
+            Action.FillWeight = 50F;
+            Action.HeaderText = "Action";
+            Action.Name = "Action";
+            Action.Resizable = DataGridViewTriState.True;
+            Action.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action.Text = "Edit";
+            Action.UseColumnTextForButtonValue = true;
             // 
-            // TranHoa
+            // Action2
             // 
-            TranHoa.HeaderText = "Trận hòa";
-            TranHoa.Name = "TranHoa";
+            Action2.FillWeight = 50F;
+            Action2.HeaderText = "";
+            Action2.Name = "Action2";
+            Action2.Resizable = DataGridViewTriState.True;
+            Action2.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action2.Text = "Delete";
+            Action2.UseColumnTextForButtonValue = true;
             // 
-            // TranThua
-            // 
-            TranThua.HeaderText = "Trận thua";
-            TranThua.Name = "TranThua";
-            // 
-            // BanThang
-            // 
-            BanThang.HeaderText = "Bàn thắng/bàn thua";
-            BanThang.Name = "BanThang";
-            // 
-            // HieuSo
-            // 
-            HieuSo.HeaderText = "Hiệu số";
-            HieuSo.Name = "HieuSo";
-            // 
-            // Diem
-            // 
-            Diem.HeaderText = "Điểm";
-            Diem.Name = "Diem";
-            // 
-            // LichSu
-            // 
-            LichSu.HeaderText = "Lịch sử";
-            LichSu.Name = "LichSu";
-            // 
-            // RankingForm
+            // EmployeeListForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -414,7 +386,7 @@
             Controls.Add(pnHeader);
             Controls.Add(pnContent);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "RankingForm";
+            Name = "EmployeeListForm";
             Text = "OrdersForm";
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
@@ -444,16 +416,10 @@
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private System.Windows.Forms.Button btnTrangTruoc;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
-        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn TimeStamp;
         private DataGridViewTextBoxColumn PhuongThucGD;
         private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Username;
-        private DataGridViewTextBoxColumn TranHoa;
-        private DataGridViewTextBoxColumn TranThua;
-        private DataGridViewTextBoxColumn BanThang;
-        private DataGridViewTextBoxColumn HieuSo;
-        private DataGridViewTextBoxColumn Diem;
-        private DataGridViewTextBoxColumn LichSu;
+        private DataGridViewButtonColumn Action;
+        private DataGridViewButtonColumn Action2;
     }
 }
