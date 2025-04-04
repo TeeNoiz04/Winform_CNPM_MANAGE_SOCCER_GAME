@@ -107,7 +107,17 @@ namespace MANAGE_SOCCER_GAME.Data
             builder.Entity<Team>()
            .HasOne(t => t.Coach)           
            .WithOne(c => c.Team)           
-           .HasForeignKey<Team>(t => t.IdCoach); 
+           .HasForeignKey<Team>(t => t.IdCoach);
+            builder.Entity<Team>(tm =>
+            {
+                tm.HasKey(t => t.Id);
+                tm.HasOne(t => t.Tournament)
+                    .WithMany(t => t.Teams)
+                    .HasForeignKey(t => t.IdTournament);
+               
+              
+            }
+            );
         }
 
 
