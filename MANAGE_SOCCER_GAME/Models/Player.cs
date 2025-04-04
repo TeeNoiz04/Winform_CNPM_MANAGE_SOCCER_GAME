@@ -18,7 +18,7 @@ namespace MANAGE_SOCCER_GAME.Models
         public float Height { get; set; }
         public float Weight { get; set; }
         public Guid? IdImage { get; set; }
-        public Image? Image { get; set; }
+        public ImagePlayer? Image { get; set; }
         public Guid? IdTeam { get; set; }
         public Team? Team { get; set; }
         public ICollection<SoccerGame> SoccerGamesAsGoalscorer { get; set; }

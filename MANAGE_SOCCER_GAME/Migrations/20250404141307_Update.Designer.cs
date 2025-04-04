@@ -4,6 +4,7 @@ using MANAGE_SOCCER_GAME.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MANAGE_SOCCER_GAME.Migrations
 {
     [DbContext(typeof(ManageSoccerGame))]
-    partial class ManageSoccerGameModelSnapshot : ModelSnapshot
+    [Migration("20250404141307_Update")]
+    partial class Update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,6 +39,9 @@ namespace MANAGE_SOCCER_GAME.Migrations
                         .HasColumnType("int");
 
                     b.Property<Guid?>("IdImage")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("IdTeam")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
@@ -457,6 +463,9 @@ namespace MANAGE_SOCCER_GAME.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CoachId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("IdCoach")
                         .HasColumnType("uniqueidentifier");
 
@@ -479,8 +488,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdCoach")
-                        .IsUnique();
+                    b.HasIndex("CoachId");
 
                     b.HasIndex("TournamentId");
 
@@ -871,8 +879,8 @@ namespace MANAGE_SOCCER_GAME.Migrations
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Team", b =>
                 {
                     b.HasOne("MANAGE_SOCCER_GAME.Models.Coach", "Coach")
-                        .WithOne("Team")
-                        .HasForeignKey("MANAGE_SOCCER_GAME.Models.Team", "IdCoach")
+                        .WithMany()
+                        .HasForeignKey("CoachId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -945,8 +953,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Coach", b =>
                 {
                     b.Navigation("Image");
-
-                    b.Navigation("Team");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Game", b =>
