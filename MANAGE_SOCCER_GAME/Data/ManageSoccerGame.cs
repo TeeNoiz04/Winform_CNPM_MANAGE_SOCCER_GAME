@@ -9,7 +9,7 @@ using MANAGE_SOCCER_GAME.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Image = MANAGE_SOCCER_GAME.Models.Image;
+using ImagePlayer = MANAGE_SOCCER_GAME.Models.ImagePlayer;
 
 namespace MANAGE_SOCCER_GAME.Data
 {
@@ -19,7 +19,9 @@ namespace MANAGE_SOCCER_GAME.Data
         {
         }
         public DbSet<Game> Games { get; set; }
-        public DbSet<Image> Images { get; set; }
+        public DbSet<ImagePlayer> ImagePlayers { get; set; }
+        public DbSet<ImageCoacher> ImageCoachers { get; set; }
+        public DbSet<ImageTeam> ImageTeams { get; set; }
         public DbSet<MatchdaySquad> MatchdaySquads { get; set; }
         public DbSet<MatchOfficials> MatchOfficials { get; set; }
         public DbSet<MatchSchedule> MatchSchedules { get; set; }
@@ -102,7 +104,10 @@ namespace MANAGE_SOCCER_GAME.Data
                     .WithMany(r => r.MatchOfficials)
                     .HasForeignKey(m => m.IdReferee);
             });
-           
+            builder.Entity<Team>()
+           .HasOne(t => t.Coach)           
+           .WithOne(c => c.Team)           
+           .HasForeignKey<Team>(t => t.IdCoach); 
         }
 
 
