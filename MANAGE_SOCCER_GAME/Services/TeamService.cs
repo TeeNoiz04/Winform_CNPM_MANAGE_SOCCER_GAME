@@ -32,7 +32,7 @@ namespace MANAGE_SOCCER_GAME.Services
 
         public async Task<Team?> GetTeamByIdAsync(Guid id)
         {
-            return await _context.Teams.FindAsync(id);
+            return await _context.Teams.Include(x => x.Player).FirstOrDefaultAsync(x => x.Id == id);
         }
 
 

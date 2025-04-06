@@ -19,7 +19,7 @@ namespace MANAGE_SOCCER_GAME.Models
         public Guid IdCoach { get; set; }
         public Coach Coach { get; set; }
 
-        public ICollection<Player> Player { get; set; } 
+        public ICollection<Player> Player { get; set; } = new List<Player>();
         public ICollection<MatchSchedule> MatchSchedules { get; set; }
     }
 }
