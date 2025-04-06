@@ -52,11 +52,17 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
         {
             try
             {
+                if (!int.TryParse(txtExpYear.Text, out int expYear))
+                {
+                    MessageBox.Show("Experience year must be a valid number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 var coach = new Coach
                 {
                     Name = txtName.Text,
                     National = txtNational.Text,
-                    ExpYear = int.Parse(txtExpYear.Text),
+                    ExpYear = expYear,
                     PhoneNumber = txtPhoneNumber.Text,
                     Email = txtEmail.Text
                 };
@@ -76,11 +82,17 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
         {
             try
             {
+                if (!int.TryParse(txtExpYear.Text, out int expYear))
+                {
+                    MessageBox.Show("Experience year must be a valid number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 Coach coach = new Coach
                 {
                     Name = txtName.Text,
                     National = txtNational.Text,
-                    ExpYear = int.Parse(txtExpYear.Text),
+                    ExpYear = expYear,
                     PhoneNumber = txtPhoneNumber.Text,
                     Email = txtEmail.Text
                 };
