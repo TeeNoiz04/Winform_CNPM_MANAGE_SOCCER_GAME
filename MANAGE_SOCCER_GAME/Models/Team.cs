@@ -11,6 +11,7 @@ namespace MANAGE_SOCCER_GAME.Models
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Province  { get; set; }
+        public bool IsDeleted { get; set; } = false;
         public Guid IdTournament { get; set; }
         public Tournament Tournament { get; set; } = null;
         public Guid? IdImage { get; set; }
