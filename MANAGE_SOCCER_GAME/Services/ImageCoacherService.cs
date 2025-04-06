@@ -31,10 +31,10 @@ namespace MANAGE_SOCCER_GAME.Services
         {
             ValidateUrl(image.Url);
 
-            if (string.IsNullOrWhiteSpace(image.publicId))
+            if (string.IsNullOrWhiteSpace(image.PublicId))
                 throw new Exception("publicId là bắt buộc.");
 
-            var exists = await _context.ImageCoachers.AnyAsync(i => i.publicId == image.publicId);
+            var exists = await _context.ImageCoachers.AnyAsync(i => i.PublicId == image.PublicId);
             if (exists)
                 throw new Exception("publicId đã tồn tại.");
 
@@ -98,7 +98,7 @@ namespace MANAGE_SOCCER_GAME.Services
 
             existing.Url = updated.Url;
             existing.AltText = updated.AltText;
-            existing.publicId = updated.publicId;
+            existing.PublicId = updated.PublicId;
             existing.CoachId = updated.CoachId;
             existing.UpdateAt = DateTime.Now;
 
@@ -138,7 +138,7 @@ namespace MANAGE_SOCCER_GAME.Services
             if (string.IsNullOrWhiteSpace(publicId))
                 throw new Exception("publicId không hợp lệ.");
 
-            return await _context.ImageCoachers.AnyAsync(i => i.publicId == publicId);
+            return await _context.ImageCoachers.AnyAsync(i => i.PublicId == publicId);
         }
     }
 }

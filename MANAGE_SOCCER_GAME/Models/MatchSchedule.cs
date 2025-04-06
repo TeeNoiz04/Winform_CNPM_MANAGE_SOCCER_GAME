@@ -13,5 +13,6 @@ namespace MANAGE_SOCCER_GAME.Models
         public Guid IdGame { get; set; }
         public Game Game { get; set; }
         public bool IsHomeGround { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }
