@@ -97,6 +97,11 @@ namespace MANAGE_SOCCER_GAME.Services
                 .ToListAsync();
         }
 
+        public async Task<bool> TournamentExistsAsync(Guid id)
+        {
+            return await _context.Tournaments.AnyAsync(t => t.Id == id);
+        }
+
     }
 }
 
