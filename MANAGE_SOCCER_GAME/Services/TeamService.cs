@@ -2,12 +2,6 @@
 using MANAGE_SOCCER_GAME.Models;
 using MANAGE_SOCCER_GAME.Utils.InputValidators;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace MANAGE_SOCCER_GAME.Services
 {
     public class TeamService
@@ -33,7 +27,7 @@ namespace MANAGE_SOCCER_GAME.Services
 
         public async Task<List<Team>> GetAllTeamAsync()
         {
-            return await _context.Teams.ToListAsync();
+            return await _context.Teams.Where(x => x.IsDeleted == false).ToListAsync();
         }
 
         public async Task<Team?> GetTeamByIdAsync(Guid id)
@@ -54,7 +48,18 @@ namespace MANAGE_SOCCER_GAME.Services
             existingTeam.IdTournament = team.IdTournament;
             existingTeam.IdCoach = team.IdCoach;
 
-            _context.Teams.Update(existingTeam);
+            await _context.SaveChangesAsync();
+            return existingTeam;
+        }
+
+        public async Task<Team?> DeleteTeamAsync(Guid Id)
+        {
+            var existingTeam = await _context.Teams.FindAsync(Id);
+            if (existingTeam == null)
+                return null;
+
+            existingTeam.IsDeleted = true;
+
             await _context.SaveChangesAsync();
             return existingTeam;
         }
@@ -71,6 +76,11 @@ namespace MANAGE_SOCCER_GAME.Services
                 throw new ArgumentException(nameof(team));
             }
 
+            if (!InputValidator.IsValidString(team.Name))
+            {
+                throw new ArgumentException("Team name must contain only letters and spaces, and cannot be empty.", nameof(team.Name));
+            }
+
             if (!InputValidator.IsValidString(team.Province))
             {
                 throw new ArgumentException("Team province must contain only letters and spaces, and cannot be empty.", nameof(team.Province));
@@ -78,17 +88,12 @@ namespace MANAGE_SOCCER_GAME.Services
 
             if (!await _tournamentService.TournamentExistsAsync(team.IdTournament))
             {
-                throw new ArgumentException("Tournament not found");
+                throw new ArgumentException("Tournament not found", nameof(team.IdTournament));
             }
 
             if (await _context.Coaches.FindAsync(team.IdCoach) == null)
             {
-                throw new ArgumentException("Coach not found");
-            }
-
-            if (await _context.Teams.AnyAsync(t => t.Name == team.Name))
-            {
-                throw new ArgumentException("A team with the same name already exists.");
+                throw new ArgumentException("Coach not found", nameof(team.IdCoach));
             }
         }
 

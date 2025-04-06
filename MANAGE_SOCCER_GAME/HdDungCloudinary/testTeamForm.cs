@@ -126,7 +126,7 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
                     IdTournament = (Guid)cbTounament.SelectedValue,
                     IdCoach = (Guid)cbCoach.SelectedValue
                 };
-              
+
 
                 var t = await _teamService.UpdateTeamAsync(guid, team);
                 if (t == null)
@@ -134,9 +134,9 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
                     MessageBox.Show("Update failed.");
                     return;
                 }
-             
+
                 MessageBox.Show("Updated!");
-         
+
 
                 btnUpdate.Enabled = false;
             }
@@ -178,6 +178,27 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
                 MessageBox.Show("Chưa chọn dòng nào.");
                 btnUpdate.Enabled = false;
 
+            }
+        }
+
+        private async void xoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lvTeam.SelectedItems.Count > 0)
+            {
+                string teamId = lvTeam.SelectedItems[0].SubItems[0].Text;
+
+                var team = await _teamService.DeleteTeamAsync(Guid.Parse(teamId));
+                if (team == null)
+                {
+                    MessageBox.Show("Team not found.");
+                    return;
+                }
+
+                MessageBox.Show("Selected team: " + teamId);
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn dòng nào.");
             }
         }
     }

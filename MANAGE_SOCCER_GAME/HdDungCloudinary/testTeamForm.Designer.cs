@@ -39,12 +39,13 @@
             id = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             contextMenuStrip1 = new ContextMenuStrip(components);
             sửaToolStripMenuItem = new ToolStripMenuItem();
             cbCoach = new ComboBox();
             btnUpdate = new Button();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
+            xoaToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -125,16 +126,25 @@
             columnHeader2.Text = "Province";
             columnHeader2.Width = 100;
             // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "tournamentId";
+            columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "coachId";
+            // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sửaToolStripMenuItem });
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sửaToolStripMenuItem, xoaToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(94, 26);
+            contextMenuStrip1.Size = new Size(181, 70);
             // 
             // sửaToolStripMenuItem
             // 
             sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            sửaToolStripMenuItem.Size = new Size(93, 22);
+            sửaToolStripMenuItem.Size = new Size(180, 22);
             sửaToolStripMenuItem.Text = "Sửa";
             sửaToolStripMenuItem.Click += LoadTeam;
             // 
@@ -157,14 +167,12 @@
             btnUpdate.UseVisualStyleBackColor = true;
             btnUpdate.Click += btnUpdate_ClickAsync;
             // 
-            // columnHeader3
+            // xoaToolStripMenuItem
             // 
-            columnHeader3.Text = "tournamentId";
-            columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "coachId";
+            xoaToolStripMenuItem.Name = "xoaToolStripMenuItem";
+            xoaToolStripMenuItem.Size = new Size(180, 22);
+            xoaToolStripMenuItem.Text = "Xoa";
+            xoaToolStripMenuItem.Click += xoaToolStripMenuItem_Click;
             // 
             // testTeamForm
             // 
@@ -206,5 +214,6 @@
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
+        private ToolStripMenuItem xoaToolStripMenuItem;
     }
 }
