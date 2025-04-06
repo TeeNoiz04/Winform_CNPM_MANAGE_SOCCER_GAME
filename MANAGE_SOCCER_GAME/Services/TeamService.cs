@@ -1,5 +1,6 @@
 ﻿using MANAGE_SOCCER_GAME.Data;
 using MANAGE_SOCCER_GAME.Models;
+using MANAGE_SOCCER_GAME.Utils.InputValidators;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,32 +15,15 @@ namespace MANAGE_SOCCER_GAME.Services
         private readonly ManageSoccerGame _context;
         private readonly TournamentService _tournamentService;
 
-        // cách làm khác
-        //public TeamService(ManageSoccerGame context, TournamentService tournamentService)
-        //{
-        //    _context = context;
-        //    _tournamentService = tournamentService;
-        //}
-
         public TeamService(ManageSoccerGame context)
         {
             _context = context;
             _tournamentService = new TournamentService(_context);
         }
 
-        public async Task<Team> CreateAsync(Team team)
+        public async Task<Team> CreateTeamAsync(Team team)
         {
-            var tournamentExist = await _tournamentService.TournamentExistsAsync(team.IdTournament);
-            if (!tournamentExist)
-            {
-                throw new Exception("Tournament not found");
-            }
-
-            var teamExist = await _context.Teams.AnyAsync(t => t.Name == team.Name);
-            if (teamExist)
-            {
-                throw new Exception("A team with the same name already exists.");
-            }
+           await ValidateTeamAsync(team);
 
             team.Id = Guid.NewGuid();
             _context.Teams.Add(team);
@@ -47,8 +31,66 @@ namespace MANAGE_SOCCER_GAME.Services
             return team;
         }
 
+        public async Task<List<Team>> GetAllTeamAsync()
+        {
+            return await _context.Teams.ToListAsync();
+        }
+
+        public async Task<Team?> GetTeamByIdAsync(Guid id)
+        {
+            return await _context.Teams.FindAsync(id);
+        }
 
 
-        
+        public async Task<Team?> UpdateTeamAsync(Guid Id, Team team)
+        {
+            var existingTeam = await _context.Teams.FindAsync(Id);
+            if (existingTeam == null)
+                return null;
+
+            await ValidateTeamAsync(team);
+            existingTeam.Name = team.Name;
+            existingTeam.Province = team.Province;
+            existingTeam.IdTournament = team.IdTournament;
+            existingTeam.IdCoach = team.IdCoach;
+
+            _context.Teams.Update(existingTeam);
+            await _context.SaveChangesAsync();
+            return existingTeam;
+        }
+
+        public async Task<bool> TeamExistsAsync(Guid id)
+        {
+            return await _context.Teams.AnyAsync(t => t.Id == id);
+        }
+
+        private async Task ValidateTeamAsync(Team team)
+        {
+            if (team == null)
+            {
+                throw new ArgumentException(nameof(team));
+            }
+
+            if (!InputValidator.IsValidString(team.Province))
+            {
+                throw new ArgumentException("Team province must contain only letters and spaces, and cannot be empty.", nameof(team.Province));
+            }
+
+            if (!await _tournamentService.TournamentExistsAsync(team.IdTournament))
+            {
+                throw new ArgumentException("Tournament not found");
+            }
+
+            if (await _context.Coaches.FindAsync(team.IdCoach) == null)
+            {
+                throw new ArgumentException("Coach not found");
+            }
+
+            if (await _context.Teams.AnyAsync(t => t.Name == team.Name))
+            {
+                throw new ArgumentException("A team with the same name already exists.");
+            }
+        }
+
     }
 }
