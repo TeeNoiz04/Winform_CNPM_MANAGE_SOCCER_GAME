@@ -182,6 +182,7 @@
             // 
             // pnLayout
             // 
+            pnLayout.BorderStyle = BorderStyle.FixedSingle;
             pnLayout.Controls.Add(pnTitle);
             pnLayout.Controls.Add(pnContent);
             pnLayout.Location = new Point(3, 3);

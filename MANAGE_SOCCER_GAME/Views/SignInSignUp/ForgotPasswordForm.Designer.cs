@@ -1,6 +1,6 @@
 ﻿namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
 {
-    partial class SignUpManuallyForm
+    partial class ForgotPasswordForm
     {
         /// <summary>
         /// Required designer variable.
@@ -44,6 +44,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblAsk = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblAskAgree = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txbPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,6 +54,7 @@
             picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             txbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             txbUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            txbDateOfBirth = new Guna.UI2.WinForms.Guna2TextBox();
             txbFullName = new Guna.UI2.WinForms.Guna2TextBox();
             txbPhone = new Guna.UI2.WinForms.Guna2TextBox();
             cbAgree = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -72,8 +75,8 @@
             lblAsk.Size = new Size(185, 19);
             lblAsk.TabIndex = 25;
             lblAsk.Text = "Change registration method";
-            lblAsk.Click += lblAsk_Click;
-            lblAsk.MouseHover += lblAsk_MouseHover;
+            //lblAsk.Click += lblAsk_Click;
+            //lblAsk.MouseHover += lblAsk_MouseHover;
             // 
             // lblAskAgree
             // 
@@ -113,10 +116,10 @@
             txbPassword.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txbPassword.Size = new Size(400, 50);
             txbPassword.TabIndex = 17;
-            txbPassword.Click += txbPassword_Click;
-            txbPassword.Leave += txbPassword_Leave;
-            txbPassword.MouseLeave += txbPassword_MouseLeave;
-            txbPassword.MouseHover += txbConfirmPassword_MouseHover;
+            //txbPassword.Click += txbPassword_Click;
+            //txbPassword.Leave += txbPassword_Leave;
+            //txbPassword.MouseLeave += txbPassword_MouseLeave;
+            //txbPassword.MouseHover += txbConfirmPassword_MouseHover;
             // 
             // txbConfirmPassword
             // 
@@ -144,10 +147,10 @@
             txbConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txbConfirmPassword.Size = new Size(400, 50);
             txbConfirmPassword.TabIndex = 16;
-            txbConfirmPassword.Click += txbConfirmPassword_Click;
-            txbConfirmPassword.Leave += txbConfirmPassword_Leave;
-            txbConfirmPassword.MouseLeave += txbConfirmPassword_MouseLeave;
-            txbConfirmPassword.MouseHover += txbConfirmPassword_MouseHover;
+            //txbConfirmPassword.Click += txbConfirmPassword_Click;
+            //txbConfirmPassword.Leave += txbConfirmPassword_Leave;
+            //txbConfirmPassword.MouseLeave += txbConfirmPassword_MouseLeave;
+            //txbConfirmPassword.MouseHover += txbConfirmPassword_MouseHover;
             // 
             // btnRegister
             // 
@@ -167,7 +170,7 @@
             btnRegister.Size = new Size(400, 45);
             btnRegister.TabIndex = 15;
             btnRegister.Text = "Create account";
-            btnRegister.Click += btnRegister_Click;
+            //btnRegister.Click += btnRegister_Click;
             // 
             // picLogo
             // 
@@ -208,10 +211,10 @@
             txbEmail.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txbEmail.Size = new Size(400, 50);
             txbEmail.TabIndex = 27;
-            txbEmail.Click += txbEmail_Click;
-            txbEmail.Leave += txbEmail_Leave;
-            txbEmail.MouseLeave += txbEmail_MouseLeave;
-            txbEmail.MouseHover += txbEmail_MouseHover;
+            //txbEmail.Click += txbEmail_Click;
+            //txbEmail.Leave += txbEmail_Leave;
+            //txbEmail.MouseLeave += txbEmail_MouseLeave;
+            //txbEmail.MouseHover += txbEmail_MouseHover;
             // 
             // txbUsername
             // 
@@ -239,10 +242,36 @@
             txbUsername.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txbUsername.Size = new Size(400, 50);
             txbUsername.TabIndex = 26;
-            txbUsername.Click += txbUserName_Click;
-            txbUsername.Leave += txbUsername_Leave;
-            txbUsername.MouseLeave += txbUsername_MouseLeave;
-            txbUsername.MouseHover += txbUsername_MouseHover;
+            //txbUsername.Click += txbUserName_Click;
+            //txbUsername.Leave += txbUsername_Leave;
+            //txbUsername.MouseLeave += txbUsername_MouseLeave;
+            //txbUsername.MouseHover += txbUsername_MouseHover;
+            // 
+            // txbDateOfBirth
+            // 
+            txbDateOfBirth.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            txbDateOfBirth.BorderColor = Color.FromArgb(52, 52, 116);
+            txbDateOfBirth.BorderRadius = 5;
+            txbDateOfBirth.Cursor = Cursors.IBeam;
+            txbDateOfBirth.CustomizableEdges = customizableEdges13;
+            txbDateOfBirth.DefaultText = "day/month/year";
+            txbDateOfBirth.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txbDateOfBirth.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txbDateOfBirth.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txbDateOfBirth.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txbDateOfBirth.FillColor = Color.FromArgb(52, 52, 116);
+            txbDateOfBirth.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbDateOfBirth.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbDateOfBirth.ForeColor = Color.Silver;
+            txbDateOfBirth.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbDateOfBirth.Location = new Point(100, 675);
+            txbDateOfBirth.Margin = new Padding(6, 5, 6, 5);
+            txbDateOfBirth.Name = "txbDateOfBirth";
+            txbDateOfBirth.PlaceholderText = "";
+            txbDateOfBirth.SelectedText = "";
+            txbDateOfBirth.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txbDateOfBirth.Size = new Size(400, 50);
+            txbDateOfBirth.TabIndex = 30;
             // 
             // txbFullName
             // 
@@ -250,7 +279,7 @@
             txbFullName.BorderColor = Color.FromArgb(52, 52, 116);
             txbFullName.BorderRadius = 5;
             txbFullName.Cursor = Cursors.IBeam;
-            txbFullName.CustomizableEdges = customizableEdges13;
+            txbFullName.CustomizableEdges = customizableEdges15;
             txbFullName.DefaultText = "Full name";
             txbFullName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbFullName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -266,13 +295,13 @@
             txbFullName.Name = "txbFullName";
             txbFullName.PlaceholderText = "";
             txbFullName.SelectedText = "";
-            txbFullName.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txbFullName.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txbFullName.Size = new Size(400, 50);
             txbFullName.TabIndex = 29;
-            txbFullName.Click += txbFullName_Click;
-            txbFullName.Leave += txbFullName_Leave;
-            txbFullName.MouseLeave += txbFullName_MouseLeave;
-            txbFullName.MouseHover += txbFullName_MouseHover;
+            //txbFullName.Click += txbFullName_Click;
+            //txbFullName.Leave += txbFullName_Leave;
+            //txbFullName.MouseLeave += txbFullName_MouseLeave;
+            //txbFullName.MouseHover += txbFullName_MouseHover;
             // 
             // txbPhone
             // 
@@ -281,7 +310,7 @@
             txbPhone.BorderColor = Color.FromArgb(52, 52, 116);
             txbPhone.BorderRadius = 5;
             txbPhone.Cursor = Cursors.IBeam;
-            txbPhone.CustomizableEdges = customizableEdges15;
+            txbPhone.CustomizableEdges = customizableEdges17;
             txbPhone.DefaultText = "Phone number (Optional)";
             txbPhone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbPhone.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -297,13 +326,13 @@
             txbPhone.Name = "txbPhone";
             txbPhone.PlaceholderText = "";
             txbPhone.SelectedText = "";
-            txbPhone.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txbPhone.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txbPhone.Size = new Size(400, 50);
             txbPhone.TabIndex = 28;
-            txbPhone.Click += txbPhone_Click;
-            txbPhone.Leave += txbPhone_Leave;
-            txbPhone.MouseLeave += txbPhone_MouseLeave;
-            txbPhone.MouseHover += txbPhone_MouseHover;
+            //txbPhone.Click += txbPhone_Click;
+            //txbPhone.Leave += txbPhone_Leave;
+            //txbPhone.MouseLeave += txbPhone_MouseLeave;
+            //txbPhone.MouseHover += txbPhone_MouseHover;
             // 
             // cbAgree
             // 
@@ -357,6 +386,7 @@
             Controls.Add(lblTitlle);
             Controls.Add(lblTitle2);
             Controls.Add(cbAgree);
+            Controls.Add(txbDateOfBirth);
             Controls.Add(txbFullName);
             Controls.Add(txbPhone);
             Controls.Add(txbEmail);
@@ -385,6 +415,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox picLogo;
         private Guna.UI2.WinForms.Guna2TextBox txbEmail;
         private Guna.UI2.WinForms.Guna2TextBox txbUsername;
+        private Guna.UI2.WinForms.Guna2TextBox txbDateOfBirth;
         private Guna.UI2.WinForms.Guna2TextBox txbFullName;
         private Guna.UI2.WinForms.Guna2TextBox txbPhone;
         private Guna.UI2.WinForms.Guna2CheckBox cbAgree;

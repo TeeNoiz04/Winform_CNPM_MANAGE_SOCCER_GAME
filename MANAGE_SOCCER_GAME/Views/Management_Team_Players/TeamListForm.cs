@@ -89,7 +89,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             //dataGridView.Columns["Action2"].Width = 100;
             //dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); 
 
-            
+
 
             if (countLine > count)
             {
@@ -225,6 +225,12 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btnAddTeam_Click(object sender, EventArgs e)
+        {
+            var formAdd = new AddTeamForm();
+            formAdd.ShowDialog();
         }
     }
 

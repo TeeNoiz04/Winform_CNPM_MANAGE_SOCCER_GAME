@@ -52,7 +52,7 @@
             pnContent = new Guna.UI2.WinForms.Guna2Panel();
             pnFooter = new Panel();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnAddTeam = new Guna.UI2.WinForms.Guna2Button();
             cbbSoDong = new ComboBox();
             lblSoDong = new Label();
             btnTrangTruoc = new Button();
@@ -60,9 +60,9 @@
             lblSoTrang = new Label();
             dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             ID = new DataGridViewTextBoxColumn();
-            TimeStamp = new DataGridViewTextBoxColumn();
-            PhuongThucGD = new DataGridViewTextBoxColumn();
-            SanNha = new DataGridViewTextBoxColumn();
+            Club = new DataGridViewTextBoxColumn();
+            Played = new DataGridViewTextBoxColumn();
+            Stadium = new DataGridViewTextBoxColumn();
             Action = new DataGridViewButtonColumn();
             Action2 = new DataGridViewButtonColumn();
             pnHeader.SuspendLayout();
@@ -101,7 +101,7 @@
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnTimKiem.Size = new Size(80, 30);
             btnTimKiem.TabIndex = 26;
-            btnTimKiem.Text = "Tìm kiếm";
+            btnTimKiem.Text = "Search";
             btnTimKiem.Click += btnTimKiem_ClickAsync;
             // 
             // txbTimKiem
@@ -147,11 +147,11 @@
             lblCot.AutoSize = true;
             lblCot.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCot.ForeColor = Color.White;
-            lblCot.Location = new Point(1677, 16);
+            lblCot.Location = new Point(1649, 16);
             lblCot.Name = "lblCot";
-            lblCot.Size = new Size(32, 18);
+            lblCot.Size = new Size(60, 18);
             lblCot.TabIndex = 10;
-            lblCot.Text = "Cột";
+            lblCot.Text = "Column";
             // 
             // lblSapXep
             // 
@@ -161,9 +161,9 @@
             lblSapXep.ForeColor = Color.White;
             lblSapXep.Location = new Point(1509, 16);
             lblSapXep.Name = "lblSapXep";
-            lblSapXep.Size = new Size(61, 18);
+            lblSapXep.Size = new Size(36, 18);
             lblSapXep.TabIndex = 8;
-            lblSapXep.Text = "Sắp xếp";
+            lblSapXep.Text = "Sort";
             // 
             // cbbSapXep
             // 
@@ -171,7 +171,7 @@
             cbbSapXep.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbbSapXep.FormattingEnabled = true;
             cbbSapXep.Items.AddRange(new object[] { "Tăng dần", "Giảm dần" });
-            cbbSapXep.Location = new Point(1576, 13);
+            cbbSapXep.Location = new Point(1548, 13);
             cbbSapXep.Margin = new Padding(3, 2, 3, 2);
             cbbSapXep.Name = "cbbSapXep";
             cbbSapXep.Size = new Size(95, 26);
@@ -193,7 +193,7 @@
             // pnFooter
             // 
             pnFooter.Controls.Add(btnRefresh);
-            pnFooter.Controls.Add(guna2Button1);
+            pnFooter.Controls.Add(btnAddTeam);
             pnFooter.Controls.Add(cbbSoDong);
             pnFooter.Controls.Add(lblSoDong);
             pnFooter.Controls.Add(btnTrangTruoc);
@@ -214,9 +214,9 @@
             btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnRefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnRefresh.FillColor = Color.FromArgb(60, 211, 252);
-            btnRefresh.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRefresh.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(424, 4);
+            btnRefresh.Location = new Point(449, 5);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRefresh.Size = new Size(80, 30);
@@ -224,30 +224,31 @@
             btnRefresh.Text = "Refresh";
             btnRefresh.Click += btnRefresh_Click;
             // 
-            // guna2Button1
+            // btnAddTeam
             // 
-            guna2Button1.BorderRadius = 5;
-            guna2Button1.CustomizableEdges = customizableEdges7;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(60, 211, 252);
-            guna2Button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(1707, 4);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button1.Size = new Size(110, 30);
-            guna2Button1.TabIndex = 28;
-            guna2Button1.Text = "Thêm đội";
+            btnAddTeam.BorderRadius = 5;
+            btnAddTeam.CustomizableEdges = customizableEdges7;
+            btnAddTeam.DisabledState.BorderColor = Color.DarkGray;
+            btnAddTeam.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAddTeam.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAddTeam.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAddTeam.FillColor = Color.FromArgb(60, 211, 252);
+            btnAddTeam.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddTeam.ForeColor = Color.White;
+            btnAddTeam.Location = new Point(1700, 5);
+            btnAddTeam.Name = "btnAddTeam";
+            btnAddTeam.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnAddTeam.Size = new Size(110, 30);
+            btnAddTeam.TabIndex = 28;
+            btnAddTeam.Text = "Add team";
+            btnAddTeam.Click += btnAddTeam_Click;
             // 
             // cbbSoDong
             // 
-            cbbSoDong.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbbSoDong.Font = new Font("Microsoft Sans Serif", 11.25F);
             cbbSoDong.FormattingEnabled = true;
             cbbSoDong.Items.AddRange(new object[] { "10", "20", "30", "40", "50", "60", "70", "80", "90", "100" });
-            cbbSoDong.Location = new Point(80, 7);
+            cbbSoDong.Location = new Point(105, 7);
             cbbSoDong.Margin = new Padding(3, 2, 3, 2);
             cbbSoDong.Name = "cbbSoDong";
             cbbSoDong.Size = new Size(70, 26);
@@ -257,47 +258,47 @@
             // lblSoDong
             // 
             lblSoDong.AutoSize = true;
-            lblSoDong.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSoDong.Font = new Font("Microsoft Sans Serif", 11.25F);
             lblSoDong.ForeColor = Color.White;
-            lblSoDong.Location = new Point(10, 10);
+            lblSoDong.Location = new Point(10, 11);
             lblSoDong.Name = "lblSoDong";
-            lblSoDong.Size = new Size(64, 18);
+            lblSoDong.Size = new Size(89, 18);
             lblSoDong.TabIndex = 2;
-            lblSoDong.Text = "Số dòng";
+            lblSoDong.Text = "Line number";
             // 
             // btnTrangTruoc
             // 
-            btnTrangTruoc.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTrangTruoc.Location = new Point(156, 4);
+            btnTrangTruoc.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnTrangTruoc.Location = new Point(181, 5);
             btnTrangTruoc.Margin = new Padding(3, 2, 3, 2);
             btnTrangTruoc.Name = "btnTrangTruoc";
             btnTrangTruoc.Size = new Size(100, 30);
             btnTrangTruoc.TabIndex = 4;
-            btnTrangTruoc.Text = "Trang Trước";
+            btnTrangTruoc.Text = "Previous";
             btnTrangTruoc.UseVisualStyleBackColor = true;
             btnTrangTruoc.Click += btnTrangTruoc_Click;
             // 
             // btnTrangKe
             // 
-            btnTrangKe.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTrangKe.Location = new Point(318, 4);
+            btnTrangKe.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnTrangKe.Location = new Point(343, 5);
             btnTrangKe.Margin = new Padding(3, 2, 3, 2);
             btnTrangKe.Name = "btnTrangKe";
             btnTrangKe.Size = new Size(100, 30);
             btnTrangKe.TabIndex = 5;
-            btnTrangKe.Text = "Trang Kế";
+            btnTrangKe.Text = "Next";
             btnTrangKe.UseVisualStyleBackColor = true;
             btnTrangKe.Click += btnTrangKe_Click;
             // 
             // lblSoTrang
             // 
-            lblSoTrang.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSoTrang.Font = new Font("Microsoft Sans Serif", 11.25F);
             lblSoTrang.ForeColor = Color.White;
-            lblSoTrang.Location = new Point(262, 9);
+            lblSoTrang.Location = new Point(287, 10);
             lblSoTrang.Name = "lblSoTrang";
             lblSoTrang.Size = new Size(50, 20);
             lblSoTrang.TabIndex = 7;
-            lblSoTrang.Text = "Trang";
+            lblSoTrang.Text = "Page";
             lblSoTrang.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // dataGridView
@@ -314,7 +315,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, SanNha, Action, Action2 });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Club, Played, Stadium, Action, Action2 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -364,25 +365,25 @@
             // 
             // ID
             // 
-            ID.HeaderText = "Mã đội";
+            ID.HeaderText = "Code";
             ID.Name = "ID";
             // 
-            // TimeStamp
+            // Club
             // 
-            TimeStamp.FillWeight = 66.1519F;
-            TimeStamp.HeaderText = "Tên đội";
-            TimeStamp.Name = "TimeStamp";
+            Club.FillWeight = 66.1519F;
+            Club.HeaderText = "Club";
+            Club.Name = "Club";
             // 
-            // PhuongThucGD
+            // Played
             // 
-            PhuongThucGD.FillWeight = 66.1519F;
-            PhuongThucGD.HeaderText = "Số lượng cầu thủ";
-            PhuongThucGD.Name = "PhuongThucGD";
+            Played.FillWeight = 66.1519F;
+            Played.HeaderText = "Played";
+            Played.Name = "Played";
             // 
-            // SanNha
+            // Stadium
             // 
-            SanNha.HeaderText = "Sân nhà";
-            SanNha.Name = "SanNha";
+            Stadium.HeaderText = "Stadium";
+            Stadium.Name = "Stadium";
             // 
             // Action
             // 
@@ -391,7 +392,7 @@
             Action.Name = "Action";
             Action.Resizable = DataGridViewTriState.True;
             Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Chi tiết";
+            Action.Text = "Detail";
             Action.UseColumnTextForButtonValue = true;
             // 
             // Action2
@@ -401,7 +402,7 @@
             Action2.Name = "Action2";
             Action2.Resizable = DataGridViewTriState.True;
             Action2.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action2.Text = "Xóa";
+            Action2.Text = "Delete";
             Action2.UseColumnTextForButtonValue = true;
             // 
             // TeamListForm
@@ -443,11 +444,11 @@
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private System.Windows.Forms.Button btnTrangTruoc;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnAddTeam;
         private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TimeStamp;
-        private DataGridViewTextBoxColumn PhuongThucGD;
-        private DataGridViewTextBoxColumn SanNha;
+        private DataGridViewTextBoxColumn Club;
+        private DataGridViewTextBoxColumn Played;
+        private DataGridViewTextBoxColumn Stadium;
         private DataGridViewButtonColumn Action;
         private DataGridViewButtonColumn Action2;
     }

@@ -21,8 +21,8 @@ namespace MANAGE_SOCCER_GAME
             var context = new ManageSoccerGame(option.Options);
 
 
-            //Application.Run(new MainForm());
-            Application.Run(new TestTournamentForm(context));
+            Application.Run(new MainForm());
+            //Application.Run(new TestTournamentForm(context));
         }
     }
 }

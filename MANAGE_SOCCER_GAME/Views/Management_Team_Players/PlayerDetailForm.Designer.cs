@@ -381,14 +381,15 @@
             btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnBack.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnBack.FillColor = Color.FromArgb(20, 44, 76);
             btnBack.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(12, 56);
+            btnBack.Location = new Point(0, 60);
             btnBack.Name = "btnBack";
             btnBack.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btnBack.Size = new Size(55, 35);
+            btnBack.Size = new Size(60, 35);
             btnBack.TabIndex = 35;
-            btnBack.Text = "<=";
+            btnBack.Text = "<<";
             btnBack.Click += btnBack_Click;
             // 
             // PlayerDetailForm
