@@ -16,7 +16,7 @@ namespace MANAGE_SOCCER_GAME.Services
 
         public async Task<List<Coach>> GetAllCoachesAsync()
         {
-            return await _context.Coaches.ToListAsync();
+            return await _context.Coaches.Where(x => x.IsDeleted == false).ToListAsync();
         }
 
         public async Task<Coach?> GetCoachByIdAsync(Guid id)
@@ -29,6 +29,8 @@ namespace MANAGE_SOCCER_GAME.Services
             ValidateCoachAsync(coach);
 
             coach.Id = Guid.NewGuid();
+            coach.IsDeleted = false;
+
             _context.Coaches.Add(coach);
             await _context.SaveChangesAsync();
             return coach;
@@ -55,6 +57,18 @@ namespace MANAGE_SOCCER_GAME.Services
         public async Task<bool> CoachExistsAsync(Guid id)
         {
             return await _context.Coaches.AnyAsync(t => t.Id == id);
+        }
+
+        public async Task<Coach?> DeleteCoachAsync(Guid Id)
+        {
+            var existingCoach = await _context.Coaches.FindAsync(Id);
+            if (existingCoach == null)
+                return null;
+
+            existingCoach.IsDeleted = true;
+
+            await _context.SaveChangesAsync();
+            return existingCoach;
         }
 
         private void ValidateCoachAsync(Coach coach)
