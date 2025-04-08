@@ -4,6 +4,7 @@ using MANAGE_SOCCER_GAME.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MANAGE_SOCCER_GAME.Migrations
 {
     [DbContext(typeof(ManageSoccerGame))]
-    partial class ManageSoccerGameModelSnapshot : ModelSnapshot
+    [Migration("20250406152148_Updatedatabase3")]
+    partial class Updatedatabase3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,9 +40,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.Property<Guid?>("IdImage")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -325,6 +325,9 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.Property<Guid?>("IdTeam")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -346,9 +349,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.Property<float>("Weight")
                         .HasColumnType("real");
-
-                    b.Property<bool>("isDeleted")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 

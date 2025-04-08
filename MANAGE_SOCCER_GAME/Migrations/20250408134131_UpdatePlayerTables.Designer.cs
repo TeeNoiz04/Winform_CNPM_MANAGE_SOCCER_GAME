@@ -4,6 +4,7 @@ using MANAGE_SOCCER_GAME.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MANAGE_SOCCER_GAME.Migrations
 {
     [DbContext(typeof(ManageSoccerGame))]
-    partial class ManageSoccerGameModelSnapshot : ModelSnapshot
+    [Migration("20250408134131_UpdatePlayerTables")]
+    partial class UpdatePlayerTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,9 +40,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.Property<Guid?>("IdImage")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

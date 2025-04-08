@@ -14,6 +14,7 @@ namespace MANAGE_SOCCER_GAME.Models
         public string Position { get; set; }
         public int Number { get; set; }
         public string National { get; set; }
+        public bool  isDeleted { get; set; } = false;
         public string Status { get; set; }
         public float Height { get; set; }
         public float Weight { get; set; }

@@ -36,6 +36,7 @@ namespace MANAGE_SOCCER_GAME.Data
         public DbSet<Tournament> Tournaments { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Coach> Coaches { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -118,6 +119,14 @@ namespace MANAGE_SOCCER_GAME.Data
               
             }
             );
+            builder.Entity<Player>(p =>
+            {
+                p.HasKey(p => p.Id);
+                p.HasOne(p => p.Team)
+                    .WithMany(t => t.Player)
+                    .HasForeignKey(p => p.IdTeam);
+               
+            });
         }
 
 

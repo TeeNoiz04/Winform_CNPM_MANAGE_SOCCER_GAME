@@ -4,6 +4,7 @@ using MANAGE_SOCCER_GAME.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MANAGE_SOCCER_GAME.Migrations
 {
     [DbContext(typeof(ManageSoccerGame))]
-    partial class ManageSoccerGameModelSnapshot : ModelSnapshot
+    [Migration("20250406105505_updatePlayertable")]
+    partial class updatePlayertable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,9 +40,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.Property<Guid?>("IdImage")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -103,14 +103,14 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PublicId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("UpdateAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("publicId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -137,14 +137,14 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.Property<Guid>("PlayerId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("PublicId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("UpdateAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("publicId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -168,10 +168,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PublicId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<Guid>("TeamId")
                         .HasColumnType("uniqueidentifier");
 
@@ -179,6 +175,10 @@ namespace MANAGE_SOCCER_GAME.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("publicId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -212,9 +212,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.Property<Guid>("IdGame")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("IsHomeGround")
                         .HasColumnType("bit");
@@ -346,9 +343,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.Property<float>("Weight")
                         .HasColumnType("real");
-
-                    b.Property<bool>("isDeleted")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -484,9 +478,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.Property<Guid>("IdTournament")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -517,9 +508,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
