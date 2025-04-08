@@ -43,9 +43,9 @@
             columnHeader4 = new ColumnHeader();
             contextMenuStrip1 = new ContextMenuStrip(components);
             sửaToolStripMenuItem = new ToolStripMenuItem();
+            xoaToolStripMenuItem = new ToolStripMenuItem();
             cbCoach = new ComboBox();
             btnUpdate = new Button();
-            xoaToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -139,14 +139,21 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sửaToolStripMenuItem, xoaToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 70);
+            contextMenuStrip1.Size = new Size(95, 48);
             // 
             // sửaToolStripMenuItem
             // 
             sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            sửaToolStripMenuItem.Size = new Size(180, 22);
+            sửaToolStripMenuItem.Size = new Size(94, 22);
             sửaToolStripMenuItem.Text = "Sửa";
             sửaToolStripMenuItem.Click += LoadTeam;
+            // 
+            // xoaToolStripMenuItem
+            // 
+            xoaToolStripMenuItem.Name = "xoaToolStripMenuItem";
+            xoaToolStripMenuItem.Size = new Size(94, 22);
+            xoaToolStripMenuItem.Text = "Xoa";
+            xoaToolStripMenuItem.Click += xoaToolStripMenuItem_Click;
             // 
             // cbCoach
             // 
@@ -166,13 +173,6 @@
             btnUpdate.Text = "update";
             btnUpdate.UseVisualStyleBackColor = true;
             btnUpdate.Click += btnUpdate_ClickAsync;
-            // 
-            // xoaToolStripMenuItem
-            // 
-            xoaToolStripMenuItem.Name = "xoaToolStripMenuItem";
-            xoaToolStripMenuItem.Size = new Size(180, 22);
-            xoaToolStripMenuItem.Text = "Xoa";
-            xoaToolStripMenuItem.Click += xoaToolStripMenuItem_Click;
             // 
             // testTeamForm
             // 

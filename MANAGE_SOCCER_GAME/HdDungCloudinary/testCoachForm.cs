@@ -162,5 +162,27 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
 
             }
         }
+
+        private async void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lvCoach.SelectedItems.Count > 0)
+            {
+                string coachId = lvCoach.SelectedItems[0].SubItems[0].Text;
+
+                var team = await _coachService.DeleteCoachAsync(Guid.Parse(coachId));
+                if (team == null)
+                {
+                    MessageBox.Show("Coach not found.");
+                    return;
+                }
+
+                MessageBox.Show("Selected Coach: " + coachId);
+                await LoadCoaches();
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn dòng nào.");
+            }
+        }
     }
 }

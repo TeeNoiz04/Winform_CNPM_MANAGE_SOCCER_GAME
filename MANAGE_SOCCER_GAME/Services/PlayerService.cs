@@ -18,7 +18,7 @@ using Microsoft.EntityFrameworkCore;
 
         public async Task<List<Player>> GetAllPlayersAsync()
         {
-            return await _context.Players.ToListAsync();
+            return await _context.Players.Where(x => x.isDeleted == false).ToListAsync();
         }
 
         public async Task<Player?> GetPlayerByIdAsync(Guid id)
@@ -61,6 +61,23 @@ using Microsoft.EntityFrameworkCore;
         public async Task<bool> PlayerExistsAsync(Guid id)
         {
             return await _context.Players.AnyAsync(t => t.Id == id);
+        }
+
+        public async Task<Player?> DeletePlayerAsync(Guid Id)
+        {
+            var existingPlayer = await _context.Players.FindAsync(Id);
+            if (existingPlayer == null)
+                return null;
+
+            existingPlayer.isDeleted = true;
+
+            await _context.SaveChangesAsync();
+            return existingPlayer;
+        }
+
+        public async Task<List<Player>> GetPlayersByTeamIdAsync(Guid teamId)
+        {
+            return await _context.Players.Where(x => x.IdTeam == teamId && x.isDeleted == false).ToListAsync();
         }
 
         private async Task ValidatePlayerAsync(Player player)

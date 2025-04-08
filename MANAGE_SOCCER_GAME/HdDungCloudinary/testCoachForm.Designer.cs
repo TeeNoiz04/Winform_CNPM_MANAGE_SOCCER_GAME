@@ -50,8 +50,8 @@
             phonenumber = new ColumnHeader();
             contextMenuStrip1 = new ContextMenuStrip(components);
             sửaToolStripMenuItem = new ToolStripMenuItem();
-            xemToolStripMenuItem = new ToolStripMenuItem();
             lbID = new Label();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -202,23 +202,16 @@
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sửaToolStripMenuItem, xemToolStripMenuItem });
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sửaToolStripMenuItem, deleteToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(99, 48);
+            contextMenuStrip1.Size = new Size(181, 70);
             // 
             // sửaToolStripMenuItem
             // 
             sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            sửaToolStripMenuItem.Size = new Size(98, 22);
+            sửaToolStripMenuItem.Size = new Size(180, 22);
             sửaToolStripMenuItem.Text = "Sửa";
             sửaToolStripMenuItem.Click += LoadCoach;
-            // 
-            // xemToolStripMenuItem
-            // 
-            xemToolStripMenuItem.Name = "xemToolStripMenuItem";
-            xemToolStripMenuItem.Size = new Size(98, 22);
-            xemToolStripMenuItem.Text = "Xem";
-            xemToolStripMenuItem.Click += LoadCoach;
             // 
             // lbID
             // 
@@ -228,6 +221,13 @@
             lbID.Size = new Size(18, 15);
             lbID.TabIndex = 13;
             lbID.Text = "ID";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(180, 22);
+            deleteToolStripMenuItem.Text = "Delete";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // testCoachForm
             // 
@@ -280,6 +280,6 @@
         private ColumnHeader phonenumber;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem sửaToolStripMenuItem;
-        private ToolStripMenuItem xemToolStripMenuItem;
+        private ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

@@ -19,7 +19,23 @@ namespace MANAGE_SOCCER_GAME.Services
         {
            await ValidateTeamAsync(team);
 
+            if (await _context.Teams.AnyAsync(t => t.Name == team.Name && t.IdTournament == team.IdTournament))
+            {
+                throw new ArgumentException("A team with the same name already exists in this tournament.", nameof(team));
+            }
+
+            if (await _context.Teams.AnyAsync(t => t.Name == team.Name && t.IdTournament == team.IdTournament && t.IdCoach == team.IdCoach))
+            {
+                throw new ArgumentException("A team with the same name and coach already exists in this tournament.", nameof(team));
+            }
+
+            if (await _context.Teams.AnyAsync(t => t.IdCoach == team.IdCoach && t.IdTournament == team.IdTournament))
+            {
+                throw new ArgumentException("A coach can only coach one team in a tournament.", nameof(team));
+            }
+
             team.Id = Guid.NewGuid();
+            team.IsDeleted = false;
             _context.Teams.Add(team);
             await _context.SaveChangesAsync();
             return team;
@@ -27,7 +43,7 @@ namespace MANAGE_SOCCER_GAME.Services
 
         public async Task<List<Team>> GetAllTeamAsync()
         {
-            return await _context.Teams.Where(x => x.IsDeleted == false).ToListAsync();
+            return await _context.Teams.Where(x => x.IsDeleted == false).Include(x => x.Coach).Include(x => x.Tournament).ToListAsync();
         }
 
         public async Task<Team?> GetTeamByIdAsync(Guid id)
@@ -62,6 +78,13 @@ namespace MANAGE_SOCCER_GAME.Services
 
             await _context.SaveChangesAsync();
             return existingTeam;
+        }
+
+        public async Task<List<Team>> GetTeamsByTournamentIdAsync(Guid tournamentId)
+        {
+            return await _context.Teams
+                .Where(t => t.IdTournament == tournamentId && !t.IsDeleted)
+                .ToListAsync();
         }
 
         public async Task<bool> TeamExistsAsync(Guid id)

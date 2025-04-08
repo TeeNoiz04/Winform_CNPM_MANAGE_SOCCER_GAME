@@ -62,8 +62,8 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
                 var listItem = new ListViewItem(team.Id.ToString());
                 listItem.SubItems.Add(team.Name);
                 listItem.SubItems.Add(team.Province);
-                listItem.SubItems.Add(team.IdTournament.ToString());
-                listItem.SubItems.Add(team.IdCoach.ToString());
+                listItem.SubItems.Add(team.Tournament.Name);
+                listItem.SubItems.Add(team.Coach.Name);
 
                 lvTeam.Items.Add(listItem);
             }
@@ -195,6 +195,10 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
                 }
 
                 MessageBox.Show("Selected team: " + teamId);
+
+                await LoadTournamentsToComboBox();
+                await LoadCoachesToComboBox();
+                await LoadTeams();
             }
             else
             {
