@@ -12,6 +12,7 @@ namespace MANAGE_SOCCER_GAME.Models
         public string Name { get; set; }
         public string National { get; set; }
         public int ExpYear { get; set; }
+        public bool  IsDeleted { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public Guid? IdImage { get; set; }
