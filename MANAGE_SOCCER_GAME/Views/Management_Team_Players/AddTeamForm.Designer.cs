@@ -37,114 +37,31 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            txbDateOfBirth = new Guna.UI2.WinForms.Guna2TextBox();
-            txbFullName = new Guna.UI2.WinForms.Guna2TextBox();
-            txbPhone = new Guna.UI2.WinForms.Guna2TextBox();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txbProvince = new Guna.UI2.WinForms.Guna2TextBox();
             txbTeamname = new Guna.UI2.WinForms.Guna2TextBox();
-            txbPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            txbConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
             lblName = new Label();
             lblProvince = new Label();
-            label2 = new Label();
+            lblTitle = new Label();
             btnCancel = new Guna.UI2.WinForms.Guna2Button();
             btnSubmit = new Guna.UI2.WinForms.Guna2Button();
             gnElipse = new Guna.UI2.WinForms.Guna2Elipse(components);
             openFileDialog = new OpenFileDialog();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            cbbTournament = new Guna.UI2.WinForms.Guna2ComboBox();
+            lblTournament = new Label();
+            lblCoach = new Label();
+            cbbCoach = new Guna.UI2.WinForms.Guna2ComboBox();
+            txbUpload = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // txbDateOfBirth
-            // 
-            txbDateOfBirth.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            txbDateOfBirth.BorderColor = Color.FromArgb(52, 52, 116);
-            txbDateOfBirth.BorderRadius = 5;
-            txbDateOfBirth.Cursor = Cursors.IBeam;
-            txbDateOfBirth.CustomizableEdges = customizableEdges1;
-            txbDateOfBirth.DefaultText = "day/month/year";
-            txbDateOfBirth.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbDateOfBirth.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbDateOfBirth.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbDateOfBirth.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbDateOfBirth.FillColor = Color.FromArgb(52, 52, 116);
-            txbDateOfBirth.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbDateOfBirth.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbDateOfBirth.ForeColor = Color.Silver;
-            txbDateOfBirth.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbDateOfBirth.Location = new Point(62, 498);
-            txbDateOfBirth.Margin = new Padding(6, 5, 6, 5);
-            txbDateOfBirth.Name = "txbDateOfBirth";
-            txbDateOfBirth.PlaceholderText = "";
-            txbDateOfBirth.SelectedText = "";
-            txbDateOfBirth.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txbDateOfBirth.Size = new Size(400, 50);
-            txbDateOfBirth.TabIndex = 37;
-            // 
-            // txbFullName
-            // 
-            txbFullName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            txbFullName.BorderColor = Color.FromArgb(52, 52, 116);
-            txbFullName.BorderRadius = 5;
-            txbFullName.Cursor = Cursors.IBeam;
-            txbFullName.CustomizableEdges = customizableEdges3;
-            txbFullName.DefaultText = "Full name";
-            txbFullName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbFullName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbFullName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbFullName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbFullName.FillColor = Color.FromArgb(52, 52, 116);
-            txbFullName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbFullName.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbFullName.ForeColor = Color.Silver;
-            txbFullName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbFullName.Location = new Point(62, 552);
-            txbFullName.Margin = new Padding(6, 5, 6, 5);
-            txbFullName.Name = "txbFullName";
-            txbFullName.PlaceholderText = "";
-            txbFullName.SelectedText = "";
-            txbFullName.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txbFullName.Size = new Size(400, 50);
-            txbFullName.TabIndex = 36;
-            // 
-            // txbPhone
-            // 
-            txbPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            txbPhone.AutoSize = true;
-            txbPhone.BorderColor = Color.FromArgb(52, 52, 116);
-            txbPhone.BorderRadius = 5;
-            txbPhone.Cursor = Cursors.IBeam;
-            txbPhone.CustomizableEdges = customizableEdges5;
-            txbPhone.DefaultText = "Phone number (Optional)";
-            txbPhone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbPhone.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbPhone.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbPhone.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbPhone.FillColor = Color.FromArgb(52, 52, 116);
-            txbPhone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbPhone.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbPhone.ForeColor = Color.Silver;
-            txbPhone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbPhone.Location = new Point(62, 612);
-            txbPhone.Margin = new Padding(6);
-            txbPhone.Name = "txbPhone";
-            txbPhone.PlaceholderText = "";
-            txbPhone.SelectedText = "";
-            txbPhone.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txbPhone.Size = new Size(400, 61);
-            txbPhone.TabIndex = 35;
             // 
             // txbProvince
             // 
@@ -152,7 +69,7 @@
             txbProvince.BorderColor = Color.FromArgb(52, 52, 116);
             txbProvince.BorderRadius = 5;
             txbProvince.Cursor = Cursors.IBeam;
-            txbProvince.CustomizableEdges = customizableEdges7;
+            txbProvince.CustomizableEdges = customizableEdges1;
             txbProvince.DefaultText = "Province";
             txbProvince.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbProvince.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -163,14 +80,18 @@
             txbProvince.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbProvince.ForeColor = Color.Silver;
             txbProvince.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbProvince.Location = new Point(62, 211);
+            txbProvince.Location = new Point(50, 420);
             txbProvince.Margin = new Padding(6, 5, 6, 5);
             txbProvince.Name = "txbProvince";
             txbProvince.PlaceholderText = "";
             txbProvince.SelectedText = "";
-            txbProvince.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txbProvince.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txbProvince.Size = new Size(400, 50);
             txbProvince.TabIndex = 34;
+            txbProvince.Click += txbProvince_Click;
+            txbProvince.Leave += txbProvince_Leave;
+            txbProvince.MouseLeave += txbProvince_MouseLeave;
+            txbProvince.MouseHover += txbProvince_MouseHover;
             // 
             // txbTeamname
             // 
@@ -179,7 +100,7 @@
             txbTeamname.BorderColor = Color.FromArgb(52, 52, 116);
             txbTeamname.BorderRadius = 5;
             txbTeamname.Cursor = Cursors.IBeam;
-            txbTeamname.CustomizableEdges = customizableEdges9;
+            txbTeamname.CustomizableEdges = customizableEdges3;
             txbTeamname.DefaultText = "Team name";
             txbTeamname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbTeamname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -190,105 +111,60 @@
             txbTeamname.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbTeamname.ForeColor = Color.Silver;
             txbTeamname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTeamname.Location = new Point(62, 107);
+            txbTeamname.Location = new Point(50, 320);
             txbTeamname.Margin = new Padding(6);
             txbTeamname.Name = "txbTeamname";
             txbTeamname.PlaceholderText = "";
             txbTeamname.SelectedText = "";
-            txbTeamname.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txbTeamname.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txbTeamname.Size = new Size(400, 50);
             txbTeamname.TabIndex = 33;
-            // 
-            // txbPassword
-            // 
-            txbPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            txbPassword.BorderColor = Color.FromArgb(52, 52, 116);
-            txbPassword.BorderRadius = 5;
-            txbPassword.Cursor = Cursors.IBeam;
-            txbPassword.CustomizableEdges = customizableEdges11;
-            txbPassword.DefaultText = "Password";
-            txbPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbPassword.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbPassword.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbPassword.FillColor = Color.FromArgb(52, 52, 116);
-            txbPassword.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbPassword.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbPassword.ForeColor = Color.Silver;
-            txbPassword.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbPassword.Location = new Point(62, 372);
-            txbPassword.Margin = new Padding(6, 5, 6, 5);
-            txbPassword.Name = "txbPassword";
-            txbPassword.PlaceholderText = "";
-            txbPassword.SelectedText = "";
-            txbPassword.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txbPassword.Size = new Size(400, 50);
-            txbPassword.TabIndex = 32;
-            // 
-            // txbConfirmPassword
-            // 
-            txbConfirmPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            txbConfirmPassword.AutoSize = true;
-            txbConfirmPassword.BorderColor = Color.FromArgb(52, 52, 116);
-            txbConfirmPassword.BorderRadius = 5;
-            txbConfirmPassword.Cursor = Cursors.IBeam;
-            txbConfirmPassword.CustomizableEdges = customizableEdges13;
-            txbConfirmPassword.DefaultText = "Confirm Password";
-            txbConfirmPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbConfirmPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbConfirmPassword.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbConfirmPassword.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbConfirmPassword.FillColor = Color.FromArgb(52, 52, 116);
-            txbConfirmPassword.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbConfirmPassword.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbConfirmPassword.ForeColor = Color.Silver;
-            txbConfirmPassword.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbConfirmPassword.Location = new Point(62, 432);
-            txbConfirmPassword.Margin = new Padding(6);
-            txbConfirmPassword.Name = "txbConfirmPassword";
-            txbConfirmPassword.PlaceholderText = "";
-            txbConfirmPassword.SelectedText = "";
-            txbConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txbConfirmPassword.Size = new Size(400, 61);
-            txbConfirmPassword.TabIndex = 31;
+            txbTeamname.Click += txbTeamname_Click;
+            txbTeamname.Leave += txbTeamname_Leave;
+            txbTeamname.MouseLeave += txbTeamname_MouseLeave;
+            txbTeamname.MouseHover += txbTeamname_MouseHover;
             // 
             // lblName
             // 
-            lblName.AutoSize = true;
-            lblName.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lblName.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(62, 71);
+            lblName.Location = new Point(50, 280);
             lblName.Name = "lblName";
-            lblName.Size = new Size(124, 30);
+            lblName.Size = new Size(120, 30);
             lblName.TabIndex = 38;
             lblName.Text = "Team Name";
+            lblName.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblProvince
             // 
-            lblProvince.AutoSize = true;
-            lblProvince.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProvince.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lblProvince.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblProvince.ForeColor = Color.White;
-            lblProvince.Location = new Point(62, 176);
+            lblProvince.Location = new Point(50, 380);
             lblProvince.Name = "lblProvince";
-            lblProvince.Size = new Size(92, 30);
+            lblProvince.Size = new Size(90, 30);
             lblProvince.TabIndex = 39;
             lblProvince.Text = "Province";
+            lblProvince.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // lblTitle
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(216, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(158, 37);
-            label2.TabIndex = 40;
-            label2.Text = "ADD TEAM";
+            lblTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lblTitle.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(170, 50);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(160, 40);
+            lblTitle.TabIndex = 40;
+            lblTitle.Text = "ADD TEAM";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnCancel.BorderRadius = 5;
-            btnCancel.CustomizableEdges = customizableEdges15;
+            btnCancel.CustomizableEdges = customizableEdges5;
             btnCancel.DisabledState.BorderColor = Color.DarkGray;
             btnCancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -296,9 +172,9 @@
             btnCancel.FillColor = Color.FromArgb(60, 211, 252);
             btnCancel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(105, 703);
+            btnCancel.Location = new Point(50, 710);
             btnCancel.Name = "btnCancel";
-            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnCancel.Size = new Size(100, 40);
             btnCancel.TabIndex = 41;
             btnCancel.Text = "Cancel";
@@ -306,8 +182,9 @@
             // 
             // btnSubmit
             // 
+            btnSubmit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnSubmit.BorderRadius = 5;
-            btnSubmit.CustomizableEdges = customizableEdges17;
+            btnSubmit.CustomizableEdges = customizableEdges7;
             btnSubmit.DisabledState.BorderColor = Color.DarkGray;
             btnSubmit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSubmit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -315,16 +192,17 @@
             btnSubmit.FillColor = Color.FromArgb(60, 211, 252);
             btnSubmit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSubmit.ForeColor = Color.White;
-            btnSubmit.Location = new Point(394, 703);
+            btnSubmit.Location = new Point(350, 710);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnSubmit.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnSubmit.Size = new Size(100, 40);
             btnSubmit.TabIndex = 42;
             btnSubmit.Text = "Submit";
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // gnElipse
             // 
-            gnElipse.BorderRadius = 10;
+            gnElipse.BorderRadius = 40;
             gnElipse.TargetControl = this;
             // 
             // openFileDialog
@@ -333,34 +211,116 @@
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges19;
+            guna2PictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            guna2PictureBox1.CustomizableEdges = customizableEdges15;
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(191, 269);
+            guna2PictureBox1.Location = new Point(50, 140);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2PictureBox1.Size = new Size(80, 80);
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2PictureBox1.Size = new Size(120, 120);
             guna2PictureBox1.TabIndex = 43;
             guna2PictureBox1.TabStop = false;
+            // 
+            // cbbTournament
+            // 
+            cbbTournament.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            cbbTournament.BackColor = Color.Transparent;
+            cbbTournament.CustomizableEdges = customizableEdges13;
+            cbbTournament.DrawMode = DrawMode.OwnerDrawFixed;
+            cbbTournament.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbbTournament.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbbTournament.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbbTournament.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbbTournament.ForeColor = Color.FromArgb(68, 88, 112);
+            cbbTournament.ItemHeight = 30;
+            cbbTournament.Location = new Point(50, 520);
+            cbbTournament.Name = "cbbTournament";
+            cbbTournament.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            cbbTournament.Size = new Size(400, 36);
+            cbbTournament.TabIndex = 44;
+            // 
+            // lblTournament
+            // 
+            lblTournament.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lblTournament.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTournament.ForeColor = Color.White;
+            lblTournament.Location = new Point(50, 480);
+            lblTournament.Name = "lblTournament";
+            lblTournament.Size = new Size(120, 30);
+            lblTournament.TabIndex = 45;
+            lblTournament.Text = "Tournament";
+            lblTournament.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblCoach
+            // 
+            lblCoach.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lblCoach.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCoach.ForeColor = Color.White;
+            lblCoach.Location = new Point(50, 566);
+            lblCoach.Name = "lblCoach";
+            lblCoach.Size = new Size(70, 30);
+            lblCoach.TabIndex = 46;
+            lblCoach.Text = "Coach";
+            lblCoach.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cbbCoach
+            // 
+            cbbCoach.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            cbbCoach.BackColor = Color.Transparent;
+            cbbCoach.CustomizableEdges = customizableEdges11;
+            cbbCoach.DrawMode = DrawMode.OwnerDrawFixed;
+            cbbCoach.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbbCoach.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbbCoach.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbbCoach.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbbCoach.ForeColor = Color.FromArgb(68, 88, 112);
+            cbbCoach.ItemHeight = 30;
+            cbbCoach.Location = new Point(50, 606);
+            cbbCoach.Name = "cbbCoach";
+            cbbCoach.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cbbCoach.Size = new Size(400, 36);
+            cbbCoach.TabIndex = 47;
+            // 
+            // txbUpload
+            // 
+            txbUpload.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            txbUpload.BorderRadius = 5;
+            txbUpload.CustomizableEdges = customizableEdges9;
+            txbUpload.DisabledState.BorderColor = Color.DarkGray;
+            txbUpload.DisabledState.CustomBorderColor = Color.DarkGray;
+            txbUpload.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            txbUpload.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            txbUpload.FillColor = Color.FromArgb(60, 211, 252);
+            txbUpload.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbUpload.ForeColor = Color.White;
+            txbUpload.Location = new Point(190, 185);
+            txbUpload.Name = "txbUpload";
+            txbUpload.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txbUpload.Size = new Size(140, 30);
+            txbUpload.TabIndex = 48;
+            txbUpload.Text = "Upload logo";
+            txbUpload.Click += txbUpload_Click;
             // 
             // AddTeamForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(31, 70, 121);
-            ClientSize = new Size(630, 792);
+            ClientSize = new Size(500, 800);
+            Controls.Add(txbUpload);
+            Controls.Add(cbbCoach);
+            Controls.Add(lblCoach);
+            Controls.Add(lblTournament);
+            Controls.Add(cbbTournament);
             Controls.Add(guna2PictureBox1);
             Controls.Add(btnSubmit);
             Controls.Add(btnCancel);
-            Controls.Add(label2);
+            Controls.Add(lblTitle);
             Controls.Add(lblProvince);
             Controls.Add(lblName);
-            Controls.Add(txbDateOfBirth);
-            Controls.Add(txbFullName);
-            Controls.Add(txbPhone);
             Controls.Add(txbProvince);
             Controls.Add(txbTeamname);
-            Controls.Add(txbPassword);
-            Controls.Add(txbConfirmPassword);
+            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AddTeamForm";
             Text = "AddTeamForm";
@@ -370,21 +330,20 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2TextBox txbDateOfBirth;
-        private Guna.UI2.WinForms.Guna2TextBox txbFullName;
-        private Guna.UI2.WinForms.Guna2TextBox txbPhone;
         private Guna.UI2.WinForms.Guna2TextBox txbProvince;
         private Guna.UI2.WinForms.Guna2TextBox txbTeamname;
-        private Guna.UI2.WinForms.Guna2TextBox txbPassword;
-        private Guna.UI2.WinForms.Guna2TextBox txbConfirmPassword;
         private Label lblName;
         private Label lblProvince;
-        private Label label2;
+        private Label lblTitle;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnSubmit;
         private Guna.UI2.WinForms.Guna2Elipse gnElipse;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private OpenFileDialog openFileDialog;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbTournament;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbCoach;
+        private Label lblCoach;
+        private Label lblTournament;
+        private Guna.UI2.WinForms.Guna2Button txbUpload;
     }
 }

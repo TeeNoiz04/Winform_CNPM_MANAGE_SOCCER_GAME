@@ -64,5 +64,12 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         {
             _router.LoadForm3(new TeamDetailForm());
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var formEdit = new EditPlayerForm();
+            formEdit.Location = new Point(250, 140);
+            formEdit.ShowDialog();
+        }
     }
 }

@@ -54,7 +54,7 @@
             picAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             pnContent = new Guna.UI2.WinForms.Guna2Panel();
             btnRemove = new Guna.UI2.WinForms.Guna2Button();
-            label1 = new Label();
+            lblHeight = new Label();
             lblRedCards = new Label();
             lblYellowCards = new Label();
             lblAssists = new Label();
@@ -62,7 +62,7 @@
             lblMatchPlayed = new Label();
             lblNameClub = new Label();
             picClub = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnEdit = new Guna.UI2.WinForms.Guna2Button();
             lblAge = new Label();
             lblPosition = new Label();
             lblName = new Label();
@@ -193,7 +193,7 @@
             // pnContent
             // 
             pnContent.Controls.Add(btnRemove);
-            pnContent.Controls.Add(label1);
+            pnContent.Controls.Add(lblHeight);
             pnContent.Controls.Add(lblRedCards);
             pnContent.Controls.Add(lblYellowCards);
             pnContent.Controls.Add(lblAssists);
@@ -201,7 +201,7 @@
             pnContent.Controls.Add(lblMatchPlayed);
             pnContent.Controls.Add(lblNameClub);
             pnContent.Controls.Add(picClub);
-            pnContent.Controls.Add(guna2Button1);
+            pnContent.Controls.Add(btnEdit);
             pnContent.Controls.Add(lblAge);
             pnContent.Controls.Add(lblPosition);
             pnContent.Controls.Add(lblName);
@@ -232,16 +232,16 @@
             btnRemove.TabIndex = 40;
             btnRemove.Text = "Remove";
             // 
-            // label1
+            // lblHeight
             // 
-            label1.Anchor = AnchorStyles.Left;
-            label1.Font = new Font("Microsoft Sans Serif", 12.75F);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(280, 135);
-            label1.Name = "label1";
-            label1.Size = new Size(100, 20);
-            label1.TabIndex = 39;
-            label1.Text = "Chiều cao";
+            lblHeight.Anchor = AnchorStyles.Left;
+            lblHeight.Font = new Font("Microsoft Sans Serif", 12.75F);
+            lblHeight.ForeColor = Color.White;
+            lblHeight.Location = new Point(280, 135);
+            lblHeight.Name = "lblHeight";
+            lblHeight.Size = new Size(100, 20);
+            lblHeight.TabIndex = 39;
+            lblHeight.Text = "Chiều cao";
             // 
             // lblRedCards
             // 
@@ -322,24 +322,25 @@
             picClub.TabIndex = 32;
             picClub.TabStop = false;
             // 
-            // guna2Button1
+            // btnEdit
             // 
-            guna2Button1.Anchor = AnchorStyles.Bottom;
-            guna2Button1.BorderRadius = 5;
-            guna2Button1.CustomizableEdges = customizableEdges11;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(60, 211, 252);
-            guna2Button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(385, 205);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Button1.Size = new Size(80, 30);
-            guna2Button1.TabIndex = 30;
-            guna2Button1.Text = "Edit";
+            btnEdit.Anchor = AnchorStyles.Bottom;
+            btnEdit.BorderRadius = 5;
+            btnEdit.CustomizableEdges = customizableEdges11;
+            btnEdit.DisabledState.BorderColor = Color.DarkGray;
+            btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEdit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEdit.FillColor = Color.FromArgb(60, 211, 252);
+            btnEdit.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Location = new Point(385, 205);
+            btnEdit.Name = "btnEdit";
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnEdit.Size = new Size(80, 30);
+            btnEdit.TabIndex = 30;
+            btnEdit.Text = "Edit";
+            btnEdit.Click += btnEdit_Click;
             // 
             // lblAge
             // 
@@ -425,7 +426,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox picAvatar;
         private Guna.UI2.WinForms.Guna2Panel pnContent;
         private Label lblName;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Label lblAge;
         private Label lblPosition;
         private Guna.UI2.WinForms.Guna2PictureBox picClub;
@@ -433,7 +434,7 @@
         private Label lblAssists;
         private Label lblGoalsScored;
         private Label lblMatchPlayed;
-        private Label label1;
+        private Label lblHeight;
         private Label lblRedCards;
         private Label lblYellowCards;
         private Guna.UI2.WinForms.Guna2Button btnRemove;

@@ -19,7 +19,7 @@ namespace MANAGE_SOCCER_GAME.Views
         public MainForm()
         {
             InitializeComponent();
-            _router = new Router(pnContent1, pnContent2, pnContent3, pnContent4);
+            _router = new Router(pnContent1, pnContent2, pnContent3, pnContent4, pnAccount);
             _router.LoadForm3(new SignInForm());
         }
 

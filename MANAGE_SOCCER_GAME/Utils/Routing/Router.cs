@@ -23,15 +23,17 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
         private static Control? _Control2;
         private static Control? _Control3;
         private static Control? _Control4;
+        private static Control _ControlAccount = null;
 
         public Router() { }
 
-        public Router(Control control1, Control control2, Control control3, Control control4)
+        public Router(Control control1, Control control2, Control control3, Control control4, Control controlAccount)
         {
             _Control1 = control1;
             _Control2 = control2;
             _Control3 = control3;
             _Control4 = control4;
+            _ControlAccount = controlAccount;
         }
 
         public void LoadForm(Control ControlContent, Form FormAtion, Form FormChild)
@@ -234,6 +236,12 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             LoadForm2(new SidebarAMOForm());
             LoadForm3(new EmployeeListForm());
             //LoadForm3(new RefereeListForm());
+        }
+
+        public void LoadAccount()
+        {
+            _ControlAccount.Visible = !_ControlAccount.Visible;
+            _ControlAccount.BringToFront();
         }
     }
 }

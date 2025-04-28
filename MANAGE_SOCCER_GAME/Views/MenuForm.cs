@@ -38,7 +38,7 @@ namespace MANAGE_SOCCER_GAME.Views
 
         private void btnShowPnAccount_Click(object sender, EventArgs e)
         {
-            //_router.LoadAccount();
+            _router.LoadAccount();
         }
 
         private void btnTeam_Click(object sender, EventArgs e)

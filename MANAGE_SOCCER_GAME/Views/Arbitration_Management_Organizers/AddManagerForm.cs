@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
-    public partial class AddRefereeForm : Form
+    public partial class AddManagerForm : Form
     {
-        public AddRefereeForm()
+        public AddManagerForm()
         {
             InitializeComponent();
         }

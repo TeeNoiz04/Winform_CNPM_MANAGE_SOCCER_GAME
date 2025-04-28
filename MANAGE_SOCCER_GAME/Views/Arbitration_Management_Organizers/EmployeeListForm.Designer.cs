@@ -51,7 +51,7 @@
             cbbSapXep = new ComboBox();
             pnContent = new Guna.UI2.WinForms.Guna2Panel();
             pnFooter = new Panel();
-            btnAddReferee = new Guna.UI2.WinForms.Guna2Button();
+            btnAddEmployee = new Guna.UI2.WinForms.Guna2Button();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             lblSoDong = new Label();
             cbbSoDong = new ComboBox();
@@ -191,7 +191,7 @@
             // 
             // pnFooter
             // 
-            pnFooter.Controls.Add(btnAddReferee);
+            pnFooter.Controls.Add(btnAddEmployee);
             pnFooter.Controls.Add(btnRefresh);
             pnFooter.Controls.Add(lblSoDong);
             pnFooter.Controls.Add(cbbSoDong);
@@ -204,23 +204,24 @@
             pnFooter.Size = new Size(1520, 40);
             pnFooter.TabIndex = 18;
             // 
-            // btnAddReferee
+            // btnAddEmployee
             // 
-            btnAddReferee.BorderRadius = 5;
-            btnAddReferee.CustomizableEdges = customizableEdges5;
-            btnAddReferee.DisabledState.BorderColor = Color.DarkGray;
-            btnAddReferee.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAddReferee.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAddReferee.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAddReferee.FillColor = Color.FromArgb(60, 211, 252);
-            btnAddReferee.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddReferee.ForeColor = Color.White;
-            btnAddReferee.Location = new Point(1395, 5);
-            btnAddReferee.Name = "btnAddReferee";
-            btnAddReferee.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnAddReferee.Size = new Size(120, 30);
-            btnAddReferee.TabIndex = 34;
-            btnAddReferee.Text = "Add Employee";
+            btnAddEmployee.BorderRadius = 5;
+            btnAddEmployee.CustomizableEdges = customizableEdges5;
+            btnAddEmployee.DisabledState.BorderColor = Color.DarkGray;
+            btnAddEmployee.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAddEmployee.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAddEmployee.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAddEmployee.FillColor = Color.FromArgb(60, 211, 252);
+            btnAddEmployee.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddEmployee.ForeColor = Color.White;
+            btnAddEmployee.Location = new Point(1395, 5);
+            btnAddEmployee.Name = "btnAddEmployee";
+            btnAddEmployee.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAddEmployee.Size = new Size(120, 30);
+            btnAddEmployee.TabIndex = 34;
+            btnAddEmployee.Text = "Add Employee";
+            btnAddEmployee.Click += btnAddEmployee_Click;
             // 
             // btnRefresh
             // 
@@ -439,6 +440,6 @@
         private Label lblSoTrang;
         private Button btnTrangKe;
         private Button btnTrangTruoc;
-        private Guna.UI2.WinForms.Guna2Button btnAddReferee;
+        private Guna.UI2.WinForms.Guna2Button btnAddEmployee;
     }
 }

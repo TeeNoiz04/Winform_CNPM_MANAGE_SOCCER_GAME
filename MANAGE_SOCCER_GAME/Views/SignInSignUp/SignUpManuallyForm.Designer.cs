@@ -52,8 +52,8 @@
             picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             txbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             txbUsername = new Guna.UI2.WinForms.Guna2TextBox();
-            txbFullName = new Guna.UI2.WinForms.Guna2TextBox();
-            txbPhone = new Guna.UI2.WinForms.Guna2TextBox();
+            txbFirstName = new Guna.UI2.WinForms.Guna2TextBox();
+            txbLastName = new Guna.UI2.WinForms.Guna2TextBox();
             cbAgree = new Guna.UI2.WinForms.Guna2CheckBox();
             lblTitle2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblTitlle = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -67,7 +67,7 @@
             lblAsk.BackColor = Color.Transparent;
             lblAsk.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAsk.ForeColor = Color.FromArgb(60, 211, 252);
-            lblAsk.Location = new Point(100, 295);
+            lblAsk.Location = new Point(100, 320);
             lblAsk.Name = "lblAsk";
             lblAsk.Size = new Size(185, 19);
             lblAsk.TabIndex = 25;
@@ -82,7 +82,7 @@
             lblAskAgree.BackColor = Color.Transparent;
             lblAskAgree.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAskAgree.ForeColor = Color.DarkGray;
-            lblAskAgree.Location = new Point(127, 865);
+            lblAskAgree.Location = new Point(127, 830);
             lblAskAgree.Name = "lblAskAgree";
             lblAskAgree.Size = new Size(181, 19);
             lblAskAgree.TabIndex = 20;
@@ -105,7 +105,7 @@
             txbPassword.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbPassword.ForeColor = Color.Silver;
             txbPassword.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbPassword.Location = new Point(100, 555);
+            txbPassword.Location = new Point(100, 580);
             txbPassword.Margin = new Padding(6, 5, 6, 5);
             txbPassword.Name = "txbPassword";
             txbPassword.PlaceholderText = "";
@@ -136,7 +136,7 @@
             txbConfirmPassword.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbConfirmPassword.ForeColor = Color.Silver;
             txbConfirmPassword.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbConfirmPassword.Location = new Point(100, 615);
+            txbConfirmPassword.Location = new Point(100, 640);
             txbConfirmPassword.Margin = new Padding(6);
             txbConfirmPassword.Name = "txbConfirmPassword";
             txbConfirmPassword.PlaceholderText = "";
@@ -161,7 +161,7 @@
             btnRegister.FillColor = Color.FromArgb(60, 211, 252);
             btnRegister.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegister.ForeColor = Color.White;
-            btnRegister.Location = new Point(100, 905);
+            btnRegister.Location = new Point(100, 870);
             btnRegister.Name = "btnRegister";
             btnRegister.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRegister.Size = new Size(400, 45);
@@ -175,7 +175,7 @@
             picLogo.CustomizableEdges = customizableEdges7;
             picLogo.Image = Properties.Resources.LogoV;
             picLogo.ImageRotate = 0F;
-            picLogo.Location = new Point(220, 105);
+            picLogo.Location = new Point(220, 130);
             picLogo.Name = "picLogo";
             picLogo.ShadowDecoration.CustomizableEdges = customizableEdges8;
             picLogo.Size = new Size(160, 160);
@@ -200,7 +200,7 @@
             txbEmail.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbEmail.ForeColor = Color.Silver;
             txbEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbEmail.Location = new Point(100, 495);
+            txbEmail.Location = new Point(100, 520);
             txbEmail.Margin = new Padding(6, 5, 6, 5);
             txbEmail.Name = "txbEmail";
             txbEmail.PlaceholderText = "";
@@ -231,7 +231,7 @@
             txbUsername.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbUsername.ForeColor = Color.Silver;
             txbUsername.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbUsername.Location = new Point(100, 435);
+            txbUsername.Location = new Point(100, 460);
             txbUsername.Margin = new Padding(6);
             txbUsername.Name = "txbUsername";
             txbUsername.PlaceholderText = "";
@@ -244,66 +244,66 @@
             txbUsername.MouseLeave += txbUsername_MouseLeave;
             txbUsername.MouseHover += txbUsername_MouseHover;
             // 
-            // txbFullName
+            // txbFirstName
             // 
-            txbFullName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            txbFullName.BorderColor = Color.FromArgb(52, 52, 116);
-            txbFullName.BorderRadius = 5;
-            txbFullName.Cursor = Cursors.IBeam;
-            txbFullName.CustomizableEdges = customizableEdges13;
-            txbFullName.DefaultText = "Full name";
-            txbFullName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbFullName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbFullName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbFullName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbFullName.FillColor = Color.FromArgb(52, 52, 116);
-            txbFullName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbFullName.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbFullName.ForeColor = Color.Silver;
-            txbFullName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbFullName.Location = new Point(100, 735);
-            txbFullName.Margin = new Padding(6, 5, 6, 5);
-            txbFullName.Name = "txbFullName";
-            txbFullName.PlaceholderText = "";
-            txbFullName.SelectedText = "";
-            txbFullName.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txbFullName.Size = new Size(400, 50);
-            txbFullName.TabIndex = 29;
-            txbFullName.Click += txbFullName_Click;
-            txbFullName.Leave += txbFullName_Leave;
-            txbFullName.MouseLeave += txbFullName_MouseLeave;
-            txbFullName.MouseHover += txbFullName_MouseHover;
+            txbFirstName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            txbFirstName.BorderColor = Color.FromArgb(52, 52, 116);
+            txbFirstName.BorderRadius = 5;
+            txbFirstName.Cursor = Cursors.IBeam;
+            txbFirstName.CustomizableEdges = customizableEdges13;
+            txbFirstName.DefaultText = "First name";
+            txbFirstName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txbFirstName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txbFirstName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txbFirstName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txbFirstName.FillColor = Color.FromArgb(52, 52, 116);
+            txbFirstName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbFirstName.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbFirstName.ForeColor = Color.Silver;
+            txbFirstName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbFirstName.Location = new Point(100, 700);
+            txbFirstName.Margin = new Padding(6, 5, 6, 5);
+            txbFirstName.Name = "txbFirstName";
+            txbFirstName.PlaceholderText = "";
+            txbFirstName.SelectedText = "";
+            txbFirstName.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txbFirstName.Size = new Size(400, 50);
+            txbFirstName.TabIndex = 29;
+            txbFirstName.Click += txbFirstName_Click;
+            txbFirstName.Leave += txbFirstName_Leave;
+            txbFirstName.MouseLeave += txbFirstName_MouseLeave;
+            txbFirstName.MouseHover += txbFirstName_MouseHover;
             // 
-            // txbPhone
+            // txbLastName
             // 
-            txbPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            txbPhone.AutoSize = true;
-            txbPhone.BorderColor = Color.FromArgb(52, 52, 116);
-            txbPhone.BorderRadius = 5;
-            txbPhone.Cursor = Cursors.IBeam;
-            txbPhone.CustomizableEdges = customizableEdges15;
-            txbPhone.DefaultText = "Phone number (Optional)";
-            txbPhone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbPhone.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbPhone.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbPhone.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbPhone.FillColor = Color.FromArgb(52, 52, 116);
-            txbPhone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbPhone.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbPhone.ForeColor = Color.Silver;
-            txbPhone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbPhone.Location = new Point(100, 795);
-            txbPhone.Margin = new Padding(6);
-            txbPhone.Name = "txbPhone";
-            txbPhone.PlaceholderText = "";
-            txbPhone.SelectedText = "";
-            txbPhone.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            txbPhone.Size = new Size(400, 50);
-            txbPhone.TabIndex = 28;
-            txbPhone.Click += txbPhone_Click;
-            txbPhone.Leave += txbPhone_Leave;
-            txbPhone.MouseLeave += txbPhone_MouseLeave;
-            txbPhone.MouseHover += txbPhone_MouseHover;
+            txbLastName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            txbLastName.AutoSize = true;
+            txbLastName.BorderColor = Color.FromArgb(52, 52, 116);
+            txbLastName.BorderRadius = 5;
+            txbLastName.Cursor = Cursors.IBeam;
+            txbLastName.CustomizableEdges = customizableEdges15;
+            txbLastName.DefaultText = "Last name";
+            txbLastName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txbLastName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txbLastName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txbLastName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txbLastName.FillColor = Color.FromArgb(52, 52, 116);
+            txbLastName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbLastName.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbLastName.ForeColor = Color.Silver;
+            txbLastName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbLastName.Location = new Point(100, 760);
+            txbLastName.Margin = new Padding(6);
+            txbLastName.Name = "txbLastName";
+            txbLastName.PlaceholderText = "";
+            txbLastName.SelectedText = "";
+            txbLastName.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txbLastName.Size = new Size(400, 50);
+            txbLastName.TabIndex = 28;
+            txbLastName.Click += txbLastName_Click;
+            txbLastName.Leave += txbLastName_Leave;
+            txbLastName.MouseLeave += txbLastName_MouseLeave;
+            txbLastName.MouseHover += txbLastName_MouseHover;
             // 
             // cbAgree
             // 
@@ -313,7 +313,7 @@
             cbAgree.CheckedState.BorderThickness = 0;
             cbAgree.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             cbAgree.Font = new Font("Microsoft Sans Serif", 11.25F);
-            cbAgree.Location = new Point(100, 865);
+            cbAgree.Location = new Point(100, 830);
             cbAgree.Name = "cbAgree";
             cbAgree.Size = new Size(21, 19);
             cbAgree.TabIndex = 31;
@@ -329,7 +329,7 @@
             lblTitle2.BackColor = Color.Transparent;
             lblTitle2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitle2.ForeColor = Color.DarkGray;
-            lblTitle2.Location = new Point(100, 375);
+            lblTitle2.Location = new Point(100, 400);
             lblTitle2.Name = "lblTitle2";
             lblTitle2.Size = new Size(320, 40);
             lblTitle2.TabIndex = 32;
@@ -342,7 +342,7 @@
             lblTitlle.BackColor = Color.Transparent;
             lblTitlle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitlle.ForeColor = Color.White;
-            lblTitlle.Location = new Point(100, 335);
+            lblTitlle.Location = new Point(100, 360);
             lblTitlle.Name = "lblTitlle";
             lblTitlle.Size = new Size(220, 33);
             lblTitlle.TabIndex = 33;
@@ -357,8 +357,8 @@
             Controls.Add(lblTitlle);
             Controls.Add(lblTitle2);
             Controls.Add(cbAgree);
-            Controls.Add(txbFullName);
-            Controls.Add(txbPhone);
+            Controls.Add(txbFirstName);
+            Controls.Add(txbLastName);
             Controls.Add(txbEmail);
             Controls.Add(txbUsername);
             Controls.Add(lblAsk);
@@ -385,8 +385,8 @@
         private Guna.UI2.WinForms.Guna2PictureBox picLogo;
         private Guna.UI2.WinForms.Guna2TextBox txbEmail;
         private Guna.UI2.WinForms.Guna2TextBox txbUsername;
-        private Guna.UI2.WinForms.Guna2TextBox txbFullName;
-        private Guna.UI2.WinForms.Guna2TextBox txbPhone;
+        private Guna.UI2.WinForms.Guna2TextBox txbFirstName;
+        private Guna.UI2.WinForms.Guna2TextBox txbLastName;
         private Guna.UI2.WinForms.Guna2CheckBox cbAgree;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitlle;

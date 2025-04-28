@@ -1,6 +1,6 @@
-﻿namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
+﻿namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
-    partial class EditPlayerForm
+    partial class AddManagerForm
     {
         /// <summary>
         /// Required designer variable.

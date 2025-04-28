@@ -17,14 +17,12 @@ namespace MANAGE_SOCCER_GAME.Views.Schedule_Management
         private int curentPage = 1;
         private int countLine = 0;
         private float totalPage = 0;
-        public MatchDetailForm()
+        public MatchDetailForm(int x = 1920, int y = 930)
         {
             InitializeComponent();
             //_bookSoldService = new BookSoldService();
             _router = new Router();
-
-
-
+            this.Size = new System.Drawing.Size(x,y);
         }
 
 

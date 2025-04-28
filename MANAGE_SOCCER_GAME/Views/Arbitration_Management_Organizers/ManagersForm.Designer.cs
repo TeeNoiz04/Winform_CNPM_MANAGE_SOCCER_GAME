@@ -1,6 +1,6 @@
 ﻿namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
-    partial class RefereeListForm
+    partial class ManagersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,22 +51,18 @@
             cbbSapXep = new ComboBox();
             pnContent = new Guna.UI2.WinForms.Guna2Panel();
             pnFooter = new Panel();
+            btnAddManager = new Guna.UI2.WinForms.Guna2Button();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
-            cbbSoDong = new ComboBox();
             lblSoDong = new Label();
-            btnTrangTruoc = new Button();
-            btnTrangKe = new Button();
+            cbbSoDong = new ComboBox();
             lblSoTrang = new Label();
-            btnAddReferee = new Guna.UI2.WinForms.Guna2Button();
+            btnTrangKe = new Button();
+            btnTrangTruoc = new Button();
             dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            TimeStamp = new DataGridViewTextBoxColumn();
-            PhuongThucGD = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            KinhNghiem = new DataGridViewTextBoxColumn();
-            Action = new DataGridViewButtonColumn();
-            Action2 = new DataGridViewButtonColumn();
+            Manager = new DataGridViewTextBoxColumn();
+            Club = new DataGridViewTextBoxColumn();
+            Nationality = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -194,23 +190,42 @@
             // 
             // pnFooter
             // 
+            pnFooter.Controls.Add(btnAddManager);
             pnFooter.Controls.Add(btnRefresh);
-            pnFooter.Controls.Add(cbbSoDong);
             pnFooter.Controls.Add(lblSoDong);
-            pnFooter.Controls.Add(btnTrangTruoc);
-            pnFooter.Controls.Add(btnTrangKe);
+            pnFooter.Controls.Add(cbbSoDong);
             pnFooter.Controls.Add(lblSoTrang);
-            pnFooter.Controls.Add(btnAddReferee);
+            pnFooter.Controls.Add(btnTrangKe);
+            pnFooter.Controls.Add(btnTrangTruoc);
             pnFooter.Dock = DockStyle.Bottom;
             pnFooter.Location = new Point(0, 560);
             pnFooter.Name = "pnFooter";
             pnFooter.Size = new Size(1520, 40);
             pnFooter.TabIndex = 18;
             // 
+            // btnAddManager
+            // 
+            btnAddManager.BorderRadius = 5;
+            btnAddManager.CustomizableEdges = customizableEdges5;
+            btnAddManager.DisabledState.BorderColor = Color.DarkGray;
+            btnAddManager.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAddManager.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAddManager.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAddManager.FillColor = Color.FromArgb(60, 211, 252);
+            btnAddManager.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddManager.ForeColor = Color.White;
+            btnAddManager.Location = new Point(1395, 5);
+            btnAddManager.Name = "btnAddManager";
+            btnAddManager.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAddManager.Size = new Size(120, 30);
+            btnAddManager.TabIndex = 34;
+            btnAddManager.Text = "Add Manager";
+            btnAddManager.Click += btnAddManager_Click;
+            // 
             // btnRefresh
             // 
             btnRefresh.BorderRadius = 5;
-            btnRefresh.CustomizableEdges = customizableEdges5;
+            btnRefresh.CustomizableEdges = customizableEdges7;
             btnRefresh.DisabledState.BorderColor = Color.DarkGray;
             btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -220,10 +235,21 @@
             btnRefresh.ForeColor = Color.White;
             btnRefresh.Location = new Point(449, 5);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnRefresh.Size = new Size(80, 30);
-            btnRefresh.TabIndex = 40;
+            btnRefresh.TabIndex = 33;
             btnRefresh.Text = "Refresh";
+            // 
+            // lblSoDong
+            // 
+            lblSoDong.AutoSize = true;
+            lblSoDong.Font = new Font("Microsoft Sans Serif", 11.25F);
+            lblSoDong.ForeColor = Color.White;
+            lblSoDong.Location = new Point(10, 11);
+            lblSoDong.Name = "lblSoDong";
+            lblSoDong.Size = new Size(89, 18);
+            lblSoDong.TabIndex = 28;
+            lblSoDong.Text = "Line number";
             // 
             // cbbSoDong
             // 
@@ -234,40 +260,7 @@
             cbbSoDong.Margin = new Padding(3, 2, 3, 2);
             cbbSoDong.Name = "cbbSoDong";
             cbbSoDong.Size = new Size(70, 26);
-            cbbSoDong.TabIndex = 36;
-            // 
-            // lblSoDong
-            // 
-            lblSoDong.AutoSize = true;
-            lblSoDong.Font = new Font("Microsoft Sans Serif", 11.25F);
-            lblSoDong.ForeColor = Color.White;
-            lblSoDong.Location = new Point(10, 11);
-            lblSoDong.Name = "lblSoDong";
-            lblSoDong.Size = new Size(89, 18);
-            lblSoDong.TabIndex = 35;
-            lblSoDong.Text = "Line number";
-            // 
-            // btnTrangTruoc
-            // 
-            btnTrangTruoc.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnTrangTruoc.Location = new Point(181, 5);
-            btnTrangTruoc.Margin = new Padding(3, 2, 3, 2);
-            btnTrangTruoc.Name = "btnTrangTruoc";
-            btnTrangTruoc.Size = new Size(100, 30);
-            btnTrangTruoc.TabIndex = 37;
-            btnTrangTruoc.Text = "Previous";
-            btnTrangTruoc.UseVisualStyleBackColor = true;
-            // 
-            // btnTrangKe
-            // 
-            btnTrangKe.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnTrangKe.Location = new Point(343, 5);
-            btnTrangKe.Margin = new Padding(3, 2, 3, 2);
-            btnTrangKe.Name = "btnTrangKe";
-            btnTrangKe.Size = new Size(100, 30);
-            btnTrangKe.TabIndex = 38;
-            btnTrangKe.Text = "Next";
-            btnTrangKe.UseVisualStyleBackColor = true;
+            cbbSoDong.TabIndex = 29;
             // 
             // lblSoTrang
             // 
@@ -276,28 +269,31 @@
             lblSoTrang.Location = new Point(287, 10);
             lblSoTrang.Name = "lblSoTrang";
             lblSoTrang.Size = new Size(50, 20);
-            lblSoTrang.TabIndex = 39;
+            lblSoTrang.TabIndex = 32;
             lblSoTrang.Text = "Page";
             lblSoTrang.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnAddReferee
+            // btnTrangKe
             // 
-            btnAddReferee.BorderRadius = 5;
-            btnAddReferee.CustomizableEdges = customizableEdges7;
-            btnAddReferee.DisabledState.BorderColor = Color.DarkGray;
-            btnAddReferee.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAddReferee.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAddReferee.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAddReferee.FillColor = Color.FromArgb(60, 211, 252);
-            btnAddReferee.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddReferee.ForeColor = Color.White;
-            btnAddReferee.Location = new Point(1405, 5);
-            btnAddReferee.Name = "btnAddReferee";
-            btnAddReferee.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnAddReferee.Size = new Size(110, 30);
-            btnAddReferee.TabIndex = 29;
-            btnAddReferee.Text = "Add Referee";
-            btnAddReferee.Click += btnAddReferee_Click;
+            btnTrangKe.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnTrangKe.Location = new Point(343, 5);
+            btnTrangKe.Margin = new Padding(3, 2, 3, 2);
+            btnTrangKe.Name = "btnTrangKe";
+            btnTrangKe.Size = new Size(100, 30);
+            btnTrangKe.TabIndex = 31;
+            btnTrangKe.Text = "Next";
+            btnTrangKe.UseVisualStyleBackColor = true;
+            // 
+            // btnTrangTruoc
+            // 
+            btnTrangTruoc.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnTrangTruoc.Location = new Point(181, 5);
+            btnTrangTruoc.Margin = new Padding(3, 2, 3, 2);
+            btnTrangTruoc.Name = "btnTrangTruoc";
+            btnTrangTruoc.Size = new Size(100, 30);
+            btnTrangTruoc.TabIndex = 30;
+            btnTrangTruoc.Text = "Previous";
+            btnTrangTruoc.UseVisualStyleBackColor = true;
             // 
             // dataGridView
             // 
@@ -313,7 +309,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Price, Username, KinhNghiem, Action, Action2 });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Manager, Club, Nationality, Status });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -361,62 +357,29 @@
             dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
-            // ID
+            // Manager
             // 
-            ID.HeaderText = "Mã trọng tài";
-            ID.Name = "ID";
+            Manager.FillWeight = 66.1519F;
+            Manager.HeaderText = "Manager";
+            Manager.Name = "Manager";
             // 
-            // TimeStamp
+            // Club
             // 
-            TimeStamp.FillWeight = 66.1519F;
-            TimeStamp.HeaderText = "Họ tên";
-            TimeStamp.Name = "TimeStamp";
+            Club.FillWeight = 66.1519F;
+            Club.HeaderText = "Club";
+            Club.Name = "Club";
             // 
-            // PhuongThucGD
+            // Nationality
             // 
-            PhuongThucGD.FillWeight = 66.1519F;
-            PhuongThucGD.HeaderText = "Ngày sinh";
-            PhuongThucGD.Name = "PhuongThucGD";
+            Nationality.HeaderText = "Nationality";
+            Nationality.Name = "Nationality";
             // 
-            // Price
+            // Status
             // 
-            Price.FillWeight = 66.1519F;
-            Price.HeaderText = "Vị trí";
-            Price.Name = "Price";
+            Status.HeaderText = "Status";
+            Status.Name = "Status";
             // 
-            // Username
-            // 
-            Username.FillWeight = 66.1519F;
-            Username.HeaderText = "Quốc tịch";
-            Username.Name = "Username";
-            Username.Resizable = DataGridViewTriState.True;
-            // 
-            // KinhNghiem
-            // 
-            KinhNghiem.HeaderText = "Kinh Nghiệm";
-            KinhNghiem.Name = "KinhNghiem";
-            // 
-            // Action
-            // 
-            Action.FillWeight = 50F;
-            Action.HeaderText = "Action";
-            Action.Name = "Action";
-            Action.Resizable = DataGridViewTriState.True;
-            Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Chi tiết";
-            Action.UseColumnTextForButtonValue = true;
-            // 
-            // Action2
-            // 
-            Action2.FillWeight = 50F;
-            Action2.HeaderText = "";
-            Action2.Name = "Action2";
-            Action2.Resizable = DataGridViewTriState.True;
-            Action2.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action2.Text = "Xóa";
-            Action2.UseColumnTextForButtonValue = true;
-            // 
-            // RefereeListForm
+            // ManagersForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -425,7 +388,7 @@
             Controls.Add(pnHeader);
             Controls.Add(pnContent);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "RefereeListForm";
+            Name = "ManagersForm";
             Text = "OrdersForm";
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
@@ -449,20 +412,16 @@
         private System.Windows.Forms.Panel pnFooter;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView;
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TimeStamp;
-        private DataGridViewTextBoxColumn PhuongThucGD;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Username;
-        private DataGridViewTextBoxColumn KinhNghiem;
-        private DataGridViewButtonColumn Action;
-        private DataGridViewButtonColumn Action2;
-        private Guna.UI2.WinForms.Guna2Button btnAddReferee;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
-        private ComboBox cbbSoDong;
         private Label lblSoDong;
-        private Button btnTrangTruoc;
-        private Button btnTrangKe;
+        private ComboBox cbbSoDong;
         private Label lblSoTrang;
+        private Button btnTrangKe;
+        private Button btnTrangTruoc;
+        private DataGridViewTextBoxColumn Manager;
+        private DataGridViewTextBoxColumn Club;
+        private DataGridViewTextBoxColumn Nationality;
+        private DataGridViewTextBoxColumn Status;
+        private Guna.UI2.WinForms.Guna2Button btnAddManager;
     }
 }

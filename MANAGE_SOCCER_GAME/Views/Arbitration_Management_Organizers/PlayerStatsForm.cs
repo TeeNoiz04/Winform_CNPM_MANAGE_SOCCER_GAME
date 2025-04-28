@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
-    public partial class RefereeListForm : Form
+    public partial class PlayerStatsForm : Form
     {
         private Router _router;
         private int curentPage = 1;
         private int countLine = 0;
         private float totalPage = 0;
-        public RefereeListForm()
+        public PlayerStatsForm()
         {
             InitializeComponent();
             //_bookSoldService = new BookSoldService();
@@ -218,13 +218,6 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadData();
-        }
-
-        private void btnAddReferee_Click(object sender, EventArgs e)
-        {
-            var formAdd = new AddRefereeForm();
-            formAdd.Location = new Point(250, 140);
-            formAdd.ShowDialog();
         }
     }
 }

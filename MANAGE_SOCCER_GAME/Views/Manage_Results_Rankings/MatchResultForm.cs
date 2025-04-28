@@ -84,7 +84,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
         // Xem chi tiết trận đấu 
         private void view_Match_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3(new MatchDetailForm());
+            _router.LoadForm3(new MatchDetailForm(1620, 930));
         }
 
         private void MatchResultForm_Load(object sender, EventArgs e)

@@ -156,6 +156,7 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             lblForgotPassword.Size = new Size(140, 19);
             lblForgotPassword.TabIndex = 5;
             lblForgotPassword.Text = "Forgot password?";
+            lblForgotPassword.Click += lblForgotPassword_Click;
             lblForgotPassword.MouseHover += lblForgotPassword_MouseHover;
             // 
             // lblContinue
