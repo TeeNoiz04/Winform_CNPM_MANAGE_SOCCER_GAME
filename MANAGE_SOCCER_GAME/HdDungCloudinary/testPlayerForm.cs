@@ -26,11 +26,11 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
 
         private async Task LoadTeamToComboBox()
         {
-            var teams = await _teamService.GetAllTeamAsync();
+            //var teams = await _teamService.GetAllTeamAsync();
 
-            cbTeam.DataSource = teams;
-            cbTeam.DisplayMember = "Name";
-            cbTeam.ValueMember = "Id";
+            //cbTeam.DataSource = teams;
+            //cbTeam.DisplayMember = "Name";
+            //cbTeam.ValueMember = "Id";
         }
 
         private async Task LoadPlayers()

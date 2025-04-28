@@ -20,6 +20,8 @@ namespace MANAGE_SOCCER_GAME.Models
         public Coach Coach { get; set; }
 
         public ICollection<Player> Player { get; set; } = new List<Player>();
-        public ICollection<MatchSchedule> MatchSchedules { get; set; }
+        public ICollection<Game> HomeGames { get; set; } = new List<Game>();
+        public ICollection<Game> AwayGames { get; set; } = new List<Game>();
+
     }
 }

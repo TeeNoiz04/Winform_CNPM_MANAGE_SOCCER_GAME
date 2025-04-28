@@ -4,6 +4,7 @@ using MANAGE_SOCCER_GAME.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MANAGE_SOCCER_GAME.Migrations
 {
     [DbContext(typeof(ManageSoccerGame))]
-    partial class ManageSoccerGameModelSnapshot : ModelSnapshot
+    [Migration("20250428122526_Remove_PlayerId_From_SoccerGame")]
+    partial class Remove_PlayerId_From_SoccerGame
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,8 +79,9 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("RoundId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Round")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("RowVersion")
                         .IsConcurrencyToken()
@@ -99,8 +103,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.HasIndex("AwayTeamId");
 
                     b.HasIndex("HomeTeamId");
-
-                    b.HasIndex("RoundId");
 
                     b.HasIndex("TeamId");
 
@@ -438,32 +440,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.ToTable("RolePermissions");
                 });
 
-            modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Round", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("TournamentId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TournamentId");
-
-                    b.ToTable("Rounds");
-                });
-
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.SoccerGame", b =>
                 {
                     b.Property<Guid>("Id")
@@ -780,12 +756,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MANAGE_SOCCER_GAME.Models.Round", "Round")
-                        .WithMany("Games")
-                        .HasForeignKey("RoundId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("MANAGE_SOCCER_GAME.Models.Team", null)
                         .WithMany("AwayGames")
                         .HasForeignKey("TeamId");
@@ -797,8 +767,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.Navigation("AwayTeam");
 
                     b.Navigation("HomeTeam");
-
-                    b.Navigation("Round");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.ImageCoacher", b =>
@@ -917,17 +885,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.Navigation("Permission");
 
                     b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Round", b =>
-                {
-                    b.HasOne("MANAGE_SOCCER_GAME.Models.Tournament", "Tournament")
-                        .WithMany("Rounds")
-                        .HasForeignKey("TournamentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tournament");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.SoccerGame", b =>
@@ -1080,11 +1037,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.Navigation("UserRoles");
                 });
 
-            modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Round", b =>
-                {
-                    b.Navigation("Games");
-                });
-
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Team", b =>
                 {
                     b.Navigation("AwayGames");
@@ -1098,8 +1050,6 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Tournament", b =>
                 {
-                    b.Navigation("Rounds");
-
                     b.Navigation("Teams");
                 });
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace MANAGE_SOCCER_GAME.Models
 {
     public class SoccerGame
@@ -14,7 +8,7 @@ namespace MANAGE_SOCCER_GAME.Models
         public string SoccerType { get; set; }
         public Guid GoalScorerId { get; set; }
         public Player GoalScorer { get; set; }
-        public Guid AssitantId { get; set; }
+        public Guid? AssitantId { get; set; }
         public Player? Assitant { get; set; }
         public Guid GameId { get; set; }
         public Game Game { get; set; }

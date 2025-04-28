@@ -17,12 +17,12 @@ namespace MANAGE_SOCCER_GAME
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             var option = new DbContextOptionsBuilder<ManageSoccerGame>()
-                        .UseSqlServer("Data Source=TEENOIZ04;Initial Catalog=Manage_soccer_game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+                        .UseSqlServer("Data Source=ThanhDanh;Initial Catalog=Manage_soccer_game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
             var context = new ManageSoccerGame(option.Options);
 
 
-            //Application.Run(new MainForm());
-            Application.Run(new TestTournamentForm(context));
+            Application.Run(new MainForm());
+            //Application.Run(new TestTournamentForm(context));
         }
     }
 }
