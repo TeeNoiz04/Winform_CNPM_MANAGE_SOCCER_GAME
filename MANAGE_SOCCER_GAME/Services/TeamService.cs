@@ -1,4 +1,5 @@
 ﻿using MANAGE_SOCCER_GAME.Data;
+using MANAGE_SOCCER_GAME.Dtos;
 using MANAGE_SOCCER_GAME.Models;
 using MANAGE_SOCCER_GAME.Utils.InputValidators;
 using Microsoft.EntityFrameworkCore;
@@ -19,22 +20,62 @@ namespace MANAGE_SOCCER_GAME.Services
         {
            await ValidateTeamAsync(team);
 
+            if (await _context.Teams.AnyAsync(t => t.Name == team.Name && t.IdTournament == team.IdTournament))
+            {
+                throw new ArgumentException("A team with the same name already exists in this tournament.", nameof(team));
+            }
+
+            if (await _context.Teams.AnyAsync(t => t.Name == team.Name && t.IdTournament == team.IdTournament && t.IdCoach == team.IdCoach))
+            {
+                throw new ArgumentException("A team with the same name and coach already exists in this tournament.", nameof(team));
+            }
+
+            if (await _context.Teams.AnyAsync(t => t.IdCoach == team.IdCoach && t.IdTournament == team.IdTournament))
+            {
+                throw new ArgumentException("A coach can only coach one team in a tournament.", nameof(team));
+            }
+
             team.Id = Guid.NewGuid();
+            team.IsDeleted = false;
             _context.Teams.Add(team);
             await _context.SaveChangesAsync();
             return team;
         }
 
-        public async Task<List<Team>> GetAllTeamAsync()
+        public async Task<List<TeamDTO>> GetAllTeamByTournamentIdAsync(Guid id)
         {
-            return await _context.Teams.Where(x => x.IsDeleted == false).ToListAsync();
+            var teams = await _context.Teams.Include(x => x.Player)
+                                        .Include(x => x.Coach)
+                                        .Include(x => x.Tournament)
+                                        .Where(x => x.IdTournament == id && x.IsDeleted == false)
+                                        .ToListAsync();
+
+            var dtos = teams.Select(c => new TeamDTO
+            {
+                Id = c.Id,
+                Name = c.Name,
+                TotalPlayers = c.Player.Count(),
+            }).ToList();
+
+            return dtos;
         }
 
-        public async Task<Team?> GetTeamByIdAsync(Guid id)
+        public async Task<TeamDTO?> GetTeamByIdAsync(Guid id)
         {
-            return await _context.Teams.Include(x => x.Player).FirstOrDefaultAsync(x => x.Id == id);
-        }
+            var team = await _context.Teams.Include(x => x.Player)
+                                        .Include(x => x.Coach)
+                                        .FirstOrDefaultAsync(x => x.Id == id);
+            if (team == null)
+                return null;    
+            var dto = new TeamDTO
+            {
+                Id = team.Id,
+                Name = team.Name,
+                TotalPlayers = team.Player.Count(),
+            };
 
+            return dto;
+        }
 
         public async Task<Team?> UpdateTeamAsync(Guid Id, Team team)
         {
@@ -67,6 +108,25 @@ namespace MANAGE_SOCCER_GAME.Services
         public async Task<bool> TeamExistsAsync(Guid id)
         {
             return await _context.Teams.AnyAsync(t => t.Id == id);
+        }
+
+        public async Task<List<TeamDTO>> SearchTeamsAsync(string keyword)
+        {
+            keyword = keyword.Trim().ToLower();
+            var teams = await _context.Teams
+                .Include(x => x.Coach)
+                .Include(x => x.Tournament)
+                .Where(t => t.Name.ToLower().Contains(keyword) && !t.IsDeleted)
+                .ToListAsync();
+
+            var dtos = teams.Select(c => new TeamDTO
+            {
+                Id = c.Id,
+                Name = c.Name,
+                TotalPlayers = c.Player.Count(),
+            }).ToList();
+
+            return dtos;
         }
 
         private async Task ValidateTeamAsync(Team team)

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MANAGE_SOCCER_GAME.Models
+﻿namespace MANAGE_SOCCER_GAME.Models
 {
     public class Tournament
     {
@@ -15,6 +9,7 @@ namespace MANAGE_SOCCER_GAME.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public ICollection<Team> Teams { get; set; } = new List<Team>();
+        public ICollection<Round> Rounds { get; set; } = new List<Round>();
 
     }
 }

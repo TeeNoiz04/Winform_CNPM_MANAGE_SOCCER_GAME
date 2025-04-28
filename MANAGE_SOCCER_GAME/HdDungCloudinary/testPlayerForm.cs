@@ -26,11 +26,11 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
 
         private async Task LoadTeamToComboBox()
         {
-            var teams = await _teamService.GetAllTeamAsync();
+            //var teams = await _teamService.GetAllTeamAsync();
 
-            cbTeam.DataSource = teams;
-            cbTeam.DisplayMember = "Name";
-            cbTeam.ValueMember = "Id";
+            //cbTeam.DataSource = teams;
+            //cbTeam.DisplayMember = "Name";
+            //cbTeam.ValueMember = "Id";
         }
 
         private async Task LoadPlayers()
@@ -72,15 +72,15 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
                     return;
                 }
 
-                txtName.Text = player.Name;
-                Ibirthdate.Value = player.BirthDate;
-                txtNumber.Text = player.Number.ToString();
-                txtPosition.Text = player.Position;
-                txtNational.Text = player.National;
-                txtStatus.Text = player.Status;
-                txtHeight.Text = player.Height.ToString();
-                txtWeight.Text = player.Weight.ToString();
-                cbTeam.SelectedValue = player.IdTeam;
+                //txtName.Text = player.Name;
+                //Ibirthdate.Value = player.BirthDate;
+                //txtNumber.Text = player.Number.ToString();
+                //txtPosition.Text = player.Position;
+                //txtNational.Text = player.National;
+                //txtStatus.Text = player.Status;
+                //txtHeight.Text = player.Height.ToString();
+                //txtWeight.Text = player.Weight.ToString();
+                //cbTeam.SelectedValue = player.IdTeam;
 
                 guid = player.Id;
                 btnUpdate.Enabled = true;

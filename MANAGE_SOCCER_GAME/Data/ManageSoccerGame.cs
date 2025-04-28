@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using MANAGE_SOCCER_GAME.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -24,7 +19,6 @@ namespace MANAGE_SOCCER_GAME.Data
         public DbSet<ImageTeam> ImageTeams { get; set; }
         public DbSet<MatchdaySquad> MatchdaySquads { get; set; }
         public DbSet<MatchOfficials> MatchOfficials { get; set; }
-        public DbSet<MatchSchedule> MatchSchedules { get; set; }
         public DbSet<PenaltyCard> PenaltyCards { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Player> Players { get; set; }
@@ -37,6 +31,7 @@ namespace MANAGE_SOCCER_GAME.Data
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Coach> Coaches { get; set; }
+        public DbSet<Round> Rounds { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -48,7 +43,7 @@ namespace MANAGE_SOCCER_GAME.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-              
+
             builder.Entity<UserRole>(userRole =>
             {
                 userRole.HasKey(ur => new { ur.UserId, ur.RoleId });
@@ -63,7 +58,9 @@ namespace MANAGE_SOCCER_GAME.Data
                     .HasForeignKey(ur => ur.RoleId)
                     .IsRequired();
             });
-            builder.Entity<RolePermission>(rp => {
+
+            builder.Entity<RolePermission>(rp =>
+            {
                 rp.HasKey(rp => new { rp.RoleId, rp.PermissionId });
                 rp.HasOne(rp => rp.Role)
                     .WithMany(r => r.RolePermissions)
@@ -77,24 +74,14 @@ namespace MANAGE_SOCCER_GAME.Data
 
             builder.Entity<MatchdaySquad>()
                 .HasKey(ms => new { ms.IdGame, ms.IdPlayer });
+
             builder.Entity<MatchdaySquad>().HasOne(ms => ms.Game)
                 .WithMany(g => g.MatchdaySquads)
                 .HasForeignKey(ms => ms.IdGame);
+
             builder.Entity<MatchdaySquad>().HasOne(ms => ms.Player).WithMany(p => p.MatchdaySquads)
                 .HasForeignKey(ms => ms.IdPlayer);
 
-
-            builder.Entity<MatchSchedule>(math =>
-            {
-                math.HasKey(m => new { m.IdTeam, m.IdGame });
-                math.HasOne(m => m.Team)
-                    .WithMany(g => g.MatchSchedules)
-                    .HasForeignKey(m => m.IdTeam);
-
-                math.HasOne(m => m.Game)
-                    .WithMany(r => r.MatchSchedules)
-                    .HasForeignKey(m => m.IdGame);
-            });
             builder.Entity<MatchOfficials>(mathOfficial =>
             {
                 mathOfficial.HasKey(m => new { m.IdGame, m.IdReferee });
@@ -105,28 +92,64 @@ namespace MANAGE_SOCCER_GAME.Data
                     .WithMany(r => r.MatchOfficials)
                     .HasForeignKey(m => m.IdReferee);
             });
+
             builder.Entity<Team>()
-           .HasOne(t => t.Coach)           
-           .WithOne(c => c.Team)           
-           .HasForeignKey<Team>(t => t.IdCoach);
+               .HasOne(t => t.Coach)
+               .WithOne(c => c.Team)
+               .HasForeignKey<Team>(t => t.IdCoach);
+
             builder.Entity<Team>(tm =>
             {
                 tm.HasKey(t => t.Id);
                 tm.HasOne(t => t.Tournament)
                     .WithMany(t => t.Teams)
                     .HasForeignKey(t => t.IdTournament);
-               
-              
             }
             );
+
             builder.Entity<Player>(p =>
             {
                 p.HasKey(p => p.Id);
                 p.HasOne(p => p.Team)
                     .WithMany(t => t.Player)
                     .HasForeignKey(p => p.IdTeam);
-               
+
             });
+
+            builder.Entity<SoccerGame>()
+                .HasOne(sg => sg.GoalScorer)
+                .WithMany()
+                .HasForeignKey(sg => sg.GoalScorerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<SoccerGame>()
+                .HasOne(sg => sg.Assitant)
+                .WithMany()
+                .HasForeignKey(sg => sg.AssitantId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Game>()
+                .HasOne(g => g.HomeTeam)
+                .WithMany()
+                .HasForeignKey(g => g.HomeTeamId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Game>()
+                .HasOne(g => g.AwayTeam)
+                .WithMany()
+                .HasForeignKey(g => g.AwayTeamId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Tournament>()
+                .HasMany(t => t.Rounds)
+                .WithOne(t => t.Tournament)
+                .HasForeignKey(t => t.TournamentId);
+
+            builder.Entity<Round>()
+                .HasMany(r => r.Games)
+                .WithOne(r => r.Round)
+                .HasForeignKey(r => r.RoundId);
+
         }
 
 
