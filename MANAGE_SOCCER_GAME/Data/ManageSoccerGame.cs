@@ -63,6 +63,7 @@ namespace MANAGE_SOCCER_GAME.Data
                     .HasForeignKey(ur => ur.RoleId)
                     .IsRequired();
             });
+
             builder.Entity<RolePermission>(rp => {
                 rp.HasKey(rp => new { rp.RoleId, rp.PermissionId });
                 rp.HasOne(rp => rp.Role)
@@ -77,9 +78,11 @@ namespace MANAGE_SOCCER_GAME.Data
 
             builder.Entity<MatchdaySquad>()
                 .HasKey(ms => new { ms.IdGame, ms.IdPlayer });
+
             builder.Entity<MatchdaySquad>().HasOne(ms => ms.Game)
                 .WithMany(g => g.MatchdaySquads)
                 .HasForeignKey(ms => ms.IdGame);
+
             builder.Entity<MatchdaySquad>().HasOne(ms => ms.Player).WithMany(p => p.MatchdaySquads)
                 .HasForeignKey(ms => ms.IdPlayer);
 
@@ -95,6 +98,7 @@ namespace MANAGE_SOCCER_GAME.Data
                     .WithMany(r => r.MatchSchedules)
                     .HasForeignKey(m => m.IdGame);
             });
+
             builder.Entity<MatchOfficials>(mathOfficial =>
             {
                 mathOfficial.HasKey(m => new { m.IdGame, m.IdReferee });
@@ -105,20 +109,21 @@ namespace MANAGE_SOCCER_GAME.Data
                     .WithMany(r => r.MatchOfficials)
                     .HasForeignKey(m => m.IdReferee);
             });
+
             builder.Entity<Team>()
-           .HasOne(t => t.Coach)           
-           .WithOne(c => c.Team)           
-           .HasForeignKey<Team>(t => t.IdCoach);
+               .HasOne(t => t.Coach)           
+               .WithOne(c => c.Team)           
+               .HasForeignKey<Team>(t => t.IdCoach);
+
             builder.Entity<Team>(tm =>
             {
                 tm.HasKey(t => t.Id);
                 tm.HasOne(t => t.Tournament)
                     .WithMany(t => t.Teams)
                     .HasForeignKey(t => t.IdTournament);
-               
-              
             }
             );
+
             builder.Entity<Player>(p =>
             {
                 p.HasKey(p => p.Id);
@@ -127,6 +132,18 @@ namespace MANAGE_SOCCER_GAME.Data
                     .HasForeignKey(p => p.IdTeam);
                
             });
+
+            builder.Entity<SoccerGame>()
+                .HasOne(sg => sg.GoalScorer)
+                .WithMany()
+                .HasForeignKey(sg => sg.GoalScorerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<SoccerGame>()
+                .HasOne(sg => sg.Assitant)
+                .WithMany()
+                .HasForeignKey(sg => sg.AssitantId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
 
