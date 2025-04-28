@@ -49,24 +49,24 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
 
         private async Task LoadTeams()
         {
-            var teams = await _teamService.GetAllTeamAsync();
-            if (teams == null || !teams.Any())
-            {
-                MessageBox.Show("No teams found.");
-                return;
-            }
-            lvTeam.Items.Clear();
+            //var teams = await _teamService.GetAllTeamAsync();
+            //if (teams == null || !teams.Any())
+            //{
+            //    MessageBox.Show("No teams found.");
+            //    return;
+            //}
+            //lvTeam.Items.Clear();
 
-            foreach (var team in teams)
-            {
-                var listItem = new ListViewItem(team.Id.ToString());
-                listItem.SubItems.Add(team.Name);
-                listItem.SubItems.Add(team.Province);
-                listItem.SubItems.Add(team.Tournament.Name);
-                listItem.SubItems.Add(team.Coach.Name);
+            //foreach (var team in teams)
+            //{
+            //    var listItem = new ListViewItem(team.Id.ToString());
+            //    listItem.SubItems.Add(team.Name);
+            //    listItem.SubItems.Add(team.Province);
+            //    listItem.SubItems.Add(team.Tournament.Name);
+            //    listItem.SubItems.Add(team.Coach.Name);
 
-                lvTeam.Items.Add(listItem);
-            }
+            //    lvTeam.Items.Add(listItem);
+            //}
         }
 
         private async void testTeamForm_Load(object sender, EventArgs e)
@@ -155,30 +155,30 @@ namespace MANAGE_SOCCER_GAME.HdDungCloudinary
 
         private async void LoadTeam(object sender, EventArgs e)
         {
-            if (lvTeam.SelectedItems.Count > 0)
-            {
-                string teamId = lvTeam.SelectedItems[0].SubItems[0].Text;
+            //if (lvTeam.SelectedItems.Count > 0)
+            //{
+            //    string teamId = lvTeam.SelectedItems[0].SubItems[0].Text;
 
-                var team = await _teamService.GetTeamByIdAsync(Guid.Parse(teamId));
-                if (team == null)
-                {
-                    MessageBox.Show("Team not found.");
-                    return;
-                }
+            //    var team = await _teamService.GetTeamByIdAsync(Guid.Parse(teamId));
+            //    if (team == null)
+            //    {
+            //        MessageBox.Show("Team not found.");
+            //        return;
+            //    }
 
-                txtName.Text = team.Name;
-                txtProvince.Text = team.Province;
-                guid = team.Id;
-                btnUpdate.Enabled = true;
-                MessageBox.Show("Selected team: " + guid);
+            //    txtName.Text = team.Name;
+            //    txtProvince.Text = team.Province;
+            //    guid = team.Id;
+            //    btnUpdate.Enabled = true;
+            //    MessageBox.Show("Selected team: " + guid);
 
-            }
-            else
-            {
-                MessageBox.Show("Chưa chọn dòng nào.");
-                btnUpdate.Enabled = false;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Chưa chọn dòng nào.");
+            //    btnUpdate.Enabled = false;
 
-            }
+            //}
         }
 
         private async void xoaToolStripMenuItem_Click(object sender, EventArgs e)

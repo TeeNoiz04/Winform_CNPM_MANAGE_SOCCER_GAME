@@ -35,8 +35,6 @@ using Microsoft.EntityFrameworkCore;
                 TeamName = c.Team != null ? c.Team.Name : "No Team",
                 Age = DateTime.Now.Year - c.BirthDate.Year - (DateTime.Now.DayOfYear < c.BirthDate.DayOfYear ? 1 : 0),
                 TotalGoals = c.SoccerGamesAsGoalscorer.Count(),
-                //
-                //TotalAssists = c.SoccerGamesAsGoalscorer.Sum(sg => sg.),
                 TotalYellowCards = c.PenaltyCards.Count(pc => pc.TypeCard == "Yellow"),
                 TotalRedCards = c.PenaltyCards.Count(pc => pc.TypeCard == "Red"),
                 TotalMatches = c.MatchdaySquads.Count()
@@ -49,11 +47,14 @@ using Microsoft.EntityFrameworkCore;
         {
             var player = await _context.Players.Include(x => x.SoccerGamesAsGoalscorer)
                                          .Include(x => x.PenaltyCards)
-                                         .Include(x => x.MatchdaySquads).FirstOrDefaultAsync(x => x.Id == id);
+                                         .Include(x => x.MatchdaySquads)
+                                         .Include(x => x.Team).FirstOrDefaultAsync(x => x.Id == id);
 
             if (player == null)
                 return null;
 
+            int totalGoals = await _context.SoccerGames.CountAsync(g => g.GoalScorerId == player.Id);
+            int totalAssists = await _context.SoccerGames.CountAsync(g => g.AssitantId == player.Id);
 
             var dto = new PlayerDTO
             {
@@ -66,7 +67,43 @@ using Microsoft.EntityFrameworkCore;
                 Age = DateTime.Now.Year - player.BirthDate.Year - (DateTime.Now.DayOfYear < player.BirthDate.DayOfYear ? 1 : 0),
                 TotalYellowCards = player.PenaltyCards.Count(pc => pc.TypeCard == "Yellow"),
                 TotalRedCards = player.PenaltyCards.Count(pc => pc.TypeCard == "Red"),
-                TotalMatches = player.MatchdaySquads.Count()
+                TotalMatches = player.MatchdaySquads.Count(),
+                TotalGoals = totalGoals,
+                TotalAssists = totalAssists,
+                TeamName = player.Team != null ? player.Team.Name : "No Team",
+            };
+
+            return dto;
+        }
+
+        public async Task<PlayerDTO?> GetPlayerByTeamIdAsync(Guid id)
+        {
+            var player = await _context.Players.Include(x => x.SoccerGamesAsGoalscorer)
+                                         .Include(x => x.PenaltyCards)
+                                         .Include(x => x.MatchdaySquads)
+                                         .Include(x => x.Team).FirstOrDefaultAsync(x => x.IdTeam == id);
+
+            if (player == null)
+                return null;
+
+            int totalGoals = await _context.SoccerGames.CountAsync(g => g.GoalScorerId == player.Id);
+            int totalAssists = await _context.SoccerGames.CountAsync(g => g.AssitantId == player.Id);
+
+            var dto = new PlayerDTO
+            {
+                Id = player.Id,
+                Number = player.Number,
+                Name = player.Name,
+                National = player.National,
+                Position = player.Position,
+                Height = player.Height,
+                Age = DateTime.Now.Year - player.BirthDate.Year - (DateTime.Now.DayOfYear < player.BirthDate.DayOfYear ? 1 : 0),
+                TotalYellowCards = player.PenaltyCards.Count(pc => pc.TypeCard == "Yellow"),
+                TotalRedCards = player.PenaltyCards.Count(pc => pc.TypeCard == "Red"),
+                TotalMatches = player.MatchdaySquads.Count(),
+                TotalGoals = totalGoals,
+                TotalAssists = totalAssists,
+                TeamName = player.Team != null ? player.Team.Name : "No Team",
             };
 
             return dto;
@@ -77,6 +114,7 @@ using Microsoft.EntityFrameworkCore;
             await ValidatePlayerAsync(player);
 
             player.Id = Guid.NewGuid();
+            player.isDeleted = false;
             _context.Players.Add(player);
             await _context.SaveChangesAsync();
             return player;
@@ -123,7 +161,7 @@ using Microsoft.EntityFrameworkCore;
 
         public async Task<List<Player>> GetPlayersByTeamIdAsync(Guid teamId)
         {
-            return await _context.Players.Where(x => x.IdTeam == teamId && x.isDeleted == false).ToListAsync();
+            return await _context.Players.Where(x => x.IdTeam == teamId && !x.isDeleted).ToListAsync();
         }
 
         public async Task<List<PlayerDTO>> SearchPlayersAsync(string keyword)
@@ -132,7 +170,7 @@ using Microsoft.EntityFrameworkCore;
             keyword = keyword.Trim().ToLower();
 
             var players = await _context.Players
-                .Where(p => p.isDeleted == false && p.Name.ToLower().Contains(keyword))
+                .Where(p => !p.isDeleted && p.Name.ToLower().Contains(keyword))
                 .Include(p => p.PenaltyCards)
                 .Include(p => p.MatchdaySquads)
                 .ToListAsync();
