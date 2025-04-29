@@ -220,6 +220,20 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         {
             _router.LoadForm3(new TeamListForm());
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var formEdit = new EditTeamForm();
+            formEdit.Location = new Point(250, 140);
+            formEdit.ShowDialog();
+        }
+
+        private void btnAddPlayer_Click(object sender, EventArgs e)
+        {
+            var formAdd = new AddPlayerForm();
+            formAdd.Location = new Point(250, 140);
+            formAdd.ShowDialog();
+        }
     }
 }
 

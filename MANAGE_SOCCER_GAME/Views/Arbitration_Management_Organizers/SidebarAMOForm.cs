@@ -68,5 +68,35 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
                 }
             }
         }
+
+        private void btnPlayerStats_Click(object sender, EventArgs e)
+        {
+            if (sender is Guna2Button button)
+            {
+                if (!button.Checked)
+                {
+                    _currentButton.Checked = false;
+                    button.Checked = true;
+                    _currentButton = button;
+
+                    _router.LoadForm3(new PlayerStatsForm());
+                }
+            }
+        }
+
+        private void btnManagers_Click(object sender, EventArgs e)
+        {
+            if (sender is Guna2Button button)
+            {
+                if (!button.Checked)
+                {
+                    _currentButton.Checked = false;
+                    button.Checked = true;
+                    _currentButton = button;
+
+                    _router.LoadForm3(new ManagersForm());
+                }
+            }
+        }
     }
 }

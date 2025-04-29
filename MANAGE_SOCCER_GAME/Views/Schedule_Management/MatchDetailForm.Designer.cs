@@ -48,6 +48,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -66,6 +70,8 @@
             lblStatus = new Label();
             pnTimeLine = new Guna.UI2.WinForms.Guna2Panel();
             btnBack = new Guna.UI2.WinForms.Guna2Button();
+            btnEditMatch = new Guna.UI2.WinForms.Guna2Button();
+            btnUpdateResults = new Guna.UI2.WinForms.Guna2Button();
             pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picTeam1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picTeam2).BeginInit();
@@ -271,6 +277,7 @@
             // 
             // pnContent
             // 
+            pnContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pnContent.Controls.Add(pnParticipant);
             pnContent.Controls.Add(pnTimeLine);
             pnContent.CustomizableEdges = customizableEdges17;
@@ -325,15 +332,54 @@
             btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnBack.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnBack.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.FillColor = Color.FromArgb(20, 44, 76);
+            btnBack.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(12, 56);
+            btnBack.Location = new Point(0, 60);
             btnBack.Name = "btnBack";
             btnBack.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btnBack.Size = new Size(55, 35);
+            btnBack.Size = new Size(60, 35);
             btnBack.TabIndex = 33;
-            btnBack.Text = "<=";
+            btnBack.Text = "<<";
             btnBack.Click += btnBack_Click;
+            // 
+            // btnEditMatch
+            // 
+            btnEditMatch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            btnEditMatch.BorderRadius = 5;
+            btnEditMatch.CustomizableEdges = customizableEdges21;
+            btnEditMatch.DisabledState.BorderColor = Color.DarkGray;
+            btnEditMatch.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEditMatch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEditMatch.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEditMatch.FillColor = Color.FromArgb(60, 211, 252);
+            btnEditMatch.Font = new Font("Segoe UI", 12F);
+            btnEditMatch.ForeColor = Color.White;
+            btnEditMatch.Location = new Point(1600, 100);
+            btnEditMatch.Name = "btnEditMatch";
+            btnEditMatch.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnEditMatch.Size = new Size(150, 40);
+            btnEditMatch.TabIndex = 34;
+            btnEditMatch.Text = "Edit Match";
+            // 
+            // btnUpdateResults
+            // 
+            btnUpdateResults.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            btnUpdateResults.BorderRadius = 5;
+            btnUpdateResults.CustomizableEdges = customizableEdges23;
+            btnUpdateResults.DisabledState.BorderColor = Color.DarkGray;
+            btnUpdateResults.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnUpdateResults.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnUpdateResults.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnUpdateResults.FillColor = Color.FromArgb(60, 211, 252);
+            btnUpdateResults.Font = new Font("Segoe UI", 12F);
+            btnUpdateResults.ForeColor = Color.White;
+            btnUpdateResults.Location = new Point(1600, 160);
+            btnUpdateResults.Name = "btnUpdateResults";
+            btnUpdateResults.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnUpdateResults.Size = new Size(150, 40);
+            btnUpdateResults.TabIndex = 35;
+            btnUpdateResults.Text = "Update Results";
             // 
             // MatchDetailForm
             // 
@@ -341,6 +387,8 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(20, 44, 76);
             ClientSize = new Size(1920, 930);
+            Controls.Add(btnUpdateResults);
+            Controls.Add(btnEditMatch);
             Controls.Add(btnBack);
             Controls.Add(pnContent);
             Controls.Add(pnHeader);
@@ -377,5 +425,7 @@
         private Guna.UI2.WinForms.Guna2Panel pnTimeLine;
         private Label lblStatus;
         private Guna.UI2.WinForms.Guna2Button btnBack;
+        private Guna.UI2.WinForms.Guna2Button btnEditMatch;
+        private Guna.UI2.WinForms.Guna2Button btnUpdateResults;
     }
 }

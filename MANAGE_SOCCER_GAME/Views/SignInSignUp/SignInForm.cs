@@ -101,5 +101,10 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
                 txbPassword.PasswordChar = '*';
             }
         }
+
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+            _router.LoadForm3(new ForgotPasswordForm());
+        }
     }
 }

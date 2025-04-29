@@ -89,7 +89,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             //dataGridView.Columns["Action2"].Width = 100;
             //dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); 
 
-            
+
 
             if (countLine > count)
             {
@@ -168,7 +168,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         {
             DataGridViewRow row = dataGridView.Rows[e.RowIndex];
             var id = row.Cells["ID"].Value.ToString();
-            // Chi tiết
+            // Edit
             if (e.ColumnIndex == dataGridView.Columns["Action"].Index && e.RowIndex >= 0)
             {
                 //var hoadonDuyet = _entities.HOADONs.FirstOrDefault(n => n.MaHD == id);
@@ -184,7 +184,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 _router.LoadForm3(new TeamDetailForm());
 
             }
-            // Xóa
+            // Delete
             else if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
             {
                 //_action.LoadDetailOrders(id);
@@ -225,6 +225,13 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btnAddTeam_Click(object sender, EventArgs e)
+        {
+            var formAdd = new AddTeamForm();
+            formAdd.Location = new Point(250, 140);
+            formAdd.ShowDialog();
         }
     }
 

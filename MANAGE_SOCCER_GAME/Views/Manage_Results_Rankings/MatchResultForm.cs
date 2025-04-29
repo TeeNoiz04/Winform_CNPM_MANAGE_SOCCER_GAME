@@ -84,7 +84,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
         // Xem chi tiết trận đấu 
         private void view_Match_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3(new MatchDetailForm());
+            _router.LoadForm3(new MatchDetailForm(1620, 930));
         }
 
         private void MatchResultForm_Load(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
         // Tạo từng vòng đấu
         void createRound()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
             {
                 Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -108,7 +108,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
                 layoutPanel.Controls.Add(titlePanel);
                 layoutPanel.Location = new Point(3, 3);
                 layoutPanel.Name = "pnLayout" + i.ToString();
-                layoutPanel.Size = new Size(832, 246);
+                layoutPanel.Size = new Size(416, 380);
                 layoutPanel.TabIndex = 27;
                 // 
                 // pnTitle
@@ -119,7 +119,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
                 titlePanel.Location = new Point(3, 3);
                 titlePanel.Name = "pnTitle" + i.ToString();
                 titlePanel.ShadowDecoration.CustomizableEdges = customizableEdges18;
-                titlePanel.Size = new Size(832, 50);
+                titlePanel.Size = new Size(410, 50);
                 titlePanel.TabIndex = 7;
                 // 
                 // lblRound
@@ -141,7 +141,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
         // Tạo từng trận đấu
         void createMatch(FlowLayoutPanel layout)
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
