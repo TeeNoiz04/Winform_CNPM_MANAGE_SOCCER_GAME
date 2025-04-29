@@ -104,7 +104,7 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
 
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3(new ForgotPasswordForm());
+            _router.LoadForm3<ForgotPasswordForm>();
         }
     }
 }

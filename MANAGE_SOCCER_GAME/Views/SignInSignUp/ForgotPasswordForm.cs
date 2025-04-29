@@ -23,7 +23,7 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
 
         private void lblAsk_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3(new SignInForm());
+            _router.LoadForm3<SignInForm>();
         }
         private void txbEmail_MouseLeave(object sender, EventArgs e)
         {

@@ -64,7 +64,7 @@ namespace MANAGE_SOCCER_GAME.Views.Schedule_Management
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3(new MatchScheduleForm());
+            _router.LoadForm3<MatchScheduleForm>();
         }
     }
 }

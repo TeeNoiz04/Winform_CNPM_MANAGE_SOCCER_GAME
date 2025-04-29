@@ -1,19 +1,17 @@
-﻿using MANAGE_SOCCER_GAME.Views;
+﻿using MANAGE_SOCCER_GAME.Data;
+using MANAGE_SOCCER_GAME.Services;
+using MANAGE_SOCCER_GAME.Views;
 using MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers;
 using MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings;
 using MANAGE_SOCCER_GAME.Views.Management_Team_Players;
 using MANAGE_SOCCER_GAME.Views.Schedule_Management;
 using MANAGE_SOCCER_GAME.Views.SignInSignUp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MANAGE_SOCCER_GAME.Utils.Routing
 {
     internal class Router
     {
+        private readonly ManageSoccerGame _context;
         private static Form? _Form1;
         private static Form? _Form2;
         private static Form? _Form3;
@@ -99,26 +97,60 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Form2.BringToFront();
         }
 
-        public void LoadForm3(Form FormChild)
+        //public void LoadForm3(Form FormChild)
+        //{
+        //    if (_Form3 != null && !_Form3.IsDisposed)
+        //    {
+        //        _Form3.Close();
+        //    }
+
+        //    // Thiết lập form mới vào ActForm
+        //    FormChild.TopLevel = false;
+        //    FormChild.FormBorderStyle = FormBorderStyle.None;
+        //    //FormChild.Dock = DockStyle.Fill;
+        //    FormChild.AutoScaleMode = AutoScaleMode.Dpi;
+
+        //    // Thêm form vào Control và hiển thị
+        //    _Form3 = FormChild;
+        //    _Control3.Controls.Add(_Form3);
+        //    _Control3.Tag = _Form3;
+        //    _Form3.Show();
+        //    _Form3.BringToFront();
+        //}
+        public void LoadForm3<T>() where T : Form
         {
+            // Kiểm tra nếu _Form3 đã được tạo ra và không bị dispose
             if (_Form3 != null && !_Form3.IsDisposed)
             {
-                _Form3.Close();
+                // Ẩn form cũ đi thay vì đóng
+                _Form3.Hide();
             }
 
-            // Thiết lập form mới vào ActForm
-            FormChild.TopLevel = false;
-            FormChild.FormBorderStyle = FormBorderStyle.None;
-            //FormChild.Dock = DockStyle.Fill;
-            FormChild.AutoScaleMode = AutoScaleMode.Dpi;
+            // Tạo form mới từ AppService
+            _Form3 = AppService.Get<T>();
 
-            // Thêm form vào Control và hiển thị
-            _Form3 = FormChild;
+            // Kiểm tra xem form mới có được tạo hay không
+            if (_Form3 == null)
+            {
+                MessageBox.Show("Không thể tạo form mới.");
+                return;
+            }
+
+            // Cấu hình form mới
+            _Form3.TopLevel = false;
+            _Form3.FormBorderStyle = FormBorderStyle.None;
+            _Form3.AutoScaleMode = AutoScaleMode.Dpi;
+
+            // Làm sạch các điều khiển hiện có trong _Control3 và thêm form mới
+            _Control3.Controls.Clear();
             _Control3.Controls.Add(_Form3);
             _Control3.Tag = _Form3;
+
+            // Hiển thị form mới
             _Form3.Show();
             _Form3.BringToFront();
         }
+
 
         public void LoadForm4(Form FormChild)
         {
@@ -153,7 +185,7 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Size = new System.Drawing.Size(600, 1080);
             _Control3.Location = new System.Drawing.Point(660, 0);
 
-            LoadForm3(new SignInForm());
+            LoadForm3<SignInForm>();
         }
 
         public void LoadSignup()
@@ -165,7 +197,7 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
 
             _Control3.Dock = DockStyle.Fill;
 
-            LoadForm3(new SignUpForm());
+            LoadForm3<SignUpForm>();
         }
 
         public void LoadHome()
@@ -178,7 +210,9 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.Fill;
 
             LoadForm1(new MenuForm());
-            LoadForm3(new HomeForm());
+            //LoadForm3(new HomeForm());
+            LoadForm3<HomeForm>();
+
         }
 
         public void LoadMTP()
@@ -191,7 +225,7 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.Fill;
 
             //LoadForm2(new SidebarMTPForm());
-            LoadForm3(new TeamListForm());
+            LoadForm3<TeamListForm>();
             //LoadForm3(new TeamDetailForm());
             //LoadForm3(new PlayerDetailForm());
         }
@@ -206,8 +240,10 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.Fill;
 
             //LoadForm2(new SidebarMTPForm());
-            LoadForm3(new MatchScheduleForm());
+            //LoadForm3(new MatchScheduleForm());
             //LoadForm3(new MatchDetailForm());
+            LoadForm3<MatchScheduleForm>();
+
         }
 
         public void LoadResult()
@@ -220,7 +256,7 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.Fill;
 
             LoadForm2(new SidebarMRRForm());
-            LoadForm3(new RankingForm());
+            LoadForm3<RankingForm>();
             //LoadForm3(new MatchResultForm());
         }
 
@@ -234,7 +270,7 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
             _Control3.Dock = DockStyle.Fill;
 
             LoadForm2(new SidebarAMOForm());
-            LoadForm3(new EmployeeListForm());
+            LoadForm3<EmployeeListForm>();
             //LoadForm3(new RefereeListForm());
         }
 

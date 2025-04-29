@@ -1,27 +1,21 @@
-﻿using MANAGE_SOCCER_GAME.Utils.Routing;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MANAGE_SOCCER_GAME.Services;
+using MANAGE_SOCCER_GAME.Utils.Routing;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
 
 namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 {
     public partial class TeamListForm : Form
     {
+        private readonly TeamService _teamService;
         private Router _router;
         private int curentPage = 1;
         private int countLine = 0;
         private float totalPage = 0;
-        public TeamListForm()
+        public TeamListForm(TeamService teamService)
         {
             InitializeComponent();
-            //_bookSoldService = new BookSoldService();
+            _teamService = teamService;
             _router = new Router();
 
             cbbSoDong.SelectedIndex = 0;
@@ -34,82 +28,79 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 btnTrangTruoc.Enabled = false;
                 btnTrangKe.Enabled = true;
             }
-
-            dataGridView.Rows.Add("kkk", "kkk", "kkk", "kkk");
-
             LoadData();
         }
 
         private async void LoadData()
         {
-            if (!string.IsNullOrWhiteSpace(txbTimKiem.Text) && txbTimKiem.Text != "Search")
-            {
-                //var fillterSearch = _viewhoadon.Where(n => n.MaHD.Contains(txbTimKiem.Text) || n.PhuongThucGD.Contains(txbTimKiem.Text) || n.TenKH.Contains(txbTimKiem.Text)).ToList();
-                //if (fillterSearch == null)
-                //{
-                //    MessageBox.Show("Không tìm thấy kết quả");
-                //    return;
-                //}
-                //_viewhoadon = fillterSearch;
-                curentPage = 1;
-            }
+            //if (!string.IsNullOrWhiteSpace(txbTimKiem.Text) && txbTimKiem.Text != "Search")
+            //{
+            //    //var fillterSearch = _viewhoadon.Where(n => n.MaHD.Contains(txbTimKiem.Text) || n.PhuongThucGD.Contains(txbTimKiem.Text) || n.TenKH.Contains(txbTimKiem.Text)).ToList();
+            //    //if (fillterSearch == null)
+            //    //{
+            //    //    MessageBox.Show("Không tìm thấy kết quả");
+            //    //    return;
+            //    //}
+            //    //_viewhoadon = fillterSearch;
+            //    curentPage = 1;
+            //}
 
             //var count = _viewhoadon.Count;
-            var count = 2;
-            countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
-            totalPage = (float)count / countLine;
-            totalPage = totalPage > (int)totalPage ? (int)totalPage + 1 : (int)totalPage;
+            //var count = 2;
+            //countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
+            //totalPage = (float)count / countLine;
+            //totalPage = totalPage > (int)totalPage ? (int)totalPage + 1 : (int)totalPage;
 
-            if (cbbCot.SelectedItem == null)
-            {
-                return;
-            }
+            //if (cbbCot.SelectedItem == null)
+            //{
+            //    return;
+            //}
 
-            var columnName = cbbCot.SelectedItem.ToString();
-            var sortOrder = cbbSapXep.SelectedItem.ToString();
-            if (sortOrder == "Tăng dần")
-            {
-                //_viewhoadon = _viewhoadon.OrderBy(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
-            }
-            else if (sortOrder == "Giảm dần")
-            {
-                //_viewhoadon = _viewhoadon.OrderByDescending(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
-            }
+            //var columnName = cbbCot.SelectedItem.ToString();
+            //var sortOrder = cbbSapXep.SelectedItem.ToString();
+            //if (sortOrder == "Tăng dần")
+            //{
+            //    //_viewhoadon = _viewhoadon.OrderBy(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
+            //}
+            //else if (sortOrder == "Giảm dần")
+            //{
+            //    //_viewhoadon = _viewhoadon.OrderByDescending(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
+            //}
 
-            dataGridView.AutoGenerateColumns = false;
-            //dataGridView.Columns["ID"].DataPropertyName = "MaHD";
-            //dataGridView.Columns["TimeStamp"].DataPropertyName = "NgayGD";
-            //dataGridView.Columns["PhuongThucGD"].DataPropertyName = "PhuongThucGD";
-            //dataGridView.Columns["Price"].DataPropertyName = "TongTien";
-            //dataGridView.Columns["Username"].DataPropertyName = "TenKH";
-            //dataGridView.Columns["IsCheck"].DataPropertyName = "IsCheck";
-            //dataGridView.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            //dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            //dataGridView.Columns["Action"].Width = 100;
-            //dataGridView.Columns["Action2"].Width = 100;
-            //dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); 
+            //dataGridView.AutoGenerateColumns = false;
+            ////dataGridView.Columns["ID"].DataPropertyName = "MaHD";
+            ////dataGridView.Columns["TimeStamp"].DataPropertyName = "NgayGD";
+            ////dataGridView.Columns["PhuongThucGD"].DataPropertyName = "PhuongThucGD";
+            ////dataGridView.Columns["Price"].DataPropertyName = "TongTien";
+            ////dataGridView.Columns["Username"].DataPropertyName = "TenKH";
+            ////dataGridView.Columns["IsCheck"].DataPropertyName = "IsCheck";
+            ////dataGridView.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+            ////dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+            ////dataGridView.Columns["Action"].Width = 100;
+            ////dataGridView.Columns["Action2"].Width = 100;
+            ////dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); 
 
 
 
-            if (countLine > count)
-            {
-                btnTrangTruoc.Enabled = false;
-                btnTrangKe.Enabled = false;
-                pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
-            }
-            else
-            {
-                if (curentPage == 1)
-                {
-                    btnTrangKe.Enabled = true;
-                }
-                pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * countLine) + 30 + pnFooter.Size.Height);
-            }
-            if (pnContent.Size.Height > this.Size.Height - pnHeader.Size.Height)
-            {
-                pnContent.Size = new Size(pnContent.Size.Width, this.Size.Height - pnHeader.Size.Height);
-            }
-            lblSoTrang.Text = $"{curentPage}/{totalPage}";
+            //if (countLine > count)
+            //{
+            //    btnTrangTruoc.Enabled = false;
+            //    btnTrangKe.Enabled = false;
+            //    pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
+            //}
+            //else
+            //{
+            //    if (curentPage == 1)
+            //    {
+            //        btnTrangKe.Enabled = true;
+            //    }
+            //    pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * countLine) + 30 + pnFooter.Size.Height);
+            //}
+            //if (pnContent.Size.Height > this.Size.Height - pnHeader.Size.Height)
+            //{
+            //    pnContent.Size = new Size(pnContent.Size.Width, this.Size.Height - pnHeader.Size.Height);
+            //}
+            //lblSoTrang.Text = $"{curentPage}/{totalPage}";
         }
 
         private void btnTrangTruoc_Click(object sender, EventArgs e)
@@ -181,7 +172,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 //    LoadData();
                 //}
 
-                _router.LoadForm3(new TeamDetailForm());
+                _router.LoadForm3<TeamDetailForm>();
 
             }
             // Delete
@@ -229,9 +220,10 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         private void btnAddTeam_Click(object sender, EventArgs e)
         {
-            var formAdd = new AddTeamForm();
-            formAdd.Location = new Point(250, 140);
-            formAdd.ShowDialog();
+            var factory = AppService.Get<Func<TournamentService, CoachService, AddTeamForm>>();
+            var form = factory(AppService.Get<TournamentService>(), AppService.Get<CoachService>());
+            form.Location = new Point(250, 140);
+            form.ShowDialog();
         }
     }
 

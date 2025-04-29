@@ -1,4 +1,5 @@
-﻿using MANAGE_SOCCER_GAME.Utils.Routing;
+﻿using MANAGE_SOCCER_GAME.Data;
+using MANAGE_SOCCER_GAME.Utils.Routing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,6 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         {
             InitializeComponent();
             _router = new Router();
-
         }
 
 
@@ -62,7 +62,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3(new TeamDetailForm());
+            _router.LoadForm3<TeamDetailForm>();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

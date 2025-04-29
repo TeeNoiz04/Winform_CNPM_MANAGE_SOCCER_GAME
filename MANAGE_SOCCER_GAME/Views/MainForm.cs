@@ -1,4 +1,5 @@
-﻿using MANAGE_SOCCER_GAME.Utils.Routing;
+﻿using MANAGE_SOCCER_GAME.Data;
+using MANAGE_SOCCER_GAME.Utils.Routing;
 using MANAGE_SOCCER_GAME.Views.SignInSignUp;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace MANAGE_SOCCER_GAME.Views
         {
             InitializeComponent();
             _router = new Router(pnContent1, pnContent2, pnContent3, pnContent4, pnAccount);
-            _router.LoadForm3(new SignInForm());
+            _router.LoadForm3<SignInForm>();
         }
 
     }

@@ -1,4 +1,6 @@
-﻿using MANAGE_SOCCER_GAME.Utils.Routing;
+﻿using MANAGE_SOCCER_GAME.Data;
+using MANAGE_SOCCER_GAME.Services;
+using MANAGE_SOCCER_GAME.Utils.Routing;
 using System.Data;
 
 namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
@@ -170,7 +172,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 //    LoadData();
                 //}
 
-                _router.LoadForm3(new PlayerDetailForm());
+                _router.LoadForm3<PlayerDetailForm>();
 
             }
             // Chi tiết
@@ -218,7 +220,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3(new TeamListForm());
+            _router.LoadForm3<TeamListForm>();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
