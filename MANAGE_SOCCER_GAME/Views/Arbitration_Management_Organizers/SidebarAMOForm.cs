@@ -34,7 +34,7 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
                     button.Checked = true;
                     _currentButton = button;
 
-                    _router.LoadForm3(new EmployeeListForm());
+                    _router.LoadForm3<EmployeeListForm>();
                 }
             }
         }
@@ -49,7 +49,7 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
                     button.Checked = true;
                     _currentButton = button;
 
-                    _router.LoadForm3(new RefereeListForm());
+                    _router.LoadForm3<RefereeListForm>();
                 }
             }
         }
@@ -64,7 +64,7 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
                     button.Checked = true;
                     _currentButton = button;
 
-                    _router.LoadForm3(new AssignRefereeForm());
+                    _router.LoadForm3<AssignRefereeForm>();
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
                     button.Checked = true;
                     _currentButton = button;
 
-                    _router.LoadForm3(new PlayerStatsForm());
+                    _router.LoadForm3<PlayerStatsForm>();
                 }
             }
         }
@@ -94,7 +94,7 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
                     button.Checked = true;
                     _currentButton = button;
 
-                    _router.LoadForm3(new ManagersForm());
+                    _router.LoadForm3<ManagersForm>();
                 }
             }
         }

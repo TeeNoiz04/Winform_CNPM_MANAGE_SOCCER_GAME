@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MANAGE_SOCCER_GAME.Data;
+using MANAGE_SOCCER_GAME.Models;
+using MANAGE_SOCCER_GAME.Services;
 
 namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 {
     public partial class AddTeamForm : Form
     {
-        public AddTeamForm()
+        private readonly TournamentService _tournamentService;
+        private readonly CoachService _coachService;
+        private IEnumerable<Tournament> _tournaments;
+        private List<Coach> _coaches;
+        public AddTeamForm(TournamentService tournamentService, CoachService coachService)
         {
             InitializeComponent();
+            _tournamentService = tournamentService;
+            _coachService = coachService;
+            _tournaments = new List<Tournament>();
+            _coaches = new List<Coach>();
         }
 
         private void txbTeamname_MouseLeave(object sender, EventArgs e)
@@ -87,7 +89,36 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txbTeamname.Text) || string.IsNullOrWhiteSpace(txbProvince.Text))
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
 
+
+
+        }
+
+        private async void AddTeamForm_Load(object sender, EventArgs e)
+        {
+            await LoadTournament();
+            await LoadCoach();
+        }
+
+        private async Task LoadTournament()
+        {
+            _tournaments = await _tournamentService.GetAllTournamentsAsync();
+            cbbTournament.DataSource = _tournaments;
+            cbbTournament.DisplayMember = "Name";
+            cbbTournament.ValueMember = "Id";
+        }
+
+        private async Task LoadCoach()
+        {
+            _coaches = await _coachService.GetAllCoachesAsync();
+            cbbCoach.DataSource = _coaches;
+            cbbCoach.DisplayMember = "Name";
+            cbbCoach.ValueMember = "Id";
         }
     }
 }

@@ -29,7 +29,7 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3(new SignUpManuallyForm());
+            _router.LoadForm3<SignUpManuallyForm>();
         }
 
         private void lblLogin_MouseHover(object sender, EventArgs e)

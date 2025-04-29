@@ -33,7 +33,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
                     button.Checked = true;
                     _currentButton = button;
 
-                    _router.LoadForm3(new RankingForm());
+                    _router.LoadForm3<RankingForm>();
                 }
             }
         }
@@ -48,7 +48,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
                     button.Checked = true;
                     _currentButton = button;
 
-                    _router.LoadForm3(new MatchResultForm());
+                    _router.LoadForm3<MatchResultForm>();
                 }
             }
         }

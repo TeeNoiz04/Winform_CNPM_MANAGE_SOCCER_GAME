@@ -498,7 +498,7 @@
             txbWeight.MouseLeave += txbWeight_MouseLeave;
             txbWeight.MouseHover += txbWeight_MouseHover;
             // 
-            // AddPlayerForm
+            // EditPlayerForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -527,7 +527,8 @@
             Controls.Add(txbFullName);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "AddPlayerForm";
+            Name = "EditPlayerForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddTeamForm";
             ((System.ComponentModel.ISupportInitialize)picAvatar).EndInit();
             ResumeLayout(false);

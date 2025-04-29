@@ -70,7 +70,7 @@
             txbProvince.BorderRadius = 5;
             txbProvince.Cursor = Cursors.IBeam;
             txbProvince.CustomizableEdges = customizableEdges1;
-            txbProvince.DefaultText = "Province";
+            txbProvince.DefaultText = "";
             txbProvince.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbProvince.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txbProvince.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -83,7 +83,7 @@
             txbProvince.Location = new Point(50, 420);
             txbProvince.Margin = new Padding(6, 5, 6, 5);
             txbProvince.Name = "txbProvince";
-            txbProvince.PlaceholderText = "";
+            txbProvince.PlaceholderText = "Province";
             txbProvince.SelectedText = "";
             txbProvince.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txbProvince.Size = new Size(400, 50);
@@ -101,7 +101,7 @@
             txbTeamname.BorderRadius = 5;
             txbTeamname.Cursor = Cursors.IBeam;
             txbTeamname.CustomizableEdges = customizableEdges3;
-            txbTeamname.DefaultText = "Team name";
+            txbTeamname.DefaultText = "";
             txbTeamname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbTeamname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txbTeamname.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -114,7 +114,7 @@
             txbTeamname.Location = new Point(50, 320);
             txbTeamname.Margin = new Padding(6);
             txbTeamname.Name = "txbTeamname";
-            txbTeamname.PlaceholderText = "";
+            txbTeamname.PlaceholderText = "Team name";
             txbTeamname.SelectedText = "";
             txbTeamname.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txbTeamname.Size = new Size(400, 50);
@@ -324,6 +324,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AddTeamForm";
             Text = "AddTeamForm";
+            Load += AddTeamForm_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

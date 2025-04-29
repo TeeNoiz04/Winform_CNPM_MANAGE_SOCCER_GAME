@@ -70,7 +70,7 @@ namespace MANAGE_SOCCER_GAME.Views.Schedule_Management
         // Xem chi tiết trận đấu 
         private void view_Match_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3(new MatchDetailForm());
+            _router.LoadForm3<MatchDetailForm>();
         }
 
         private void MatchScheduleForm_Load(object sender, EventArgs e)
