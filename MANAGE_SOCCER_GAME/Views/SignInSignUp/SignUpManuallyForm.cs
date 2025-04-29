@@ -154,60 +154,60 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             }
         }
 
-        private void txbFullName_MouseLeave(object sender, EventArgs e)
+        private void txbFirstName_MouseLeave(object sender, EventArgs e)
         {
-            txbFullName.BorderColor = Color.FromArgb(52, 52, 116);
+            txbFirstName.BorderColor = Color.FromArgb(52, 52, 116);
         }
 
-        private void txbFullName_MouseHover(object sender, EventArgs e)
+        private void txbFirstName_MouseHover(object sender, EventArgs e)
         {
-            txbFullName.BorderColor = Color.FromArgb(60, 211, 252);
+            txbFirstName.BorderColor = Color.FromArgb(60, 211, 252);
         }
 
-        private void txbFullName_Leave(object sender, EventArgs e)
+        private void txbFirstName_Leave(object sender, EventArgs e)
         {
-            if (txbFullName.Text == string.Empty)
+            if (txbFirstName.Text == string.Empty)
             {
-                txbFullName.Text = "Full name";
-                txbFullName.ForeColor = Color.Silver;
+                txbFirstName.Text = "First name";
+                txbFirstName.ForeColor = Color.Silver;
             }
         }
 
-        private void txbFullName_Click(object sender, EventArgs e)
+        private void txbFirstName_Click(object sender, EventArgs e)
         {
-            if (txbFullName.Text == "Full name")
+            if (txbFirstName.Text == "First name")
             {
-                txbFullName.Text = string.Empty;
-                txbFullName.ForeColor = Color.FromArgb(60, 211, 252);
-                txbFullName.BorderColor = Color.FromArgb(60, 211, 252);
+                txbFirstName.Text = string.Empty;
+                txbFirstName.ForeColor = Color.FromArgb(60, 211, 252);
+                txbFirstName.BorderColor = Color.FromArgb(60, 211, 252);
             }
         }
-        private void txbPhone_MouseLeave(object sender, EventArgs e)
+        private void txbLastName_MouseLeave(object sender, EventArgs e)
         {
-            txbPhone.BorderColor = Color.FromArgb(52, 52, 116);
+            txbLastName.BorderColor = Color.FromArgb(52, 52, 116);
         }
 
-        private void txbPhone_MouseHover(object sender, EventArgs e)
+        private void txbLastName_MouseHover(object sender, EventArgs e)
         {
-            txbPhone.BorderColor = Color.FromArgb(60, 211, 252);
+            txbLastName.BorderColor = Color.FromArgb(60, 211, 252);
         }
 
-        private void txbPhone_Leave(object sender, EventArgs e)
+        private void txbLastName_Leave(object sender, EventArgs e)
         {
-            if (txbPhone.Text == string.Empty)
+            if (txbLastName.Text == string.Empty)
             {
-                txbPhone.Text = "Phone number (Optional)";
-                txbPhone.ForeColor = Color.Silver;
+                txbLastName.Text = "Last name";
+                txbLastName.ForeColor = Color.Silver;
             }
         }
 
-        private void txbPhone_Click(object sender, EventArgs e)
+        private void txbLastName_Click(object sender, EventArgs e)
         {
-            if (txbPhone.Text == "Phone number (Optional)")
+            if (txbLastName.Text == "Last name")
             {
-                txbPhone.Text = string.Empty;
-                txbPhone.ForeColor = Color.FromArgb(60, 211, 252);
-                txbPhone.BorderColor = Color.FromArgb(60, 211, 252);
+                txbLastName.Text = string.Empty;
+                txbLastName.ForeColor = Color.FromArgb(60, 211, 252);
+                txbLastName.BorderColor = Color.FromArgb(60, 211, 252);
             }
         }
     }

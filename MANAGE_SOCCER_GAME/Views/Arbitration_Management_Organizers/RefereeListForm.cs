@@ -219,5 +219,12 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
         {
             LoadData();
         }
+
+        private void btnAddReferee_Click(object sender, EventArgs e)
+        {
+            var formAdd = new AddRefereeForm();
+            formAdd.Location = new Point(250, 140);
+            formAdd.ShowDialog();
+        }
     }
 }

@@ -32,14 +32,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,24 +49,24 @@
             cbbSapXep = new ComboBox();
             pnContent = new Guna.UI2.WinForms.Guna2Panel();
             pnFooter = new Panel();
+            dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             cbbSoDong = new ComboBox();
             lblSoDong = new Label();
             btnTrangTruoc = new Button();
             btnTrangKe = new Button();
             lblSoTrang = new Label();
-            dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             ID = new DataGridViewTextBoxColumn();
-            TimeStamp = new DataGridViewTextBoxColumn();
-            PhuongThucGD = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            TranHoa = new DataGridViewTextBoxColumn();
-            TranThua = new DataGridViewTextBoxColumn();
-            BanThang = new DataGridViewTextBoxColumn();
-            HieuSo = new DataGridViewTextBoxColumn();
-            Diem = new DataGridViewTextBoxColumn();
-            LichSu = new DataGridViewTextBoxColumn();
+            Team = new DataGridViewTextBoxColumn();
+            Played = new DataGridViewTextBoxColumn();
+            Won = new DataGridViewTextBoxColumn();
+            Drawn = new DataGridViewTextBoxColumn();
+            Lost = new DataGridViewTextBoxColumn();
+            GoalsFor = new DataGridViewTextBoxColumn();
+            GoalsAgainst = new DataGridViewTextBoxColumn();
+            GoalsDifference = new DataGridViewTextBoxColumn();
+            Points = new DataGridViewTextBoxColumn();
+            Form = new DataGridViewTextBoxColumn();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -103,7 +103,7 @@
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnTimKiem.Size = new Size(80, 30);
             btnTimKiem.TabIndex = 26;
-            btnTimKiem.Text = "Tìm kiếm";
+            btnTimKiem.Text = "Search";
             btnTimKiem.Click += btnTimKiem_ClickAsync;
             // 
             // txbTimKiem
@@ -149,11 +149,11 @@
             lblCot.AutoSize = true;
             lblCot.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCot.ForeColor = Color.White;
-            lblCot.Location = new Point(1457, 16);
+            lblCot.Location = new Point(1432, 16);
             lblCot.Name = "lblCot";
-            lblCot.Size = new Size(32, 18);
+            lblCot.Size = new Size(60, 18);
             lblCot.TabIndex = 10;
-            lblCot.Text = "Cột";
+            lblCot.Text = "Column";
             // 
             // lblSapXep
             // 
@@ -163,9 +163,9 @@
             lblSapXep.ForeColor = Color.White;
             lblSapXep.Location = new Point(1289, 16);
             lblSapXep.Name = "lblSapXep";
-            lblSapXep.Size = new Size(61, 18);
+            lblSapXep.Size = new Size(36, 18);
             lblSapXep.TabIndex = 8;
-            lblSapXep.Text = "Sắp xếp";
+            lblSapXep.Text = "Sort";
             // 
             // cbbSapXep
             // 
@@ -173,7 +173,7 @@
             cbbSapXep.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbbSapXep.FormattingEnabled = true;
             cbbSapXep.Items.AddRange(new object[] { "Tăng dần", "Giảm dần" });
-            cbbSapXep.Location = new Point(1356, 13);
+            cbbSapXep.Location = new Point(1331, 13);
             cbbSapXep.Margin = new Padding(3, 2, 3, 2);
             cbbSapXep.Name = "cbbSapXep";
             cbbSapXep.Size = new Size(95, 26);
@@ -185,15 +185,16 @@
             pnContent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnContent.Controls.Add(pnFooter);
             pnContent.Controls.Add(dataGridView);
-            pnContent.CustomizableEdges = customizableEdges5;
+            pnContent.CustomizableEdges = customizableEdges7;
             pnContent.Location = new Point(50, 60);
             pnContent.Name = "pnContent";
-            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges8;
             pnContent.Size = new Size(1520, 600);
             pnContent.TabIndex = 25;
             // 
             // pnFooter
             // 
+            pnFooter.Controls.Add(btnRefresh);
             pnFooter.Controls.Add(cbbSoDong);
             pnFooter.Controls.Add(lblSoDong);
             pnFooter.Controls.Add(btnTrangTruoc);
@@ -204,64 +205,6 @@
             pnFooter.Name = "pnFooter";
             pnFooter.Size = new Size(1520, 40);
             pnFooter.TabIndex = 18;
-            // 
-            // cbbSoDong
-            // 
-            cbbSoDong.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbbSoDong.FormattingEnabled = true;
-            cbbSoDong.Items.AddRange(new object[] { "10", "20", "30", "40", "50", "60", "70", "80", "90", "100" });
-            cbbSoDong.Location = new Point(80, 7);
-            cbbSoDong.Margin = new Padding(3, 2, 3, 2);
-            cbbSoDong.Name = "cbbSoDong";
-            cbbSoDong.Size = new Size(70, 26);
-            cbbSoDong.TabIndex = 3;
-            cbbSoDong.SelectedIndexChanged += cbbSoDong_SelectedIndexChanged;
-            // 
-            // lblSoDong
-            // 
-            lblSoDong.AutoSize = true;
-            lblSoDong.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSoDong.ForeColor = Color.White;
-            lblSoDong.Location = new Point(10, 10);
-            lblSoDong.Name = "lblSoDong";
-            lblSoDong.Size = new Size(64, 18);
-            lblSoDong.TabIndex = 2;
-            lblSoDong.Text = "Số dòng";
-            // 
-            // btnTrangTruoc
-            // 
-            btnTrangTruoc.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTrangTruoc.Location = new Point(156, 4);
-            btnTrangTruoc.Margin = new Padding(3, 2, 3, 2);
-            btnTrangTruoc.Name = "btnTrangTruoc";
-            btnTrangTruoc.Size = new Size(100, 30);
-            btnTrangTruoc.TabIndex = 4;
-            btnTrangTruoc.Text = "Trang Trước";
-            btnTrangTruoc.UseVisualStyleBackColor = true;
-            btnTrangTruoc.Click += btnTrangTruoc_Click;
-            // 
-            // btnTrangKe
-            // 
-            btnTrangKe.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTrangKe.Location = new Point(318, 4);
-            btnTrangKe.Margin = new Padding(3, 2, 3, 2);
-            btnTrangKe.Name = "btnTrangKe";
-            btnTrangKe.Size = new Size(100, 30);
-            btnTrangKe.TabIndex = 5;
-            btnTrangKe.Text = "Trang Kế";
-            btnTrangKe.UseVisualStyleBackColor = true;
-            btnTrangKe.Click += btnTrangKe_Click;
-            // 
-            // lblSoTrang
-            // 
-            lblSoTrang.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSoTrang.ForeColor = Color.White;
-            lblSoTrang.Location = new Point(262, 9);
-            lblSoTrang.Name = "lblSoTrang";
-            lblSoTrang.Size = new Size(50, 20);
-            lblSoTrang.TabIndex = 7;
-            lblSoTrang.Text = "Trang";
-            lblSoTrang.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // dataGridView
             // 
@@ -277,7 +220,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Price, Username, TranHoa, TranThua, BanThang, HieuSo, Diem, LichSu });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Team, Played, Won, Drawn, Lost, GoalsFor, GoalsAgainst, GoalsDifference, Points, Form });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -328,81 +271,137 @@
             // btnRefresh
             // 
             btnRefresh.BorderRadius = 5;
-            btnRefresh.CustomizableEdges = customizableEdges7;
+            btnRefresh.CustomizableEdges = customizableEdges5;
             btnRefresh.DisabledState.BorderColor = Color.DarkGray;
             btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnRefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnRefresh.FillColor = Color.FromArgb(60, 211, 252);
-            btnRefresh.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRefresh.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(50, 666);
+            btnRefresh.Location = new Point(449, 5);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRefresh.Size = new Size(80, 30);
-            btnRefresh.TabIndex = 27;
+            btnRefresh.TabIndex = 33;
             btnRefresh.Text = "Refresh";
-            btnRefresh.Click += btnRefresh_Click;
+            // 
+            // cbbSoDong
+            // 
+            cbbSoDong.Font = new Font("Microsoft Sans Serif", 11.25F);
+            cbbSoDong.FormattingEnabled = true;
+            cbbSoDong.Items.AddRange(new object[] { "10", "20", "30", "40", "50", "60", "70", "80", "90", "100" });
+            cbbSoDong.Location = new Point(105, 7);
+            cbbSoDong.Margin = new Padding(3, 2, 3, 2);
+            cbbSoDong.Name = "cbbSoDong";
+            cbbSoDong.Size = new Size(70, 26);
+            cbbSoDong.TabIndex = 29;
+            cbbSoDong.SelectedIndexChanged += cbbSoDong_SelectedIndexChanged;
+            // 
+            // lblSoDong
+            // 
+            lblSoDong.AutoSize = true;
+            lblSoDong.Font = new Font("Microsoft Sans Serif", 11.25F);
+            lblSoDong.ForeColor = Color.White;
+            lblSoDong.Location = new Point(10, 11);
+            lblSoDong.Name = "lblSoDong";
+            lblSoDong.Size = new Size(89, 18);
+            lblSoDong.TabIndex = 28;
+            lblSoDong.Text = "Line number";
+            // 
+            // btnTrangTruoc
+            // 
+            btnTrangTruoc.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnTrangTruoc.Location = new Point(181, 5);
+            btnTrangTruoc.Margin = new Padding(3, 2, 3, 2);
+            btnTrangTruoc.Name = "btnTrangTruoc";
+            btnTrangTruoc.Size = new Size(100, 30);
+            btnTrangTruoc.TabIndex = 30;
+            btnTrangTruoc.Text = "Previous";
+            btnTrangTruoc.UseVisualStyleBackColor = true;
+            btnTrangTruoc.Click += btnTrangTruoc_Click;
+            // 
+            // btnTrangKe
+            // 
+            btnTrangKe.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnTrangKe.Location = new Point(343, 5);
+            btnTrangKe.Margin = new Padding(3, 2, 3, 2);
+            btnTrangKe.Name = "btnTrangKe";
+            btnTrangKe.Size = new Size(100, 30);
+            btnTrangKe.TabIndex = 31;
+            btnTrangKe.Text = "Next";
+            btnTrangKe.UseVisualStyleBackColor = true;
+            btnTrangKe.Click += btnTrangKe_Click;
+            // 
+            // lblSoTrang
+            // 
+            lblSoTrang.Font = new Font("Microsoft Sans Serif", 11.25F);
+            lblSoTrang.ForeColor = Color.White;
+            lblSoTrang.Location = new Point(287, 10);
+            lblSoTrang.Name = "lblSoTrang";
+            lblSoTrang.Size = new Size(50, 20);
+            lblSoTrang.TabIndex = 32;
+            lblSoTrang.Text = "Page";
+            lblSoTrang.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ID
             // 
-            ID.HeaderText = "Thứ hạng";
+            ID.HeaderText = "#";
             ID.Name = "ID";
             // 
-            // TimeStamp
+            // Team
             // 
-            TimeStamp.FillWeight = 66.1519F;
-            TimeStamp.HeaderText = "Tên đội";
-            TimeStamp.Name = "TimeStamp";
+            Team.FillWeight = 66.1519F;
+            Team.HeaderText = "Team";
+            Team.Name = "Team";
             // 
-            // PhuongThucGD
+            // Played
             // 
-            PhuongThucGD.FillWeight = 66.1519F;
-            PhuongThucGD.HeaderText = "Mã đội";
-            PhuongThucGD.Name = "PhuongThucGD";
+            Played.FillWeight = 66.1519F;
+            Played.HeaderText = "Played";
+            Played.Name = "Played";
             // 
-            // Price
+            // Won
             // 
-            Price.FillWeight = 66.1519F;
-            Price.HeaderText = "Số trận";
-            Price.Name = "Price";
+            Won.FillWeight = 66.1519F;
+            Won.HeaderText = "Won";
+            Won.Name = "Won";
+            Won.Resizable = DataGridViewTriState.True;
             // 
-            // Username
+            // Drawn
             // 
-            Username.FillWeight = 66.1519F;
-            Username.HeaderText = "Trận thắng";
-            Username.Name = "Username";
-            Username.Resizable = DataGridViewTriState.True;
+            Drawn.HeaderText = "Drawn";
+            Drawn.Name = "Drawn";
             // 
-            // TranHoa
+            // Lost
             // 
-            TranHoa.HeaderText = "Trận hòa";
-            TranHoa.Name = "TranHoa";
+            Lost.HeaderText = "Lost";
+            Lost.Name = "Lost";
             // 
-            // TranThua
+            // GoalsFor
             // 
-            TranThua.HeaderText = "Trận thua";
-            TranThua.Name = "TranThua";
+            GoalsFor.HeaderText = "GF";
+            GoalsFor.Name = "GoalsFor";
             // 
-            // BanThang
+            // GoalsAgainst
             // 
-            BanThang.HeaderText = "Bàn thắng/bàn thua";
-            BanThang.Name = "BanThang";
+            GoalsAgainst.HeaderText = "GA";
+            GoalsAgainst.Name = "GoalsAgainst";
             // 
-            // HieuSo
+            // GoalsDifference
             // 
-            HieuSo.HeaderText = "Hiệu số";
-            HieuSo.Name = "HieuSo";
+            GoalsDifference.HeaderText = "GD";
+            GoalsDifference.Name = "GoalsDifference";
             // 
-            // Diem
+            // Points
             // 
-            Diem.HeaderText = "Điểm";
-            Diem.Name = "Diem";
+            Points.HeaderText = "Points";
+            Points.Name = "Points";
             // 
-            // LichSu
+            // Form
             // 
-            LichSu.HeaderText = "Lịch sử";
-            LichSu.Name = "LichSu";
+            Form.HeaderText = "Form";
+            Form.Name = "Form";
             // 
             // RankingForm
             // 
@@ -410,7 +409,6 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(20, 44, 76);
             ClientSize = new Size(1620, 1000);
-            Controls.Add(btnRefresh);
             Controls.Add(pnHeader);
             Controls.Add(pnContent);
             FormBorderStyle = FormBorderStyle.None;
@@ -436,24 +434,24 @@
         private System.Windows.Forms.ComboBox cbbSapXep;
         private Guna.UI2.WinForms.Guna2Panel pnContent;
         private System.Windows.Forms.Panel pnFooter;
-        private System.Windows.Forms.ComboBox cbbSoDong;
-        private System.Windows.Forms.Label lblSoDong;
-        private System.Windows.Forms.Button btnTrangKe;
-        private System.Windows.Forms.Label lblSoTrang;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView;
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
-        private System.Windows.Forms.Button btnTrangTruoc;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private ComboBox cbbSoDong;
+        private Label lblSoDong;
+        private Button btnTrangTruoc;
+        private Button btnTrangKe;
+        private Label lblSoTrang;
         private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TimeStamp;
-        private DataGridViewTextBoxColumn PhuongThucGD;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Username;
-        private DataGridViewTextBoxColumn TranHoa;
-        private DataGridViewTextBoxColumn TranThua;
-        private DataGridViewTextBoxColumn BanThang;
-        private DataGridViewTextBoxColumn HieuSo;
-        private DataGridViewTextBoxColumn Diem;
-        private DataGridViewTextBoxColumn LichSu;
+        private DataGridViewTextBoxColumn Team;
+        private DataGridViewTextBoxColumn Played;
+        private DataGridViewTextBoxColumn Won;
+        private DataGridViewTextBoxColumn Drawn;
+        private DataGridViewTextBoxColumn Lost;
+        private DataGridViewTextBoxColumn GoalsFor;
+        private DataGridViewTextBoxColumn GoalsAgainst;
+        private DataGridViewTextBoxColumn GoalsDifference;
+        private DataGridViewTextBoxColumn Points;
+        private DataGridViewTextBoxColumn Form;
     }
 }

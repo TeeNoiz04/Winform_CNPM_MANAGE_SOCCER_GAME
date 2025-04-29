@@ -45,11 +45,8 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignInForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            pnFooter = new Guna.UI2.WinForms.Guna2Panel();
-            lblFooter = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnLogin = new Guna.UI2.WinForms.Guna2Button();
             txbUsername = new Guna.UI2.WinForms.Guna2TextBox();
             txbPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -63,38 +60,14 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             lblAsk = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnLine = new Guna.UI2.WinForms.Guna2Panel();
             picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            pnFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             SuspendLayout();
             // 
-            // pnFooter
-            // 
-            pnFooter.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnFooter.BackColor = Color.FromArgb(52, 52, 116);
-            pnFooter.Controls.Add(lblFooter);
-            pnFooter.CustomizableEdges = customizableEdges1;
-            pnFooter.Location = new Point(0, 1000);
-            pnFooter.Name = "pnFooter";
-            pnFooter.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            pnFooter.Size = new Size(600, 80);
-            pnFooter.TabIndex = 1;
-            // 
-            // lblFooter
-            // 
-            lblFooter.AutoSize = false;
-            lblFooter.BackColor = Color.Transparent;
-            lblFooter.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFooter.ForeColor = Color.White;
-            lblFooter.Location = new Point(246, 24);
-            lblFooter.Name = "lblFooter";
-            lblFooter.Size = new Size(122, 35);
-            lblFooter.TabIndex = 13;
-            lblFooter.Text = "MAY 63";
-            // 
             // btnLogin
             // 
+            btnLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnLogin.BorderRadius = 10;
-            btnLogin.CustomizableEdges = customizableEdges3;
+            btnLogin.CustomizableEdges = customizableEdges1;
             btnLogin.DisabledState.BorderColor = Color.DarkGray;
             btnLogin.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLogin.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -102,9 +75,9 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             btnLogin.FillColor = Color.FromArgb(60, 211, 252);
             btnLogin.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(100, 500);
+            btnLogin.Location = new Point(100, 520);
             btnLogin.Name = "btnLogin";
-            btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnLogin.Size = new Size(400, 45);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Log in";
@@ -112,11 +85,12 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             // 
             // txbUsername
             // 
+            txbUsername.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txbUsername.AutoSize = true;
             txbUsername.BorderColor = Color.FromArgb(52, 52, 116);
             txbUsername.BorderRadius = 5;
             txbUsername.Cursor = Cursors.IBeam;
-            txbUsername.CustomizableEdges = customizableEdges5;
+            txbUsername.CustomizableEdges = customizableEdges3;
             txbUsername.DefaultText = "Email or Username";
             txbUsername.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbUsername.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -127,12 +101,12 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             txbUsername.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbUsername.ForeColor = Color.Silver;
             txbUsername.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbUsername.Location = new Point(100, 370);
+            txbUsername.Location = new Point(100, 390);
             txbUsername.Margin = new Padding(6);
             txbUsername.Name = "txbUsername";
             txbUsername.PlaceholderText = "";
             txbUsername.SelectedText = "";
-            txbUsername.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txbUsername.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txbUsername.Size = new Size(400, 50);
             txbUsername.TabIndex = 3;
             txbUsername.Click += txbUserName_Click;
@@ -142,10 +116,11 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             // 
             // txbPassword
             // 
+            txbPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txbPassword.BorderColor = Color.FromArgb(52, 52, 116);
             txbPassword.BorderRadius = 5;
             txbPassword.Cursor = Cursors.IBeam;
-            txbPassword.CustomizableEdges = customizableEdges7;
+            txbPassword.CustomizableEdges = customizableEdges5;
             txbPassword.DefaultText = "Password";
             txbPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -156,12 +131,12 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             txbPassword.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbPassword.ForeColor = Color.Silver;
             txbPassword.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbPassword.Location = new Point(100, 430);
+            txbPassword.Location = new Point(100, 450);
             txbPassword.Margin = new Padding(6, 5, 6, 5);
             txbPassword.Name = "txbPassword";
             txbPassword.PlaceholderText = "";
             txbPassword.SelectedText = "";
-            txbPassword.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txbPassword.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txbPassword.Size = new Size(400, 50);
             txbPassword.TabIndex = 4;
             txbPassword.Click += txbPassword_Click;
@@ -171,24 +146,27 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             // 
             // lblForgotPassword
             // 
+            lblForgotPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lblForgotPassword.AutoSize = false;
             lblForgotPassword.BackColor = Color.Transparent;
             lblForgotPassword.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblForgotPassword.ForeColor = Color.FromArgb(60, 211, 252);
-            lblForgotPassword.Location = new Point(230, 575);
+            lblForgotPassword.Location = new Point(230, 595);
             lblForgotPassword.Name = "lblForgotPassword";
             lblForgotPassword.Size = new Size(140, 19);
             lblForgotPassword.TabIndex = 5;
             lblForgotPassword.Text = "Forgot password?";
+            lblForgotPassword.Click += lblForgotPassword_Click;
             lblForgotPassword.MouseHover += lblForgotPassword_MouseHover;
             // 
             // lblContinue
             // 
+            lblContinue.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lblContinue.AutoSize = false;
             lblContinue.BackColor = Color.FromArgb(20, 44, 76);
             lblContinue.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblContinue.ForeColor = Color.DarkGray;
-            lblContinue.Location = new Point(238, 625);
+            lblContinue.Location = new Point(238, 645);
             lblContinue.Name = "lblContinue";
             lblContinue.Size = new Size(123, 19);
             lblContinue.TabIndex = 6;
@@ -196,11 +174,12 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             // 
             // lblAskCreate
             // 
+            lblAskCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lblAskCreate.AutoSize = false;
             lblAskCreate.BackColor = Color.Transparent;
             lblAskCreate.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAskCreate.ForeColor = Color.DarkGray;
-            lblAskCreate.Location = new Point(154, 725);
+            lblAskCreate.Location = new Point(154, 745);
             lblAskCreate.Name = "lblAskCreate";
             lblAskCreate.Size = new Size(181, 19);
             lblAskCreate.TabIndex = 7;
@@ -208,11 +187,12 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             // 
             // lblCreateAccount
             // 
+            lblCreateAccount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lblCreateAccount.AutoSize = false;
             lblCreateAccount.BackColor = Color.Transparent;
             lblCreateAccount.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCreateAccount.ForeColor = Color.FromArgb(60, 211, 252);
-            lblCreateAccount.Location = new Point(341, 725);
+            lblCreateAccount.Location = new Point(341, 745);
             lblCreateAccount.Name = "lblCreateAccount";
             lblCreateAccount.Size = new Size(104, 19);
             lblCreateAccount.TabIndex = 8;
@@ -222,9 +202,10 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             // 
             // btnFB
             // 
+            btnFB.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnFB.BackColor = Color.FromArgb(20, 44, 76);
             btnFB.BorderRadius = 10;
-            btnFB.CustomizableEdges = customizableEdges9;
+            btnFB.CustomizableEdges = customizableEdges7;
             btnFB.DisabledState.BorderColor = Color.DarkGray;
             btnFB.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFB.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -232,17 +213,18 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             btnFB.FillColor = Color.FromArgb(52, 52, 116);
             btnFB.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFB.ForeColor = Color.White;
-            btnFB.Location = new Point(100, 660);
+            btnFB.Location = new Point(100, 680);
             btnFB.Name = "btnFB";
-            btnFB.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnFB.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnFB.Size = new Size(120, 35);
             btnFB.TabIndex = 9;
             btnFB.Text = "Facebook";
             // 
             // btnApple
             // 
+            btnApple.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnApple.BorderRadius = 10;
-            btnApple.CustomizableEdges = customizableEdges11;
+            btnApple.CustomizableEdges = customizableEdges9;
             btnApple.DisabledState.BorderColor = Color.DarkGray;
             btnApple.DisabledState.CustomBorderColor = Color.DarkGray;
             btnApple.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -250,17 +232,18 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             btnApple.FillColor = Color.FromArgb(52, 52, 116);
             btnApple.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnApple.ForeColor = Color.White;
-            btnApple.Location = new Point(380, 660);
+            btnApple.Location = new Point(380, 680);
             btnApple.Name = "btnApple";
-            btnApple.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnApple.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnApple.Size = new Size(120, 35);
             btnApple.TabIndex = 10;
             btnApple.Text = "Apple";
             // 
             // btnGG
             // 
+            btnGG.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnGG.BorderRadius = 10;
-            btnGG.CustomizableEdges = customizableEdges13;
+            btnGG.CustomizableEdges = customizableEdges11;
             btnGG.DisabledState.BorderColor = Color.DarkGray;
             btnGG.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGG.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -268,20 +251,21 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             btnGG.FillColor = Color.FromArgb(52, 52, 116);
             btnGG.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGG.ForeColor = Color.White;
-            btnGG.Location = new Point(240, 660);
+            btnGG.Location = new Point(240, 680);
             btnGG.Name = "btnGG";
-            btnGG.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnGG.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnGG.Size = new Size(120, 35);
             btnGG.TabIndex = 11;
             btnGG.Text = "Google";
             // 
             // lblAsk
             // 
+            lblAsk.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lblAsk.AutoSize = false;
             lblAsk.BackColor = Color.Transparent;
             lblAsk.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAsk.ForeColor = Color.DarkGray;
-            lblAsk.Location = new Point(209, 330);
+            lblAsk.Location = new Point(209, 350);
             lblAsk.Name = "lblAsk";
             lblAsk.Size = new Size(181, 19);
             lblAsk.TabIndex = 12;
@@ -289,26 +273,29 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             // 
             // pnLine
             // 
+            pnLine.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pnLine.BorderColor = Color.Gray;
             pnLine.BorderThickness = 1;
-            pnLine.CustomizableEdges = customizableEdges15;
+            pnLine.CustomizableEdges = customizableEdges13;
             pnLine.FillColor = Color.Gray;
             pnLine.ForeColor = Color.DarkGray;
-            pnLine.Location = new Point(100, 635);
+            pnLine.Location = new Point(100, 655);
             pnLine.Name = "pnLine";
-            pnLine.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            pnLine.ShadowDecoration.CustomizableEdges = customizableEdges14;
             pnLine.Size = new Size(400, 1);
             pnLine.TabIndex = 13;
             // 
             // picLogo
             // 
+            picLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             picLogo.BackgroundImageLayout = ImageLayout.Zoom;
-            picLogo.CustomizableEdges = customizableEdges17;
+            picLogo.CustomizableEdges = customizableEdges15;
+            picLogo.Image = (Image)resources.GetObject("picLogo.Image");
             picLogo.ImageRotate = 0F;
-            picLogo.Location = new Point(0, 150);
+            picLogo.Location = new Point(225, 170);
             picLogo.Name = "picLogo";
-            picLogo.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            picLogo.Size = new Size(600, 140);
+            picLogo.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            picLogo.Size = new Size(150, 150);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
@@ -331,12 +318,10 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
             Controls.Add(txbPassword);
             Controls.Add(txbUsername);
             Controls.Add(btnLogin);
-            Controls.Add(pnFooter);
             Controls.Add(picLogo);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SignInForm";
             Text = "LoginForm";
-            pnFooter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -346,7 +331,6 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
         #endregion
 
         private Guna.UI2.WinForms.Guna2PictureBox picLogo;
-        private Guna.UI2.WinForms.Guna2Panel pnFooter;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private Guna.UI2.WinForms.Guna2TextBox txbUsername;
         private Guna.UI2.WinForms.Guna2TextBox txbPassword;
@@ -358,7 +342,6 @@ namespace MANAGE_SOCCER_GAME.Views.SignInSignUp
         private Guna.UI2.WinForms.Guna2Button btnApple;
         private Guna.UI2.WinForms.Guna2Button btnGG;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAsk;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblFooter;
         private Guna.UI2.WinForms.Guna2Panel pnLine;
     }
 }

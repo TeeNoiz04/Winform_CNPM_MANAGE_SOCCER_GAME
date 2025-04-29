@@ -49,7 +49,7 @@
             btnResult.FillColor = Color.FromArgb(31, 70, 121);
             btnResult.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnResult.ForeColor = Color.White;
-            btnResult.Location = new Point(30, 121);
+            btnResult.Location = new Point(30, 125);
             btnResult.Name = "btnResult";
             btnResult.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnResult.Size = new Size(235, 45);
@@ -83,7 +83,7 @@
             btnRanking.FillColor = Color.FromArgb(31, 70, 121);
             btnRanking.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRanking.ForeColor = Color.White;
-            btnRanking.Location = new Point(30, 76);
+            btnRanking.Location = new Point(30, 80);
             btnRanking.Name = "btnRanking";
             btnRanking.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnRanking.Size = new Size(235, 45);

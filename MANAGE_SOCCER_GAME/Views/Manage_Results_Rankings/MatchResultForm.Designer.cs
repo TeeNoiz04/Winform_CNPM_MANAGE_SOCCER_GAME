@@ -177,9 +177,9 @@
             // 
             pnLayoutMain.AutoScroll = true;
             pnLayoutMain.Controls.Add(pnLayout);
-            pnLayoutMain.Location = new Point(122, 63);
+            pnLayoutMain.Location = new Point(175, 60);
             pnLayoutMain.Name = "pnLayoutMain";
-            pnLayoutMain.Size = new Size(1765, 855);
+            pnLayoutMain.Size = new Size(1270, 855);
             pnLayoutMain.TabIndex = 25;
             // 
             // pnLayout
@@ -188,7 +188,7 @@
             pnLayout.Controls.Add(pnContent);
             pnLayout.Location = new Point(3, 3);
             pnLayout.Name = "pnLayout";
-            pnLayout.Size = new Size(832, 246);
+            pnLayout.Size = new Size(416, 380);
             pnLayout.TabIndex = 27;
             // 
             // pnTitle
@@ -199,7 +199,7 @@
             pnTitle.Location = new Point(3, 3);
             pnTitle.Name = "pnTitle";
             pnTitle.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            pnTitle.Size = new Size(832, 50);
+            pnTitle.Size = new Size(410, 50);
             pnTitle.TabIndex = 7;
             // 
             // lblRound

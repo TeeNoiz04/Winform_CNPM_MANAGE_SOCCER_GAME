@@ -34,10 +34,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnAssignReferee = new Guna.UI2.WinForms.Guna2Button();
             lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnEmployee = new Guna.UI2.WinForms.Guna2Button();
             btnReferee = new Guna.UI2.WinForms.Guna2Button();
+            btnPlayerStats = new Guna.UI2.WinForms.Guna2Button();
+            btnManagers = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // btnAssignReferee
@@ -52,7 +58,7 @@
             btnAssignReferee.FillColor = Color.FromArgb(31, 70, 121);
             btnAssignReferee.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAssignReferee.ForeColor = Color.White;
-            btnAssignReferee.Location = new Point(30, 166);
+            btnAssignReferee.Location = new Point(30, 170);
             btnAssignReferee.Name = "btnAssignReferee";
             btnAssignReferee.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnAssignReferee.Size = new Size(235, 45);
@@ -86,7 +92,7 @@
             btnEmployee.FillColor = Color.FromArgb(31, 70, 121);
             btnEmployee.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEmployee.ForeColor = Color.White;
-            btnEmployee.Location = new Point(30, 76);
+            btnEmployee.Location = new Point(30, 80);
             btnEmployee.Name = "btnEmployee";
             btnEmployee.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnEmployee.Size = new Size(235, 45);
@@ -107,7 +113,7 @@
             btnReferee.FillColor = Color.FromArgb(31, 70, 121);
             btnReferee.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReferee.ForeColor = Color.White;
-            btnReferee.Location = new Point(30, 121);
+            btnReferee.Location = new Point(30, 125);
             btnReferee.Name = "btnReferee";
             btnReferee.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnReferee.Size = new Size(235, 45);
@@ -116,12 +122,56 @@
             btnReferee.TextAlign = HorizontalAlignment.Left;
             btnReferee.Click += btnRefereeList_Click;
             // 
+            // btnPlayerStats
+            // 
+            btnPlayerStats.BorderRadius = 15;
+            btnPlayerStats.CheckedState.FillColor = Color.FromArgb(60, 211, 252);
+            btnPlayerStats.CustomizableEdges = customizableEdges7;
+            btnPlayerStats.DisabledState.BorderColor = Color.DarkGray;
+            btnPlayerStats.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnPlayerStats.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnPlayerStats.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnPlayerStats.FillColor = Color.FromArgb(31, 70, 121);
+            btnPlayerStats.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPlayerStats.ForeColor = Color.White;
+            btnPlayerStats.Location = new Point(30, 215);
+            btnPlayerStats.Name = "btnPlayerStats";
+            btnPlayerStats.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnPlayerStats.Size = new Size(235, 45);
+            btnPlayerStats.TabIndex = 25;
+            btnPlayerStats.Text = "Player Stats";
+            btnPlayerStats.TextAlign = HorizontalAlignment.Left;
+            btnPlayerStats.Click += btnPlayerStats_Click;
+            // 
+            // btnManagers
+            // 
+            btnManagers.BorderRadius = 15;
+            btnManagers.CheckedState.FillColor = Color.FromArgb(60, 211, 252);
+            btnManagers.CustomizableEdges = customizableEdges9;
+            btnManagers.DisabledState.BorderColor = Color.DarkGray;
+            btnManagers.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnManagers.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnManagers.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnManagers.FillColor = Color.FromArgb(31, 70, 121);
+            btnManagers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnManagers.ForeColor = Color.White;
+            btnManagers.Location = new Point(30, 260);
+            btnManagers.Name = "btnManagers";
+            btnManagers.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnManagers.Size = new Size(235, 45);
+            btnManagers.TabIndex = 26;
+            btnManagers.Text = "Managers";
+            btnManagers.TextAlign = HorizontalAlignment.Left;
+            btnManagers.Click += btnManagers_Click;
+            // 
             // SidebarAMOForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(31, 70, 121);
             ClientSize = new Size(300, 930);
+            Controls.Add(btnManagers);
+            Controls.Add(btnPlayerStats);
             Controls.Add(btnReferee);
             Controls.Add(btnAssignReferee);
             Controls.Add(lblTitle);
@@ -139,5 +189,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
         private Guna.UI2.WinForms.Guna2Button btnEmployee;
         private Guna.UI2.WinForms.Guna2Button btnReferee;
+        private Guna.UI2.WinForms.Guna2Button btnPlayerStats;
+        private Guna.UI2.WinForms.Guna2Button btnManagers;
     }
 }

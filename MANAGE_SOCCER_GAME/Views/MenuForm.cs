@@ -38,16 +38,16 @@ namespace MANAGE_SOCCER_GAME.Views
 
         private void btnShowPnAccount_Click(object sender, EventArgs e)
         {
-            //_router.LoadAccount();
+            _router.LoadAccount();
         }
 
         private void btnTeam_Click(object sender, EventArgs e)
         {
-            if (!btnTeam.Checked)
+            if (!btnClubs.Checked)
             {
                 _curentButton.Checked = false;
-                btnTeam.Checked = true;
-                _curentButton = btnTeam;
+                btnClubs.Checked = true;
+                _curentButton = btnClubs;
                 _router.LoadMTP();
             }
         }
