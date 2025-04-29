@@ -34,6 +34,10 @@ namespace MANAGE_SOCCER_GAME.Services
 
             existingGame.DateStart = game.DateStart;
             existingGame.TimeStart = game.TimeStart;
+            existingGame.HomeTeamId = game.HomeTeamId;
+            existingGame.AwayTeamId = game.AwayTeamId;
+            existingGame.RoundId = game.RoundId;
+
             await _context.SaveChangesAsync();
             return game;
         }
