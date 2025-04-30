@@ -48,6 +48,7 @@ namespace MANAGE_SOCCER_GAME
             services.AddScoped<ManagersForm>();
             services.AddScoped<ForgotPasswordForm>();
             services.AddScoped<MatchDetailForm>();
+            services.AddScoped<TourmentForm>();
 
 
             services.AddScoped<Func<TournamentService, CoachService, AddTeamForm>>(

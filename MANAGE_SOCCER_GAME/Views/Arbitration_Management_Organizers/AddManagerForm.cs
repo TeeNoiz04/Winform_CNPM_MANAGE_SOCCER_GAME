@@ -45,62 +45,6 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             }
         }
 
-        private void txbBirthDate_MouseLeave(object sender, EventArgs e)
-        {
-            txbBirthDate.BorderColor = Color.FromArgb(52, 52, 116);
-        }
-
-        private void txbBirthDate_MouseHover(object sender, EventArgs e)
-        {
-            txbBirthDate.BorderColor = Color.FromArgb(60, 211, 252);
-        }
-
-        private void txbBirthDate_Leave(object sender, EventArgs e)
-        {
-            if (txbBirthDate.Text == string.Empty)
-            {
-                txbBirthDate.Text = "BirthDate";
-                txbBirthDate.ForeColor = Color.Silver;
-            }
-        }
-
-        private void txbBirthDate_Click(object sender, EventArgs e)
-        {
-            if (txbBirthDate.Text == "BirthDate")
-            {
-                txbBirthDate.Text = string.Empty;
-                txbBirthDate.ForeColor = Color.FromArgb(60, 211, 252);
-                txbBirthDate.BorderColor = Color.FromArgb(60, 211, 252);
-            }
-        }
-        private void txbPosition_MouseLeave(object sender, EventArgs e)
-        {
-            txbPosition.BorderColor = Color.FromArgb(52, 52, 116);
-        }
-
-        private void txbPosition_MouseHover(object sender, EventArgs e)
-        {
-            txbPosition.BorderColor = Color.FromArgb(60, 211, 252);
-        }
-
-        private void txbPosition_Leave(object sender, EventArgs e)
-        {
-            if (txbPosition.Text == string.Empty)
-            {
-                txbPosition.Text = "Position";
-                txbPosition.ForeColor = Color.Silver;
-            }
-        }
-
-        private void txbPosition_Click(object sender, EventArgs e)
-        {
-            if (txbPosition.Text == "Position")
-            {
-                txbPosition.Text = string.Empty;
-                txbPosition.ForeColor = Color.FromArgb(60, 211, 252);
-                txbPosition.BorderColor = Color.FromArgb(60, 211, 252);
-            }
-        }
         private void txbNumber_MouseLeave(object sender, EventArgs e)
         {
             txbNumber.BorderColor = Color.FromArgb(52, 52, 116);
@@ -157,60 +101,33 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
                 txbNational.BorderColor = Color.FromArgb(60, 211, 252);
             }
         }
-        private void txbWeight_MouseLeave(object sender, EventArgs e)
-        {
-            txbWeight.BorderColor = Color.FromArgb(52, 52, 116);
-        }
 
-        private void txbWeight_MouseHover(object sender, EventArgs e)
-        {
-            txbWeight.BorderColor = Color.FromArgb(60, 211, 252);
-        }
-
-        private void txbWeight_Leave(object sender, EventArgs e)
-        {
-            if (txbWeight.Text == string.Empty)
-            {
-                txbWeight.Text = "Weight";
-                txbWeight.ForeColor = Color.Silver;
-            }
-        }
-
-        private void txbWeight_Click(object sender, EventArgs e)
-        {
-            if (txbWeight.Text == "Weight")
-            {
-                txbWeight.Text = string.Empty;
-                txbWeight.ForeColor = Color.FromArgb(60, 211, 252);
-                txbWeight.BorderColor = Color.FromArgb(60, 211, 252);
-            }
-        }
         private void txbHeight_MouseLeave(object sender, EventArgs e)
         {
-            txbHeight.BorderColor = Color.FromArgb(52, 52, 116);
+            txbEmail.BorderColor = Color.FromArgb(52, 52, 116);
         }
 
         private void txbHeight_MouseHover(object sender, EventArgs e)
         {
-            txbHeight.BorderColor = Color.FromArgb(60, 211, 252);
+            txbEmail.BorderColor = Color.FromArgb(60, 211, 252);
         }
 
         private void txbHeight_Leave(object sender, EventArgs e)
         {
-            if (txbHeight.Text == string.Empty)
+            if (txbEmail.Text == string.Empty)
             {
-                txbHeight.Text = "Height";
-                txbHeight.ForeColor = Color.Silver;
+                txbEmail.Text = "Email";
+                txbEmail.ForeColor = Color.Silver;
             }
         }
 
         private void txbHeight_Click(object sender, EventArgs e)
         {
-            if (txbHeight.Text == "Height")
+            if (txbEmail.Text == "Email")
             {
-                txbHeight.Text = string.Empty;
-                txbHeight.ForeColor = Color.FromArgb(60, 211, 252);
-                txbHeight.BorderColor = Color.FromArgb(60, 211, 252);
+                txbEmail.Text = string.Empty;
+                txbEmail.ForeColor = Color.FromArgb(60, 211, 252);
+                txbEmail.BorderColor = Color.FromArgb(60, 211, 252);
             }
         }
         private void btnCancel_Click(object sender, EventArgs e)
