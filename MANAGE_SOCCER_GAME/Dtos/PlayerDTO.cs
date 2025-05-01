@@ -12,9 +12,9 @@
         public int TotalAssists { get; set; }
         public float Height { get; set; }
         public string? TeamName { get; set; }
-
         public int TotalYellowCards { get; set; }
         public int TotalRedCards { get; set; }
         public int TotalMatches { get; set; }
+        public Guid? TeamId { get; set; }
     }
 }

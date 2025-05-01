@@ -8,13 +8,15 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
     {
         private readonly TournamentService _tournamentService;
         private readonly CoachService _coachService;
+        private readonly TeamService _teamService;
         private IEnumerable<Tournament> _tournaments;
         private List<Coach> _coaches;
-        public AddTeamForm(TournamentService tournamentService, CoachService coachService)
+        public AddTeamForm(TournamentService tournamentService, CoachService coachService, TeamService teamService)
         {
             InitializeComponent();
             _tournamentService = tournamentService;
             _coachService = coachService;
+            _teamService = teamService;
             _tournaments = new List<Tournament>();
             _coaches = new List<Coach>();
         }
@@ -87,16 +89,35 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private async void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txbTeamname.Text) || string.IsNullOrWhiteSpace(txbProvince.Text))
-            {
-                MessageBox.Show("Please fill in all fields.");
+            if (!ValidateTeamInput())
                 return;
+
+            if (MessageBox.Show("Bạn có chắc chắn muốn thêm đội này?", "Xác nhận", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+
+            var team = new Team
+            {
+                Name = txbTeamname.Text.Trim(),
+                Province = txbProvince.Text.Trim(),
+                IdTournament = (Guid)cbbTournament.SelectedValue,
+                IdCoach = (Guid)cbbCoach.SelectedValue,
+                IdImage = null
+            };
+
+            try
+            {
+                var savedCourse = await _teamService.CreateTeamAsync(team);
+
+
+                AppService.ShowSuccess("Thêm đội thành công!");
+                this.Close();
             }
-
-
-
+            catch (Exception ex)
+            {
+                AppService.ShowError("Lỗi khi thêm đội: " + ex.Message);
+            }
         }
 
         private async void AddTeamForm_Load(object sender, EventArgs e)
@@ -119,6 +140,14 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             cbbCoach.DataSource = _coaches;
             cbbCoach.DisplayMember = "Name";
             cbbCoach.ValueMember = "Id";
+        }
+
+        private bool ValidateTeamInput()
+        {
+            if (AppService.IsEmptyInput(txbTeamname, txbProvince))
+                return false;
+
+            return true;
         }
     }
 }

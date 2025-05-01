@@ -88,6 +88,7 @@
             txbProvince.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txbProvince.Size = new Size(400, 50);
             txbProvince.TabIndex = 34;
+            txbProvince.Tag = "Province";
             txbProvince.Click += txbProvince_Click;
             txbProvince.Leave += txbProvince_Leave;
             txbProvince.MouseLeave += txbProvince_MouseLeave;
@@ -119,6 +120,7 @@
             txbTeamname.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txbTeamname.Size = new Size(400, 50);
             txbTeamname.TabIndex = 33;
+            txbTeamname.Tag = "Team Name";
             txbTeamname.Click += txbTeamname_Click;
             txbTeamname.Leave += txbTeamname_Leave;
             txbTeamname.MouseLeave += txbTeamname_MouseLeave;

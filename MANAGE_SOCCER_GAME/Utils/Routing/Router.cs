@@ -119,34 +119,52 @@ namespace MANAGE_SOCCER_GAME.Utils.Routing
         //}
         public void LoadForm3<T>() where T : Form
         {
-            // Kiểm tra nếu _Form3 đã được tạo ra và không bị dispose
             if (_Form3 != null && !_Form3.IsDisposed)
             {
-                // Ẩn form cũ đi thay vì đóng
                 _Form3.Hide();
             }
 
-            // Tạo form mới từ AppService
             _Form3 = AppService.Get<T>();
 
-            // Kiểm tra xem form mới có được tạo hay không
             if (_Form3 == null)
             {
                 MessageBox.Show("Không thể tạo form mới.");
                 return;
             }
 
-            // Cấu hình form mới
             _Form3.TopLevel = false;
             _Form3.FormBorderStyle = FormBorderStyle.None;
             _Form3.AutoScaleMode = AutoScaleMode.Dpi;
 
-            // Làm sạch các điều khiển hiện có trong _Control3 và thêm form mới
             _Control3.Controls.Clear();
             _Control3.Controls.Add(_Form3);
             _Control3.Tag = _Form3;
 
-            // Hiển thị form mới
+            _Form3.Show();
+            _Form3.BringToFront();
+        }
+
+        public void LoadForm3(Form form)
+        {
+            if (_Form3 != null && !_Form3.IsDisposed)
+                _Form3.Hide();
+
+            _Form3 = form;
+
+            if (_Form3 == null)
+            {
+                MessageBox.Show("Không thể tạo form mới.");
+                return;
+            }
+
+            _Form3.TopLevel = false;
+            _Form3.FormBorderStyle = FormBorderStyle.None;
+            _Form3.AutoScaleMode = AutoScaleMode.Dpi;
+
+            _Control3.Controls.Clear();
+            _Control3.Controls.Add(_Form3);
+            _Control3.Tag = _Form3;
+
             _Form3.Show();
             _Form3.BringToFront();
         }

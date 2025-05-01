@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -67,6 +67,18 @@
             btnTrangTruoc = new Button();
             btnTrangKe = new Button();
             dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            pnContentTeam = new Guna.UI2.WinForms.Guna2Panel();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            lblCoach = new Label();
+            btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            lblStadium = new Label();
+            lblCode = new Label();
+            lblName = new Label();
+            btnBack = new Guna.UI2.WinForms.Guna2Button();
             ID = new DataGridViewTextBoxColumn();
             NameTeam = new DataGridViewTextBoxColumn();
             Age = new DataGridViewTextBoxColumn();
@@ -78,14 +90,6 @@
             RedCards = new DataGridViewTextBoxColumn();
             Action = new DataGridViewButtonColumn();
             Action2 = new DataGridViewButtonColumn();
-            picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            pnContentTeam = new Guna.UI2.WinForms.Guna2Panel();
-            lblCoach = new Label();
-            btnEdit = new Guna.UI2.WinForms.Guna2Button();
-            lblStadium = new Label();
-            lblCode = new Label();
-            lblName = new Label();
-            btnBack = new Guna.UI2.WinForms.Guna2Button();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -110,7 +114,7 @@
             // btnTimKiem
             // 
             btnTimKiem.BorderRadius = 5;
-            btnTimKiem.CustomizableEdges = customizableEdges19;
+            btnTimKiem.CustomizableEdges = customizableEdges1;
             btnTimKiem.DisabledState.BorderColor = Color.DarkGray;
             btnTimKiem.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTimKiem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -120,7 +124,7 @@
             btnTimKiem.ForeColor = Color.White;
             btnTimKiem.Location = new Point(10, 10);
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnTimKiem.Size = new Size(80, 30);
             btnTimKiem.TabIndex = 26;
             btnTimKiem.Text = "Search";
@@ -130,8 +134,8 @@
             // 
             txbTimKiem.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txbTimKiem.Cursor = Cursors.IBeam;
-            txbTimKiem.CustomizableEdges = customizableEdges21;
-            txbTimKiem.DefaultText = "Search";
+            txbTimKiem.CustomizableEdges = customizableEdges3;
+            txbTimKiem.DefaultText = "";
             txbTimKiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbTimKiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txbTimKiem.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -142,9 +146,9 @@
             txbTimKiem.Location = new Point(96, 10);
             txbTimKiem.Margin = new Padding(3, 4, 3, 4);
             txbTimKiem.Name = "txbTimKiem";
-            txbTimKiem.PlaceholderText = "";
+            txbTimKiem.PlaceholderText = "Search";
             txbTimKiem.SelectedText = "";
-            txbTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            txbTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txbTimKiem.Size = new Size(1077, 30);
             txbTimKiem.TabIndex = 15;
             txbTimKiem.Click += txbTimKiem_Click;
@@ -205,10 +209,10 @@
             pnContent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnContent.Controls.Add(pnFooter);
             pnContent.Controls.Add(dataGridView);
-            pnContent.CustomizableEdges = customizableEdges23;
+            pnContent.CustomizableEdges = customizableEdges9;
             pnContent.Location = new Point(380, 65);
             pnContent.Name = "pnContent";
-            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges10;
             pnContent.Size = new Size(1500, 600);
             pnContent.TabIndex = 25;
             // 
@@ -230,7 +234,7 @@
             // btnRefresh
             // 
             btnRefresh.BorderRadius = 5;
-            btnRefresh.CustomizableEdges = customizableEdges25;
+            btnRefresh.CustomizableEdges = customizableEdges5;
             btnRefresh.DisabledState.BorderColor = Color.DarkGray;
             btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -240,15 +244,16 @@
             btnRefresh.ForeColor = Color.White;
             btnRefresh.Location = new Point(449, 5);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRefresh.Size = new Size(80, 30);
             btnRefresh.TabIndex = 40;
             btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnAddPlayer
             // 
             btnAddPlayer.BorderRadius = 5;
-            btnAddPlayer.CustomizableEdges = customizableEdges27;
+            btnAddPlayer.CustomizableEdges = customizableEdges7;
             btnAddPlayer.DisabledState.BorderColor = Color.DarkGray;
             btnAddPlayer.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAddPlayer.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -258,7 +263,7 @@
             btnAddPlayer.ForeColor = Color.White;
             btnAddPlayer.Location = new Point(1380, 5);
             btnAddPlayer.Name = "btnAddPlayer";
-            btnAddPlayer.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnAddPlayer.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnAddPlayer.Size = new Size(110, 30);
             btnAddPlayer.TabIndex = 30;
             btnAddPlayer.Text = "Add player";
@@ -324,39 +329,39 @@
             // 
             // dataGridView
             // 
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, NameTeam, Age, Nationality, Position, Goals, Assists, YellowCards, RedCards, Action, Action2 });
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.GridColor = Color.FromArgb(231, 229, 255);
             dataGridView.Location = new Point(0, 0);
             dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Control;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowTemplate.Height = 22;
             dataGridView.Size = new Size(1500, 600);
@@ -384,25 +389,184 @@
             dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
+            // picLogo
+            // 
+            picLogo.CustomizableEdges = customizableEdges11;
+            picLogo.ImageRotate = 0F;
+            picLogo.Location = new Point(0, 0);
+            picLogo.Name = "picLogo";
+            picLogo.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            picLogo.Size = new Size(270, 270);
+            picLogo.TabIndex = 28;
+            picLogo.TabStop = false;
+            // 
+            // pnContentTeam
+            // 
+            pnContentTeam.Controls.Add(label4);
+            pnContentTeam.Controls.Add(label3);
+            pnContentTeam.Controls.Add(label2);
+            pnContentTeam.Controls.Add(label1);
+            pnContentTeam.Controls.Add(lblCoach);
+            pnContentTeam.Controls.Add(btnEdit);
+            pnContentTeam.Controls.Add(lblStadium);
+            pnContentTeam.Controls.Add(lblCode);
+            pnContentTeam.Controls.Add(lblName);
+            pnContentTeam.Controls.Add(picLogo);
+            pnContentTeam.CustomizableEdges = customizableEdges15;
+            pnContentTeam.Location = new Point(50, 65);
+            pnContentTeam.Name = "pnContentTeam";
+            pnContentTeam.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            pnContentTeam.Size = new Size(270, 490);
+            pnContentTeam.TabIndex = 29;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 12F);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(24, 402);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 20);
+            label4.TabIndex = 36;
+            label4.Text = "Coach: ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 12F);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(24, 362);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 20);
+            label3.TabIndex = 35;
+            label3.Text = "Stadium: ";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 12F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(24, 325);
+            label2.Name = "label2";
+            label2.Size = new Size(55, 20);
+            label2.TabIndex = 34;
+            label2.Text = "Code: ";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 12F);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(24, 291);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 20);
+            label1.TabIndex = 33;
+            label1.Text = "Name: ";
+            // 
+            // lblCoach
+            // 
+            lblCoach.AutoSize = true;
+            lblCoach.Font = new Font("Microsoft Sans Serif", 12F);
+            lblCoach.ForeColor = Color.White;
+            lblCoach.Location = new Point(93, 402);
+            lblCoach.Name = "lblCoach";
+            lblCoach.Size = new Size(63, 20);
+            lblCoach.TabIndex = 32;
+            lblCoach.Text = "Coach: ";
+            // 
+            // btnEdit
+            // 
+            btnEdit.BorderRadius = 5;
+            btnEdit.CustomizableEdges = customizableEdges13;
+            btnEdit.DisabledState.BorderColor = Color.DarkGray;
+            btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEdit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEdit.FillColor = Color.FromArgb(60, 211, 252);
+            btnEdit.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Location = new Point(95, 440);
+            btnEdit.Name = "btnEdit";
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnEdit.Size = new Size(80, 30);
+            btnEdit.TabIndex = 30;
+            btnEdit.Text = "Edit";
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // lblStadium
+            // 
+            lblStadium.AutoSize = true;
+            lblStadium.Font = new Font("Microsoft Sans Serif", 12F);
+            lblStadium.ForeColor = Color.White;
+            lblStadium.Location = new Point(106, 362);
+            lblStadium.Name = "lblStadium";
+            lblStadium.Size = new Size(76, 20);
+            lblStadium.TabIndex = 31;
+            lblStadium.Text = "Stadium: ";
+            // 
+            // lblCode
+            // 
+            lblCode.AutoSize = true;
+            lblCode.Font = new Font("Microsoft Sans Serif", 12F);
+            lblCode.ForeColor = Color.White;
+            lblCode.Location = new Point(89, 325);
+            lblCode.Name = "lblCode";
+            lblCode.Size = new Size(55, 20);
+            lblCode.TabIndex = 30;
+            lblCode.Text = "Code: ";
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Font = new Font("Microsoft Sans Serif", 12F);
+            lblName.ForeColor = Color.White;
+            lblName.Location = new Point(89, 291);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(59, 20);
+            lblName.TabIndex = 29;
+            lblName.Text = "Name: ";
+            // 
+            // btnBack
+            // 
+            btnBack.CustomizableEdges = customizableEdges17;
+            btnBack.DisabledState.BorderColor = Color.DarkGray;
+            btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnBack.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnBack.FillColor = Color.FromArgb(20, 44, 76);
+            btnBack.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(0, 0);
+            btnBack.Name = "btnBack";
+            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnBack.Size = new Size(60, 35);
+            btnBack.TabIndex = 34;
+            btnBack.Text = "<<";
+            btnBack.Click += btnBack_Click;
+            // 
             // ID
             // 
+            ID.DataPropertyName = "Id";
             ID.HeaderText = "#";
             ID.Name = "ID";
             // 
             // NameTeam
             // 
+            NameTeam.DataPropertyName = "Name";
             NameTeam.FillWeight = 66.1519F;
             NameTeam.HeaderText = "Name";
             NameTeam.Name = "NameTeam";
             // 
             // Age
             // 
+            Age.DataPropertyName = "Age";
             Age.FillWeight = 66.1519F;
             Age.HeaderText = "Age";
             Age.Name = "Age";
             // 
             // Nationality
             // 
+            Nationality.DataPropertyName = "Nationality";
             Nationality.FillWeight = 66.1519F;
             Nationality.HeaderText = "Nationality";
             Nationality.Name = "Nationality";
@@ -410,27 +574,32 @@
             // 
             // Position
             // 
+            Position.DataPropertyName = "Position";
             Position.HeaderText = "Position";
             Position.Name = "Position";
             // 
             // Goals
             // 
+            Goals.DataPropertyName = "Goals";
             Goals.FillWeight = 66.1519F;
             Goals.HeaderText = "Goals";
             Goals.Name = "Goals";
             // 
             // Assists
             // 
+            Assists.DataPropertyName = "Assists";
             Assists.HeaderText = "Assists";
             Assists.Name = "Assists";
             // 
             // YellowCards
             // 
+            YellowCards.DataPropertyName = "YellowCards";
             YellowCards.HeaderText = "Yellow Cards";
             YellowCards.Name = "YellowCards";
             // 
             // RedCards
             // 
+            RedCards.DataPropertyName = "RedCards";
             RedCards.HeaderText = "Red Cards";
             RedCards.Name = "RedCards";
             // 
@@ -454,113 +623,6 @@
             Action2.Text = "Delete";
             Action2.UseColumnTextForButtonValue = true;
             // 
-            // picLogo
-            // 
-            picLogo.CustomizableEdges = customizableEdges29;
-            picLogo.ImageRotate = 0F;
-            picLogo.Location = new Point(0, 0);
-            picLogo.Name = "picLogo";
-            picLogo.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            picLogo.Size = new Size(270, 270);
-            picLogo.TabIndex = 28;
-            picLogo.TabStop = false;
-            // 
-            // pnContentTeam
-            // 
-            pnContentTeam.Controls.Add(lblCoach);
-            pnContentTeam.Controls.Add(btnEdit);
-            pnContentTeam.Controls.Add(lblStadium);
-            pnContentTeam.Controls.Add(lblCode);
-            pnContentTeam.Controls.Add(lblName);
-            pnContentTeam.Controls.Add(picLogo);
-            pnContentTeam.CustomizableEdges = customizableEdges33;
-            pnContentTeam.Location = new Point(50, 65);
-            pnContentTeam.Name = "pnContentTeam";
-            pnContentTeam.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            pnContentTeam.Size = new Size(270, 490);
-            pnContentTeam.TabIndex = 29;
-            // 
-            // lblCoach
-            // 
-            lblCoach.AutoSize = true;
-            lblCoach.Font = new Font("Microsoft Sans Serif", 12F);
-            lblCoach.ForeColor = Color.White;
-            lblCoach.Location = new Point(20, 395);
-            lblCoach.Name = "lblCoach";
-            lblCoach.Size = new Size(63, 20);
-            lblCoach.TabIndex = 32;
-            lblCoach.Text = "Coach: ";
-            // 
-            // btnEdit
-            // 
-            btnEdit.BorderRadius = 5;
-            btnEdit.CustomizableEdges = customizableEdges31;
-            btnEdit.DisabledState.BorderColor = Color.DarkGray;
-            btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnEdit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnEdit.FillColor = Color.FromArgb(60, 211, 252);
-            btnEdit.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(95, 440);
-            btnEdit.Name = "btnEdit";
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            btnEdit.Size = new Size(80, 30);
-            btnEdit.TabIndex = 30;
-            btnEdit.Text = "Edit";
-            btnEdit.Click += btnEdit_Click;
-            // 
-            // lblStadium
-            // 
-            lblStadium.AutoSize = true;
-            lblStadium.Font = new Font("Microsoft Sans Serif", 12F);
-            lblStadium.ForeColor = Color.White;
-            lblStadium.Location = new Point(20, 360);
-            lblStadium.Name = "lblStadium";
-            lblStadium.Size = new Size(76, 20);
-            lblStadium.TabIndex = 31;
-            lblStadium.Text = "Stadium: ";
-            // 
-            // lblCode
-            // 
-            lblCode.AutoSize = true;
-            lblCode.Font = new Font("Microsoft Sans Serif", 12F);
-            lblCode.ForeColor = Color.White;
-            lblCode.Location = new Point(20, 325);
-            lblCode.Name = "lblCode";
-            lblCode.Size = new Size(55, 20);
-            lblCode.TabIndex = 30;
-            lblCode.Text = "Code: ";
-            // 
-            // lblName
-            // 
-            lblName.AutoSize = true;
-            lblName.Font = new Font("Microsoft Sans Serif", 12F);
-            lblName.ForeColor = Color.White;
-            lblName.Location = new Point(20, 290);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(59, 20);
-            lblName.TabIndex = 29;
-            lblName.Text = "Name: ";
-            // 
-            // btnBack
-            // 
-            btnBack.CustomizableEdges = customizableEdges35;
-            btnBack.DisabledState.BorderColor = Color.DarkGray;
-            btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnBack.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnBack.FillColor = Color.FromArgb(20, 44, 76);
-            btnBack.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(0, 0);
-            btnBack.Name = "btnBack";
-            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            btnBack.Size = new Size(60, 35);
-            btnBack.TabIndex = 34;
-            btnBack.Text = "<<";
-            btnBack.Click += btnBack_Click;
-            // 
             // TeamDetailForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -574,6 +636,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "TeamDetailForm";
             Text = "OrdersForm";
+            Load += TeamDetailForm_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             pnContent.ResumeLayout(false);
@@ -584,7 +647,6 @@
             pnContentTeam.ResumeLayout(false);
             pnContentTeam.PerformLayout();
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -614,6 +676,10 @@
         private Label lblSoTrang;
         private Button btnTrangTruoc;
         private Button btnTrangKe;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn NameTeam;
         private DataGridViewTextBoxColumn Age;

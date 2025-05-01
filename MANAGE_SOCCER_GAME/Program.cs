@@ -28,6 +28,9 @@ namespace MANAGE_SOCCER_GAME
             services.AddScoped<TournamentService>();
             services.AddScoped<CoachService>();
             services.AddScoped<TeamService>();
+            services.AddScoped<PlayerService>();
+            services.AddScoped<UserService>();
+            services.AddScoped<GameService>();
 
             services.AddScoped<MainForm>();
             services.AddScoped<AddTeamForm>();
@@ -49,12 +52,29 @@ namespace MANAGE_SOCCER_GAME
             services.AddScoped<ForgotPasswordForm>();
             services.AddScoped<MatchDetailForm>();
 
-
-            services.AddScoped<Func<TournamentService, CoachService, AddTeamForm>>(
-              serviceProvider => (t, c) =>
-                  new AddTeamForm(t, c)
+            services.AddScoped<Func<TeamService, PlayerService, Guid, TeamDetailForm>>(
+              serviceProvider => (t, p, i) =>
+                  new TeamDetailForm(t, p, i)
             );
 
+            services.AddScoped<Func<PlayerService, Guid, AddPlayerForm>>(
+              serviceProvider => (p, i) =>
+                  new AddPlayerForm(p, i)
+            );
+
+            services.AddScoped<Func<TournamentService, TeamService, CoachService, Guid, EditTeamForm>>(
+              serviceProvider => (t, te, c, i) =>
+                  new EditTeamForm(t, te, c, i)
+            );
+
+            services.AddScoped<Func<PlayerService, Guid, PlayerDetailForm>>(
+              serviceProvider => (p, i) =>
+                  new PlayerDetailForm(p, i)
+            );
+            services.AddScoped<Func<PlayerService, Guid, EditPlayerForm>>(
+             serviceProvider => (p, i) =>
+                 new EditPlayerForm(p, i)
+           );
 
             // Tạo service provider
             AppService.ServiceProvider = services.BuildServiceProvider();

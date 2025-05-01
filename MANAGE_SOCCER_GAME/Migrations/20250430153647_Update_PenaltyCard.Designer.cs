@@ -4,6 +4,7 @@ using MANAGE_SOCCER_GAME.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MANAGE_SOCCER_GAME.Migrations
 {
     [DbContext(typeof(ManageSoccerGame))]
-    partial class ManageSoccerGameModelSnapshot : ModelSnapshot
+    [Migration("20250430153647_Update_PenaltyCard")]
+    partial class Update_PenaltyCard
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,7 +58,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Coaches", (string)null);
+                    b.ToTable("Coaches");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Game", b =>
@@ -106,7 +109,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasIndex("TeamId1");
 
-                    b.ToTable("Games", (string)null);
+                    b.ToTable("Games");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.ImageCoacher", b =>
@@ -140,7 +143,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.HasIndex("CoachId")
                         .IsUnique();
 
-                    b.ToTable("ImageCoachers", (string)null);
+                    b.ToTable("ImageCoachers");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.ImagePlayer", b =>
@@ -174,7 +177,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.HasIndex("PlayerId")
                         .IsUnique();
 
-                    b.ToTable("ImagePlayers", (string)null);
+                    b.ToTable("ImagePlayers");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.ImageTeam", b =>
@@ -208,7 +211,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
                     b.HasIndex("TeamId")
                         .IsUnique();
 
-                    b.ToTable("ImageTeams", (string)null);
+                    b.ToTable("ImageTeams");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.MatchOfficials", b =>
@@ -223,7 +226,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasIndex("IdReferee");
 
-                    b.ToTable("MatchOfficials", (string)null);
+                    b.ToTable("MatchOfficials");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.MatchdaySquad", b =>
@@ -238,7 +241,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasIndex("IdPlayer");
 
-                    b.ToTable("MatchdaySquads", (string)null);
+                    b.ToTable("MatchdaySquads");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.PenaltyCard", b =>
@@ -276,7 +279,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasIndex("PlayerId");
 
-                    b.ToTable("PenaltyCards", (string)null);
+                    b.ToTable("PenaltyCards");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Permission", b =>
@@ -304,7 +307,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasKey("PermissionId");
 
-                    b.ToTable("Permissions", (string)null);
+                    b.ToTable("Permissions");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Player", b =>
@@ -354,7 +357,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasIndex("IdTeam");
 
-                    b.ToTable("Players", (string)null);
+                    b.ToTable("Players");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Referee", b =>
@@ -383,7 +386,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Referees", (string)null);
+                    b.ToTable("Referees");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Role", b =>
@@ -435,7 +438,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasIndex("PermissionId");
 
-                    b.ToTable("RolePermissions", (string)null);
+                    b.ToTable("RolePermissions");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Round", b =>
@@ -461,7 +464,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasIndex("TournamentId");
 
-                    b.ToTable("Rounds", (string)null);
+                    b.ToTable("Rounds");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.SoccerGame", b =>
@@ -499,7 +502,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasIndex("PlayerId");
 
-                    b.ToTable("SoccerGames", (string)null);
+                    b.ToTable("SoccerGames");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Team", b =>
@@ -535,7 +538,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasIndex("IdTournament");
 
-                    b.ToTable("Teams", (string)null);
+                    b.ToTable("Teams");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.Tournament", b =>
@@ -563,7 +566,7 @@ namespace MANAGE_SOCCER_GAME.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tournaments", (string)null);
+                    b.ToTable("Tournaments");
                 });
 
             modelBuilder.Entity("MANAGE_SOCCER_GAME.Models.User", b =>
