@@ -38,12 +38,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnAssignReferee = new Guna.UI2.WinForms.Guna2Button();
             lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnEmployee = new Guna.UI2.WinForms.Guna2Button();
             btnReferee = new Guna.UI2.WinForms.Guna2Button();
             btnPlayerStats = new Guna.UI2.WinForms.Guna2Button();
             btnManagers = new Guna.UI2.WinForms.Guna2Button();
+            btnTourment = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // btnAssignReferee
@@ -164,12 +167,34 @@
             btnManagers.TextAlign = HorizontalAlignment.Left;
             btnManagers.Click += btnManagers_Click;
             // 
+            // btnTourment
+            // 
+            btnTourment.BorderRadius = 15;
+            btnTourment.CheckedState.FillColor = Color.FromArgb(60, 211, 252);
+            btnTourment.CustomizableEdges = customizableEdges11;
+            btnTourment.DisabledState.BorderColor = Color.DarkGray;
+            btnTourment.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnTourment.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnTourment.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTourment.FillColor = Color.FromArgb(31, 70, 121);
+            btnTourment.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTourment.ForeColor = Color.White;
+            btnTourment.Location = new Point(30, 305);
+            btnTourment.Name = "btnTourment";
+            btnTourment.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnTourment.Size = new Size(235, 45);
+            btnTourment.TabIndex = 27;
+            btnTourment.Text = "Tourment";
+            btnTourment.TextAlign = HorizontalAlignment.Left;
+            btnTourment.Click += btnTourment_Click;
+            // 
             // SidebarAMOForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(31, 70, 121);
             ClientSize = new Size(300, 930);
+            Controls.Add(btnTourment);
             Controls.Add(btnManagers);
             Controls.Add(btnPlayerStats);
             Controls.Add(btnReferee);
@@ -191,5 +216,6 @@
         private Guna.UI2.WinForms.Guna2Button btnReferee;
         private Guna.UI2.WinForms.Guna2Button btnPlayerStats;
         private Guna.UI2.WinForms.Guna2Button btnManagers;
+        private Guna.UI2.WinForms.Guna2Button btnTourment;
     }
 }
