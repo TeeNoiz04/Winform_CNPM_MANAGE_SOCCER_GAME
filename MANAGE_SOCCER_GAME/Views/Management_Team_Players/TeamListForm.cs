@@ -1,5 +1,9 @@
-﻿using MANAGE_SOCCER_GAME.Services;
+﻿using Guna.UI2.WinForms;
+using MANAGE_SOCCER_GAME.Dtos;
+using MANAGE_SOCCER_GAME.Services;
 using MANAGE_SOCCER_GAME.Utils.Routing;
+using Microsoft.VisualBasic.Devices;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using static System.Collections.Specialized.BitVector32;
 
@@ -10,17 +14,42 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         private readonly TeamService _teamService;
         private Router _router;
         private int curentPage = 1;
-        private int countLine = 0;
+        private int countLine = 10;
         private float totalPage = 0;
+        private List<TeamDTO> _allTeams = new List<TeamDTO>();
+        private List<TeamDTO> _filteredTeams = new List<TeamDTO>();
+
+        private bool isInitializing = true;
+
         public TeamListForm(TeamService teamService)
         {
             InitializeComponent();
             _teamService = teamService;
             _router = new Router();
 
+            isInitializing = true; // Bắt đầu khởi tạo
+
+
             cbbSoDong.SelectedIndex = 0;
             cbbSapXep.SelectedIndex = 0;
-            cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
+            var props = typeof(TeamDTO).GetProperties()
+            .Select(prop =>
+            {
+                var displayAttr = prop.GetCustomAttributes(typeof(DisplayAttribute), false)
+                                      .Cast<DisplayAttribute>()
+                                      .FirstOrDefault();
+                return new
+                {
+                    Value = prop.Name,
+                    Display = displayAttr?.Name ?? prop.Name
+                };
+            })
+            .ToList();
+
+            cbbCot.DataSource = props;
+            cbbCot.ValueMember = "Value";
+            cbbCot.DisplayMember = "Display";
+
             cbbCot.SelectedIndex = 0;
 
             if (curentPage == 1)
@@ -28,82 +57,70 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 btnTrangTruoc.Enabled = false;
                 btnTrangKe.Enabled = true;
             }
-            LoadData();
+            isInitializing = false;
+
         }
 
-        private async void LoadData()
+        private async Task LoadData(bool isReload = false)
         {
-            //if (!string.IsNullOrWhiteSpace(txbTimKiem.Text) && txbTimKiem.Text != "Search")
-            //{
-            //    //var fillterSearch = _viewhoadon.Where(n => n.MaHD.Contains(txbTimKiem.Text) || n.PhuongThucGD.Contains(txbTimKiem.Text) || n.TenKH.Contains(txbTimKiem.Text)).ToList();
-            //    //if (fillterSearch == null)
-            //    //{
-            //    //    MessageBox.Show("Không tìm thấy kết quả");
-            //    //    return;
-            //    //}
-            //    //_viewhoadon = fillterSearch;
-            //    curentPage = 1;
-            //}
-
-            //var count = _viewhoadon.Count;
-            //var count = 2;
-            //countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
-            //totalPage = (float)count / countLine;
-            //totalPage = totalPage > (int)totalPage ? (int)totalPage + 1 : (int)totalPage;
-
-            //if (cbbCot.SelectedItem == null)
-            //{
-            //    return;
-            //}
-
-            //var columnName = cbbCot.SelectedItem.ToString();
-            //var sortOrder = cbbSapXep.SelectedItem.ToString();
-            //if (sortOrder == "Tăng dần")
-            //{
-            //    //_viewhoadon = _viewhoadon.OrderBy(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
-            //}
-            //else if (sortOrder == "Giảm dần")
-            //{
-            //    //_viewhoadon = _viewhoadon.OrderByDescending(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
-            //}
-
-            //dataGridView.AutoGenerateColumns = false;
-            ////dataGridView.Columns["ID"].DataPropertyName = "MaHD";
-            ////dataGridView.Columns["TimeStamp"].DataPropertyName = "NgayGD";
-            ////dataGridView.Columns["PhuongThucGD"].DataPropertyName = "PhuongThucGD";
-            ////dataGridView.Columns["Price"].DataPropertyName = "TongTien";
-            ////dataGridView.Columns["Username"].DataPropertyName = "TenKH";
-            ////dataGridView.Columns["IsCheck"].DataPropertyName = "IsCheck";
-            ////dataGridView.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            ////dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            ////dataGridView.Columns["Action"].Width = 100;
-            ////dataGridView.Columns["Action2"].Width = 100;
-            ////dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); 
+            try
+            {
+                if (isReload || _allTeams.Count == 0)
+                {
+                    _allTeams = await _teamService.GetAllTeamByTournamentIdAsync(AppService.TournamentId);
+                    _filteredTeams = new List<TeamDTO>(_allTeams);
+                }
 
 
+                string selectedColumn = cbbCot.SelectedValue?.ToString();
+                string sortDirection = cbbSapXep.SelectedItem?.ToString();
 
-            //if (countLine > count)
-            //{
-            //    btnTrangTruoc.Enabled = false;
-            //    btnTrangKe.Enabled = false;
-            //    pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
-            //}
-            //else
-            //{
-            //    if (curentPage == 1)
-            //    {
-            //        btnTrangKe.Enabled = true;
-            //    }
-            //    pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * countLine) + 30 + pnFooter.Size.Height);
-            //}
-            //if (pnContent.Size.Height > this.Size.Height - pnHeader.Size.Height)
-            //{
-            //    pnContent.Size = new Size(pnContent.Size.Width, this.Size.Height - pnHeader.Size.Height);
-            //}
-            //lblSoTrang.Text = $"{curentPage}/{totalPage}";
+                if (!string.IsNullOrEmpty(selectedColumn))
+                {
+                    var propInfo = typeof(TeamDTO).GetProperty(selectedColumn);
+                    if (propInfo != null)
+                    {
+                        if (sortDirection == "Tăng dần")
+                            _filteredTeams = _filteredTeams.OrderBy(x => propInfo.GetValue(x, null)).ToList();
+                        else if (sortDirection == "Giảm dần")
+                            _filteredTeams = _filteredTeams.OrderByDescending(x => propInfo.GetValue(x, null)).ToList();
+                    }
+                }
+
+                var count = _filteredTeams.Count;
+                countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
+                totalPage = (float)count / countLine;
+                totalPage = totalPage > (int)totalPage ? (int)totalPage + 1 : (int)totalPage;
+
+                dataGridView.DataSource = _filteredTeams.Skip(countLine * (curentPage - 1)).Take(countLine).ToList();
+
+                if (countLine > count)
+                {
+                    btnTrangTruoc.Enabled = false;
+                    btnTrangKe.Enabled = false;
+                    pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
+                }
+                else
+                {
+                    if (curentPage == 1)
+                    {
+                        btnTrangKe.Enabled = true;
+                    }
+                    pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * countLine) + 30 + pnFooter.Size.Height);
+                }
+                if (pnContent.Size.Height > this.Size.Height - pnHeader.Size.Height)
+                {
+                    pnContent.Size = new Size(pnContent.Size.Width, this.Size.Height - pnHeader.Size.Height);
+                }
+                lblSoTrang.Text = $"{curentPage}/{totalPage}";
+            }
+            catch (Exception ex)
+            {
+                AppService.ShowError("Lỗi khi tải danh sách team: " + ex.Message);
+            }
         }
 
-        private void btnTrangTruoc_Click(object sender, EventArgs e)
+        private async void btnTrangTruoc_Click(object sender, EventArgs e)
         {
             if (curentPage > 1)
             {
@@ -118,10 +135,10 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 btnTrangTruoc.Enabled = false;
             }
 
-            LoadData();
+            await LoadData();
         }
 
-        private void btnTrangKe_Click(object sender, EventArgs e)
+        private async void btnTrangKe_Click(object sender, EventArgs e)
         {
             if (curentPage < totalPage)
             {
@@ -136,62 +153,57 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 btnTrangKe.Enabled = false;
             }
 
-            LoadData();
+            await LoadData();
         }
 
-        private void cbbSoDong_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cbb_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isInitializing) return;
+            countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
             curentPage = 1;
-            LoadData();
-        }
-
-        private void cbbSapXep_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void cbbCot_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadData();
+            await LoadData();
         }
 
         private async void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView.Rows[e.RowIndex];
-            var id = row.Cells["ID"].Value.ToString();
-            // Edit
-            if (e.ColumnIndex == dataGridView.Columns["Action"].Index && e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                //var hoadonDuyet = _entities.HOADONs.FirstOrDefault(n => n.MaHD == id);
-                //if (hoadonDuyet != null)
-                //{
-                //    hoadonDuyet.IsCheck = true;
-                //    hoadonDuyet.MaQTV = Session.CurentUser.MaQTV;
-                //    _entities.HOADONs.AddOrUpdate(hoadonDuyet);
-                //    _entities.SaveChanges();
-                //    LoadData();
-                //}
+                Guid teamId = Guid.Parse(dataGridView.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                var clickedColumn = dataGridView.Columns[e.ColumnIndex].Name;
+                var formDetailFactory = AppService.Get<Func<TeamService, PlayerService, Guid, TeamDetailForm>>();
 
-                _router.LoadForm3<TeamDetailForm>();
-
+                if (clickedColumn == "Detail")
+                {
+                    var form = formDetailFactory(_teamService, AppService.Get<PlayerService>(), teamId);
+                    _router.LoadForm3(form);
+                }
+                else if (clickedColumn == "Delete")
+                {
+                   
+                }
             }
-            // Delete
-            else if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
-            {
-                //_action.LoadDetailOrders(id);
-            }
+            //}
+            //// Delete
+            //else if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
+            //{
+            //    //_action.LoadDetailOrders(id);
+            //}
         }
 
         private async void btnTimKiem_ClickAsync(object sender, EventArgs e)
         {
-            LoadData();
+
+            string keyword = txbTimKiem.Text.Trim().ToLower();
+            bool success = FilterTeams(keyword);
+            if (success)
+                await LoadData(); // chỉ load nếu có kết quả
         }
 
         private async void txbTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                LoadData();
+                await LoadData();
             }
         }
 
@@ -213,29 +225,48 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private async void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadData();
+            _allTeams = null;
+            txbTimKiem.Clear();
+            await LoadData(true);
         }
 
-        private void btnAddTeam_Click(object sender, EventArgs e)
+        private async void btnAddTeam_Click(object sender, EventArgs e)
         {
-            var factory = AppService.Get<Func<TournamentService, CoachService, AddTeamForm>>();
-            var form = factory(AppService.Get<TournamentService>(), AppService.Get<CoachService>());
+            var form = AppService.Get<AddTeamForm>();
             form.Location = new Point(250, 140);
             form.ShowDialog();
+            await LoadData();
         }
-    }
 
-    public class ViewHoaDon
-    {
-        public string MaHD { get; set; }
-        public System.DateTime NgayGD { get; set; }
-        public string PhuongThucGD { get; set; }
-        public double TongTien { get; set; }
-        public string TenKH { get; set; }
-        public bool IsCheck { get; set; }
-        public ViewHoaDon() { }
+        private async void TeamListForm_Shown(object sender, EventArgs e)
+        {
+            await LoadData();
+        }
+        private bool FilterTeams(string keyword)
+        {
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                var searchResult = _allTeams
+                    .Where(x => x.Name != null && x.Name.ToLower().Contains(keyword))
+                    .ToList();
+
+                if (!searchResult.Any())
+                {
+                    MessageBox.Show("Không tìm thấy kết quả");
+                    txbTimKiem.Clear();
+                    return false;
+                }
+
+                _filteredTeams = searchResult;
+                curentPage = 1;
+            }
+
+            return true;
+        }
+
     }
 }
+
 

@@ -157,7 +157,7 @@
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(160, 40);
             lblTitle.TabIndex = 40;
-            lblTitle.Text = "ADD TEAM";
+            lblTitle.Text = "EDIT TEAM";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnCancel
@@ -198,6 +198,7 @@
             btnSubmit.Size = new Size(100, 40);
             btnSubmit.TabIndex = 42;
             btnSubmit.Text = "Submit";
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // gnElipse
             // 
@@ -300,7 +301,7 @@
             txbUpload.Text = "Upload logo";
             txbUpload.Click += txbUpload_Click;
             // 
-            // AddTeamForm
+            // EditTeamForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -321,8 +322,9 @@
             Controls.Add(txbTeamname);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "AddTeamForm";
+            Name = "EditTeamForm";
             Text = "AddTeamForm";
+            Load += EditTeamForm_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

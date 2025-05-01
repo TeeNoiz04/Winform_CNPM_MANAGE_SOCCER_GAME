@@ -37,7 +37,7 @@ namespace MANAGE_SOCCER_GAME.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=TEENOIZ04;Initial Catalog=Manage_soccer_game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+                optionsBuilder.UseSqlServer("Data Source=;Initial Catalog=Manage_soccer_game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
             }
         }
         protected override void OnModelCreating(ModelBuilder builder)
@@ -118,25 +118,25 @@ namespace MANAGE_SOCCER_GAME.Data
 
             builder.Entity<SoccerGame>()
                 .HasOne(sg => sg.GoalScorer)
-                .WithMany()
+                .WithMany(sg => sg.SoccerGamesAsGoalscorer)
                 .HasForeignKey(sg => sg.GoalScorerId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<SoccerGame>()
                 .HasOne(sg => sg.Assitant)
-                .WithMany()
+                .WithMany(sg => sg.SoccerGamesAsAssitscorer)
                 .HasForeignKey(sg => sg.AssitantId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Game>()
                 .HasOne(g => g.HomeTeam)
-                .WithMany()
+                .WithMany(g => g.HomeGames)
                 .HasForeignKey(g => g.HomeTeamId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Game>()
                 .HasOne(g => g.AwayTeam)
-                .WithMany()
+                .WithMany(g => g.AwayGames)
                 .HasForeignKey(g => g.AwayTeamId)
                 .OnDelete(DeleteBehavior.Restrict);
 
@@ -150,6 +150,10 @@ namespace MANAGE_SOCCER_GAME.Data
                 .WithOne(r => r.Round)
                 .HasForeignKey(r => r.RoundId);
 
+            builder.Entity<Player>()
+                .HasMany(r => r.PenaltyCards)
+                .WithOne(r => r.Player)
+                .HasForeignKey(r => r.PlayerId);
         }
 
 

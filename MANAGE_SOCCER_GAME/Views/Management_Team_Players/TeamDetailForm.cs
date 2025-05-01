@@ -1,4 +1,6 @@
 ﻿using MANAGE_SOCCER_GAME.Data;
+using MANAGE_SOCCER_GAME.Dtos;
+using MANAGE_SOCCER_GAME.Models;
 using MANAGE_SOCCER_GAME.Services;
 using MANAGE_SOCCER_GAME.Utils.Routing;
 using System.Data;
@@ -7,19 +9,27 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 {
     public partial class TeamDetailForm : Form
     {
+        private readonly TeamService _teamService;
+        private readonly PlayerService _playerService;
+        private readonly Guid _id;
         private Router _router;
         private int curentPage = 1;
-        private int countLine = 0;
+        private int countLine = 10;
         private float totalPage = 0;
-        public TeamDetailForm()
+        private List<PlayerViewDTO> _allPlayers = new List<PlayerViewDTO>();
+
+
+        public TeamDetailForm(TeamService teamService, PlayerService playerService, Guid id)
         {
             InitializeComponent();
-            //_bookSoldService = new BookSoldService();
             _router = new Router();
+            _playerService = playerService;
+            _teamService = teamService;
+            _id = id;
 
             cbbSoDong.SelectedIndex = 0;
             cbbSapXep.SelectedIndex = 0;
-            cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
+            cbbCot.DataSource = typeof(PlayerViewDTO).GetProperties().Select(prop => prop.Name).ToList();
             cbbCot.SelectedIndex = 0;
 
             if (curentPage == 1)
@@ -27,28 +37,29 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 btnTrangTruoc.Enabled = false;
                 btnTrangKe.Enabled = true;
             }
-
-            dataGridView.Rows.Add("kkk", "kkk", "kkk", "kkk", "kkk", "kkk");
-
-            LoadData();
         }
 
-        private async void LoadData()
+        private async Task Getall()
+        {
+            _allPlayers = await _playerService.GetAllPlayersByTeamIdAsync(_id);
+        }
+
+        private void LoadData()
         {
             if (!string.IsNullOrWhiteSpace(txbTimKiem.Text) && txbTimKiem.Text != "Search")
             {
-                //var fillterSearch = _viewhoadon.Where(n => n.MaHD.Contains(txbTimKiem.Text) || n.PhuongThucGD.Contains(txbTimKiem.Text) || n.TenKH.Contains(txbTimKiem.Text)).ToList();
-                //if (fillterSearch == null)
-                //{
-                //    MessageBox.Show("Không tìm thấy kết quả");
-                //    return;
-                //}
-                //_viewhoadon = fillterSearch;
+                string keyword = txbTimKiem.Text.Trim().ToLower();
+                var fillterSearch = _allPlayers.Where(n => n.Name.ToLower().Contains(keyword)).ToList();
+                if (fillterSearch == null)
+                {
+                    MessageBox.Show("Không tìm thấy kết quả");
+                    return;
+                }
+                _allPlayers = fillterSearch;
                 curentPage = 1;
             }
 
-            //var count = _viewhoadon.Count;
-            var count = 2;
+            var count = _allPlayers.Count;
             countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
             totalPage = (float)count / countLine;
             totalPage = totalPage > (int)totalPage ? (int)totalPage + 1 : (int)totalPage;
@@ -62,14 +73,15 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             var sortOrder = cbbSapXep.SelectedItem.ToString();
             if (sortOrder == "Tăng dần")
             {
-                //_viewhoadon = _viewhoadon.OrderBy(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
+                _allPlayers = _allPlayers.OrderBy(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
             }
             else if (sortOrder == "Giảm dần")
             {
-                //_viewhoadon = _viewhoadon.OrderByDescending(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
+                _allPlayers = _allPlayers.OrderByDescending(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
             }
 
             dataGridView.AutoGenerateColumns = false;
+
             //dataGridView.Columns["ID"].DataPropertyName = "MaHD";
             //dataGridView.Columns["TimeStamp"].DataPropertyName = "NgayGD";
             //dataGridView.Columns["PhuongThucGD"].DataPropertyName = "PhuongThucGD";
@@ -80,13 +92,14 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             //dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
             //dataGridView.Columns["Action"].Width = 100;
             //dataGridView.Columns["Action2"].Width = 100;
-            //dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); ;
+            dataGridView.DataSource = _allPlayers.Skip(countLine * (curentPage - 1)).Take(countLine).ToList();
 
             if (countLine > count)
             {
                 btnTrangTruoc.Enabled = false;
                 btnTrangKe.Enabled = false;
-                pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
+    // Dòng lỗi
+                //pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
             }
             else
             {
@@ -157,37 +170,34 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         private async void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView.Rows[e.RowIndex];
-            var id = row.Cells["ID"].Value.ToString();
-            // Duyệt
-            if (e.ColumnIndex == dataGridView.Columns["Action"].Index && e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                //var hoadonDuyet = _entities.HOADONs.FirstOrDefault(n => n.MaHD == id);
-                //if (hoadonDuyet != null)
-                //{
-                //    hoadonDuyet.IsCheck = true;
-                //    hoadonDuyet.MaQTV = Session.CurentUser.MaQTV;
-                //    _entities.HOADONs.AddOrUpdate(hoadonDuyet);
-                //    _entities.SaveChanges();
-                //    LoadData();
-                //}
+                DataGridViewRow row = dataGridView.Rows[e.RowIndex];
+                Guid id = Guid.Parse(row.Cells["ID"].Value.ToString());
+                var formDetailFactory = AppService.Get<Func<PlayerService, Guid, PlayerDetailForm>>();
 
-                _router.LoadForm3<PlayerDetailForm>();
+                // Duyệt
+                if (e.ColumnIndex == dataGridView.Columns["Action"].Index)
+                {
+                    var form = formDetailFactory(AppService.Get<PlayerService>(), id);
+                    _router.LoadForm3(form);
+                    LoadData();
+                }
+                // Chi tiết
+                else if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
+                {
+                    //_action.LoadDetailOrders(id);
+                }
 
-            }
-            // Chi tiết
-            else if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
-            {
-                //_action.LoadDetailOrders(id);
-            }
+            }    
         }
 
-        private async void btnTimKiem_ClickAsync(object sender, EventArgs e)
+        private void btnTimKiem_ClickAsync(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private async void txbTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        private void txbTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
@@ -213,8 +223,9 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private async void btnRefresh_Click(object sender, EventArgs e)
         {
+            await Getall();
             LoadData();
         }
 
@@ -223,18 +234,41 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             _router.LoadForm3<TeamListForm>();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private async void btnEdit_Click(object sender, EventArgs e)
         {
-            var formEdit = new EditTeamForm();
-            formEdit.Location = new Point(250, 140);
-            formEdit.ShowDialog();
+            var formEditFactory = AppService.Get<Func<TournamentService, TeamService, CoachService, Guid, EditTeamForm>>();
+            var form = formEditFactory(AppService.Get<TournamentService>(), _teamService, AppService.Get<CoachService>(), _id);
+            form.Location = new Point(250, 140);
+            form.ShowDialog();
+            await LoadTeam();
         }
 
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
-            var formAdd = new AddPlayerForm();
-            formAdd.Location = new Point(250, 140);
-            formAdd.ShowDialog();
+            var formAddFactory = AppService.Get<Func<PlayerService, Guid, AddPlayerForm>>();
+            var form = formAddFactory(_playerService, _id);
+            form.Location = new Point(250, 140);
+            form.ShowDialog();
+            LoadData();
+        }
+
+        private async void TeamDetailForm_Load(object sender, EventArgs e)
+        {
+            await Getall();
+            await LoadTeam();
+            LoadData();
+        }
+
+        private async Task LoadTeam()
+        {
+            var team = await _teamService.GetTeamByIdAsync(_id);
+            if (team != null)
+            {
+                lblName.Text = team.Name;
+                lblCode.Text = team.Id.ToString();
+                lblStadium.Text = team.Province;
+                lblCoach.Text = team.Coach.Name;
+            }
         }
     }
 }

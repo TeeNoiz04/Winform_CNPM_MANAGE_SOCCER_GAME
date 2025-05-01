@@ -26,7 +26,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
 
             cbbSoDong.SelectedIndex = 0;
             cbbSapXep.SelectedIndex = 0;
-            cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
+            //cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
             cbbCot.SelectedIndex = 0;
 
             if (curentPage == 1)

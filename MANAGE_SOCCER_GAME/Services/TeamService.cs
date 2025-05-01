@@ -8,29 +8,34 @@ namespace MANAGE_SOCCER_GAME.Services
     public class TeamService
     {
         private readonly ManageSoccerGame _context;
-        private readonly TournamentService _tournamentService;
 
         public TeamService(ManageSoccerGame context)
         {
             _context = context;
-            _tournamentService = new TournamentService(_context);
         }
 
         public async Task<Team> CreateTeamAsync(Team team)
         {
            await ValidateTeamAsync(team);
 
-            if (await _context.Teams.AnyAsync(t => t.Name == team.Name && t.IdTournament == team.IdTournament))
+            if (await _context.Teams.AnyAsync(t => 
+                t.Name == team.Name && 
+                t.IdTournament == team.IdTournament))
             {
                 throw new ArgumentException("A team with the same name already exists in this tournament.", nameof(team));
             }
 
-            if (await _context.Teams.AnyAsync(t => t.Name == team.Name && t.IdTournament == team.IdTournament && t.IdCoach == team.IdCoach))
+            if (await _context.Teams.AnyAsync(t => 
+                t.Name == team.Name && 
+                t.IdTournament == team.IdTournament && 
+                t.IdCoach == team.IdCoach))
             {
                 throw new ArgumentException("A team with the same name and coach already exists in this tournament.", nameof(team));
             }
 
-            if (await _context.Teams.AnyAsync(t => t.IdCoach == team.IdCoach && t.IdTournament == team.IdTournament))
+            if (await _context.Teams.AnyAsync(t => 
+                t.IdCoach == team.IdCoach && 
+                t.IdTournament == team.IdTournament))
             {
                 throw new ArgumentException("A coach can only coach one team in a tournament.", nameof(team));
             }
@@ -42,7 +47,7 @@ namespace MANAGE_SOCCER_GAME.Services
             return team;
         }
 
-        public async Task<List<TeamDTO>> GetAllTeamByTournamentIdAsync(Guid id)
+        public async Task<List<TeamDTO>?> GetAllTeamByTournamentIdAsync(Guid id)
         {
             var teams = await _context.Teams.Include(x => x.Player)
                                         .Include(x => x.Coach)
@@ -55,26 +60,17 @@ namespace MANAGE_SOCCER_GAME.Services
                 Id = c.Id,
                 Name = c.Name,
                 TotalPlayers = c.Player.Count(),
+                Stadium = c.Province
             }).ToList();
 
             return dtos;
         }
 
-        public async Task<TeamDTO?> GetTeamByIdAsync(Guid id)
+        public async Task<Team?> GetTeamByIdAsync(Guid id)
         {
-            var team = await _context.Teams.Include(x => x.Player)
+            return await _context.Teams.Include(x => x.Player)
                                         .Include(x => x.Coach)
                                         .FirstOrDefaultAsync(x => x.Id == id);
-            if (team == null)
-                return null;    
-            var dto = new TeamDTO
-            {
-                Id = team.Id,
-                Name = team.Name,
-                TotalPlayers = team.Player.Count(),
-            };
-
-            return dto;
         }
 
         public async Task<Team?> UpdateTeamAsync(Guid Id, Team team)
@@ -84,6 +80,32 @@ namespace MANAGE_SOCCER_GAME.Services
                 return null;
 
             await ValidateTeamAsync(team);
+
+            if (await _context.Teams.AnyAsync(t =>
+                t.Name == team.Name && 
+                t.IdTournament == team.IdTournament && 
+                t.Id != Id))
+            {
+                throw new ArgumentException("A team with the same name already exists in this tournament.", nameof(team));
+            }
+
+            if (await _context.Teams.AnyAsync(t => 
+                t.Name == team.Name && 
+                t.IdTournament == team.IdTournament && 
+                t.IdCoach == team.IdCoach &&
+                t.Id != Id))
+            {
+                throw new ArgumentException("A team with the same name and coach already exists in this tournament.", nameof(team));
+            }
+
+            if (await _context.Teams.AnyAsync(t => 
+                t.IdCoach == team.IdCoach && 
+                t.IdTournament == team.IdTournament &&
+                t.Id != Id))
+            {
+                throw new ArgumentException("A coach can only coach one team in a tournament.", nameof(team));
+            }
+
             existingTeam.Name = team.Name;
             existingTeam.Province = team.Province;
             existingTeam.IdTournament = team.IdTournament;
@@ -110,6 +132,11 @@ namespace MANAGE_SOCCER_GAME.Services
             return await _context.Teams.AnyAsync(t => t.Id == id);
         }
 
+        public async Task<bool> TeamNameExistsAsync(Guid id, string name)
+        {
+            return await _context.Teams.AnyAsync(t => t.Name == name && t.IdTournament == id);
+        }
+
         public async Task<List<TeamDTO>> SearchTeamsAsync(string keyword)
         {
             keyword = keyword.Trim().ToLower();
@@ -129,6 +156,12 @@ namespace MANAGE_SOCCER_GAME.Services
             return dtos;
         }
 
+        public async Task<int> GetTotalPagesAsync(Guid id,int pageSize)
+        {
+            var total = await _context.Teams.Where(x => !x.IsDeleted && x.IdTournament == id).CountAsync();
+            return (int)Math.Ceiling((double)total / pageSize);
+        }
+
         private async Task ValidateTeamAsync(Team team)
         {
             if (team == null)
@@ -146,7 +179,7 @@ namespace MANAGE_SOCCER_GAME.Services
                 throw new ArgumentException("Team province must contain only letters and spaces, and cannot be empty.", nameof(team.Province));
             }
 
-            if (!await _tournamentService.TournamentExistsAsync(team.IdTournament))
+            if (!await _context.Tournaments.AnyAsync(t => t.Id == team.IdTournament))
             {
                 throw new ArgumentException("Tournament not found", nameof(team.IdTournament));
             }

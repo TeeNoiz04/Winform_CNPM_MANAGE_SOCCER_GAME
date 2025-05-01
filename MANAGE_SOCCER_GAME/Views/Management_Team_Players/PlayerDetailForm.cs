@@ -1,27 +1,20 @@
-﻿using MANAGE_SOCCER_GAME.Data;
+﻿using MANAGE_SOCCER_GAME.Models;
+using MANAGE_SOCCER_GAME.Services;
 using MANAGE_SOCCER_GAME.Utils.Routing;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 {
     public partial class PlayerDetailForm : Form
     {
+        private readonly PlayerService _playerService;
         private Router _router;
-        private int curentPage = 1;
-        private int countLine = 0;
-        private float totalPage = 0;
-        public PlayerDetailForm()
+        private readonly Guid _id;
+        private Guid _teamId;
+        public PlayerDetailForm(PlayerService playerService, Guid id)
         {
             InitializeComponent();
             _router = new Router();
+            _playerService = playerService;
+            _id = id;
         }
 
 
@@ -62,14 +55,46 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            _router.LoadForm3<TeamDetailForm>();
+            var formDetailFactory = AppService.Get<Func<TeamService, PlayerService, Guid, TeamDetailForm>>();
+            var form = formDetailFactory(AppService.Get<TeamService>(), AppService.Get<PlayerService>(), _teamId);
+            _router.LoadForm3(form);
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private async void btnEdit_Click(object sender, EventArgs e)
         {
-            var formEdit = new EditPlayerForm();
+            var formEditFactory = AppService.Get<Func<PlayerService, Guid, EditPlayerForm>>();
+            var formEdit = formEditFactory(AppService.Get<PlayerService>(), _id);
             formEdit.Location = new Point(250, 140);
             formEdit.ShowDialog();
+            await LoadData();
+        }
+
+        private async Task LoadData()
+        {
+            var players = await _playerService.GetPlayerDetailByIdAsync(_id);
+            if (players != null)
+            {
+                _teamId = players.TeamId.Value;
+                lblName.Text = players.Name;
+                lblPosition.Text = players.Position;
+                lblAge.Text = players.Age.ToString();
+                lblHeight.Text = players.Height.ToString();
+                lblGoalsScored.Text = players.TotalGoals.ToString();
+                lblAssists.Text = players.TotalAssists.ToString();
+                lblMatchPlayed.Text = players.TotalMatches.ToString();
+                lblYellowCards.Text = players.TotalYellowCards.ToString();
+                lblRedCards.Text = players.TotalRedCards.ToString();
+                lblNameClub.Text = players.TeamName;
+            }
+            else
+            {
+                MessageBox.Show("Player not found.");
+            }
+        }
+
+        private async void PlayerDetailForm_Load(object sender, EventArgs e)
+        {
+            await LoadData();
         }
     }
 }

@@ -63,7 +63,7 @@
             Club = new DataGridViewTextBoxColumn();
             Played = new DataGridViewTextBoxColumn();
             Stadium = new DataGridViewTextBoxColumn();
-            Action = new DataGridViewButtonColumn();
+            Detail = new DataGridViewButtonColumn();
             Action2 = new DataGridViewButtonColumn();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
@@ -109,7 +109,7 @@
             txbTimKiem.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txbTimKiem.Cursor = Cursors.IBeam;
             txbTimKiem.CustomizableEdges = customizableEdges3;
-            txbTimKiem.DefaultText = "Search";
+            txbTimKiem.DefaultText = "";
             txbTimKiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbTimKiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txbTimKiem.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -120,7 +120,7 @@
             txbTimKiem.Location = new Point(96, 10);
             txbTimKiem.Margin = new Padding(3, 4, 3, 4);
             txbTimKiem.Name = "txbTimKiem";
-            txbTimKiem.PlaceholderText = "";
+            txbTimKiem.PlaceholderText = "Search";
             txbTimKiem.SelectedText = "";
             txbTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txbTimKiem.Size = new Size(1407, 30);
@@ -139,7 +139,7 @@
             cbbCot.Name = "cbbCot";
             cbbCot.Size = new Size(115, 26);
             cbbCot.TabIndex = 11;
-            cbbCot.SelectedIndexChanged += cbbCot_SelectedIndexChanged;
+            cbbCot.SelectedIndexChanged += cbb_SelectedIndexChanged;
             // 
             // lblCot
             // 
@@ -176,7 +176,7 @@
             cbbSapXep.Name = "cbbSapXep";
             cbbSapXep.Size = new Size(95, 26);
             cbbSapXep.TabIndex = 9;
-            cbbSapXep.SelectedIndexChanged += cbbSapXep_SelectedIndexChanged;
+            cbbSapXep.SelectedIndexChanged += cbb_SelectedIndexChanged;
             // 
             // pnContent
             // 
@@ -253,7 +253,7 @@
             cbbSoDong.Name = "cbbSoDong";
             cbbSoDong.Size = new Size(70, 26);
             cbbSoDong.TabIndex = 3;
-            cbbSoDong.SelectedIndexChanged += cbbSoDong_SelectedIndexChanged;
+            cbbSoDong.SelectedIndexChanged += cbb_SelectedIndexChanged;
             // 
             // lblSoDong
             // 
@@ -315,7 +315,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Club, Played, Stadium, Action, Action2 });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Club, Played, Stadium, Detail, Action2 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -365,38 +365,44 @@
             // 
             // ID
             // 
+            ID.DataPropertyName = "Id";
             ID.HeaderText = "Code";
             ID.Name = "ID";
             // 
             // Club
             // 
+            Club.DataPropertyName = "Name";
             Club.FillWeight = 66.1519F;
             Club.HeaderText = "Club";
             Club.Name = "Club";
             // 
             // Played
             // 
+            Played.DataPropertyName = "TotalPlayers";
             Played.FillWeight = 66.1519F;
             Played.HeaderText = "Played";
             Played.Name = "Played";
             // 
             // Stadium
             // 
+            Stadium.DataPropertyName = "Stadium";
             Stadium.HeaderText = "Stadium";
             Stadium.Name = "Stadium";
             // 
-            // Action
+            // Detail
             // 
-            Action.FillWeight = 50F;
-            Action.HeaderText = "Action";
-            Action.Name = "Action";
-            Action.Resizable = DataGridViewTriState.True;
-            Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Detail";
-            Action.UseColumnTextForButtonValue = true;
+            Detail.DataPropertyName = "Detail";
+            Detail.FillWeight = 50F;
+            Detail.HeaderText = "Action";
+            Detail.Name = "Detail";
+            Detail.Resizable = DataGridViewTriState.True;
+            Detail.SortMode = DataGridViewColumnSortMode.Automatic;
+            Detail.Text = "Detail";
+            Detail.UseColumnTextForButtonValue = true;
             // 
             // Action2
             // 
+            Action2.DataPropertyName = "Delete";
             Action2.FillWeight = 50F;
             Action2.HeaderText = "";
             Action2.Name = "Action2";
@@ -416,6 +422,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "TeamListForm";
             Text = "OrdersForm";
+            Shown += TeamListForm_Shown;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             pnContent.ResumeLayout(false);
@@ -423,7 +430,6 @@
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -449,7 +455,7 @@
         private DataGridViewTextBoxColumn Club;
         private DataGridViewTextBoxColumn Played;
         private DataGridViewTextBoxColumn Stadium;
-        private DataGridViewButtonColumn Action;
+        private DataGridViewButtonColumn Detail;
         private DataGridViewButtonColumn Action2;
     }
 }

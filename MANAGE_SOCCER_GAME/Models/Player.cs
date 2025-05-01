@@ -23,6 +23,7 @@ namespace MANAGE_SOCCER_GAME.Models
         public Guid? IdTeam { get; set; }
         public Team? Team { get; set; }
         public ICollection<SoccerGame> SoccerGamesAsGoalscorer { get; set; }
+        public ICollection<SoccerGame> SoccerGamesAsAssitscorer { get; set; }
         public ICollection<PenaltyCard> PenaltyCards { get; set; }
         public ICollection<MatchdaySquad> MatchdaySquads { get; set; }
     }
