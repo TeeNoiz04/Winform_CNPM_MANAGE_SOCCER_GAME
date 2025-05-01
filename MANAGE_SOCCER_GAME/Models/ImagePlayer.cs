@@ -14,7 +14,6 @@ namespace MANAGE_SOCCER_GAME.Models
         public required string PublicId { get; set; }
         public DateTime CreateAt { get; set; } = DateTime.Now;
         public DateTime UpdateAt { get; set; } = DateTime.Now;
-        
         public Guid PlayerId { get; set; }
         public Player Player { get; set; }
       

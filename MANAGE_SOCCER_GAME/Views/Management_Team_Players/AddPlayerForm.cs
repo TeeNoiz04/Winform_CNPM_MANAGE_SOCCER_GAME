@@ -6,13 +6,18 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
     public partial class AddPlayerForm : Form
     {
         private readonly PlayerService _playerService;
-        private readonly Guid _id;
+        private readonly CloudService _cloudService;
+        private readonly ImagePlayerService _imagePlayerService;
+        private readonly Guid _teamId;
+        private ImagePlayer _tempImage;
 
-        public AddPlayerForm(PlayerService playerService, Guid id)
+        public AddPlayerForm(PlayerService playerService, CloudService cloudService, ImagePlayerService imagePlayerService, Guid teamId)
         {
             InitializeComponent();
             _playerService = playerService;
-            _id = id;
+            _cloudService = cloudService;
+            _imagePlayerService = imagePlayerService;
+            _teamId = teamId;
         }
 
         private void txbFullName_MouseLeave(object sender, EventArgs e)
@@ -214,14 +219,49 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 txbHeight.BorderColor = Color.FromArgb(60, 211, 252);
             }
         }
-        private void btnCancel_Click(object sender, EventArgs e)
+        private async void btnCancel_Click(object sender, EventArgs e)
         {
+            if (_tempImage != null)
+                await _cloudService.DeleteImageAsync(_tempImage.PublicId);
             this.Close();
         }
 
-        private void txbUpload_Click(object sender, EventArgs e)
+        private async void txbUpload_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif";
+                openFileDialog.Title = "Chọn ảnh cầu thủ";
 
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    string altText = "Ảnh đại diện cầu thủ";
+
+                    try
+                    {
+                        var imageDTO = await _cloudService.UploadImageAsync(filePath, null, altText);
+                        if (imageDTO != null)
+                        {
+                            picAvatar.ImageLocation = imageDTO.Url;
+                            _tempImage = new ImagePlayer
+                            {
+                                PublicId = imageDTO.PublicId,
+                                Url = imageDTO.Url,
+                                AltText = altText
+                            };
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể tải ảnh lên.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi khi tải ảnh: {ex.Message}");
+                    }
+                }
+            }
         }
 
         private async void btnSubmit_Click(object sender, EventArgs e)
@@ -238,31 +278,72 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 BirthDate = dtBirthDate.Value.Date,
                 Position = txbPosition.Text.Trim(),
                 Number = int.Parse(txbNumber.Text.Trim()),
-                National = txbNational.Text,
+                National = txbNational.Text.Trim(),
                 Weight = int.Parse(txbWeight.Text.Trim()),
                 Height = int.Parse(txbHeight.Text.Trim()),
-                IdTeam = _id,
+                IdTeam = _teamId,
                 IdImage = null,
                 Status = "Đá chính"
             };
-          
+
             try
             {
-                var savedCourse = await _playerService.CreatePlayerAsync(player);
+                var createdPlayer = await _playerService.CreatePlayerAsync(player);
+                if (_tempImage != null)
+                {
+                    _tempImage.PlayerId = createdPlayer.Id;
+                    var savedImage = await _imagePlayerService.CreateImageAsync(_tempImage);
+                    createdPlayer.IdImage = savedImage.Id;
+                    await _playerService.UpdatePlayerAsync(createdPlayer.Id, createdPlayer);
+                }
 
                 AppService.ShowSuccess("Thêm cầu thủ thành công!");
                 this.Close();
             }
             catch (Exception ex)
             {
+                if (_tempImage != null)
+                    await _cloudService.DeleteImageAsync(_tempImage.PublicId);
                 AppService.ShowError("Lỗi khi thêm cầu thủ: " + ex.Message);
             }
         }
 
-        private bool ValidatePlayerInput()
+         private bool ValidatePlayerInput()
         {
-            if (AppService.IsEmptyInput(txbFullName ,txbPosition, txbNumber, txbNational,txbHeight ,txbWeight))
+            if (AppService.IsEmptyInput(txbFullName, txbPosition, txbNumber, txbNational, txbHeight, txbWeight))
+            {
                 return false;
+            }
+
+            if (!int.TryParse(txbNumber.Text.Trim(), out int number) || number <= 0 || number > 99)
+            {
+                MessageBox.Show("Số áo phải là số nguyên từ 1 đến 99.");
+                return false;
+            }
+
+            if (!int.TryParse(txbWeight.Text.Trim(), out int weight) || weight < 40 || weight > 150)
+            {
+                MessageBox.Show("Cân nặng phải là số nguyên từ 40 đến 150 kg.");
+                return false;
+            }
+
+            if (!int.TryParse(txbHeight.Text.Trim(), out int height) || height < 140 || height > 220)
+            {
+                MessageBox.Show("Chiều cao phải là số nguyên từ 140 đến 220 cm.");
+                return false;
+            }
+
+            if (dtBirthDate.Value > DateTime.Now || dtBirthDate.Value.Year < DateTime.Now.Year - 100)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ.");
+                return false;
+            }
+
+            if (!txbNational.Text.Trim().All(char.IsLetterOrDigit))
+            {
+                MessageBox.Show("Quốc tịch chỉ chứa chữ cái và số.");
+                return false;
+            }
 
             return true;
         }

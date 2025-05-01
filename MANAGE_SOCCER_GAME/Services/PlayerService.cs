@@ -51,7 +51,8 @@ using Microsoft.EntityFrameworkCore;
             var player = await _context.Players.Include(x => x.SoccerGamesAsGoalscorer)
                                          .Include(x => x.PenaltyCards)
                                          .Include(x => x.MatchdaySquads)
-                                         .Include(x => x.Team).FirstOrDefaultAsync(x => x.Id == id);
+                                         .Include(x => x.Team).ThenInclude(x => x.Image)
+                                         .Include(x => x.Image).FirstOrDefaultAsync(x => x.Id == id);
 
             if (player == null)
                 return null;
@@ -74,7 +75,9 @@ using Microsoft.EntityFrameworkCore;
                 TotalGoals = totalGoals,
                 TotalAssists = totalAssists,
                 TeamName = player.Team != null ? player.Team.Name : "No Team",
-                TeamId = player.IdTeam ?? Guid.Empty
+                TeamId = player.IdTeam ?? Guid.Empty,
+                urlPlayer = player.Image?.Url,
+                urlTeam = player.Team?.Image?.Url,
             };
 
             return dto;
@@ -156,6 +159,7 @@ using Microsoft.EntityFrameworkCore;
             existingPlayer.Number = player.Number;
             existingPlayer.Height = player.Height;
             existingPlayer.Weight = player.Weight;
+            existingPlayer.IdImage = player.IdImage ?? null;
 
             await _context.SaveChangesAsync();
             return existingPlayer;

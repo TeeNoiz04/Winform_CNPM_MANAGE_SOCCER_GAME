@@ -67,6 +67,17 @@
             btnTrangTruoc = new Button();
             btnTrangKe = new Button();
             dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            NameTeam = new DataGridViewTextBoxColumn();
+            Age = new DataGridViewTextBoxColumn();
+            Nationality = new DataGridViewTextBoxColumn();
+            Position = new DataGridViewTextBoxColumn();
+            Goals = new DataGridViewTextBoxColumn();
+            Assists = new DataGridViewTextBoxColumn();
+            YellowCards = new DataGridViewTextBoxColumn();
+            RedCards = new DataGridViewTextBoxColumn();
+            Action = new DataGridViewButtonColumn();
+            Action2 = new DataGridViewButtonColumn();
             picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             pnContentTeam = new Guna.UI2.WinForms.Guna2Panel();
             label4 = new Label();
@@ -79,17 +90,6 @@
             lblCode = new Label();
             lblName = new Label();
             btnBack = new Guna.UI2.WinForms.Guna2Button();
-            ID = new DataGridViewTextBoxColumn();
-            NameTeam = new DataGridViewTextBoxColumn();
-            Age = new DataGridViewTextBoxColumn();
-            Nationality = new DataGridViewTextBoxColumn();
-            Position = new DataGridViewTextBoxColumn();
-            Goals = new DataGridViewTextBoxColumn();
-            Assists = new DataGridViewTextBoxColumn();
-            YellowCards = new DataGridViewTextBoxColumn();
-            RedCards = new DataGridViewTextBoxColumn();
-            Action = new DataGridViewButtonColumn();
-            Action2 = new DataGridViewButtonColumn();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -389,6 +389,85 @@
             dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
+            // ID
+            // 
+            ID.DataPropertyName = "Id";
+            ID.HeaderText = "#";
+            ID.Name = "ID";
+            // 
+            // NameTeam
+            // 
+            NameTeam.DataPropertyName = "Name";
+            NameTeam.FillWeight = 66.1519F;
+            NameTeam.HeaderText = "Name";
+            NameTeam.Name = "NameTeam";
+            // 
+            // Age
+            // 
+            Age.DataPropertyName = "Age";
+            Age.FillWeight = 66.1519F;
+            Age.HeaderText = "Age";
+            Age.Name = "Age";
+            // 
+            // Nationality
+            // 
+            Nationality.DataPropertyName = "Nationality";
+            Nationality.FillWeight = 66.1519F;
+            Nationality.HeaderText = "Nationality";
+            Nationality.Name = "Nationality";
+            Nationality.Resizable = DataGridViewTriState.True;
+            // 
+            // Position
+            // 
+            Position.DataPropertyName = "Position";
+            Position.HeaderText = "Position";
+            Position.Name = "Position";
+            // 
+            // Goals
+            // 
+            Goals.DataPropertyName = "Goals";
+            Goals.FillWeight = 66.1519F;
+            Goals.HeaderText = "Goals";
+            Goals.Name = "Goals";
+            // 
+            // Assists
+            // 
+            Assists.DataPropertyName = "Assists";
+            Assists.HeaderText = "Assists";
+            Assists.Name = "Assists";
+            // 
+            // YellowCards
+            // 
+            YellowCards.DataPropertyName = "YellowCards";
+            YellowCards.HeaderText = "Yellow Cards";
+            YellowCards.Name = "YellowCards";
+            // 
+            // RedCards
+            // 
+            RedCards.DataPropertyName = "RedCards";
+            RedCards.HeaderText = "Red Cards";
+            RedCards.Name = "RedCards";
+            // 
+            // Action
+            // 
+            Action.FillWeight = 50F;
+            Action.HeaderText = "Action";
+            Action.Name = "Action";
+            Action.Resizable = DataGridViewTriState.True;
+            Action.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action.Text = "Detail";
+            Action.UseColumnTextForButtonValue = true;
+            // 
+            // Action2
+            // 
+            Action2.FillWeight = 50F;
+            Action2.HeaderText = "";
+            Action2.Name = "Action2";
+            Action2.Resizable = DataGridViewTriState.True;
+            Action2.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action2.Text = "Delete";
+            Action2.UseColumnTextForButtonValue = true;
+            // 
             // picLogo
             // 
             picLogo.CustomizableEdges = customizableEdges11;
@@ -397,6 +476,7 @@
             picLogo.Name = "picLogo";
             picLogo.ShadowDecoration.CustomizableEdges = customizableEdges12;
             picLogo.Size = new Size(270, 270);
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 28;
             picLogo.TabStop = false;
             // 
@@ -543,85 +623,6 @@
             btnBack.TabIndex = 34;
             btnBack.Text = "<<";
             btnBack.Click += btnBack_Click;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "Id";
-            ID.HeaderText = "#";
-            ID.Name = "ID";
-            // 
-            // NameTeam
-            // 
-            NameTeam.DataPropertyName = "Name";
-            NameTeam.FillWeight = 66.1519F;
-            NameTeam.HeaderText = "Name";
-            NameTeam.Name = "NameTeam";
-            // 
-            // Age
-            // 
-            Age.DataPropertyName = "Age";
-            Age.FillWeight = 66.1519F;
-            Age.HeaderText = "Age";
-            Age.Name = "Age";
-            // 
-            // Nationality
-            // 
-            Nationality.DataPropertyName = "Nationality";
-            Nationality.FillWeight = 66.1519F;
-            Nationality.HeaderText = "Nationality";
-            Nationality.Name = "Nationality";
-            Nationality.Resizable = DataGridViewTriState.True;
-            // 
-            // Position
-            // 
-            Position.DataPropertyName = "Position";
-            Position.HeaderText = "Position";
-            Position.Name = "Position";
-            // 
-            // Goals
-            // 
-            Goals.DataPropertyName = "Goals";
-            Goals.FillWeight = 66.1519F;
-            Goals.HeaderText = "Goals";
-            Goals.Name = "Goals";
-            // 
-            // Assists
-            // 
-            Assists.DataPropertyName = "Assists";
-            Assists.HeaderText = "Assists";
-            Assists.Name = "Assists";
-            // 
-            // YellowCards
-            // 
-            YellowCards.DataPropertyName = "YellowCards";
-            YellowCards.HeaderText = "Yellow Cards";
-            YellowCards.Name = "YellowCards";
-            // 
-            // RedCards
-            // 
-            RedCards.DataPropertyName = "RedCards";
-            RedCards.HeaderText = "Red Cards";
-            RedCards.Name = "RedCards";
-            // 
-            // Action
-            // 
-            Action.FillWeight = 50F;
-            Action.HeaderText = "Action";
-            Action.Name = "Action";
-            Action.Resizable = DataGridViewTriState.True;
-            Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Detail";
-            Action.UseColumnTextForButtonValue = true;
-            // 
-            // Action2
-            // 
-            Action2.FillWeight = 50F;
-            Action2.HeaderText = "";
-            Action2.Name = "Action2";
-            Action2.Resizable = DataGridViewTriState.True;
-            Action2.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action2.Text = "Delete";
-            Action2.UseColumnTextForButtonValue = true;
             // 
             // TeamDetailForm
             // 

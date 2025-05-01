@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Microsoft.Extensions.DependencyInjection;
+using System.Net;
 
 namespace MANAGE_SOCCER_GAME.Services
 {
@@ -60,6 +61,31 @@ namespace MANAGE_SOCCER_GAME.Services
 
             return System.Text.RegularExpressions.Regex.IsMatch(name, @"^[\p{L} ]{2,50}$");
         }
-       
+
+        public static async Task LoadImageFromUrl(string? imageUrl, Guna2PictureBox pictureBox)
+        {
+            if (string.IsNullOrEmpty(imageUrl))
+            {
+                return;
+            }
+
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var imageBytes = await httpClient.GetByteArrayAsync(imageUrl);
+                    using (var ms = new MemoryStream(imageBytes))
+                    {
+                        pictureBox.Image = Image.FromStream(ms);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể tải ảnh: " + ex.Message);
+            }
+        }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using MANAGE_SOCCER_GAME.Data;
+﻿using CloudinaryDotNet;
+using MANAGE_SOCCER_GAME.Data;
 using MANAGE_SOCCER_GAME.Dtos;
 using MANAGE_SOCCER_GAME.Models;
 using MANAGE_SOCCER_GAME.Services;
@@ -181,12 +182,18 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 {
                     var form = formDetailFactory(AppService.Get<PlayerService>(), id);
                     _router.LoadForm3(form);
-                    LoadData();
+                       
                 }
                 // Chi tiết
                 else if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
                 {
-                    //_action.LoadDetailOrders(id);
+                    var result = MessageBox.Show("Bạn có chắc chắn muốn xóa cầu thủ này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.No) {
+                        return;
+                    }
+                    await _playerService.DeletePlayerAsync(id);
+                    await Getall();
+                    LoadData();
                 }
 
             }    
@@ -236,19 +243,23 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         private async void btnEdit_Click(object sender, EventArgs e)
         {
-            var formEditFactory = AppService.Get<Func<TournamentService, TeamService, CoachService, Guid, EditTeamForm>>();
-            var form = formEditFactory(AppService.Get<TournamentService>(), _teamService, AppService.Get<CoachService>(), _id);
+            var formEditFactory = AppService.Get<Func<TournamentService, TeamService, CoachService, 
+                CloudService, ImageTeamService, Guid, EditTeamForm>>();
+            var form = formEditFactory(AppService.Get<TournamentService>(), _teamService, AppService.Get<CoachService>(),
+                AppService.Get<CloudService>(), AppService.Get<ImageTeamService>(), _id);
+
             form.Location = new Point(250, 140);
             form.ShowDialog();
             await LoadTeam();
         }
 
-        private void btnAddPlayer_Click(object sender, EventArgs e)
+        private async void btnAddPlayer_Click(object sender, EventArgs e)
         {
-            var formAddFactory = AppService.Get<Func<PlayerService, Guid, AddPlayerForm>>();
-            var form = formAddFactory(_playerService, _id);
+            var formAddFactory = AppService.Get<Func<PlayerService, CloudService, ImagePlayerService,Guid, AddPlayerForm>>();
+            var form = formAddFactory(_playerService, AppService.Get<CloudService>(), AppService.Get<ImagePlayerService>(), _id);
             form.Location = new Point(250, 140);
             form.ShowDialog();
+            await Getall();
             LoadData();
         }
 
@@ -268,6 +279,9 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 lblCode.Text = team.Id.ToString();
                 lblStadium.Text = team.Province;
                 lblCoach.Text = team.Coach.Name;
+                if (!string.IsNullOrEmpty(team.Image?.Url))
+                    AppService.LoadImageFromUrl(team.Image.Url, picLogo);
+
             }
         }
     }

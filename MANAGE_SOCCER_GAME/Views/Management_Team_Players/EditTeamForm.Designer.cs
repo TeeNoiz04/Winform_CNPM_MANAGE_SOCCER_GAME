@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txbProvince = new Guna.UI2.WinForms.Guna2TextBox();
             txbTeamname = new Guna.UI2.WinForms.Guna2TextBox();
             lblName = new Label();
@@ -54,13 +54,13 @@
             btnSubmit = new Guna.UI2.WinForms.Guna2Button();
             gnElipse = new Guna.UI2.WinForms.Guna2Elipse(components);
             openFileDialog = new OpenFileDialog();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            picAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             cbbTournament = new Guna.UI2.WinForms.Guna2ComboBox();
             lblTournament = new Label();
             lblCoach = new Label();
             cbbCoach = new Guna.UI2.WinForms.Guna2ComboBox();
             txbUpload = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatar).BeginInit();
             SuspendLayout();
             // 
             // txbProvince
@@ -69,7 +69,7 @@
             txbProvince.BorderColor = Color.FromArgb(52, 52, 116);
             txbProvince.BorderRadius = 5;
             txbProvince.Cursor = Cursors.IBeam;
-            txbProvince.CustomizableEdges = customizableEdges1;
+            txbProvince.CustomizableEdges = customizableEdges17;
             txbProvince.DefaultText = "Province";
             txbProvince.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbProvince.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -85,7 +85,7 @@
             txbProvince.Name = "txbProvince";
             txbProvince.PlaceholderText = "";
             txbProvince.SelectedText = "";
-            txbProvince.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txbProvince.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txbProvince.Size = new Size(400, 50);
             txbProvince.TabIndex = 34;
             txbProvince.Click += txbProvince_Click;
@@ -100,7 +100,7 @@
             txbTeamname.BorderColor = Color.FromArgb(52, 52, 116);
             txbTeamname.BorderRadius = 5;
             txbTeamname.Cursor = Cursors.IBeam;
-            txbTeamname.CustomizableEdges = customizableEdges3;
+            txbTeamname.CustomizableEdges = customizableEdges19;
             txbTeamname.DefaultText = "Team name";
             txbTeamname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbTeamname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -116,7 +116,7 @@
             txbTeamname.Name = "txbTeamname";
             txbTeamname.PlaceholderText = "";
             txbTeamname.SelectedText = "";
-            txbTeamname.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txbTeamname.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txbTeamname.Size = new Size(400, 50);
             txbTeamname.TabIndex = 33;
             txbTeamname.Click += txbTeamname_Click;
@@ -164,7 +164,7 @@
             // 
             btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnCancel.BorderRadius = 5;
-            btnCancel.CustomizableEdges = customizableEdges5;
+            btnCancel.CustomizableEdges = customizableEdges21;
             btnCancel.DisabledState.BorderColor = Color.DarkGray;
             btnCancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -174,7 +174,7 @@
             btnCancel.ForeColor = Color.White;
             btnCancel.Location = new Point(50, 710);
             btnCancel.Name = "btnCancel";
-            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btnCancel.Size = new Size(100, 40);
             btnCancel.TabIndex = 41;
             btnCancel.Text = "Cancel";
@@ -184,7 +184,7 @@
             // 
             btnSubmit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnSubmit.BorderRadius = 5;
-            btnSubmit.CustomizableEdges = customizableEdges7;
+            btnSubmit.CustomizableEdges = customizableEdges23;
             btnSubmit.DisabledState.BorderColor = Color.DarkGray;
             btnSubmit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSubmit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -194,7 +194,7 @@
             btnSubmit.ForeColor = Color.White;
             btnSubmit.Location = new Point(350, 710);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnSubmit.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnSubmit.Size = new Size(100, 40);
             btnSubmit.TabIndex = 42;
             btnSubmit.Text = "Submit";
@@ -209,23 +209,24 @@
             // 
             openFileDialog.FileName = "openFileDialog";
             // 
-            // guna2PictureBox1
+            // picAvatar
             // 
-            guna2PictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            guna2PictureBox1.CustomizableEdges = customizableEdges15;
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(50, 140);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2PictureBox1.Size = new Size(120, 120);
-            guna2PictureBox1.TabIndex = 43;
-            guna2PictureBox1.TabStop = false;
+            picAvatar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            picAvatar.CustomizableEdges = customizableEdges25;
+            picAvatar.ImageRotate = 0F;
+            picAvatar.Location = new Point(50, 140);
+            picAvatar.Name = "picAvatar";
+            picAvatar.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            picAvatar.Size = new Size(120, 120);
+            picAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            picAvatar.TabIndex = 43;
+            picAvatar.TabStop = false;
             // 
             // cbbTournament
             // 
             cbbTournament.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             cbbTournament.BackColor = Color.Transparent;
-            cbbTournament.CustomizableEdges = customizableEdges13;
+            cbbTournament.CustomizableEdges = customizableEdges27;
             cbbTournament.DrawMode = DrawMode.OwnerDrawFixed;
             cbbTournament.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbTournament.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -235,7 +236,7 @@
             cbbTournament.ItemHeight = 30;
             cbbTournament.Location = new Point(50, 520);
             cbbTournament.Name = "cbbTournament";
-            cbbTournament.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            cbbTournament.ShadowDecoration.CustomizableEdges = customizableEdges28;
             cbbTournament.Size = new Size(400, 36);
             cbbTournament.TabIndex = 44;
             // 
@@ -267,7 +268,7 @@
             // 
             cbbCoach.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             cbbCoach.BackColor = Color.Transparent;
-            cbbCoach.CustomizableEdges = customizableEdges11;
+            cbbCoach.CustomizableEdges = customizableEdges29;
             cbbCoach.DrawMode = DrawMode.OwnerDrawFixed;
             cbbCoach.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbCoach.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -277,7 +278,7 @@
             cbbCoach.ItemHeight = 30;
             cbbCoach.Location = new Point(50, 606);
             cbbCoach.Name = "cbbCoach";
-            cbbCoach.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cbbCoach.ShadowDecoration.CustomizableEdges = customizableEdges30;
             cbbCoach.Size = new Size(400, 36);
             cbbCoach.TabIndex = 47;
             // 
@@ -285,7 +286,7 @@
             // 
             txbUpload.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txbUpload.BorderRadius = 5;
-            txbUpload.CustomizableEdges = customizableEdges9;
+            txbUpload.CustomizableEdges = customizableEdges31;
             txbUpload.DisabledState.BorderColor = Color.DarkGray;
             txbUpload.DisabledState.CustomBorderColor = Color.DarkGray;
             txbUpload.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -295,7 +296,7 @@
             txbUpload.ForeColor = Color.White;
             txbUpload.Location = new Point(190, 185);
             txbUpload.Name = "txbUpload";
-            txbUpload.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txbUpload.ShadowDecoration.CustomizableEdges = customizableEdges32;
             txbUpload.Size = new Size(140, 30);
             txbUpload.TabIndex = 48;
             txbUpload.Text = "Upload logo";
@@ -312,7 +313,7 @@
             Controls.Add(lblCoach);
             Controls.Add(lblTournament);
             Controls.Add(cbbTournament);
-            Controls.Add(guna2PictureBox1);
+            Controls.Add(picAvatar);
             Controls.Add(btnSubmit);
             Controls.Add(btnCancel);
             Controls.Add(lblTitle);
@@ -325,7 +326,7 @@
             Name = "EditTeamForm";
             Text = "AddTeamForm";
             Load += EditTeamForm_Load;
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -339,7 +340,7 @@
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnSubmit;
         private Guna.UI2.WinForms.Guna2Elipse gnElipse;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox picAvatar;
         private OpenFileDialog openFileDialog;
         private Guna.UI2.WinForms.Guna2ComboBox cbbTournament;
         private Guna.UI2.WinForms.Guna2ComboBox cbbCoach;

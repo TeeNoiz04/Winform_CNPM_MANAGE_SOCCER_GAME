@@ -10,7 +10,7 @@ namespace MANAGE_SOCCER_GAME.Dtos
     {
         public string Url { get; set; }
         public string PublicId { get; set; } // Thêm publicId vào DTO
-        public Guid foreignKeyId { get; set; }
+        public Guid? ForeignKeyId { get; set; }
         public string AltText { get; set; }
     }
 }

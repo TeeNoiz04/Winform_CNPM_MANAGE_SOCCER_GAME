@@ -1,6 +1,8 @@
 ﻿using MANAGE_SOCCER_GAME.Models;
 using MANAGE_SOCCER_GAME.Services;
 using MANAGE_SOCCER_GAME.Utils.Routing;
+using System.Net;
+using System.Windows.Forms;
 namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 {
     public partial class PlayerDetailForm : Form
@@ -62,8 +64,8 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         private async void btnEdit_Click(object sender, EventArgs e)
         {
-            var formEditFactory = AppService.Get<Func<PlayerService, Guid, EditPlayerForm>>();
-            var formEdit = formEditFactory(AppService.Get<PlayerService>(), _id);
+            var formEditFactory = AppService.Get<Func<PlayerService, CloudService, ImagePlayerService, Guid, EditPlayerForm>>();
+            var formEdit = formEditFactory(AppService.Get<PlayerService>(), AppService.Get<CloudService>(), AppService.Get<ImagePlayerService>(), _id);
             formEdit.Location = new Point(250, 140);
             formEdit.ShowDialog();
             await LoadData();
@@ -85,6 +87,8 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 lblYellowCards.Text = players.TotalYellowCards.ToString();
                 lblRedCards.Text = players.TotalRedCards.ToString();
                 lblNameClub.Text = players.TeamName;
+                AppService.LoadImageFromUrl(players.urlPlayer, picAvatar);
+                AppService.LoadImageFromUrl(players.urlTeam, picClub);
             }
             else
             {
@@ -96,5 +100,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         {
             await LoadData();
         }
+
+        
     }
 }

@@ -1,14 +1,4 @@
 ﻿using MANAGE_SOCCER_GAME.Utils.Routing;
-using MANAGE_SOCCER_GAME.Views.Management_Team_Players;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
 {
@@ -27,7 +17,7 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
             cbbSoDong.SelectedIndex = 0;
             cbbSapXep.SelectedIndex = 0;
             //cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
-            cbbCot.SelectedIndex = 0;
+            //cbbCot.SelectedIndex = 0;
 
             if (curentPage == 1)
             {
@@ -147,17 +137,17 @@ namespace MANAGE_SOCCER_GAME.Views.Manage_Results_Rankings
         private void cbbSoDong_SelectedIndexChanged(object sender, EventArgs e)
         {
             curentPage = 1;
-            LoadData();
+            //LoadData();
         }
 
         private void cbbSapXep_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
         }
 
         private void cbbCot_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
         }
 
         private async void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

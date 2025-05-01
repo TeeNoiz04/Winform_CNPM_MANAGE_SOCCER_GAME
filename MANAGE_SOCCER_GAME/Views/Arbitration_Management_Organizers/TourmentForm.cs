@@ -26,8 +26,8 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 
             cbbSoDong.SelectedIndex = 0;
             cbbSapXep.SelectedIndex = 0;
-            cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
-            cbbCot.SelectedIndex = 0;
+            //cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
+            //cbbCot.SelectedIndex = 0;
 
             if (curentPage == 1)
             {

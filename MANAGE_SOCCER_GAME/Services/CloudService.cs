@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CloudinaryDotNet;
+﻿using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using MANAGE_SOCCER_GAME.Dtos;
 
@@ -23,7 +18,7 @@ namespace MANAGE_SOCCER_GAME.Services
 
             _cloudinary = new Cloudinary(cloudinaryConfig);
         }
-        public async Task<ImageResponeDTO> UploadImageAsync(string filePath, Guid foreignKeyId, string altText)
+        public async Task<ImageResponeDTO> UploadImageAsync(string filePath, Guid? foreignKeyId, string altText)
         {
             try
             {
@@ -34,12 +29,11 @@ namespace MANAGE_SOCCER_GAME.Services
 
                 var uploadResult = await _cloudinary.UploadAsync(uploadParams);
 
-               
                 return new ImageResponeDTO
                 {
                     Url = uploadResult.Url.ToString(),
-                    PublicId = uploadResult.PublicId,  // add public_id here
-                    foreignKeyId = foreignKeyId,
+                    PublicId = uploadResult.PublicId,
+                    ForeignKeyId = foreignKeyId, // Có thể là null
                     AltText = altText
                 };
             }

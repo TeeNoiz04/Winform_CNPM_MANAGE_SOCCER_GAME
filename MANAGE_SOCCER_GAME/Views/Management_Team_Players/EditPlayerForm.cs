@@ -1,16 +1,27 @@
 ﻿using MANAGE_SOCCER_GAME.Models;
 using MANAGE_SOCCER_GAME.Services;
+using System.Net;
+using System.IO;
 
 namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 {
     public partial class EditPlayerForm : Form
     {
+        private readonly CloudService _cloudService;
         private readonly PlayerService _playerService;
+        private readonly ImagePlayerService _imagePlayerService;
         private readonly Guid _id;
-        public EditPlayerForm(PlayerService playerService, Guid id)
+        private Guid? _uploadedImageId = null;
+        private Guid? _existingPlayerImageId = null;
+        private ImagePlayer _tempImage = null; 
+
+
+        public EditPlayerForm(PlayerService playerService,CloudService cloudService, ImagePlayerService imagePlayerService,Guid id)
         {
             InitializeComponent();
             _playerService = playerService;
+            _cloudService = cloudService;
+            _imagePlayerService = imagePlayerService;
             _id = id;
         }
         private void txbFullName_MouseLeave(object sender, EventArgs e)
@@ -41,35 +52,6 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 txbFullName.BorderColor = Color.FromArgb(60, 211, 252);
             }
         }
-
-        //private void txbBirthDate_MouseLeave(object sender, EventArgs e)
-        //{
-        //    txbBirthDate.BorderColor = Color.FromArgb(52, 52, 116);
-        //}
-
-        //private void txbBirthDate_MouseHover(object sender, EventArgs e)
-        //{
-        //    txbBirthDate.BorderColor = Color.FromArgb(60, 211, 252);
-        //}
-
-        //private void txbBirthDate_Leave(object sender, EventArgs e)
-        //{
-        //    if (txbBirthDate.Text == string.Empty)
-        //    {
-        //        txbBirthDate.Text = "BirthDate";
-        //        txbBirthDate.ForeColor = Color.Silver;
-        //    }
-        //}
-
-        //private void txbBirthDate_Click(object sender, EventArgs e)
-        //{
-        //    if (txbBirthDate.Text == "BirthDate")
-        //    {
-        //        txbBirthDate.Text = string.Empty;
-        //        txbBirthDate.ForeColor = Color.FromArgb(60, 211, 252);
-        //        txbBirthDate.BorderColor = Color.FromArgb(60, 211, 252);
-        //    }
-        //}
         private void txbPosition_MouseLeave(object sender, EventArgs e)
         {
             txbPosition.BorderColor = Color.FromArgb(52, 52, 116);
@@ -210,13 +192,52 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 txbHeight.BorderColor = Color.FromArgb(60, 211, 252);
             }
         }
-        private void btnCancel_Click(object sender, EventArgs e)
+        private async void btnCancel_Click(object sender, EventArgs e)
         {
+            if (_tempImage != null)
+                await _cloudService.DeleteImageAsync(_tempImage.PublicId);
             this.Close();
         }
 
-        private void txbUpload_Click(object sender, EventArgs e)
+        private async void txbUpload_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif";
+                openFileDialog.Title = "Chọn ảnh cầu thủ";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    string altText = "Ảnh đại diện cầu thủ";
+
+                    try
+                    {
+                        var imageDTO = await _cloudService.UploadImageAsync(filePath, _id, altText);
+                        if (imageDTO != null)
+                        {
+                            picAvatar.ImageLocation = imageDTO.Url;
+                            _uploadedImageId = Guid.NewGuid();
+
+                            _tempImage = new ImagePlayer
+                            {
+                                PlayerId = _id,
+                                PublicId = imageDTO.PublicId,
+                                Url = imageDTO.Url,
+                                AltText = altText
+                            };
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể tải ảnh lên.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi khi tải ảnh: {ex.Message}");
+                    }
+                }
+            }
 
         }
 
@@ -237,11 +258,17 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 National = txbNational.Text,
                 Weight = int.Parse(txbWeight.Text.Trim()),
                 Height = int.Parse(txbHeight.Text.Trim()),
-                IdImage = null,
+                IdImage = _existingPlayerImageId // nếu có upload mới thì dùng
             };
 
             try
             {
+                if (_tempImage != null)
+                {
+                    var savedImage = await _imagePlayerService.CreateImageAsync(_tempImage);
+                    player.IdImage = savedImage.Id;
+                }
+
                 var saved = await _playerService.UpdatePlayerAsync(_id, player);
 
                 AppService.ShowSuccess("Cập nhật thông tin cầu thủ thành công!");
@@ -249,6 +276,8 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             }
             catch (Exception ex)
             {
+                if (_tempImage != null)
+                    await _cloudService.DeleteImageAsync(_tempImage.PublicId);
                 AppService.ShowError("Lỗi khi cập nhât thông tin cầu thủ: " + ex.Message);
             }
         }
@@ -268,6 +297,9 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             txbNational.Text = player.National;
             txbWeight.Text = player.Weight.ToString();
             txbHeight.Text = player.Height.ToString();
+            _existingPlayerImageId = player.IdImage;
+            if (!string.IsNullOrEmpty(player.Image?.Url))
+                AppService.LoadImageFromUrl(player?.Image.Url, picAvatar);
         }
 
         private async void EditPlayerForm_Load(object sender, EventArgs e)
@@ -277,9 +309,42 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         private bool ValidatePlayerInput()
         {
             if (AppService.IsEmptyInput(txbFullName, txbPosition, txbNumber, txbNational, txbHeight, txbWeight))
+            {
                 return false;
+            }
+
+            if (!int.TryParse(txbNumber.Text.Trim(), out int number) || number <= 0 || number > 99)
+            {
+                MessageBox.Show("Số áo phải là số nguyên từ 1 đến 99.");
+                return false;
+            }
+
+            if (!int.TryParse(txbWeight.Text.Trim(), out int weight) || weight < 40 || weight > 150)
+            {
+                MessageBox.Show("Cân nặng phải là số nguyên từ 40 đến 150 kg.");
+                return false;
+            }
+
+            if (!int.TryParse(txbHeight.Text.Trim(), out int height) || height < 140 || height > 220)
+            {
+                MessageBox.Show("Chiều cao phải là số nguyên từ 140 đến 220 cm.");
+                return false;
+            }
+
+            if (dtBirthDate.Value > DateTime.Now || dtBirthDate.Value.Year < DateTime.Now.Year - 100)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ.");
+                return false;
+            }
+
+            if (!txbNational.Text.Trim().All(char.IsLetterOrDigit))
+            {
+                MessageBox.Show("Quốc tịch chỉ chứa chữ cái và số.");
+                return false;
+            }
 
             return true;
         }
+
     }
 }

@@ -31,6 +31,10 @@ namespace MANAGE_SOCCER_GAME
             services.AddScoped<PlayerService>();
             services.AddScoped<UserService>();
             services.AddScoped<GameService>();
+            services.AddScoped<CloudService>();
+            services.AddScoped<ImagePlayerService>();
+            services.AddScoped<ImageCoacherService>();
+            services.AddScoped<ImageTeamService>();
 
             services.AddScoped<MainForm>();
             services.AddScoped<AddTeamForm>();
@@ -53,29 +57,32 @@ namespace MANAGE_SOCCER_GAME
             services.AddScoped<MatchDetailForm>();
             services.AddScoped<TourmentForm>();
 
+            services.AddScoped<TestTournamentForm>();
+
             services.AddScoped<Func<TeamService, PlayerService, Guid, TeamDetailForm>>(
               serviceProvider => (t, p, i) =>
                   new TeamDetailForm(t, p, i)
             );
 
-            services.AddScoped<Func<PlayerService, Guid, AddPlayerForm>>(
-              serviceProvider => (p, i) =>
-                  new AddPlayerForm(p, i)
+            services.AddScoped<Func<PlayerService, CloudService, ImagePlayerService, Guid, AddPlayerForm>>(
+            serviceProvider => (p, c, im, i) =>
+                new AddPlayerForm(p, c, im, i)
             );
 
-            services.AddScoped<Func<TournamentService, TeamService, CoachService, Guid, EditTeamForm>>(
-              serviceProvider => (t, te, c, i) =>
-                  new EditTeamForm(t, te, c, i)
+            services.AddScoped<Func<TournamentService, TeamService, CoachService,CloudService, ImageTeamService, Guid, EditTeamForm>>(
+              serviceProvider => (t, te, c,cl, im, i) =>
+                  new EditTeamForm(t, te, c,cl, im, i)
             );
 
             services.AddScoped<Func<PlayerService, Guid, PlayerDetailForm>>(
               serviceProvider => (p, i) =>
                   new PlayerDetailForm(p, i)
             );
-            services.AddScoped<Func<PlayerService, Guid, EditPlayerForm>>(
-             serviceProvider => (p, i) =>
-                 new EditPlayerForm(p, i)
-           );
+
+            services.AddScoped<Func<PlayerService, CloudService, ImagePlayerService,Guid, EditPlayerForm>>(
+             serviceProvider => (p, c, im,i) =>
+                 new EditPlayerForm(p,c, im, i)
+            );
 
             // Tạo service provider
             AppService.ServiceProvider = services.BuildServiceProvider();
@@ -88,7 +95,6 @@ namespace MANAGE_SOCCER_GAME
 
 
             Application.Run(AppService.ServiceProvider.GetRequiredService<MainForm>());
-            //Application.Run(new TestTournamentForm(context));
         }
     }
 }

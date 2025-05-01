@@ -54,13 +54,13 @@
             btnSubmit = new Guna.UI2.WinForms.Guna2Button();
             gnElipse = new Guna.UI2.WinForms.Guna2Elipse(components);
             openFileDialog = new OpenFileDialog();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            picAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             cbbTournament = new Guna.UI2.WinForms.Guna2ComboBox();
             lblTournament = new Label();
             lblCoach = new Label();
             cbbCoach = new Guna.UI2.WinForms.Guna2ComboBox();
             txbUpload = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatar).BeginInit();
             SuspendLayout();
             // 
             // txbProvince
@@ -211,17 +211,18 @@
             // 
             openFileDialog.FileName = "openFileDialog";
             // 
-            // guna2PictureBox1
+            // picAvatar
             // 
-            guna2PictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            guna2PictureBox1.CustomizableEdges = customizableEdges15;
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(50, 140);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2PictureBox1.Size = new Size(120, 120);
-            guna2PictureBox1.TabIndex = 43;
-            guna2PictureBox1.TabStop = false;
+            picAvatar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            picAvatar.CustomizableEdges = customizableEdges15;
+            picAvatar.ImageRotate = 0F;
+            picAvatar.Location = new Point(50, 143);
+            picAvatar.Name = "picAvatar";
+            picAvatar.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            picAvatar.Size = new Size(120, 120);
+            picAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            picAvatar.TabIndex = 43;
+            picAvatar.TabStop = false;
             // 
             // cbbTournament
             // 
@@ -314,7 +315,7 @@
             Controls.Add(lblCoach);
             Controls.Add(lblTournament);
             Controls.Add(cbbTournament);
-            Controls.Add(guna2PictureBox1);
+            Controls.Add(picAvatar);
             Controls.Add(btnSubmit);
             Controls.Add(btnCancel);
             Controls.Add(lblTitle);
@@ -327,7 +328,7 @@
             Name = "AddTeamForm";
             Text = "AddTeamForm";
             Load += AddTeamForm_Load;
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picAvatar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -341,7 +342,7 @@
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnSubmit;
         private Guna.UI2.WinForms.Guna2Elipse gnElipse;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox picAvatar;
         private OpenFileDialog openFileDialog;
         private Guna.UI2.WinForms.Guna2ComboBox cbbTournament;
         private Guna.UI2.WinForms.Guna2ComboBox cbbCoach;

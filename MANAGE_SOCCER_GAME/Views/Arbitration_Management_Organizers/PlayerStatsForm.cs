@@ -27,7 +27,7 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             cbbSoDong.SelectedIndex = 0;
             cbbSapXep.SelectedIndex = 0;
             //cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
-            cbbCot.SelectedIndex = 0;
+            //cbbCot.SelectedIndex = 0;
 
             if (curentPage == 1)
             {
@@ -147,17 +147,17 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
         private void cbbSoDong_SelectedIndexChanged(object sender, EventArgs e)
         {
             curentPage = 1;
-            LoadData();
+            //LoadData();
         }
 
         private void cbbSapXep_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
         }
 
         private void cbbCot_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
         }
 
         private async void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
