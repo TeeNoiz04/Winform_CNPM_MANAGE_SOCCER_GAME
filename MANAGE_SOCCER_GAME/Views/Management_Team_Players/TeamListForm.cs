@@ -179,7 +179,12 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
                 }
                 else if (clickedColumn == "Delete")
                 {
-                   
+                    var result = MessageBox.Show("Bạn có chắc chắn muốn xóa đội bóng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.No)
+                        return;
+
+                    await _teamService.DeleteTeamAsync(teamId);
+                    await LoadData(true);
                 }
             }
             //}

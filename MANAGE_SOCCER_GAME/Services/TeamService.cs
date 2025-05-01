@@ -59,7 +59,7 @@ namespace MANAGE_SOCCER_GAME.Services
             {
                 Id = c.Id,
                 Name = c.Name,
-                TotalPlayers = c.Player.Count(),
+                TotalPlayers = c.Player.Count(p => !p.isDeleted),
                 Stadium = c.Province
             }).ToList();
 
@@ -70,6 +70,7 @@ namespace MANAGE_SOCCER_GAME.Services
         {
             return await _context.Teams.Include(x => x.Player)
                                         .Include(x => x.Coach)
+                                        .Include(x => x.Image)
                                         .FirstOrDefaultAsync(x => x.Id == id);
         }
 
@@ -110,6 +111,7 @@ namespace MANAGE_SOCCER_GAME.Services
             existingTeam.Province = team.Province;
             existingTeam.IdTournament = team.IdTournament;
             existingTeam.IdCoach = team.IdCoach;
+            existingTeam.IdImage = team.IdImage ?? null;
 
             await _context.SaveChangesAsync();
             return existingTeam;
@@ -130,36 +132,6 @@ namespace MANAGE_SOCCER_GAME.Services
         public async Task<bool> TeamExistsAsync(Guid id)
         {
             return await _context.Teams.AnyAsync(t => t.Id == id);
-        }
-
-        public async Task<bool> TeamNameExistsAsync(Guid id, string name)
-        {
-            return await _context.Teams.AnyAsync(t => t.Name == name && t.IdTournament == id);
-        }
-
-        public async Task<List<TeamDTO>> SearchTeamsAsync(string keyword)
-        {
-            keyword = keyword.Trim().ToLower();
-            var teams = await _context.Teams
-                .Include(x => x.Coach)
-                .Include(x => x.Tournament)
-                .Where(t => t.Name.ToLower().Contains(keyword) && !t.IsDeleted)
-                .ToListAsync();
-
-            var dtos = teams.Select(c => new TeamDTO
-            {
-                Id = c.Id,
-                Name = c.Name,
-                TotalPlayers = c.Player.Count(),
-            }).ToList();
-
-            return dtos;
-        }
-
-        public async Task<int> GetTotalPagesAsync(Guid id,int pageSize)
-        {
-            var total = await _context.Teams.Where(x => !x.IsDeleted && x.IdTournament == id).CountAsync();
-            return (int)Math.Ceiling((double)total / pageSize);
         }
 
         private async Task ValidateTeamAsync(Team team)

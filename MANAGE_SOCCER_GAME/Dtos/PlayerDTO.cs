@@ -16,5 +16,8 @@
         public int TotalRedCards { get; set; }
         public int TotalMatches { get; set; }
         public Guid? TeamId { get; set; }
+        public string? urlPlayer { get; set; } = null;
+        public string? urlTeam { get; set; } = null;
+
     }
 }

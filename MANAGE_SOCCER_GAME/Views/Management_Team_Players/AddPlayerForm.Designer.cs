@@ -201,6 +201,7 @@
             picAvatar.Name = "picAvatar";
             picAvatar.ShadowDecoration.CustomizableEdges = customizableEdges22;
             picAvatar.Size = new Size(120, 120);
+            picAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             picAvatar.TabIndex = 43;
             picAvatar.TabStop = false;
             // 

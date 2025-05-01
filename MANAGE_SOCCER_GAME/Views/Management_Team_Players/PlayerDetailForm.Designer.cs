@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,6 +53,14 @@
             cbbSapXep = new ComboBox();
             picAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
             pnContent = new Guna.UI2.WinForms.Guna2Panel();
+            lblRedCards = new Label();
+            lblYellowCards = new Label();
+            lblAssists = new Label();
+            lblGoalsScored = new Label();
+            lblMatchPlayed = new Label();
+            lblHeight = new Label();
+            lblAge = new Label();
+            lblPosition = new Label();
             btnRemove = new Guna.UI2.WinForms.Guna2Button();
             lb3 = new Label();
             lb8 = new Label();
@@ -67,14 +75,6 @@
             lb1 = new Label();
             lblName = new Label();
             btnBack = new Guna.UI2.WinForms.Guna2Button();
-            lblPosition = new Label();
-            lblAge = new Label();
-            lblHeight = new Label();
-            lblMatchPlayed = new Label();
-            lblRedCards = new Label();
-            lblYellowCards = new Label();
-            lblAssists = new Label();
-            lblGoalsScored = new Label();
             pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAvatar).BeginInit();
             pnContent.SuspendLayout();
@@ -98,7 +98,7 @@
             // btnTimKiem
             // 
             btnTimKiem.BorderRadius = 5;
-            btnTimKiem.CustomizableEdges = customizableEdges17;
+            btnTimKiem.CustomizableEdges = customizableEdges1;
             btnTimKiem.DisabledState.BorderColor = Color.DarkGray;
             btnTimKiem.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTimKiem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -108,7 +108,7 @@
             btnTimKiem.ForeColor = Color.White;
             btnTimKiem.Location = new Point(10, 10);
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnTimKiem.Size = new Size(80, 30);
             btnTimKiem.TabIndex = 26;
             btnTimKiem.Text = "Tìm kiếm";
@@ -118,7 +118,7 @@
             // 
             txbTimKiem.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txbTimKiem.Cursor = Cursors.IBeam;
-            txbTimKiem.CustomizableEdges = customizableEdges19;
+            txbTimKiem.CustomizableEdges = customizableEdges3;
             txbTimKiem.DefaultText = "Search";
             txbTimKiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbTimKiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -132,7 +132,7 @@
             txbTimKiem.Name = "txbTimKiem";
             txbTimKiem.PlaceholderText = "";
             txbTimKiem.SelectedText = "";
-            txbTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txbTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txbTimKiem.Size = new Size(1487, 30);
             txbTimKiem.TabIndex = 15;
             txbTimKiem.Click += txbTimKiem_Click;
@@ -189,12 +189,13 @@
             // picAvatar
             // 
             picAvatar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            picAvatar.CustomizableEdges = customizableEdges21;
+            picAvatar.CustomizableEdges = customizableEdges5;
             picAvatar.ImageRotate = 0F;
             picAvatar.Location = new Point(0, 0);
             picAvatar.Name = "picAvatar";
-            picAvatar.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            picAvatar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             picAvatar.Size = new Size(250, 250);
+            picAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             picAvatar.TabIndex = 28;
             picAvatar.TabStop = false;
             // 
@@ -222,18 +223,113 @@
             pnContent.Controls.Add(lb1);
             pnContent.Controls.Add(lblName);
             pnContent.Controls.Add(picAvatar);
-            pnContent.CustomizableEdges = customizableEdges29;
+            pnContent.CustomizableEdges = customizableEdges13;
             pnContent.Location = new Point(460, 150);
             pnContent.Name = "pnContent";
-            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges14;
             pnContent.Size = new Size(1000, 250);
             pnContent.TabIndex = 29;
+            // 
+            // lblRedCards
+            // 
+            lblRedCards.Anchor = AnchorStyles.Left;
+            lblRedCards.AutoSize = true;
+            lblRedCards.Font = new Font("Microsoft Sans Serif", 12.75F);
+            lblRedCards.ForeColor = Color.White;
+            lblRedCards.Location = new Point(641, 165);
+            lblRedCards.Name = "lblRedCards";
+            lblRedCards.Size = new Size(18, 20);
+            lblRedCards.TabIndex = 48;
+            lblRedCards.Text = "?";
+            // 
+            // lblYellowCards
+            // 
+            lblYellowCards.Anchor = AnchorStyles.Left;
+            lblYellowCards.AutoSize = true;
+            lblYellowCards.Font = new Font("Microsoft Sans Serif", 12.75F);
+            lblYellowCards.ForeColor = Color.White;
+            lblYellowCards.Location = new Point(641, 135);
+            lblYellowCards.Name = "lblYellowCards";
+            lblYellowCards.Size = new Size(18, 20);
+            lblYellowCards.TabIndex = 47;
+            lblYellowCards.Text = "?";
+            // 
+            // lblAssists
+            // 
+            lblAssists.Anchor = AnchorStyles.Left;
+            lblAssists.AutoSize = true;
+            lblAssists.Font = new Font("Microsoft Sans Serif", 12.75F);
+            lblAssists.ForeColor = Color.White;
+            lblAssists.Location = new Point(641, 105);
+            lblAssists.Name = "lblAssists";
+            lblAssists.Size = new Size(18, 20);
+            lblAssists.TabIndex = 46;
+            lblAssists.Text = "?";
+            // 
+            // lblGoalsScored
+            // 
+            lblGoalsScored.Anchor = AnchorStyles.Left;
+            lblGoalsScored.AutoSize = true;
+            lblGoalsScored.Font = new Font("Microsoft Sans Serif", 12.75F);
+            lblGoalsScored.ForeColor = Color.White;
+            lblGoalsScored.Location = new Point(641, 75);
+            lblGoalsScored.Name = "lblGoalsScored";
+            lblGoalsScored.Size = new Size(18, 20);
+            lblGoalsScored.TabIndex = 45;
+            lblGoalsScored.Text = "?";
+            // 
+            // lblMatchPlayed
+            // 
+            lblMatchPlayed.Anchor = AnchorStyles.Left;
+            lblMatchPlayed.AutoSize = true;
+            lblMatchPlayed.Font = new Font("Microsoft Sans Serif", 12.75F);
+            lblMatchPlayed.ForeColor = Color.White;
+            lblMatchPlayed.Location = new Point(349, 165);
+            lblMatchPlayed.Name = "lblMatchPlayed";
+            lblMatchPlayed.Size = new Size(18, 20);
+            lblMatchPlayed.TabIndex = 44;
+            lblMatchPlayed.Text = "?";
+            // 
+            // lblHeight
+            // 
+            lblHeight.Anchor = AnchorStyles.Left;
+            lblHeight.AutoSize = true;
+            lblHeight.Font = new Font("Microsoft Sans Serif", 12.75F);
+            lblHeight.ForeColor = Color.White;
+            lblHeight.Location = new Point(371, 135);
+            lblHeight.Name = "lblHeight";
+            lblHeight.Size = new Size(18, 20);
+            lblHeight.TabIndex = 43;
+            lblHeight.Text = "?";
+            // 
+            // lblAge
+            // 
+            lblAge.Anchor = AnchorStyles.Left;
+            lblAge.Font = new Font("Microsoft Sans Serif", 12.75F);
+            lblAge.ForeColor = Color.White;
+            lblAge.Location = new Point(332, 105);
+            lblAge.Name = "lblAge";
+            lblAge.Size = new Size(46, 20);
+            lblAge.TabIndex = 42;
+            lblAge.Text = "?";
+            // 
+            // lblPosition
+            // 
+            lblPosition.Anchor = AnchorStyles.Left;
+            lblPosition.AutoSize = true;
+            lblPosition.Font = new Font("Microsoft Sans Serif", 12.75F);
+            lblPosition.ForeColor = Color.White;
+            lblPosition.Location = new Point(330, 75);
+            lblPosition.Name = "lblPosition";
+            lblPosition.Size = new Size(18, 20);
+            lblPosition.TabIndex = 41;
+            lblPosition.Text = "?";
             // 
             // btnRemove
             // 
             btnRemove.Anchor = AnchorStyles.Bottom;
             btnRemove.BorderRadius = 5;
-            btnRemove.CustomizableEdges = customizableEdges23;
+            btnRemove.CustomizableEdges = customizableEdges7;
             btnRemove.DisabledState.BorderColor = Color.DarkGray;
             btnRemove.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRemove.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -243,7 +339,7 @@
             btnRemove.ForeColor = Color.White;
             btnRemove.Location = new Point(535, 205);
             btnRemove.Name = "btnRemove";
-            btnRemove.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnRemove.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnRemove.Size = new Size(80, 30);
             btnRemove.TabIndex = 40;
             btnRemove.Text = "Remove";
@@ -335,12 +431,13 @@
             // picClub
             // 
             picClub.Anchor = AnchorStyles.Right;
-            picClub.CustomizableEdges = customizableEdges25;
+            picClub.CustomizableEdges = customizableEdges9;
             picClub.ImageRotate = 0F;
             picClub.Location = new Point(830, 50);
             picClub.Name = "picClub";
-            picClub.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            picClub.ShadowDecoration.CustomizableEdges = customizableEdges10;
             picClub.Size = new Size(120, 120);
+            picClub.SizeMode = PictureBoxSizeMode.StretchImage;
             picClub.TabIndex = 32;
             picClub.TabStop = false;
             // 
@@ -348,7 +445,7 @@
             // 
             btnEdit.Anchor = AnchorStyles.Bottom;
             btnEdit.BorderRadius = 5;
-            btnEdit.CustomizableEdges = customizableEdges27;
+            btnEdit.CustomizableEdges = customizableEdges11;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -358,7 +455,7 @@
             btnEdit.ForeColor = Color.White;
             btnEdit.Location = new Point(385, 205);
             btnEdit.Name = "btnEdit";
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnEdit.Size = new Size(80, 30);
             btnEdit.TabIndex = 30;
             btnEdit.Text = "Edit";
@@ -400,7 +497,7 @@
             // 
             // btnBack
             // 
-            btnBack.CustomizableEdges = customizableEdges31;
+            btnBack.CustomizableEdges = customizableEdges15;
             btnBack.DisabledState.BorderColor = Color.DarkGray;
             btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -410,106 +507,11 @@
             btnBack.ForeColor = Color.White;
             btnBack.Location = new Point(0, 60);
             btnBack.Name = "btnBack";
-            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnBack.Size = new Size(60, 35);
             btnBack.TabIndex = 35;
             btnBack.Text = "<<";
             btnBack.Click += btnBack_Click;
-            // 
-            // lblPosition
-            // 
-            lblPosition.Anchor = AnchorStyles.Left;
-            lblPosition.AutoSize = true;
-            lblPosition.Font = new Font("Microsoft Sans Serif", 12.75F);
-            lblPosition.ForeColor = Color.White;
-            lblPosition.Location = new Point(330, 75);
-            lblPosition.Name = "lblPosition";
-            lblPosition.Size = new Size(18, 20);
-            lblPosition.TabIndex = 41;
-            lblPosition.Text = "?";
-            // 
-            // lblAge
-            // 
-            lblAge.Anchor = AnchorStyles.Left;
-            lblAge.Font = new Font("Microsoft Sans Serif", 12.75F);
-            lblAge.ForeColor = Color.White;
-            lblAge.Location = new Point(332, 105);
-            lblAge.Name = "lblAge";
-            lblAge.Size = new Size(46, 20);
-            lblAge.TabIndex = 42;
-            lblAge.Text = "?";
-            // 
-            // lblHeight
-            // 
-            lblHeight.Anchor = AnchorStyles.Left;
-            lblHeight.AutoSize = true;
-            lblHeight.Font = new Font("Microsoft Sans Serif", 12.75F);
-            lblHeight.ForeColor = Color.White;
-            lblHeight.Location = new Point(371, 135);
-            lblHeight.Name = "lblHeight";
-            lblHeight.Size = new Size(18, 20);
-            lblHeight.TabIndex = 43;
-            lblHeight.Text = "?";
-            // 
-            // lblMatchPlayed
-            // 
-            lblMatchPlayed.Anchor = AnchorStyles.Left;
-            lblMatchPlayed.AutoSize = true;
-            lblMatchPlayed.Font = new Font("Microsoft Sans Serif", 12.75F);
-            lblMatchPlayed.ForeColor = Color.White;
-            lblMatchPlayed.Location = new Point(349, 165);
-            lblMatchPlayed.Name = "lblMatchPlayed";
-            lblMatchPlayed.Size = new Size(18, 20);
-            lblMatchPlayed.TabIndex = 44;
-            lblMatchPlayed.Text = "?";
-            // 
-            // lblRedCards
-            // 
-            lblRedCards.Anchor = AnchorStyles.Left;
-            lblRedCards.AutoSize = true;
-            lblRedCards.Font = new Font("Microsoft Sans Serif", 12.75F);
-            lblRedCards.ForeColor = Color.White;
-            lblRedCards.Location = new Point(641, 165);
-            lblRedCards.Name = "lblRedCards";
-            lblRedCards.Size = new Size(18, 20);
-            lblRedCards.TabIndex = 48;
-            lblRedCards.Text = "?";
-            // 
-            // lblYellowCards
-            // 
-            lblYellowCards.Anchor = AnchorStyles.Left;
-            lblYellowCards.AutoSize = true;
-            lblYellowCards.Font = new Font("Microsoft Sans Serif", 12.75F);
-            lblYellowCards.ForeColor = Color.White;
-            lblYellowCards.Location = new Point(641, 135);
-            lblYellowCards.Name = "lblYellowCards";
-            lblYellowCards.Size = new Size(18, 20);
-            lblYellowCards.TabIndex = 47;
-            lblYellowCards.Text = "?";
-            // 
-            // lblAssists
-            // 
-            lblAssists.Anchor = AnchorStyles.Left;
-            lblAssists.AutoSize = true;
-            lblAssists.Font = new Font("Microsoft Sans Serif", 12.75F);
-            lblAssists.ForeColor = Color.White;
-            lblAssists.Location = new Point(641, 105);
-            lblAssists.Name = "lblAssists";
-            lblAssists.Size = new Size(18, 20);
-            lblAssists.TabIndex = 46;
-            lblAssists.Text = "?";
-            // 
-            // lblGoalsScored
-            // 
-            lblGoalsScored.Anchor = AnchorStyles.Left;
-            lblGoalsScored.AutoSize = true;
-            lblGoalsScored.Font = new Font("Microsoft Sans Serif", 12.75F);
-            lblGoalsScored.ForeColor = Color.White;
-            lblGoalsScored.Location = new Point(641, 75);
-            lblGoalsScored.Name = "lblGoalsScored";
-            lblGoalsScored.Size = new Size(18, 20);
-            lblGoalsScored.TabIndex = 45;
-            lblGoalsScored.Text = "?";
             // 
             // PlayerDetailForm
             // 

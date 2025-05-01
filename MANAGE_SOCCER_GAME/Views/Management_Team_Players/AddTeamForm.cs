@@ -9,14 +9,23 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         private readonly TournamentService _tournamentService;
         private readonly CoachService _coachService;
         private readonly TeamService _teamService;
+        private readonly CloudService _cloudService;
+        private readonly ImageTeamService _imageTeamService;
         private IEnumerable<Tournament> _tournaments;
         private List<Coach> _coaches;
-        public AddTeamForm(TournamentService tournamentService, CoachService coachService, TeamService teamService)
+        private ImageTeam _tempImage;
+
+
+        public AddTeamForm(TournamentService tournamentService, 
+            CoachService coachService, TeamService teamService, 
+            CloudService cloudService, ImageTeamService imageTeamService)
         {
             InitializeComponent();
             _tournamentService = tournamentService;
             _coachService = coachService;
             _teamService = teamService;
+            _cloudService = cloudService;
+            _imageTeamService = imageTeamService;
             _tournaments = new List<Tournament>();
             _coaches = new List<Coach>();
         }
@@ -79,14 +88,49 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private async void btnCancel_Click(object sender, EventArgs e)
         {
+            if (_tempImage != null)
+                await _cloudService.DeleteImageAsync(_tempImage.PublicId);
             this.Close();
         }
 
-        private void txbUpload_Click(object sender, EventArgs e)
+        private async void txbUpload_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif";
+                openFileDialog.Title = "Chọn ảnh đội";
 
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    string altText = "Ảnh đại diện đội";
+
+                    try
+                    {
+                        var imageDTO = await _cloudService.UploadImageAsync(filePath, null, altText);
+                        if (imageDTO != null)
+                        {
+                            picAvatar.ImageLocation = imageDTO.Url;
+                            _tempImage = new ImageTeam
+                            {
+                                PublicId = imageDTO.PublicId,
+                                Url = imageDTO.Url,
+                                AltText = altText
+                            };
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể tải ảnh lên.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi khi tải ảnh: {ex.Message}");
+                    }
+                }
+            }
         }
 
         private async void btnSubmit_Click(object sender, EventArgs e)
@@ -108,14 +152,22 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
             try
             {
-                var savedCourse = await _teamService.CreateTeamAsync(team);
-
+                var createdTeam = await _teamService.CreateTeamAsync(team);
+                if (_tempImage != null)
+                {
+                    _tempImage.TeamId = createdTeam.Id;
+                    var savedImage = await _imageTeamService.CreateImageAsync(_tempImage);
+                    createdTeam.IdImage = savedImage.Id;
+                    await _teamService.UpdateTeamAsync(createdTeam.Id, createdTeam);
+                }
 
                 AppService.ShowSuccess("Thêm đội thành công!");
                 this.Close();
             }
             catch (Exception ex)
             {
+                if (_tempImage != null)
+                    await _cloudService.DeleteImageAsync(_tempImage.PublicId);
                 AppService.ShowError("Lỗi khi thêm đội: " + ex.Message);
             }
         }

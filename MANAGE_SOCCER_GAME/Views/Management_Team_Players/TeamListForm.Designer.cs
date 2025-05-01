@@ -64,7 +64,7 @@
             Played = new DataGridViewTextBoxColumn();
             Stadium = new DataGridViewTextBoxColumn();
             Detail = new DataGridViewButtonColumn();
-            Action2 = new DataGridViewButtonColumn();
+            Delete = new DataGridViewButtonColumn();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -315,7 +315,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Club, Played, Stadium, Detail, Action2 });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Club, Played, Stadium, Detail, Delete });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -400,16 +400,16 @@
             Detail.Text = "Detail";
             Detail.UseColumnTextForButtonValue = true;
             // 
-            // Action2
+            // Delete
             // 
-            Action2.DataPropertyName = "Delete";
-            Action2.FillWeight = 50F;
-            Action2.HeaderText = "";
-            Action2.Name = "Action2";
-            Action2.Resizable = DataGridViewTriState.True;
-            Action2.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action2.Text = "Delete";
-            Action2.UseColumnTextForButtonValue = true;
+            Delete.DataPropertyName = "Delete";
+            Delete.FillWeight = 50F;
+            Delete.HeaderText = "";
+            Delete.Name = "Delete";
+            Delete.Resizable = DataGridViewTriState.True;
+            Delete.SortMode = DataGridViewColumnSortMode.Automatic;
+            Delete.Text = "Delete";
+            Delete.UseColumnTextForButtonValue = true;
             // 
             // TeamListForm
             // 
@@ -456,6 +456,6 @@
         private DataGridViewTextBoxColumn Played;
         private DataGridViewTextBoxColumn Stadium;
         private DataGridViewButtonColumn Detail;
-        private DataGridViewButtonColumn Action2;
+        private DataGridViewButtonColumn Delete;
     }
 }
