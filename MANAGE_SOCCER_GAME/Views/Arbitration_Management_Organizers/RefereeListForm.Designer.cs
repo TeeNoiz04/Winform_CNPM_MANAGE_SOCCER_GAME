@@ -60,11 +60,11 @@
             btnAddReferee = new Guna.UI2.WinForms.Guna2Button();
             dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             ID = new DataGridViewTextBoxColumn();
-            TimeStamp = new DataGridViewTextBoxColumn();
-            PhuongThucGD = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            KinhNghiem = new DataGridViewTextBoxColumn();
+            Name = new DataGridViewTextBoxColumn();
+            DateOfBirth = new DataGridViewTextBoxColumn();
+            Position = new DataGridViewTextBoxColumn();
+            National = new DataGridViewTextBoxColumn();
+            YearOfExperience = new DataGridViewTextBoxColumn();
             Action = new DataGridViewButtonColumn();
             Action2 = new DataGridViewButtonColumn();
             pnHeader.SuspendLayout();
@@ -224,6 +224,7 @@
             btnRefresh.Size = new Size(80, 30);
             btnRefresh.TabIndex = 40;
             btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click_1;
             // 
             // cbbSoDong
             // 
@@ -313,7 +314,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Price, Username, KinhNghiem, Action, Action2 });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Name, DateOfBirth, Position, National, YearOfExperience, Action, Action2 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -363,38 +364,44 @@
             // 
             // ID
             // 
-            ID.HeaderText = "Mã trọng tài";
+            ID.DataPropertyName = "Id";
+            ID.HeaderText = "Id";
             ID.Name = "ID";
             // 
-            // TimeStamp
+            // Name
             // 
-            TimeStamp.FillWeight = 66.1519F;
-            TimeStamp.HeaderText = "Họ tên";
-            TimeStamp.Name = "TimeStamp";
+            Name.DataPropertyName = "Name";
+            Name.FillWeight = 66.1519F;
+            Name.HeaderText = "Name";
+            Name.Name = "Name";
             // 
-            // PhuongThucGD
+            // DateOfBirth
             // 
-            PhuongThucGD.FillWeight = 66.1519F;
-            PhuongThucGD.HeaderText = "Ngày sinh";
-            PhuongThucGD.Name = "PhuongThucGD";
+            DateOfBirth.DataPropertyName = "DateOfBirth";
+            DateOfBirth.FillWeight = 66.1519F;
+            DateOfBirth.HeaderText = "Date of Birth";
+            DateOfBirth.Name = "DateOfBirth";
             // 
-            // Price
+            // Position
             // 
-            Price.FillWeight = 66.1519F;
-            Price.HeaderText = "Vị trí";
-            Price.Name = "Price";
+            Position.DataPropertyName = "Position";
+            Position.FillWeight = 66.1519F;
+            Position.HeaderText = "Position";
+            Position.Name = "Position";
             // 
-            // Username
+            // National
             // 
-            Username.FillWeight = 66.1519F;
-            Username.HeaderText = "Quốc tịch";
-            Username.Name = "Username";
-            Username.Resizable = DataGridViewTriState.True;
+            National.DataPropertyName = "National";
+            National.FillWeight = 66.1519F;
+            National.HeaderText = "National";
+            National.Name = "National";
+            National.Resizable = DataGridViewTriState.True;
             // 
-            // KinhNghiem
+            // YearOfExperience
             // 
-            KinhNghiem.HeaderText = "Kinh Nghiệm";
-            KinhNghiem.Name = "KinhNghiem";
+            YearOfExperience.DataPropertyName = "YearOfExperience";
+            YearOfExperience.HeaderText = "Year Of Experience";
+            YearOfExperience.Name = "YearOfExperience";
             // 
             // Action
             // 
@@ -403,7 +410,7 @@
             Action.Name = "Action";
             Action.Resizable = DataGridViewTriState.True;
             Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Chi tiết";
+            Action.Text = "Edit";
             Action.UseColumnTextForButtonValue = true;
             // 
             // Action2
@@ -413,7 +420,7 @@
             Action2.Name = "Action2";
             Action2.Resizable = DataGridViewTriState.True;
             Action2.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action2.Text = "Xóa";
+            Action2.Text = "Delete";
             Action2.UseColumnTextForButtonValue = true;
             // 
             // RefereeListForm
@@ -425,8 +432,9 @@
             Controls.Add(pnHeader);
             Controls.Add(pnContent);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "RefereeListForm";
+            //Name = "RefereeListForm";
             Text = "OrdersForm";
+            Load += RefereeListForm_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             pnContent.ResumeLayout(false);
@@ -434,7 +442,6 @@
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -449,14 +456,6 @@
         private System.Windows.Forms.Panel pnFooter;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView;
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TimeStamp;
-        private DataGridViewTextBoxColumn PhuongThucGD;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Username;
-        private DataGridViewTextBoxColumn KinhNghiem;
-        private DataGridViewButtonColumn Action;
-        private DataGridViewButtonColumn Action2;
         private Guna.UI2.WinForms.Guna2Button btnAddReferee;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private ComboBox cbbSoDong;
@@ -464,5 +463,13 @@
         private Button btnTrangTruoc;
         private Button btnTrangKe;
         private Label lblSoTrang;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn DateOfBirth;
+        private DataGridViewTextBoxColumn Position;
+        private DataGridViewTextBoxColumn National;
+        private DataGridViewTextBoxColumn YearOfExperience;
+        private DataGridViewButtonColumn Action;
+        private DataGridViewButtonColumn Action2;
     }
 }

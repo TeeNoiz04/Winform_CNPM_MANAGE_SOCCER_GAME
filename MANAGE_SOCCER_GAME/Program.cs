@@ -35,6 +35,7 @@ namespace MANAGE_SOCCER_GAME
             services.AddScoped<ImagePlayerService>();
             services.AddScoped<ImageCoacherService>();
             services.AddScoped<ImageTeamService>();
+            services.AddScoped<RefereeService>();
 
             services.AddScoped<MainForm>();
             services.AddScoped<AddTeamForm>();
@@ -56,6 +57,10 @@ namespace MANAGE_SOCCER_GAME
             services.AddScoped<ForgotPasswordForm>();
             services.AddScoped<MatchDetailForm>();
             services.AddScoped<TourmentForm>();
+            services.AddScoped<MatchResultForm>();
+            services.AddScoped<AddRefereeForm>();
+            services.AddScoped<EditRefereeForm>();
+
 
             services.AddScoped<TestTournamentForm>();
 
@@ -82,6 +87,12 @@ namespace MANAGE_SOCCER_GAME
             services.AddScoped<Func<PlayerService, CloudService, ImagePlayerService,Guid, EditPlayerForm>>(
              serviceProvider => (p, c, im,i) =>
                  new EditPlayerForm(p,c, im, i)
+            );
+
+
+            services.AddScoped<Func<RefereeService, Guid, EditRefereeForm>>(
+             serviceProvider => (r, g) =>
+                 new EditRefereeForm(r, g)
             );
 
             // Tạo service provider

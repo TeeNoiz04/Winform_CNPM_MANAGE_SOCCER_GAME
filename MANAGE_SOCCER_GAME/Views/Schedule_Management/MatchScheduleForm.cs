@@ -1,16 +1,6 @@
 ﻿using Guna.UI2.WinForms;
-using Guna.UI2.WinForms.Suite;
 using MANAGE_SOCCER_GAME.Utils.Routing;
-using MANAGE_SOCCER_GAME.Views.Management_Team_Players;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace MANAGE_SOCCER_GAME.Views.Schedule_Management
 {
@@ -25,9 +15,6 @@ namespace MANAGE_SOCCER_GAME.Views.Schedule_Management
             InitializeComponent();
             //_bookSoldService = new BookSoldService();
             _router = new Router();
-
-
-
         }
 
 
