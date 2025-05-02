@@ -360,29 +360,34 @@
             // 
             // ID
             // 
+            ID.DataPropertyName = "Id";
             ID.HeaderText = "ID";
             ID.Name = "ID";
             ID.Visible = false;
             // 
-            // Name
+            // NameTourment
             // 
+            NameTourment.DataPropertyName = "Name";
             NameTourment.FillWeight = 66.1519F;
             NameTourment.HeaderText = "Name";
-            NameTourment.Name = "Name";
+            NameTourment.Name = "NameTourment";
             // 
             // DayStart
             // 
+            DayStart.DataPropertyName = "StartDate";
             DayStart.FillWeight = 66.1519F;
             DayStart.HeaderText = "Day Start";
             DayStart.Name = "DayStart";
             // 
             // DayEnd
             // 
+            DayEnd.DataPropertyName = "EndDate";
             DayEnd.HeaderText = "Day End";
             DayEnd.Name = "DayEnd";
             // 
             // Description
             // 
+            Description.DataPropertyName = "Description";
             Description.HeaderText = "Description";
             Description.Name = "Description";
             // 
@@ -397,6 +402,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "TourmentForm";
             Text = "OrdersForm";
+            Load += TourmentForm_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             pnContent.ResumeLayout(false);
@@ -404,7 +410,6 @@
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion

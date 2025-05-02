@@ -1,21 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MANAGE_SOCCER_GAME.Models;
+using MANAGE_SOCCER_GAME.Services;
 
 namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
     public partial class EditRefereeForm : Form
     {
-        public EditRefereeForm()
+        private readonly RefereeService _refereeService;
+        private readonly Guid _refereeId;
+        public EditRefereeForm(RefereeService refereeService, Guid refereeId)
         {
             InitializeComponent();
+            _refereeService = refereeService;
+            _refereeId = refereeId;
         }
+
+        private async void EditRefereeForm_Load(object sender, EventArgs e)
+        {
+            var referee = await _refereeService.GetRefereeByIdAsync(_refereeId);
+            if (referee != null)
+            {
+                txbFullName.Text = referee.Name;
+                txbPosition.Text = referee.Position;
+                txbNational.Text = referee.National;
+                txbExperience.Text = referee.YearOfExperience.ToString();
+                dtBirthDate.Value = referee.DateOfBirth;
+            }
+        }
+
         private void txbFullName_MouseLeave(object sender, EventArgs e)
         {
             txbFullName.BorderColor = Color.FromArgb(52, 52, 116);
@@ -45,34 +56,6 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             }
         }
 
-        private void txbBirthDate_MouseLeave(object sender, EventArgs e)
-        {
-            txbBirthDate.BorderColor = Color.FromArgb(52, 52, 116);
-        }
-
-        private void txbBirthDate_MouseHover(object sender, EventArgs e)
-        {
-            txbBirthDate.BorderColor = Color.FromArgb(60, 211, 252);
-        }
-
-        private void txbBirthDate_Leave(object sender, EventArgs e)
-        {
-            if (txbBirthDate.Text == string.Empty)
-            {
-                txbBirthDate.Text = "BirthDate";
-                txbBirthDate.ForeColor = Color.Silver;
-            }
-        }
-
-        private void txbBirthDate_Click(object sender, EventArgs e)
-        {
-            if (txbBirthDate.Text == "BirthDate")
-            {
-                txbBirthDate.Text = string.Empty;
-                txbBirthDate.ForeColor = Color.FromArgb(60, 211, 252);
-                txbBirthDate.BorderColor = Color.FromArgb(60, 211, 252);
-            }
-        }
         private void txbPosition_MouseLeave(object sender, EventArgs e)
         {
             txbPosition.BorderColor = Color.FromArgb(52, 52, 116);
@@ -162,6 +145,33 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private async void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn cập nhật thông tin trọng tài này?", "Xác nhận", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+
+            var referee = new Referee
+            {
+                Name = txbFullName.Text.Trim(),
+                DateOfBirth = dtBirthDate.Value.Date,
+                Position = txbPosition.Text.Trim(),
+                National = txbNational.Text.Trim(),
+                YearOfExperience = int.Parse(txbExperience.Text.Trim())
+            };
+
+            try
+            {
+                var createdReferee = await _refereeService.UpdateRefereeAsync(_refereeId,referee);
+
+                AppService.ShowSuccess("Cập nhật thông tin trọng tài thành công!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                AppService.ShowError("Lỗi khi cập nhật thông tin trọng tài: " + ex.Message);
+            }
         }
     }
 }

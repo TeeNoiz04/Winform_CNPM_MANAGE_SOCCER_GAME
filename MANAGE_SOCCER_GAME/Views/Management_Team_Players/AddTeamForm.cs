@@ -1,5 +1,4 @@
-﻿using MANAGE_SOCCER_GAME.Data;
-using MANAGE_SOCCER_GAME.Models;
+﻿using MANAGE_SOCCER_GAME.Models;
 using MANAGE_SOCCER_GAME.Services;
 
 namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players

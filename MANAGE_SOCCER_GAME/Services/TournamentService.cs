@@ -1,6 +1,8 @@
 ﻿using MANAGE_SOCCER_GAME.Data;
+using MANAGE_SOCCER_GAME.Dtos;
 using MANAGE_SOCCER_GAME.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Net.WebSockets;
 
 namespace MANAGE_SOCCER_GAME.Services
 {
@@ -24,6 +26,20 @@ namespace MANAGE_SOCCER_GAME.Services
         public async Task<IEnumerable<Tournament>> GetAllTournamentsAsync()
         {
             return await _context.Tournaments.ToListAsync();
+        }
+
+        public async Task<IEnumerable<TournamentDTO>> GetAllTournamentsDTOAsync()
+        {
+            var tournaments = await _context.Tournaments.ToListAsync();
+
+            var dtos = tournaments.Select(t => new TournamentDTO
+            {
+                Name = t.Name,
+                Description = t.Description,
+                StartDate = t.StartDate,
+                EndDate = t.EndDate,
+            }).ToList();
+            return dtos;
         }
 
         // Read by Id

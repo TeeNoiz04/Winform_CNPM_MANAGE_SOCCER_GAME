@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+using MANAGE_SOCCER_GAME.Models;
+using MANAGE_SOCCER_GAME.Services;
 
 namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
     public partial class AddRefereeForm : Form
     {
-        public AddRefereeForm()
+        private readonly RefereeService _refereeService;
+        public AddRefereeForm(RefereeService refereeService)
         {
             InitializeComponent();
+            _refereeService = refereeService;
         }
         private void txbFullName_MouseLeave(object sender, EventArgs e)
         {
@@ -45,34 +41,6 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             }
         }
 
-        private void txbBirthDate_MouseLeave(object sender, EventArgs e)
-        {
-            txbBirthDate.BorderColor = Color.FromArgb(52, 52, 116);
-        }
-
-        private void txbBirthDate_MouseHover(object sender, EventArgs e)
-        {
-            txbBirthDate.BorderColor = Color.FromArgb(60, 211, 252);
-        }
-
-        private void txbBirthDate_Leave(object sender, EventArgs e)
-        {
-            if (txbBirthDate.Text == string.Empty)
-            {
-                txbBirthDate.Text = "BirthDate";
-                txbBirthDate.ForeColor = Color.Silver;
-            }
-        }
-
-        private void txbBirthDate_Click(object sender, EventArgs e)
-        {
-            if (txbBirthDate.Text == "BirthDate")
-            {
-                txbBirthDate.Text = string.Empty;
-                txbBirthDate.ForeColor = Color.FromArgb(60, 211, 252);
-                txbBirthDate.BorderColor = Color.FromArgb(60, 211, 252);
-            }
-        }
         private void txbPosition_MouseLeave(object sender, EventArgs e)
         {
             txbPosition.BorderColor = Color.FromArgb(52, 52, 116);
@@ -164,5 +132,43 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             this.Close();
         }
 
+        private async void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (AppService.IsEmptyInput(txbFullName, txbExperience, txbPosition, txbExperience, txbNational))
+                return;
+            if (MessageBox.Show("Bạn có chắc chắn muốn thêm trọng tài này?", "Xác nhận", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+
+            var referee = new Referee
+            {
+                Name = txbFullName.Text.Trim(),
+                DateOfBirth = dtBirthDate.Value.Date,
+                Position = txbPosition.Text.Trim(),
+                National = txbNational.Text.Trim(),
+                YearOfExperience = int.Parse(txbExperience.Text.Trim())
+            };
+
+            try
+            {
+                var createdReferee = await _refereeService.CreateRefereeAsync(referee);
+
+                AppService.ShowSuccess("Thêm trọng tài thành công!");
+                Clear();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                AppService.ShowError("Lỗi khi thêm trọng tài: " + ex.Message);
+            }
+        }
+
+        private void Clear()
+        {
+            txbExperience.Clear();
+            txbFullName.Clear();
+            txbNational.Clear();
+            txbPosition.Clear();
+            dtBirthDate.Value = DateTime.Now;
+        }
     }
 }

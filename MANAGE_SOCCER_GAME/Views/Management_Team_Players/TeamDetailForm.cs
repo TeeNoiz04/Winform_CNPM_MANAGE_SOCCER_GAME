@@ -93,14 +93,22 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             //dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
             //dataGridView.Columns["Action"].Width = 100;
             //dataGridView.Columns["Action2"].Width = 100;
+
             dataGridView.DataSource = _allPlayers.Skip(countLine * (curentPage - 1)).Take(countLine).ToList();
 
             if (countLine > count)
             {
                 btnTrangTruoc.Enabled = false;
                 btnTrangKe.Enabled = false;
-    // Dòng lỗi
+                // Dòng lỗi
                 //pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
+                int rowHeight = (dataGridView.Rows.Count > 0) ? dataGridView.Rows[0].Height : 22; // hoặc giá trị mặc định
+                pnContent.Size = new Size(
+                    pnContent.Size.Width,
+                    (rowHeight * count) + 30 + pnFooter.Size.Height
+                );
+
+
             }
             else
             {

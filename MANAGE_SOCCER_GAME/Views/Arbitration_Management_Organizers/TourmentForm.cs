@@ -1,4 +1,7 @@
-﻿using MANAGE_SOCCER_GAME.Utils.Routing;
+﻿using MANAGE_SOCCER_GAME.Dtos;
+using MANAGE_SOCCER_GAME.Models;
+using MANAGE_SOCCER_GAME.Services;
+using MANAGE_SOCCER_GAME.Utils.Routing;
 using MANAGE_SOCCER_GAME.Views.Management_Team_Players;
 using System;
 using System.Collections.Generic;
@@ -6,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,20 +18,23 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
     public partial class TourmentForm : Form
     {
+        private TournamentService _tournamentService;
         private Router _router;
         private int curentPage = 1;
         private int countLine = 0;
         private float totalPage = 0;
-        public TourmentForm()
+        private IEnumerable<TournamentDTO> _allTournament = new List<TournamentDTO>();
+
+        public TourmentForm(TournamentService tournamentService)
         {
             InitializeComponent();
-            //_bookSoldService = new BookSoldService();
+            _tournamentService = tournamentService;
             _router = new Router();
 
             cbbSoDong.SelectedIndex = 0;
             cbbSapXep.SelectedIndex = 0;
-            //cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
-            //cbbCot.SelectedIndex = 0;
+            cbbCot.DataSource = typeof(TournamentDTO).GetProperties().Select(prop => prop.Name).ToList();
+            cbbCot.SelectedIndex = 0;
 
             if (curentPage == 1)
             {
@@ -38,22 +45,28 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             LoadData();
         }
 
+        private async Task Getall()
+        {
+            _allTournament = await _tournamentService.GetAllTournamentsDTOAsync();
+        }
+
+
         private async void LoadData()
         {
             if (!string.IsNullOrWhiteSpace(txbTimKiem.Text) && txbTimKiem.Text != "Search")
             {
-                //var fillterSearch = _viewhoadon.Where(n => n.MaHD.Contains(txbTimKiem.Text) || n.PhuongThucGD.Contains(txbTimKiem.Text) || n.TenKH.Contains(txbTimKiem.Text)).ToList();
-                //if (fillterSearch == null)
-                //{
-                //    MessageBox.Show("Không tìm thấy kết quả");
-                //    return;
-                //}
-                //_viewhoadon = fillterSearch;
+                string keyword = txbTimKiem.Text.Trim().ToLower();
+                var fillterSearch = _allTournament.Where(n => n.Name.ToLower().Contains(keyword)).ToList();
+                if (fillterSearch == null)
+                {
+                    MessageBox.Show("Không tìm thấy kết quả");
+                    return;
+                }
+                _allTournament = fillterSearch;
                 curentPage = 1;
             }
 
-            //var count = _viewhoadon.Count;
-            var count = 0;
+            var count = _allTournament.Count();
             countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
             totalPage = (float)count / countLine;
             totalPage = totalPage > (int)totalPage ? (int)totalPage + 1 : (int)totalPage;
@@ -67,11 +80,11 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             var sortOrder = cbbSapXep.SelectedItem.ToString();
             if (sortOrder == "Tăng dần")
             {
-                //_viewhoadon = _viewhoadon.OrderBy(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
+                _allTournament = _allTournament.OrderBy(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
             }
             else if (sortOrder == "Giảm dần")
             {
-                //_viewhoadon = _viewhoadon.OrderByDescending(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
+                _allTournament = _allTournament.OrderByDescending(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
             }
 
             dataGridView.AutoGenerateColumns = false;
@@ -85,13 +98,17 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             //dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
             //dataGridView.Columns["Action"].Width = 100;
             //dataGridView.Columns["Action2"].Width = 100;
-            //dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); ;
+            dataGridView.DataSource = _allTournament.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); ;
 
             if (countLine > count)
             {
                 btnTrangTruoc.Enabled = false;
                 btnTrangKe.Enabled = false;
-                pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
+                int rowHeight = (dataGridView.Rows.Count > 0) ? dataGridView.Rows[0].Height : 22; // hoặc giá trị mặc định
+                pnContent.Size = new Size(
+                    pnContent.Size.Width,
+                    (rowHeight * count) + 30 + pnFooter.Size.Height
+                );
             }
             else
             {
@@ -215,8 +232,9 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private async void btnRefresh_Click(object sender, EventArgs e)
         {
+            await Getall();
             LoadData();
         }
 
@@ -225,6 +243,12 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             var formAdd = new AddTourmentForm();
             formAdd.Location = new Point(250, 140);
             formAdd.ShowDialog();
+        }
+
+        private async void TourmentForm_Load(object sender, EventArgs e)
+        {
+            await Getall();
+            LoadData();
         }
     }
 }

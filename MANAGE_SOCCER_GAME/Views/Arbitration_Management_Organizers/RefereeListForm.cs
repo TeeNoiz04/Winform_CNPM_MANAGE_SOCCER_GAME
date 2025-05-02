@@ -1,33 +1,27 @@
-﻿using MANAGE_SOCCER_GAME.Utils.Routing;
+﻿using MANAGE_SOCCER_GAME.Models;
+using MANAGE_SOCCER_GAME.Services;
+using MANAGE_SOCCER_GAME.Utils.Routing;
 using MANAGE_SOCCER_GAME.Views.Management_Team_Players;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
     public partial class RefereeListForm : Form
     {
+        private readonly RefereeService _refereeService;
         private Router _router;
         private int curentPage = 1;
         private int countLine = 0;
         private float totalPage = 0;
-        public RefereeListForm()
+        private List<Referee> _allReferees = new List<Referee>();
+        public RefereeListForm(RefereeService refereeService)
         {
             InitializeComponent();
-            //_bookSoldService = new BookSoldService();
             _router = new Router();
 
             cbbSoDong.SelectedIndex = 0;
             cbbSapXep.SelectedIndex = 0;
-            //cbbCot.DataSource = typeof(ViewHoaDon).GetProperties().Select(prop => prop.Name).ToList();
-            //cbbCot.SelectedIndex = 0;
+            cbbCot.DataSource = typeof(Referee).GetProperties().Select(prop => prop.Name).ToList();
+            cbbCot.SelectedIndex = 0;
 
             if (curentPage == 1)
             {
@@ -36,24 +30,30 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             }
 
             LoadData();
+            _refereeService = refereeService;
+        }
+
+        private async Task GetAll()
+        {
+            _allReferees = await _refereeService.GetAllRefereesAsync();
         }
 
         private async void LoadData()
         {
             if (!string.IsNullOrWhiteSpace(txbTimKiem.Text) && txbTimKiem.Text != "Search")
             {
-                //var fillterSearch = _viewhoadon.Where(n => n.MaHD.Contains(txbTimKiem.Text) || n.PhuongThucGD.Contains(txbTimKiem.Text) || n.TenKH.Contains(txbTimKiem.Text)).ToList();
-                //if (fillterSearch == null)
-                //{
-                //    MessageBox.Show("Không tìm thấy kết quả");
-                //    return;
-                //}
-                //_viewhoadon = fillterSearch;
+                string keyword = txbTimKiem.Text.Trim().ToLower();
+                var fillterSearch = _allReferees.Where(n => n.Name.ToLower().Contains(keyword)).ToList();
+                if (fillterSearch == null)
+                {
+                    MessageBox.Show("Không tìm thấy kết quả");
+                    return;
+                }
+                _allReferees = fillterSearch;
                 curentPage = 1;
             }
 
-            //var count = _viewhoadon.Count;
-            var count = 0;
+            var count = _allReferees.Count;
             countLine = int.Parse(cbbSoDong.SelectedItem.ToString());
             totalPage = (float)count / countLine;
             totalPage = totalPage > (int)totalPage ? (int)totalPage + 1 : (int)totalPage;
@@ -67,31 +67,26 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             var sortOrder = cbbSapXep.SelectedItem.ToString();
             if (sortOrder == "Tăng dần")
             {
-                //_viewhoadon = _viewhoadon.OrderBy(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
+                _allReferees = _allReferees.OrderBy(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
             }
             else if (sortOrder == "Giảm dần")
             {
-                //_viewhoadon = _viewhoadon.OrderByDescending(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
+                _allReferees = _allReferees.OrderByDescending(c => c.GetType().GetProperty(columnName)?.GetValue(c, null)).ToList();
             }
 
             dataGridView.AutoGenerateColumns = false;
-            //dataGridView.Columns["ID"].DataPropertyName = "MaHD";
-            //dataGridView.Columns["TimeStamp"].DataPropertyName = "NgayGD";
-            //dataGridView.Columns["PhuongThucGD"].DataPropertyName = "PhuongThucGD";
-            //dataGridView.Columns["Price"].DataPropertyName = "TongTien";
-            //dataGridView.Columns["Username"].DataPropertyName = "TenKH";
-            //dataGridView.Columns["IsCheck"].DataPropertyName = "IsCheck";
-            //dataGridView.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            //dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            //dataGridView.Columns["Action"].Width = 100;
-            //dataGridView.Columns["Action2"].Width = 100;
-            //dataGridView.DataSource = _viewhoadon.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); ;
+            dataGridView.DataSource = _allReferees.Skip(countLine * (curentPage - 1)).Take(countLine).ToList();
 
             if (countLine > count)
             {
                 btnTrangTruoc.Enabled = false;
                 btnTrangKe.Enabled = false;
-                pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
+                //pnContent.Size = new Size(pnContent.Size.Width, (dataGridView.Rows[0].Height * count) + 30 + pnFooter.Size.Height);
+                int rowHeight = (dataGridView.Rows.Count > 0) ? dataGridView.Rows[0].Height : 22; // hoặc giá trị mặc định
+                pnContent.Size = new Size(
+                    pnContent.Size.Width,
+                    (rowHeight * count) + 30 + pnFooter.Size.Height
+                );
             }
             else
             {
@@ -147,40 +142,46 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
         private void cbbSoDong_SelectedIndexChanged(object sender, EventArgs e)
         {
             curentPage = 1;
-            //LoadData();
+            LoadData();
         }
 
         private void cbbSapXep_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //LoadData();
+            LoadData();
         }
 
         private void cbbCot_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //LoadData();
+            LoadData();
         }
 
         private async void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView.Rows[e.RowIndex];
-            var id = row.Cells["ID"].Value.ToString();
-            // Duyệt
-            if (e.ColumnIndex == dataGridView.Columns["Action"].Index && e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                //var hoadonDuyet = _entities.HOADONs.FirstOrDefault(n => n.MaHD == id);
-                //if (hoadonDuyet != null)
-                //{
-                //    hoadonDuyet.IsCheck = true;
-                //    hoadonDuyet.MaQTV = Session.CurentUser.MaQTV;
-                //    _entities.HOADONs.AddOrUpdate(hoadonDuyet);
-                //    _entities.SaveChanges();
-                //    LoadData();
-                //}
-            }
-            // Chi tiết
-            if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
-            {
-                //_action.LoadDetailOrders(id);
+                DataGridViewRow row = dataGridView.Rows[e.RowIndex];
+                Guid id = Guid.Parse(row.Cells["ID"].Value.ToString());
+
+                // Edit
+                if (e.ColumnIndex == dataGridView.Columns["Action"].Index)
+                {
+                    var formDetailFactory = AppService.Get<Func<RefereeService, Guid, EditRefereeForm>>();
+                    var form = formDetailFactory(AppService.Get<RefereeService>(), id);
+                    form.ShowDialog();
+                }
+                // Chi tiết
+                else if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
+                {
+                    var result = MessageBox.Show("Bạn có chắc chắn muốn xóa cầu thủ này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.No)
+                    {
+                        return;
+                    }
+                    await _refereeService.DeleteRefereeAsync(id);
+                }
+                await GetAll();
+                LoadData();
+
             }
         }
 
@@ -215,16 +216,31 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private async void btnRefresh_Click(object sender, EventArgs e)
         {
+            await GetAll();
             LoadData();
         }
 
-        private void btnAddReferee_Click(object sender, EventArgs e)
+        private async void btnAddReferee_Click(object sender, EventArgs e)
         {
-            var formAdd = new AddRefereeForm();
-            formAdd.Location = new Point(250, 140);
-            formAdd.ShowDialog();
+            var form = AppService.Get<AddRefereeForm>();
+            form.Location = new Point(250, 140);
+            form.ShowDialog();
+            await GetAll();
+            LoadData();
+        }
+
+        private async void RefereeListForm_Load(object sender, EventArgs e)
+        {
+            await GetAll();
+            LoadData();
+        }
+
+        private async void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+            await GetAll();
+            LoadData();
         }
     }
 }
