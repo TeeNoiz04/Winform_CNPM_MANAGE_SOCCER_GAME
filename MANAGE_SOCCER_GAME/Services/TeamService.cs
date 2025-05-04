@@ -162,5 +162,22 @@ namespace MANAGE_SOCCER_GAME.Services
             }
         }
 
+        public async Task<Game?> GetGameWithTeamsAsync(Guid gameId)
+        {
+            return await _context.Games
+                .Include(g => g.HomeTeam)
+                .Include(g => g.AwayTeam)
+                .FirstOrDefaultAsync(g => g.Id == gameId);
+        }
+
+        public async Task<List<Team>?> GetAllTeamByTournamentAsync(Guid id)
+        {
+            return await _context.Teams.Include(x => x.Player)
+                                        .Include(x => x.Coach)
+                                        .Include(x => x.Tournament)
+                                        .Where(x => x.IdTournament == id && x.IsDeleted == false)
+                                        .ToListAsync();
+        }
+
     }
 }

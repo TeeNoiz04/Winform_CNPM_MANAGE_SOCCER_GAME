@@ -1,7 +1,5 @@
 ﻿using MANAGE_SOCCER_GAME.Data;
-using MANAGE_SOCCER_GAME.Dtos;
 using MANAGE_SOCCER_GAME.Models;
-using MANAGE_SOCCER_GAME.Utils.InputValidators;
 using Microsoft.EntityFrameworkCore;
 
 namespace MANAGE_SOCCER_GAME.Services
@@ -16,6 +14,33 @@ namespace MANAGE_SOCCER_GAME.Services
         }
         public async Task<Game> CreateGameAsync(Game game)
         {
+            var round = await _context.Rounds
+            .Include(r => r.Tournament)
+            .FirstOrDefaultAsync(r => r.Id == game.RoundId);
+
+            if (round == null)
+                throw new ArgumentException("Round not found.", nameof(game.RoundId));
+
+            if (game.HomeTeamId == game.AwayTeamId)
+                throw new ArgumentException("Home and Away teams must be different.");
+
+            var matchDateTime = game.DateStart.Date + game.TimeStart;
+            if (matchDateTime < DateTime.Now)
+                throw new ArgumentException("Game start time must be in the future.");
+
+            if (round.StartDate > matchDateTime || round.EndDate < matchDateTime)
+                throw new ArgumentException("Game time must be within the round's date range.");
+
+            bool isDuplicate = await _context.Games.AnyAsync(g =>
+                !g.IsDeleted &&
+                g.RoundId == game.RoundId &&
+                (g.HomeTeamId == game.HomeTeamId || g.HomeTeamId == game.AwayTeamId ||
+                 g.AwayTeamId == game.HomeTeamId || g.AwayTeamId == game.AwayTeamId) &&
+                g.DateStart == game.DateStart &&
+                g.TimeStart == game.TimeStart);
+
+            if (isDuplicate)
+                throw new ArgumentException("This game conflicts with an existing match for one of the teams.");
 
             game.Id = Guid.NewGuid();
             game.IsDeleted = false;
@@ -30,7 +55,35 @@ namespace MANAGE_SOCCER_GAME.Services
             if (existingGame == null)
                 return null;
 
-            existingGame.Round = game.Round;
+            var round = await _context.Rounds
+           .Include(r => r.Tournament)
+           .FirstOrDefaultAsync(r => r.Id == game.RoundId);
+
+            if (round == null)
+                throw new ArgumentException("Round not found.", nameof(game.RoundId));
+
+            if (game.HomeTeamId == game.AwayTeamId)
+                throw new ArgumentException("Home and Away teams must be different.");
+
+            var matchDateTime = game.DateStart.Date + game.TimeStart;
+            if (matchDateTime < DateTime.Now)
+                throw new ArgumentException("Game start time must be in the future.");
+
+            if (round.StartDate > matchDateTime || round.EndDate < matchDateTime)
+                throw new ArgumentException("Game time must be within the round's date range.");
+
+            bool isDuplicate = await _context.Games.AnyAsync(g =>
+                !g.IsDeleted &&
+                 g.Id != Id &&
+                g.RoundId == game.RoundId &&
+                (g.HomeTeamId == game.HomeTeamId || g.HomeTeamId == game.AwayTeamId ||
+                 g.AwayTeamId == game.HomeTeamId || g.AwayTeamId == game.AwayTeamId) &&
+                g.DateStart == game.DateStart &&
+                g.TimeStart == game.TimeStart);
+
+            if (isDuplicate)
+                throw new ArgumentException("This game conflicts with an existing match for one of the teams.");
+
 
             existingGame.DateStart = game.DateStart;
             existingGame.TimeStart = game.TimeStart;
@@ -39,16 +92,19 @@ namespace MANAGE_SOCCER_GAME.Services
             existingGame.RoundId = game.RoundId;
 
             await _context.SaveChangesAsync();
-            return game;
+            return existingGame;
         }
 
         public async Task<Game?> GetGameByIdAsync(Guid id)
         {
-            var game = await _context.Games.Include(x => x.MatchdaySquads)
-                                          .Include(x => x.MatchOfficials)
-                                          .Include(x => x.PenaltyCards)
-                                          .Include(x => x.SoccerGames)
-                                          .FirstOrDefaultAsync(x => x.Id == id && x.IsDeleted == false);
+            var game = await _context.Games.Include(x => x.AwayTeam)
+                                           .ThenInclude(x => x.Player)
+                                           .ThenInclude(x => x.Image)
+                                           .Include(x => x.HomeTeam)
+                                           .ThenInclude(x => x.Player)
+                                           .ThenInclude(x => x.Image)
+                                           .Include(x => x.SoccerGames)
+                                           .FirstOrDefaultAsync(x => x.Id == id && x.IsDeleted == false);
 
             if (game == null)
                 return null;
@@ -62,11 +118,24 @@ namespace MANAGE_SOCCER_GAME.Services
                                           .Include(x => x.MatchOfficials)
                                           .Include(x => x.PenaltyCards)
                                           .Include(x => x.SoccerGames)
-                                          .Where(x => x.IsDeleted == false).ToListAsync();
+                                          .Where(x => x.IsDeleted == false && x.Status).ToListAsync();
             if (games == null)
                 return null;
 
             return games;
         }
+
+        public async Task<List<Game>> GetGamesByRoundIdAsync(Guid roundId)
+        {
+            var games = await _context.Games
+                                       .Include(x => x.AwayTeam)
+                                       .Include(x => x.HomeTeam)
+                                       .Where(x => !x.IsDeleted && !x.Status && x.RoundId == roundId)
+                                       .ToListAsync();
+
+            return games;
+        }
+
+
     }
 }

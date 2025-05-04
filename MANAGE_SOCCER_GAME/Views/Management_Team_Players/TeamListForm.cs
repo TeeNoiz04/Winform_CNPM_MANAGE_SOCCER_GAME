@@ -242,6 +242,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             var form = AppService.Get<AddTeamForm>();
             form.Location = new Point(250, 140);
             form.ShowDialog();
+            _allTeams = null;
             await LoadData();
         }
 

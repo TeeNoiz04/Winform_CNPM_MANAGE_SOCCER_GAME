@@ -35,13 +35,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            txbDayStart = new Guna.UI2.WinForms.Guna2TextBox();
             txbName = new Guna.UI2.WinForms.Guna2TextBox();
             lblName = new Label();
             lblDayStart = new Label();
@@ -53,38 +52,9 @@
             lblDescription = new Label();
             lblDayEnd = new Label();
             txbDescription = new Guna.UI2.WinForms.Guna2TextBox();
-            txbDayEnd = new Guna.UI2.WinForms.Guna2TextBox();
+            dtEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            dtStartDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             SuspendLayout();
-            // 
-            // txbDayStart
-            // 
-            txbDayStart.Anchor = AnchorStyles.Top;
-            txbDayStart.BorderColor = Color.FromArgb(52, 52, 116);
-            txbDayStart.BorderRadius = 5;
-            txbDayStart.Cursor = Cursors.IBeam;
-            txbDayStart.CustomizableEdges = customizableEdges1;
-            txbDayStart.DefaultText = "Day Start";
-            txbDayStart.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbDayStart.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbDayStart.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbDayStart.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbDayStart.FillColor = Color.FromArgb(52, 52, 116);
-            txbDayStart.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbDayStart.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbDayStart.ForeColor = Color.Silver;
-            txbDayStart.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbDayStart.Location = new Point(170, 150);
-            txbDayStart.Margin = new Padding(6, 5, 6, 5);
-            txbDayStart.Name = "txbDayStart";
-            txbDayStart.PlaceholderText = "";
-            txbDayStart.SelectedText = "";
-            txbDayStart.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txbDayStart.Size = new Size(280, 50);
-            txbDayStart.TabIndex = 34;
-            txbDayStart.Click += txbBirthDate_Click;
-            txbDayStart.Leave += txbBirthDate_Leave;
-            txbDayStart.MouseLeave += txbBirthDate_MouseLeave;
-            txbDayStart.MouseHover += txbBirthDate_MouseHover;
             // 
             // txbName
             // 
@@ -93,8 +63,8 @@
             txbName.BorderColor = Color.FromArgb(52, 52, 116);
             txbName.BorderRadius = 5;
             txbName.Cursor = Cursors.IBeam;
-            txbName.CustomizableEdges = customizableEdges3;
-            txbName.DefaultText = "Name";
+            txbName.CustomizableEdges = customizableEdges1;
+            txbName.DefaultText = "";
             txbName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txbName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -107,11 +77,12 @@
             txbName.Location = new Point(170, 90);
             txbName.Margin = new Padding(6);
             txbName.Name = "txbName";
-            txbName.PlaceholderText = "";
+            txbName.PlaceholderText = "Name";
             txbName.SelectedText = "";
-            txbName.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txbName.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txbName.Size = new Size(280, 50);
             txbName.TabIndex = 33;
+            txbName.Tag = "Name";
             txbName.Click += txbFullName_Click;
             txbName.Leave += txbFullName_Leave;
             txbName.MouseLeave += txbFullName_MouseLeave;
@@ -157,7 +128,7 @@
             // 
             btnCancel.Anchor = AnchorStyles.Bottom;
             btnCancel.BorderRadius = 5;
-            btnCancel.CustomizableEdges = customizableEdges5;
+            btnCancel.CustomizableEdges = customizableEdges3;
             btnCancel.DisabledState.BorderColor = Color.DarkGray;
             btnCancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -167,7 +138,7 @@
             btnCancel.ForeColor = Color.White;
             btnCancel.Location = new Point(50, 370);
             btnCancel.Name = "btnCancel";
-            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancel.Size = new Size(100, 40);
             btnCancel.TabIndex = 41;
             btnCancel.Text = "Cancel";
@@ -177,7 +148,7 @@
             // 
             btnSubmit.Anchor = AnchorStyles.Bottom;
             btnSubmit.BorderRadius = 5;
-            btnSubmit.CustomizableEdges = customizableEdges7;
+            btnSubmit.CustomizableEdges = customizableEdges5;
             btnSubmit.DisabledState.BorderColor = Color.DarkGray;
             btnSubmit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSubmit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -187,10 +158,11 @@
             btnSubmit.ForeColor = Color.White;
             btnSubmit.Location = new Point(350, 370);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnSubmit.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSubmit.Size = new Size(100, 40);
             btnSubmit.TabIndex = 42;
             btnSubmit.Text = "Submit";
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // gnElipse
             // 
@@ -231,8 +203,8 @@
             txbDescription.BorderColor = Color.FromArgb(52, 52, 116);
             txbDescription.BorderRadius = 5;
             txbDescription.Cursor = Cursors.IBeam;
-            txbDescription.CustomizableEdges = customizableEdges9;
-            txbDescription.DefaultText = "Description";
+            txbDescription.CustomizableEdges = customizableEdges11;
+            txbDescription.DefaultText = "";
             txbDescription.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbDescription.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txbDescription.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -245,46 +217,50 @@
             txbDescription.Location = new Point(170, 270);
             txbDescription.Margin = new Padding(6, 5, 6, 5);
             txbDescription.Name = "txbDescription";
-            txbDescription.PlaceholderText = "";
+            txbDescription.PlaceholderText = "Description";
             txbDescription.SelectedText = "";
-            txbDescription.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txbDescription.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txbDescription.Size = new Size(280, 50);
             txbDescription.TabIndex = 50;
+            txbDescription.Tag = "Description";
             txbDescription.Click += txbNumber_Click;
             txbDescription.Leave += txbNumber_Leave;
             txbDescription.MouseLeave += txbNumber_MouseLeave;
             txbDescription.MouseHover += txbNumber_MouseHover;
             // 
-            // txbDayEnd
+            // dtEndDate
             // 
-            txbDayEnd.Anchor = AnchorStyles.Top;
-            txbDayEnd.AutoSize = true;
-            txbDayEnd.BorderColor = Color.FromArgb(52, 52, 116);
-            txbDayEnd.BorderRadius = 5;
-            txbDayEnd.Cursor = Cursors.IBeam;
-            txbDayEnd.CustomizableEdges = customizableEdges11;
-            txbDayEnd.DefaultText = "Day End";
-            txbDayEnd.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbDayEnd.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbDayEnd.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbDayEnd.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbDayEnd.FillColor = Color.FromArgb(52, 52, 116);
-            txbDayEnd.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbDayEnd.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbDayEnd.ForeColor = Color.Silver;
-            txbDayEnd.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbDayEnd.Location = new Point(170, 210);
-            txbDayEnd.Margin = new Padding(6);
-            txbDayEnd.Name = "txbDayEnd";
-            txbDayEnd.PlaceholderText = "";
-            txbDayEnd.SelectedText = "";
-            txbDayEnd.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txbDayEnd.Size = new Size(280, 50);
-            txbDayEnd.TabIndex = 49;
-            txbDayEnd.Click += txbPosition_Click;
-            txbDayEnd.Leave += txbPosition_Leave;
-            txbDayEnd.MouseLeave += txbPosition_MouseLeave;
-            txbDayEnd.MouseHover += txbPosition_MouseHover;
+            dtEndDate.Checked = true;
+            dtEndDate.CustomizableEdges = customizableEdges7;
+            dtEndDate.FillColor = Color.FromArgb(52, 52, 116);
+            dtEndDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtEndDate.ForeColor = Color.Silver;
+            dtEndDate.Format = DateTimePickerFormat.Short;
+            dtEndDate.Location = new Point(170, 219);
+            dtEndDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtEndDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtEndDate.Name = "dtEndDate";
+            dtEndDate.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            dtEndDate.Size = new Size(280, 36);
+            dtEndDate.TabIndex = 72;
+            dtEndDate.Value = new DateTime(2025, 5, 1, 8, 13, 37, 590);
+            // 
+            // dtStartDate
+            // 
+            dtStartDate.Checked = true;
+            dtStartDate.CustomizableEdges = customizableEdges9;
+            dtStartDate.FillColor = Color.FromArgb(52, 52, 116);
+            dtStartDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtStartDate.ForeColor = Color.Silver;
+            dtStartDate.Format = DateTimePickerFormat.Short;
+            dtStartDate.Location = new Point(170, 154);
+            dtStartDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtStartDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtStartDate.Name = "dtStartDate";
+            dtStartDate.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            dtStartDate.Size = new Size(280, 36);
+            dtStartDate.TabIndex = 71;
+            dtStartDate.Value = new DateTime(2025, 5, 1, 8, 13, 37, 590);
             // 
             // AddTourmentForm
             // 
@@ -292,16 +268,16 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(31, 70, 121);
             ClientSize = new Size(500, 440);
+            Controls.Add(dtEndDate);
+            Controls.Add(dtStartDate);
             Controls.Add(lblDescription);
             Controls.Add(lblDayEnd);
             Controls.Add(txbDescription);
-            Controls.Add(txbDayEnd);
             Controls.Add(btnSubmit);
             Controls.Add(btnCancel);
             Controls.Add(lblTitle);
             Controls.Add(lblDayStart);
             Controls.Add(lblName);
-            Controls.Add(txbDayStart);
             Controls.Add(txbName);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -313,7 +289,6 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2TextBox txbDayStart;
         private Guna.UI2.WinForms.Guna2TextBox txbName;
         private Label lblName;
         private Label lblDayStart;
@@ -325,6 +300,7 @@
         private Label lblDescription;
         private Label lblDayEnd;
         private Guna.UI2.WinForms.Guna2TextBox txbDescription;
-        private Guna.UI2.WinForms.Guna2TextBox txbDayEnd;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtEndDate;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtStartDate;
     }
 }

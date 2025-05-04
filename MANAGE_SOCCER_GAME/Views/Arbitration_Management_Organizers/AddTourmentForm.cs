@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MANAGE_SOCCER_GAME.Models;
+using MANAGE_SOCCER_GAME.Services;
 
 namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
     public partial class AddTourmentForm : Form
     {
-        public AddTourmentForm()
+        private TournamentService _tournamentService;
+        public AddTourmentForm(TournamentService tournamentService)
         {
             InitializeComponent();
+            _tournamentService = tournamentService;
+
         }
         private void txbFullName_MouseLeave(object sender, EventArgs e)
         {
@@ -44,63 +40,7 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
                 txbName.BorderColor = Color.FromArgb(60, 211, 252);
             }
         }
-
-        private void txbBirthDate_MouseLeave(object sender, EventArgs e)
-        {
-            txbDayStart.BorderColor = Color.FromArgb(52, 52, 116);
-        }
-
-        private void txbBirthDate_MouseHover(object sender, EventArgs e)
-        {
-            txbDayStart.BorderColor = Color.FromArgb(60, 211, 252);
-        }
-
-        private void txbBirthDate_Leave(object sender, EventArgs e)
-        {
-            if (txbDayStart.Text == string.Empty)
-            {
-                txbDayStart.Text = "Day Start";
-                txbDayStart.ForeColor = Color.Silver;
-            }
-        }
-
-        private void txbBirthDate_Click(object sender, EventArgs e)
-        {
-            if (txbDayStart.Text == "Day Start")
-            {
-                txbDayStart.Text = string.Empty;
-                txbDayStart.ForeColor = Color.FromArgb(60, 211, 252);
-                txbDayStart.BorderColor = Color.FromArgb(60, 211, 252);
-            }
-        }
-        private void txbPosition_MouseLeave(object sender, EventArgs e)
-        {
-            txbDayEnd.BorderColor = Color.FromArgb(52, 52, 116);
-        }
-
-        private void txbPosition_MouseHover(object sender, EventArgs e)
-        {
-            txbDayEnd.BorderColor = Color.FromArgb(60, 211, 252);
-        }
-
-        private void txbPosition_Leave(object sender, EventArgs e)
-        {
-            if (txbDayEnd.Text == string.Empty)
-            {
-                txbDayEnd.Text = "Day End";
-                txbDayEnd.ForeColor = Color.Silver;
-            }
-        }
-
-        private void txbPosition_Click(object sender, EventArgs e)
-        {
-            if (txbDayEnd.Text == "Day End")
-            {
-                txbDayEnd.Text = string.Empty;
-                txbDayEnd.ForeColor = Color.FromArgb(60, 211, 252);
-                txbDayEnd.BorderColor = Color.FromArgb(60, 211, 252);
-            }
-        }
+      
         private void txbNumber_MouseLeave(object sender, EventArgs e)
         {
             txbDescription.BorderColor = Color.FromArgb(52, 52, 116);
@@ -137,6 +77,56 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
         private void txbUpload_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (!ValidateRoundInput())
+                return;
+
+            if (MessageBox.Show("Bạn có chắc chắn muốn thêm mùa giải này?", "Xác nhận", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+            var tournament = new Tournament
+            {
+                Name = txbName.Text,
+                Description = txbDescription.Text,
+                StartDate = dtStartDate.Value.Date,
+                EndDate = dtEndDate.Value.Date
+            };
+                try
+                {
+                    var create = await _tournamentService.CreateTournamentAsync(tournament);
+
+                    AppService.ShowSuccess("Thêm mùa giải thành công!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    AppService.ShowError("Lỗi khi thêm mùa giải: " + ex.Message);
+                }
+        }
+
+        private bool ValidateRoundInput()
+        {
+            if (string.IsNullOrWhiteSpace(txbName.Text))
+            {
+                AppService.ShowError("Tên vòng đấu không được để trống.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txbDescription.Text))
+            {
+                AppService.ShowError("Mô tả không được để trống.");
+                return false;
+            }
+
+            if (dtStartDate.Value.Date > dtEndDate.Value.Date)
+            {
+                AppService.ShowError("Ngày bắt đầu không được lớn hơn ngày kết thúc.");
+                return false;
+            }
+
+            return true;
         }
     }
 }

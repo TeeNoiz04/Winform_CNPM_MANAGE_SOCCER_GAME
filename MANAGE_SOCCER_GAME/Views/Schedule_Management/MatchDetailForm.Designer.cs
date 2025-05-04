@@ -36,29 +36,20 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            pnHeader = new Panel();
-            btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
-            txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
-            cbbCot = new ComboBox();
-            lblCot = new Label();
-            lblSapXep = new Label();
-            cbbSapXep = new ComboBox();
             txbTeam1 = new Guna.UI2.WinForms.Guna2TextBox();
             txbTeam2 = new Guna.UI2.WinForms.Guna2TextBox();
             picTeam1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -69,125 +60,22 @@
             pnParticipant = new Guna.UI2.WinForms.Guna2Panel();
             lblStatus = new Label();
             pnTimeLine = new Guna.UI2.WinForms.Guna2Panel();
+            fpanel = new FlowLayoutPanel();
             btnBack = new Guna.UI2.WinForms.Guna2Button();
             btnEditMatch = new Guna.UI2.WinForms.Guna2Button();
             btnUpdateResults = new Guna.UI2.WinForms.Guna2Button();
-            pnHeader.SuspendLayout();
+            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)picTeam1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picTeam2).BeginInit();
             pnContent.SuspendLayout();
             pnParticipant.SuspendLayout();
+            pnTimeLine.SuspendLayout();
             SuspendLayout();
-            // 
-            // pnHeader
-            // 
-            pnHeader.Controls.Add(btnTimKiem);
-            pnHeader.Controls.Add(txbTimKiem);
-            pnHeader.Controls.Add(cbbCot);
-            pnHeader.Controls.Add(lblCot);
-            pnHeader.Controls.Add(lblSapXep);
-            pnHeader.Controls.Add(cbbSapXep);
-            pnHeader.Dock = DockStyle.Top;
-            pnHeader.Location = new Point(0, 0);
-            pnHeader.Name = "pnHeader";
-            pnHeader.Size = new Size(1920, 50);
-            pnHeader.TabIndex = 24;
-            // 
-            // btnTimKiem
-            // 
-            btnTimKiem.BorderRadius = 5;
-            btnTimKiem.CustomizableEdges = customizableEdges1;
-            btnTimKiem.DisabledState.BorderColor = Color.DarkGray;
-            btnTimKiem.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTimKiem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTimKiem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTimKiem.FillColor = Color.FromArgb(60, 211, 252);
-            btnTimKiem.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTimKiem.ForeColor = Color.White;
-            btnTimKiem.Location = new Point(10, 10);
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnTimKiem.Size = new Size(80, 30);
-            btnTimKiem.TabIndex = 26;
-            btnTimKiem.Text = "Tìm kiếm";
-            btnTimKiem.Click += btnTimKiem_ClickAsync;
-            // 
-            // txbTimKiem
-            // 
-            txbTimKiem.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txbTimKiem.Cursor = Cursors.IBeam;
-            txbTimKiem.CustomizableEdges = customizableEdges3;
-            txbTimKiem.DefaultText = "Search";
-            txbTimKiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbTimKiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbTimKiem.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbTimKiem.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTimKiem.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTimKiem.Location = new Point(96, 10);
-            txbTimKiem.Margin = new Padding(3, 4, 3, 4);
-            txbTimKiem.Name = "txbTimKiem";
-            txbTimKiem.PlaceholderText = "";
-            txbTimKiem.SelectedText = "";
-            txbTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txbTimKiem.Size = new Size(1487, 30);
-            txbTimKiem.TabIndex = 15;
-            txbTimKiem.Click += txbTimKiem_Click;
-            txbTimKiem.KeyPress += txbTimKiem_KeyPress;
-            txbTimKiem.Leave += txbTimKiem_Leave;
-            // 
-            // cbbCot
-            // 
-            cbbCot.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cbbCot.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbbCot.FormattingEnabled = true;
-            cbbCot.Location = new Point(1795, 13);
-            cbbCot.Margin = new Padding(3, 2, 3, 2);
-            cbbCot.Name = "cbbCot";
-            cbbCot.Size = new Size(115, 26);
-            cbbCot.TabIndex = 11;
-            // 
-            // lblCot
-            // 
-            lblCot.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblCot.AutoSize = true;
-            lblCot.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCot.ForeColor = Color.White;
-            lblCot.Location = new Point(1757, 16);
-            lblCot.Name = "lblCot";
-            lblCot.Size = new Size(32, 18);
-            lblCot.TabIndex = 10;
-            lblCot.Text = "Cột";
-            // 
-            // lblSapXep
-            // 
-            lblSapXep.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblSapXep.AutoSize = true;
-            lblSapXep.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSapXep.ForeColor = Color.White;
-            lblSapXep.Location = new Point(1589, 16);
-            lblSapXep.Name = "lblSapXep";
-            lblSapXep.Size = new Size(61, 18);
-            lblSapXep.TabIndex = 8;
-            lblSapXep.Text = "Sắp xếp";
-            // 
-            // cbbSapXep
-            // 
-            cbbSapXep.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cbbSapXep.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbbSapXep.FormattingEnabled = true;
-            cbbSapXep.Items.AddRange(new object[] { "Tăng dần", "Giảm dần" });
-            cbbSapXep.Location = new Point(1656, 13);
-            cbbSapXep.Margin = new Padding(3, 2, 3, 2);
-            cbbSapXep.Name = "cbbSapXep";
-            cbbSapXep.Size = new Size(95, 26);
-            cbbSapXep.TabIndex = 9;
             // 
             // txbTeam1
             // 
             txbTeam1.BorderColor = Color.Transparent;
-            txbTeam1.CustomizableEdges = customizableEdges5;
+            txbTeam1.CustomizableEdges = customizableEdges1;
             txbTeam1.DefaultText = "Team 1";
             txbTeam1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbTeam1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -203,14 +91,14 @@
             txbTeam1.Name = "txbTeam1";
             txbTeam1.PlaceholderText = "";
             txbTeam1.SelectedText = "";
-            txbTeam1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txbTeam1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txbTeam1.Size = new Size(350, 50);
             txbTeam1.TabIndex = 27;
             // 
             // txbTeam2
             // 
             txbTeam2.BorderColor = Color.Transparent;
-            txbTeam2.CustomizableEdges = customizableEdges7;
+            txbTeam2.CustomizableEdges = customizableEdges3;
             txbTeam2.DefaultText = "Team 2";
             txbTeam2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbTeam2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -221,35 +109,38 @@
             txbTeam2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbTeam2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txbTeam2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTeam2.Location = new Point(700, 60);
+            txbTeam2.Location = new Point(699, 60);
             txbTeam2.Margin = new Padding(8);
             txbTeam2.Name = "txbTeam2";
             txbTeam2.PlaceholderText = "";
+            txbTeam2.RightToLeft = RightToLeft.No;
             txbTeam2.SelectedText = "";
-            txbTeam2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txbTeam2.Size = new Size(350, 50);
+            txbTeam2.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txbTeam2.Size = new Size(359, 50);
             txbTeam2.TabIndex = 28;
             txbTeam2.TextAlign = HorizontalAlignment.Right;
             // 
             // picTeam1
             // 
-            picTeam1.CustomizableEdges = customizableEdges9;
+            picTeam1.CustomizableEdges = customizableEdges5;
             picTeam1.ImageRotate = 0F;
             picTeam1.Location = new Point(30, 30);
             picTeam1.Name = "picTeam1";
-            picTeam1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            picTeam1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             picTeam1.Size = new Size(150, 150);
+            picTeam1.SizeMode = PictureBoxSizeMode.StretchImage;
             picTeam1.TabIndex = 30;
             picTeam1.TabStop = false;
             // 
             // picTeam2
             // 
-            picTeam2.CustomizableEdges = customizableEdges11;
+            picTeam2.CustomizableEdges = customizableEdges7;
             picTeam2.ImageRotate = 0F;
-            picTeam2.Location = new Point(1060, 30);
+            picTeam2.Location = new Point(1070, 30);
             picTeam2.Name = "picTeam2";
-            picTeam2.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            picTeam2.ShadowDecoration.CustomizableEdges = customizableEdges8;
             picTeam2.Size = new Size(150, 150);
+            picTeam2.SizeMode = PictureBoxSizeMode.StretchImage;
             picTeam2.TabIndex = 31;
             picTeam2.TabStop = false;
             // 
@@ -268,9 +159,9 @@
             // 
             lblTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTime.ForeColor = Color.White;
-            lblTime.Location = new Point(552, 30);
+            lblTime.Location = new Point(512, 30);
             lblTime.Name = "lblTime";
-            lblTime.Size = new Size(136, 22);
+            lblTime.Size = new Size(215, 22);
             lblTime.TabIndex = 1;
             lblTime.Text = "01.01.2025 00:00";
             lblTime.TextAlign = ContentAlignment.MiddleCenter;
@@ -280,27 +171,27 @@
             pnContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pnContent.Controls.Add(pnParticipant);
             pnContent.Controls.Add(pnTimeLine);
-            pnContent.CustomizableEdges = customizableEdges17;
+            pnContent.CustomizableEdges = customizableEdges13;
             pnContent.Location = new Point(340, 100);
             pnContent.Name = "pnContent";
-            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges14;
             pnContent.Size = new Size(1240, 700);
             pnContent.TabIndex = 32;
             // 
             // pnParticipant
             // 
+            pnParticipant.Controls.Add(txbTeam2);
             pnParticipant.Controls.Add(lblStatus);
             pnParticipant.Controls.Add(lblTime);
             pnParticipant.Controls.Add(txbTeam1);
             pnParticipant.Controls.Add(lblResult);
-            pnParticipant.Controls.Add(txbTeam2);
             pnParticipant.Controls.Add(picTeam2);
             pnParticipant.Controls.Add(picTeam1);
-            pnParticipant.CustomizableEdges = customizableEdges13;
+            pnParticipant.CustomizableEdges = customizableEdges9;
             pnParticipant.Dock = DockStyle.Top;
             pnParticipant.Location = new Point(0, 0);
             pnParticipant.Name = "pnParticipant";
-            pnParticipant.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            pnParticipant.ShadowDecoration.CustomizableEdges = customizableEdges10;
             pnParticipant.Size = new Size(1240, 210);
             pnParticipant.TabIndex = 33;
             // 
@@ -317,17 +208,30 @@
             // 
             // pnTimeLine
             // 
-            pnTimeLine.CustomizableEdges = customizableEdges15;
+            pnTimeLine.AutoScroll = true;
+            pnTimeLine.Controls.Add(fpanel);
+            pnTimeLine.CustomizableEdges = customizableEdges11;
             pnTimeLine.Dock = DockStyle.Bottom;
             pnTimeLine.Location = new Point(0, 210);
             pnTimeLine.Name = "pnTimeLine";
-            pnTimeLine.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            pnTimeLine.ShadowDecoration.CustomizableEdges = customizableEdges12;
             pnTimeLine.Size = new Size(1240, 490);
             pnTimeLine.TabIndex = 33;
             // 
+            // fpanel
+            // 
+            fpanel.AutoScroll = true;
+            fpanel.Dock = DockStyle.Fill;
+            fpanel.FlowDirection = FlowDirection.TopDown;
+            fpanel.Location = new Point(0, 0);
+            fpanel.Name = "fpanel";
+            fpanel.Size = new Size(1240, 490);
+            fpanel.TabIndex = 0;
+            fpanel.WrapContents = false;
+            // 
             // btnBack
             // 
-            btnBack.CustomizableEdges = customizableEdges19;
+            btnBack.CustomizableEdges = customizableEdges15;
             btnBack.DisabledState.BorderColor = Color.DarkGray;
             btnBack.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBack.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -335,9 +239,9 @@
             btnBack.FillColor = Color.FromArgb(20, 44, 76);
             btnBack.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(0, 60);
+            btnBack.Location = new Point(-1, 12);
             btnBack.Name = "btnBack";
-            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnBack.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnBack.Size = new Size(60, 35);
             btnBack.TabIndex = 33;
             btnBack.Text = "<<";
@@ -347,7 +251,7 @@
             // 
             btnEditMatch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnEditMatch.BorderRadius = 5;
-            btnEditMatch.CustomizableEdges = customizableEdges21;
+            btnEditMatch.CustomizableEdges = customizableEdges17;
             btnEditMatch.DisabledState.BorderColor = Color.DarkGray;
             btnEditMatch.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEditMatch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -355,18 +259,19 @@
             btnEditMatch.FillColor = Color.FromArgb(60, 211, 252);
             btnEditMatch.Font = new Font("Segoe UI", 12F);
             btnEditMatch.ForeColor = Color.White;
-            btnEditMatch.Location = new Point(1600, 100);
+            btnEditMatch.Location = new Point(1602, 160);
             btnEditMatch.Name = "btnEditMatch";
-            btnEditMatch.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnEditMatch.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnEditMatch.Size = new Size(150, 40);
             btnEditMatch.TabIndex = 34;
             btnEditMatch.Text = "Edit Match";
+            btnEditMatch.Click += btnEditMatch_Click;
             // 
             // btnUpdateResults
             // 
             btnUpdateResults.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnUpdateResults.BorderRadius = 5;
-            btnUpdateResults.CustomizableEdges = customizableEdges23;
+            btnUpdateResults.CustomizableEdges = customizableEdges19;
             btnUpdateResults.DisabledState.BorderColor = Color.DarkGray;
             btnUpdateResults.DisabledState.CustomBorderColor = Color.DarkGray;
             btnUpdateResults.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -374,12 +279,33 @@
             btnUpdateResults.FillColor = Color.FromArgb(60, 211, 252);
             btnUpdateResults.Font = new Font("Segoe UI", 12F);
             btnUpdateResults.ForeColor = Color.White;
-            btnUpdateResults.Location = new Point(1600, 160);
+            btnUpdateResults.Location = new Point(1602, 222);
             btnUpdateResults.Name = "btnUpdateResults";
-            btnUpdateResults.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnUpdateResults.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnUpdateResults.Size = new Size(150, 40);
             btnUpdateResults.TabIndex = 35;
             btnUpdateResults.Text = "Update Results";
+            btnUpdateResults.Click += btnUpdateResults_Click;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            btnRefresh.BorderRadius = 5;
+            btnRefresh.CustomizableEdges = customizableEdges21;
+            btnRefresh.DisabledState.BorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRefresh.FillColor = Color.FromArgb(60, 211, 252);
+            btnRefresh.Font = new Font("Segoe UI", 12F);
+            btnRefresh.ForeColor = Color.White;
+            btnRefresh.Location = new Point(1602, 100);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnRefresh.Size = new Size(150, 40);
+            btnRefresh.TabIndex = 36;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // MatchDetailForm
             // 
@@ -387,33 +313,24 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(20, 44, 76);
             ClientSize = new Size(1920, 930);
+            Controls.Add(btnRefresh);
             Controls.Add(btnUpdateResults);
             Controls.Add(btnEditMatch);
             Controls.Add(btnBack);
             Controls.Add(pnContent);
-            Controls.Add(pnHeader);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MatchDetailForm";
             Text = "OrdersForm";
-            pnHeader.ResumeLayout(false);
-            pnHeader.PerformLayout();
+            Load += MatchDetailForm_Load;
             ((System.ComponentModel.ISupportInitialize)picTeam1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picTeam2).EndInit();
             pnContent.ResumeLayout(false);
             pnParticipant.ResumeLayout(false);
+            pnTimeLine.ResumeLayout(false);
             ResumeLayout(false);
-
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnHeader;
-        private Guna.UI2.WinForms.Guna2TextBox txbTimKiem;
-        private System.Windows.Forms.ComboBox cbbCot;
-        private System.Windows.Forms.Label lblCot;
-        private System.Windows.Forms.Label lblSapXep;
-        private System.Windows.Forms.ComboBox cbbSapXep;
-        private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private Guna.UI2.WinForms.Guna2TextBox txbTeam1;
         private Guna.UI2.WinForms.Guna2TextBox txbTeam2;
         private Guna.UI2.WinForms.Guna2PictureBox picTeam1;
@@ -427,5 +344,7 @@
         private Guna.UI2.WinForms.Guna2Button btnBack;
         private Guna.UI2.WinForms.Guna2Button btnEditMatch;
         private Guna.UI2.WinForms.Guna2Button btnUpdateResults;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private FlowLayoutPanel fpanel;
     }
 }

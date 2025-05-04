@@ -122,13 +122,14 @@
             // lblTitle
             // 
             lblTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
             lblTitle.Location = new Point(170, 25);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(160, 40);
+            lblTitle.Size = new Size(180, 37);
             lblTitle.TabIndex = 40;
-            lblTitle.Text = "EDIT TEAM";
+            lblTitle.Text = "EDIT PLAYER";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnCancel

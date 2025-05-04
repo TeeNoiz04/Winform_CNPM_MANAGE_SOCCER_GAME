@@ -179,7 +179,7 @@
             pnLayoutMain.Controls.Add(pnLayout);
             pnLayoutMain.Location = new Point(175, 60);
             pnLayoutMain.Name = "pnLayoutMain";
-            pnLayoutMain.Size = new Size(1270, 855);
+            pnLayoutMain.Size = new Size(1415, 855);
             pnLayoutMain.TabIndex = 25;
             // 
             // pnLayout
@@ -303,7 +303,6 @@
             ((System.ComponentModel.ISupportInitialize)picTeam2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picTeam1).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion

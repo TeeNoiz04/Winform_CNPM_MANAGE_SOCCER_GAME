@@ -16,6 +16,21 @@ namespace MANAGE_SOCCER_GAME.Services
 
         public async Task<Tournament> CreateTournamentAsync(Tournament tournament)
         {
+            if (string.IsNullOrWhiteSpace(tournament.Name))
+                throw new ArgumentException("Tournament name is required.", nameof(tournament.Name));
+
+            if (tournament.StartDate >= tournament.EndDate)
+                throw new ArgumentException("Start date must be before end date.");
+
+            if (tournament.StartDate < DateTime.Today)
+                throw new ArgumentException("Start date cannot be in the past.");
+
+            bool isDuplicate = await _context.Tournaments
+                .AnyAsync(t => !t.IsDeleted && t.Name.ToLower() == tournament.Name.ToLower());
+
+            if (isDuplicate)
+                throw new ArgumentException("A tournament with the same name already exists.");
+
             tournament.Id = Guid.NewGuid();
             _context.Tournaments.Add(tournament);
             await _context.SaveChangesAsync();
@@ -34,6 +49,7 @@ namespace MANAGE_SOCCER_GAME.Services
 
             var dtos = tournaments.Select(t => new TournamentDTO
             {
+                Id = t.Id,
                 Name = t.Name,
                 Description = t.Description,
                 StartDate = t.StartDate,

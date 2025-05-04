@@ -56,6 +56,7 @@
             btnResult.TabIndex = 23;
             btnResult.Text = "Match Result";
             btnResult.TextAlign = HorizontalAlignment.Left;
+            btnResult.Visible = false;
             btnResult.Click += btnResult_Click;
             // 
             // lblTitle
@@ -105,7 +106,6 @@
             Name = "SidebarMRRForm";
             Text = "SidebarAppsForm";
             ResumeLayout(false);
-
         }
 
         #endregion

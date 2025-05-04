@@ -1,18 +1,8 @@
 ﻿using MANAGE_SOCCER_GAME.Dtos;
-using MANAGE_SOCCER_GAME.Models;
 using MANAGE_SOCCER_GAME.Services;
 using MANAGE_SOCCER_GAME.Utils.Routing;
-using MANAGE_SOCCER_GAME.Views.Management_Team_Players;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 {
@@ -88,16 +78,7 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             }
 
             dataGridView.AutoGenerateColumns = false;
-            //dataGridView.Columns["ID"].DataPropertyName = "MaHD";
-            //dataGridView.Columns["TimeStamp"].DataPropertyName = "NgayGD";
-            //dataGridView.Columns["PhuongThucGD"].DataPropertyName = "PhuongThucGD";
-            //dataGridView.Columns["Price"].DataPropertyName = "TongTien";
-            //dataGridView.Columns["Username"].DataPropertyName = "TenKH";
-            //dataGridView.Columns["IsCheck"].DataPropertyName = "IsCheck";
-            //dataGridView.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            //dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            //dataGridView.Columns["Action"].Width = 100;
-            //dataGridView.Columns["Action2"].Width = 100;
+        
             dataGridView.DataSource = _allTournament.Skip(countLine * (curentPage - 1)).Take(countLine).ToList(); ;
 
             if (countLine > count)
@@ -179,30 +160,25 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 
         private async void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView.Rows[e.RowIndex];
-            var id = row.Cells["ID"].Value.ToString();
-            // Duyệt
-            if (e.ColumnIndex == dataGridView.Columns["Action"].Index && e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                //var hoadonDuyet = _entities.HOADONs.FirstOrDefault(n => n.MaHD == id);
-                //if (hoadonDuyet != null)
-                //{
-                //    hoadonDuyet.IsCheck = true;
-                //    hoadonDuyet.MaQTV = Session.CurentUser.MaQTV;
-                //    _entities.HOADONs.AddOrUpdate(hoadonDuyet);
-                //    _entities.SaveChanges();
-                //    LoadData();
-                //}
-            }
-            // Chi tiết
-            if (e.ColumnIndex == dataGridView.Columns["Action2"].Index && e.RowIndex >= 0)
-            {
-                //_action.LoadDetailOrders(id);
+                DataGridViewRow row = dataGridView.Rows[e.RowIndex];
+                Guid id = Guid.Parse(row.Cells["ID"].Value.ToString());
+
+                if (e.ColumnIndex == dataGridView.Columns["Choose"].Index)
+                {
+                    if (MessageBox.Show("Bạn có chắc chắn muốn chọn mùa giải này?", "Xác nhận", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                        return;
+                    AppService.TournamentId = id;
+                    AppService.ShowSuccess($"Chọn thành công mùa giải {id}");
+                }
+
             }
         }
 
         private async void btnTimKiem_ClickAsync(object sender, EventArgs e)
         {
+            await Getall();
             LoadData();
         }
 
@@ -210,6 +186,7 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                await Getall();
                 LoadData();
             }
         }
@@ -238,11 +215,13 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
             LoadData();
         }
 
-        private void btnAddTourment_Click(object sender, EventArgs e)
+        private async void btnAddTourment_Click(object sender, EventArgs e)
         {
-            var formAdd = new AddTourmentForm();
-            formAdd.Location = new Point(250, 140);
-            formAdd.ShowDialog();
+            var form = AppService.Get<AddTourmentForm>();
+            form.Location = new Point(250, 140);
+            form.ShowDialog();
+            await Getall();
+            LoadData();
         }
 
         private async void TourmentForm_Load(object sender, EventArgs e)

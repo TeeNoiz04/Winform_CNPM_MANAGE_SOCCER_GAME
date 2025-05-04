@@ -34,12 +34,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,14 +49,14 @@
             cbbSapXep = new ComboBox();
             pnContent = new Guna.UI2.WinForms.Guna2Panel();
             pnFooter = new Panel();
-            dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             cbbSoDong = new ComboBox();
             lblSoDong = new Label();
             btnTrangTruoc = new Button();
             btnTrangKe = new Button();
             lblSoTrang = new Label();
-            ID = new DataGridViewTextBoxColumn();
+            dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            Rank = new DataGridViewTextBoxColumn();
             Team = new DataGridViewTextBoxColumn();
             Played = new DataGridViewTextBoxColumn();
             Won = new DataGridViewTextBoxColumn();
@@ -172,7 +172,7 @@
             cbbSapXep.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cbbSapXep.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbbSapXep.FormattingEnabled = true;
-            cbbSapXep.Items.AddRange(new object[] { "Tăng dần", "Giảm dần" });
+            cbbSapXep.Items.AddRange(new object[] { "Giảm dần", "Tăng dần" });
             cbbSapXep.Location = new Point(1331, 13);
             cbbSapXep.Margin = new Padding(3, 2, 3, 2);
             cbbSapXep.Name = "cbbSapXep";
@@ -206,68 +206,6 @@
             pnFooter.Size = new Size(1520, 40);
             pnFooter.TabIndex = 18;
             // 
-            // dataGridView
-            // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, Team, Played, Won, Drawn, Lost, GoalsFor, GoalsAgainst, GoalsDifference, Points, Form });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView.Dock = DockStyle.Fill;
-            dataGridView.GridColor = Color.FromArgb(231, 229, 255);
-            dataGridView.Location = new Point(0, 0);
-            dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView.RowHeadersVisible = false;
-            dataGridView.RowTemplate.Height = 22;
-            dataGridView.Size = new Size(1520, 600);
-            dataGridView.TabIndex = 16;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            dataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dataGridView.ThemeStyle.BackColor = Color.White;
-            dataGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            dataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView.ThemeStyle.HeaderStyle.Height = 30;
-            dataGridView.ThemeStyle.ReadOnly = false;
-            dataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
-            dataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridView.ThemeStyle.RowsStyle.Height = 22;
-            dataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridView.CellContentClick += dataGridView_CellContentClick;
-            // 
             // btnRefresh
             // 
             btnRefresh.BorderRadius = 5;
@@ -285,6 +223,7 @@
             btnRefresh.Size = new Size(80, 30);
             btnRefresh.TabIndex = 33;
             btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // cbbSoDong
             // 
@@ -344,25 +283,90 @@
             lblSoTrang.Text = "Page";
             lblSoTrang.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // ID
+            // dataGridView
             // 
-            ID.HeaderText = "#";
-            ID.Name = "ID";
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView.ColumnHeadersHeight = 30;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Rank, Team, Played, Won, Drawn, Lost, GoalsFor, GoalsAgainst, GoalsDifference, Points, Form });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView.Dock = DockStyle.Fill;
+            dataGridView.GridColor = Color.FromArgb(231, 229, 255);
+            dataGridView.Location = new Point(0, 0);
+            dataGridView.Name = "dataGridView";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.RowTemplate.Height = 22;
+            dataGridView.Size = new Size(1520, 600);
+            dataGridView.TabIndex = 16;
+            dataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dataGridView.ThemeStyle.BackColor = Color.White;
+            dataGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView.ThemeStyle.HeaderStyle.Height = 30;
+            dataGridView.ThemeStyle.ReadOnly = false;
+            dataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridView.ThemeStyle.RowsStyle.Height = 22;
+            dataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            // 
+            // Rank
+            // 
+            Rank.DataPropertyName = "Rank";
+            Rank.HeaderText = "Rank";
+            Rank.Name = "Rank";
             // 
             // Team
             // 
+            Team.DataPropertyName = "TeamName";
             Team.FillWeight = 66.1519F;
             Team.HeaderText = "Team";
             Team.Name = "Team";
             // 
             // Played
             // 
+            Played.DataPropertyName = "Played";
             Played.FillWeight = 66.1519F;
             Played.HeaderText = "Played";
             Played.Name = "Played";
             // 
             // Won
             // 
+            Won.DataPropertyName = "Won";
             Won.FillWeight = 66.1519F;
             Won.HeaderText = "Won";
             Won.Name = "Won";
@@ -370,36 +374,43 @@
             // 
             // Drawn
             // 
+            Drawn.DataPropertyName = "Drawn";
             Drawn.HeaderText = "Drawn";
             Drawn.Name = "Drawn";
             // 
             // Lost
             // 
+            Lost.DataPropertyName = "Lost";
             Lost.HeaderText = "Lost";
             Lost.Name = "Lost";
             // 
             // GoalsFor
             // 
+            GoalsFor.DataPropertyName = "GoalsFor";
             GoalsFor.HeaderText = "GF";
             GoalsFor.Name = "GoalsFor";
             // 
             // GoalsAgainst
             // 
+            GoalsAgainst.DataPropertyName = "GoalsAgainst";
             GoalsAgainst.HeaderText = "GA";
             GoalsAgainst.Name = "GoalsAgainst";
             // 
             // GoalsDifference
             // 
+            GoalsDifference.DataPropertyName = "GoalsDifference";
             GoalsDifference.HeaderText = "GD";
             GoalsDifference.Name = "GoalsDifference";
             // 
             // Points
             // 
+            Points.DataPropertyName = "Points";
             Points.HeaderText = "Points";
             Points.Name = "Points";
             // 
             // Form
             // 
+            Form.DataPropertyName = "Form";
             Form.HeaderText = "Form";
             Form.Name = "Form";
             // 
@@ -414,6 +425,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "RankingForm";
             Text = "OrdersForm";
+            Load += RankingForm_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             pnContent.ResumeLayout(false);
@@ -421,7 +433,6 @@
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -442,7 +453,7 @@
         private Button btnTrangTruoc;
         private Button btnTrangKe;
         private Label lblSoTrang;
-        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Rank;
         private DataGridViewTextBoxColumn Team;
         private DataGridViewTextBoxColumn Played;
         private DataGridViewTextBoxColumn Won;
