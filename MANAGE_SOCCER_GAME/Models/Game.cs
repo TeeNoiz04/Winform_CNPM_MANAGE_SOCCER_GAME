@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MANAGE_SOCCER_GAME.Models
 {
@@ -17,6 +18,12 @@ namespace MANAGE_SOCCER_GAME.Models
 
         public Guid RoundId { get; set; }
         public Round Round { get; set; }
+        public int HomeScore { get; set; } = 0;
+        public int AwayScore { get; set; } = 0;
+        public bool Status { get; set; } = false;
+
+        [NotMapped] // Không ánh xạ vào database
+        public string Name => $"{HomeTeam?.Name} vs {AwayTeam?.Name}";
 
         [Timestamp] 
         public byte[] RowVersion { get; set; }

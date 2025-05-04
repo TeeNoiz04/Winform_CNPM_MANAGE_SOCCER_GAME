@@ -64,6 +64,7 @@
             DayStart = new DataGridViewTextBoxColumn();
             DayEnd = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
+            Choose = new DataGridViewButtonColumn();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -240,6 +241,7 @@
             btnRefresh.Size = new Size(80, 30);
             btnRefresh.TabIndex = 33;
             btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // lblSoDong
             // 
@@ -310,7 +312,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, NameTourment, DayStart, DayEnd, Description });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, NameTourment, DayStart, DayEnd, Description, Choose });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -356,14 +358,12 @@
             dataGridView.ThemeStyle.RowsStyle.Height = 22;
             dataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
             // ID
             // 
             ID.DataPropertyName = "Id";
             ID.HeaderText = "ID";
             ID.Name = "ID";
-            ID.Visible = false;
             // 
             // NameTourment
             // 
@@ -390,6 +390,13 @@
             Description.DataPropertyName = "Description";
             Description.HeaderText = "Description";
             Description.Name = "Description";
+            // 
+            // Choose
+            // 
+            Choose.HeaderText = "Choose";
+            Choose.Name = "Choose";
+            Choose.Text = "Choose";
+            Choose.Visible = false;
             // 
             // TourmentForm
             // 
@@ -436,5 +443,6 @@
         private DataGridViewTextBoxColumn DayStart;
         private DataGridViewTextBoxColumn DayEnd;
         private DataGridViewTextBoxColumn Description;
+        private DataGridViewButtonColumn Choose;
     }
 }

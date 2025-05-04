@@ -34,19 +34,18 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
-            btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
-            txbTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
-            cbbCot = new ComboBox();
-            lblCot = new Label();
-            lblSapXep = new Label();
-            cbbSapXep = new ComboBox();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnAddRound = new Guna.UI2.WinForms.Guna2Button();
+            btnAddSchedule = new Guna.UI2.WinForms.Guna2Button();
             pnLayoutMain = new FlowLayoutPanel();
             pnLayout = new FlowLayoutPanel();
             pnTitle = new Guna.UI2.WinForms.Guna2Panel();
@@ -68,116 +67,79 @@
             // 
             // pnHeader
             // 
-            pnHeader.Controls.Add(btnTimKiem);
-            pnHeader.Controls.Add(txbTimKiem);
-            pnHeader.Controls.Add(cbbCot);
-            pnHeader.Controls.Add(lblCot);
-            pnHeader.Controls.Add(lblSapXep);
-            pnHeader.Controls.Add(cbbSapXep);
+            pnHeader.Controls.Add(guna2Button1);
+            pnHeader.Controls.Add(btnAddRound);
+            pnHeader.Controls.Add(btnAddSchedule);
             pnHeader.Dock = DockStyle.Top;
             pnHeader.Location = new Point(0, 0);
             pnHeader.Name = "pnHeader";
             pnHeader.Size = new Size(1920, 50);
             pnHeader.TabIndex = 24;
             // 
-            // btnTimKiem
+            // guna2Button1
             // 
-            btnTimKiem.BorderRadius = 5;
-            btnTimKiem.CustomizableEdges = customizableEdges1;
-            btnTimKiem.DisabledState.BorderColor = Color.DarkGray;
-            btnTimKiem.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTimKiem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTimKiem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTimKiem.FillColor = Color.FromArgb(60, 211, 252);
-            btnTimKiem.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTimKiem.ForeColor = Color.White;
-            btnTimKiem.Location = new Point(10, 10);
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnTimKiem.Size = new Size(80, 30);
-            btnTimKiem.TabIndex = 26;
-            btnTimKiem.Text = "Tìm kiếm";
-            btnTimKiem.Click += btnTimKiem_ClickAsync;
+            guna2Button1.BorderRadius = 5;
+            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(60, 211, 252);
+            guna2Button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(12, 12);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.Size = new Size(154, 30);
+            guna2Button1.TabIndex = 31;
+            guna2Button1.Text = "Refresh";
+            guna2Button1.Click += btnRefresh_Click;
             // 
-            // txbTimKiem
+            // btnAddRound
             // 
-            txbTimKiem.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txbTimKiem.Cursor = Cursors.IBeam;
-            txbTimKiem.CustomizableEdges = customizableEdges3;
-            txbTimKiem.DefaultText = "Search";
-            txbTimKiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbTimKiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbTimKiem.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbTimKiem.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTimKiem.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTimKiem.Location = new Point(96, 10);
-            txbTimKiem.Margin = new Padding(3, 4, 3, 4);
-            txbTimKiem.Name = "txbTimKiem";
-            txbTimKiem.PlaceholderText = "";
-            txbTimKiem.SelectedText = "";
-            txbTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txbTimKiem.Size = new Size(1487, 30);
-            txbTimKiem.TabIndex = 15;
-            txbTimKiem.Click += txbTimKiem_Click;
-            txbTimKiem.KeyPress += txbTimKiem_KeyPress;
-            txbTimKiem.Leave += txbTimKiem_Leave;
+            btnAddRound.BorderRadius = 5;
+            btnAddRound.CustomizableEdges = customizableEdges3;
+            btnAddRound.DisabledState.BorderColor = Color.DarkGray;
+            btnAddRound.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAddRound.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAddRound.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAddRound.FillColor = Color.FromArgb(60, 211, 252);
+            btnAddRound.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddRound.ForeColor = Color.White;
+            btnAddRound.Location = new Point(1767, 12);
+            btnAddRound.Name = "btnAddRound";
+            btnAddRound.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnAddRound.Size = new Size(141, 30);
+            btnAddRound.TabIndex = 30;
+            btnAddRound.Text = "Add Round";
+            btnAddRound.Click += btnAddRound_Click;
             // 
-            // cbbCot
+            // btnAddSchedule
             // 
-            cbbCot.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cbbCot.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbbCot.FormattingEnabled = true;
-            cbbCot.Location = new Point(1795, 13);
-            cbbCot.Margin = new Padding(3, 2, 3, 2);
-            cbbCot.Name = "cbbCot";
-            cbbCot.Size = new Size(115, 26);
-            cbbCot.TabIndex = 11;
-            // 
-            // lblCot
-            // 
-            lblCot.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblCot.AutoSize = true;
-            lblCot.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCot.ForeColor = Color.White;
-            lblCot.Location = new Point(1757, 16);
-            lblCot.Name = "lblCot";
-            lblCot.Size = new Size(32, 18);
-            lblCot.TabIndex = 10;
-            lblCot.Text = "Cột";
-            // 
-            // lblSapXep
-            // 
-            lblSapXep.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblSapXep.AutoSize = true;
-            lblSapXep.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSapXep.ForeColor = Color.White;
-            lblSapXep.Location = new Point(1589, 16);
-            lblSapXep.Name = "lblSapXep";
-            lblSapXep.Size = new Size(61, 18);
-            lblSapXep.TabIndex = 8;
-            lblSapXep.Text = "Sắp xếp";
-            // 
-            // cbbSapXep
-            // 
-            cbbSapXep.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cbbSapXep.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbbSapXep.FormattingEnabled = true;
-            cbbSapXep.Items.AddRange(new object[] { "Tăng dần", "Giảm dần" });
-            cbbSapXep.Location = new Point(1656, 13);
-            cbbSapXep.Margin = new Padding(3, 2, 3, 2);
-            cbbSapXep.Name = "cbbSapXep";
-            cbbSapXep.Size = new Size(95, 26);
-            cbbSapXep.TabIndex = 9;
+            btnAddSchedule.BorderRadius = 5;
+            btnAddSchedule.CustomizableEdges = customizableEdges5;
+            btnAddSchedule.DisabledState.BorderColor = Color.DarkGray;
+            btnAddSchedule.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAddSchedule.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAddSchedule.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAddSchedule.FillColor = Color.FromArgb(60, 211, 252);
+            btnAddSchedule.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddSchedule.ForeColor = Color.White;
+            btnAddSchedule.Location = new Point(1590, 12);
+            btnAddSchedule.Name = "btnAddSchedule";
+            btnAddSchedule.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAddSchedule.Size = new Size(154, 30);
+            btnAddSchedule.TabIndex = 29;
+            btnAddSchedule.Text = "Add Schedule";
+            btnAddSchedule.Click += btnAddSchedule_Click;
             // 
             // pnLayoutMain
             // 
             pnLayoutMain.AutoScroll = true;
             pnLayoutMain.Controls.Add(pnLayout);
-            pnLayoutMain.Location = new Point(122, 63);
+            pnLayoutMain.Location = new Point(40, 63);
             pnLayoutMain.Name = "pnLayoutMain";
-            pnLayoutMain.Size = new Size(1765, 855);
+            pnLayoutMain.Size = new Size(1847, 855);
             pnLayoutMain.TabIndex = 8;
             // 
             // pnLayout
@@ -189,15 +151,16 @@
             pnLayout.Name = "pnLayout";
             pnLayout.Size = new Size(832, 246);
             pnLayout.TabIndex = 27;
+            pnLayout.Visible = false;
             // 
             // pnTitle
             // 
             pnTitle.Controls.Add(lblRound);
-            pnTitle.CustomizableEdges = customizableEdges5;
+            pnTitle.CustomizableEdges = customizableEdges7;
             pnTitle.Dock = DockStyle.Top;
             pnTitle.Location = new Point(3, 3);
             pnTitle.Name = "pnTitle";
-            pnTitle.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            pnTitle.ShadowDecoration.CustomizableEdges = customizableEdges8;
             pnTitle.Size = new Size(832, 50);
             pnTitle.TabIndex = 7;
             // 
@@ -219,11 +182,11 @@
             pnContent.Controls.Add(lblTeam1);
             pnContent.Controls.Add(picTeam2);
             pnContent.Controls.Add(picTeam1);
-            pnContent.CustomizableEdges = customizableEdges11;
+            pnContent.CustomizableEdges = customizableEdges13;
             pnContent.Location = new Point(3, 59);
             pnContent.Name = "pnContent";
-            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            pnContent.Size = new Size(410, 60);
+            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            pnContent.Size = new Size(480, 60);
             pnContent.TabIndex = 6;
             pnContent.Click += view_Match_Click;
             // 
@@ -231,7 +194,7 @@
             // 
             lblResult.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             lblResult.ForeColor = Color.IndianRed;
-            lblResult.Location = new Point(155, 14);
+            lblResult.Location = new Point(192, 14);
             lblResult.Name = "lblResult";
             lblResult.Size = new Size(100, 32);
             lblResult.TabIndex = 4;
@@ -241,11 +204,12 @@
             // 
             // lblTeam2
             // 
+            lblTeam2.AutoSize = true;
             lblTeam2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             lblTeam2.ForeColor = Color.White;
-            lblTeam2.Location = new Point(265, 14);
+            lblTeam2.Location = new Point(298, 18);
             lblTeam2.Name = "lblTeam2";
-            lblTeam2.Size = new Size(85, 32);
+            lblTeam2.Size = new Size(69, 25);
             lblTeam2.TabIndex = 3;
             lblTeam2.Text = "MMM";
             lblTeam2.TextAlign = ContentAlignment.MiddleCenter;
@@ -253,11 +217,12 @@
             // 
             // lblTeam1
             // 
+            lblTeam1.AutoSize = true;
             lblTeam1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             lblTeam1.ForeColor = Color.White;
-            lblTeam1.Location = new Point(60, 14);
+            lblTeam1.Location = new Point(60, 18);
             lblTeam1.Name = "lblTeam1";
-            lblTeam1.Size = new Size(85, 32);
+            lblTeam1.Size = new Size(69, 25);
             lblTeam1.TabIndex = 2;
             lblTeam1.Text = "MMM";
             lblTeam1.TextAlign = ContentAlignment.MiddleCenter;
@@ -265,11 +230,11 @@
             // 
             // picTeam2
             // 
-            picTeam2.CustomizableEdges = customizableEdges7;
+            picTeam2.CustomizableEdges = customizableEdges9;
             picTeam2.ImageRotate = 0F;
-            picTeam2.Location = new Point(355, 5);
+            picTeam2.Location = new Point(427, 3);
             picTeam2.Name = "picTeam2";
-            picTeam2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            picTeam2.ShadowDecoration.CustomizableEdges = customizableEdges10;
             picTeam2.Size = new Size(50, 50);
             picTeam2.TabIndex = 1;
             picTeam2.TabStop = false;
@@ -277,11 +242,11 @@
             // 
             // picTeam1
             // 
-            picTeam1.CustomizableEdges = customizableEdges9;
+            picTeam1.CustomizableEdges = customizableEdges11;
             picTeam1.ImageRotate = 0F;
             picTeam1.Location = new Point(5, 5);
             picTeam1.Name = "picTeam1";
-            picTeam1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            picTeam1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             picTeam1.Size = new Size(50, 50);
             picTeam1.TabIndex = 0;
             picTeam1.TabStop = false;
@@ -300,26 +265,19 @@
             Text = "OrdersForm";
             Load += MatchScheduleForm_Load;
             pnHeader.ResumeLayout(false);
-            pnHeader.PerformLayout();
             pnLayoutMain.ResumeLayout(false);
             pnLayout.ResumeLayout(false);
             pnTitle.ResumeLayout(false);
             pnContent.ResumeLayout(false);
+            pnContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picTeam2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picTeam1).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion
 
         private System.Windows.Forms.Panel pnHeader;
-        private Guna.UI2.WinForms.Guna2TextBox txbTimKiem;
-        private System.Windows.Forms.ComboBox cbbCot;
-        private System.Windows.Forms.Label lblCot;
-        private System.Windows.Forms.Label lblSapXep;
-        private System.Windows.Forms.ComboBox cbbSapXep;
-        private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private Label label5;
         private Label label6;
         private FlowLayoutPanel pnLayoutMain;
@@ -332,5 +290,8 @@
         private Label lblTeam1;
         private Guna.UI2.WinForms.Guna2PictureBox picTeam2;
         private Guna.UI2.WinForms.Guna2PictureBox picTeam1;
+        private Guna.UI2.WinForms.Guna2Button btnAddRound;
+        private Guna.UI2.WinForms.Guna2Button btnAddSchedule;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

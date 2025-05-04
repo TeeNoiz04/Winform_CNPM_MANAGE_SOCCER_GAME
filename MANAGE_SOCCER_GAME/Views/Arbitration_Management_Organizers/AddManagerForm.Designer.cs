@@ -29,22 +29,20 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txbFullName = new Guna.UI2.WinForms.Guna2TextBox();
             lblFullName = new Label();
             lblTitle = new Label();
@@ -52,15 +50,14 @@
             btnSubmit = new Guna.UI2.WinForms.Guna2Button();
             gnElipse = new Guna.UI2.WinForms.Guna2Elipse(components);
             openFileDialog = new OpenFileDialog();
-            lblNumber = new Label();
-            txbNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            lblExpYear = new Label();
+            txbExpYear = new Guna.UI2.WinForms.Guna2TextBox();
             lblEmail = new Label();
             lblNational = new Label();
             txbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             txbNational = new Guna.UI2.WinForms.Guna2TextBox();
-            picAvatar = new Guna.UI2.WinForms.Guna2PictureBox();
-            txbUpload = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)picAvatar).BeginInit();
+            lblPhoneNumber = new Label();
+            txbPhone = new Guna.UI2.WinForms.Guna2TextBox();
             SuspendLayout();
             // 
             // txbFullName
@@ -70,7 +67,7 @@
             txbFullName.BorderColor = Color.FromArgb(52, 52, 116);
             txbFullName.BorderRadius = 5;
             txbFullName.Cursor = Cursors.IBeam;
-            txbFullName.CustomizableEdges = customizableEdges1;
+            txbFullName.CustomizableEdges = customizableEdges15;
             txbFullName.DefaultText = "Full name";
             txbFullName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbFullName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -81,14 +78,15 @@
             txbFullName.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbFullName.ForeColor = Color.Silver;
             txbFullName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbFullName.Location = new Point(170, 230);
+            txbFullName.Location = new Point(179, 95);
             txbFullName.Margin = new Padding(6);
             txbFullName.Name = "txbFullName";
             txbFullName.PlaceholderText = "";
             txbFullName.SelectedText = "";
-            txbFullName.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txbFullName.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txbFullName.Size = new Size(280, 50);
             txbFullName.TabIndex = 33;
+            txbFullName.Tag = "Full name";
             txbFullName.Click += txbFullName_Click;
             txbFullName.Leave += txbFullName_Leave;
             txbFullName.MouseLeave += txbFullName_MouseLeave;
@@ -99,7 +97,7 @@
             lblFullName.Anchor = AnchorStyles.Top;
             lblFullName.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblFullName.ForeColor = Color.White;
-            lblFullName.Location = new Point(50, 240);
+            lblFullName.Location = new Point(59, 105);
             lblFullName.Name = "lblFullName";
             lblFullName.Size = new Size(100, 30);
             lblFullName.TabIndex = 38;
@@ -122,7 +120,7 @@
             // 
             btnCancel.Anchor = AnchorStyles.Bottom;
             btnCancel.BorderRadius = 5;
-            btnCancel.CustomizableEdges = customizableEdges3;
+            btnCancel.CustomizableEdges = customizableEdges17;
             btnCancel.DisabledState.BorderColor = Color.DarkGray;
             btnCancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -130,9 +128,9 @@
             btnCancel.FillColor = Color.FromArgb(60, 211, 252);
             btnCancel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(50, 490);
+            btnCancel.Location = new Point(48, 425);
             btnCancel.Name = "btnCancel";
-            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnCancel.Size = new Size(100, 40);
             btnCancel.TabIndex = 41;
             btnCancel.Text = "Cancel";
@@ -142,7 +140,7 @@
             // 
             btnSubmit.Anchor = AnchorStyles.Bottom;
             btnSubmit.BorderRadius = 5;
-            btnSubmit.CustomizableEdges = customizableEdges5;
+            btnSubmit.CustomizableEdges = customizableEdges19;
             btnSubmit.DisabledState.BorderColor = Color.DarkGray;
             btnSubmit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSubmit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -150,12 +148,13 @@
             btnSubmit.FillColor = Color.FromArgb(60, 211, 252);
             btnSubmit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSubmit.ForeColor = Color.White;
-            btnSubmit.Location = new Point(350, 490);
+            btnSubmit.Location = new Point(347, 425);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnSubmit.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnSubmit.Size = new Size(100, 40);
             btnSubmit.TabIndex = 42;
             btnSubmit.Text = "Submit";
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // gnElipse
             // 
@@ -166,54 +165,55 @@
             // 
             openFileDialog.FileName = "openFileDialog";
             // 
-            // lblNumber
+            // lblExpYear
             // 
-            lblNumber.Anchor = AnchorStyles.Top;
-            lblNumber.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNumber.ForeColor = Color.White;
-            lblNumber.Location = new Point(50, 300);
-            lblNumber.Name = "lblNumber";
-            lblNumber.Size = new Size(100, 30);
-            lblNumber.TabIndex = 52;
-            lblNumber.Text = "Number";
-            lblNumber.TextAlign = ContentAlignment.MiddleLeft;
+            lblExpYear.Anchor = AnchorStyles.Top;
+            lblExpYear.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblExpYear.ForeColor = Color.White;
+            lblExpYear.Location = new Point(59, 165);
+            lblExpYear.Name = "lblExpYear";
+            lblExpYear.Size = new Size(100, 30);
+            lblExpYear.TabIndex = 52;
+            lblExpYear.Text = "ExpYear";
+            lblExpYear.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // txbNumber
+            // txbExpYear
             // 
-            txbNumber.Anchor = AnchorStyles.Top;
-            txbNumber.BorderColor = Color.FromArgb(52, 52, 116);
-            txbNumber.BorderRadius = 5;
-            txbNumber.Cursor = Cursors.IBeam;
-            txbNumber.CustomizableEdges = customizableEdges11;
-            txbNumber.DefaultText = "Number";
-            txbNumber.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbNumber.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbNumber.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbNumber.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbNumber.FillColor = Color.FromArgb(52, 52, 116);
-            txbNumber.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbNumber.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbNumber.ForeColor = Color.Silver;
-            txbNumber.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbNumber.Location = new Point(170, 290);
-            txbNumber.Margin = new Padding(6, 5, 6, 5);
-            txbNumber.Name = "txbNumber";
-            txbNumber.PlaceholderText = "";
-            txbNumber.SelectedText = "";
-            txbNumber.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txbNumber.Size = new Size(280, 50);
-            txbNumber.TabIndex = 50;
-            txbNumber.Click += txbNumber_Click;
-            txbNumber.Leave += txbNumber_Leave;
-            txbNumber.MouseLeave += txbNumber_MouseLeave;
-            txbNumber.MouseHover += txbNumber_MouseHover;
+            txbExpYear.Anchor = AnchorStyles.Top;
+            txbExpYear.BorderColor = Color.FromArgb(52, 52, 116);
+            txbExpYear.BorderRadius = 5;
+            txbExpYear.Cursor = Cursors.IBeam;
+            txbExpYear.CustomizableEdges = customizableEdges21;
+            txbExpYear.DefaultText = "ExpYear";
+            txbExpYear.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txbExpYear.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txbExpYear.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txbExpYear.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txbExpYear.FillColor = Color.FromArgb(52, 52, 116);
+            txbExpYear.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbExpYear.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbExpYear.ForeColor = Color.Silver;
+            txbExpYear.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbExpYear.Location = new Point(179, 155);
+            txbExpYear.Margin = new Padding(6, 5, 6, 5);
+            txbExpYear.Name = "txbExpYear";
+            txbExpYear.PlaceholderText = "";
+            txbExpYear.SelectedText = "";
+            txbExpYear.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            txbExpYear.Size = new Size(280, 50);
+            txbExpYear.TabIndex = 50;
+            txbExpYear.Tag = "ExpYear";
+            txbExpYear.Click += txbNumber_Click;
+            txbExpYear.Leave += txbNumber_Leave;
+            txbExpYear.MouseLeave += txbNumber_MouseLeave;
+            txbExpYear.MouseHover += txbNumber_MouseHover;
             // 
             // lblEmail
             // 
             lblEmail.Anchor = AnchorStyles.Top;
             lblEmail.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblEmail.ForeColor = Color.White;
-            lblEmail.Location = new Point(50, 420);
+            lblEmail.Location = new Point(59, 285);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(100, 30);
             lblEmail.TabIndex = 56;
@@ -225,7 +225,7 @@
             lblNational.Anchor = AnchorStyles.Top;
             lblNational.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNational.ForeColor = Color.White;
-            lblNational.Location = new Point(50, 360);
+            lblNational.Location = new Point(59, 225);
             lblNational.Name = "lblNational";
             lblNational.Size = new Size(100, 30);
             lblNational.TabIndex = 55;
@@ -238,7 +238,7 @@
             txbEmail.BorderColor = Color.FromArgb(52, 52, 116);
             txbEmail.BorderRadius = 5;
             txbEmail.Cursor = Cursors.IBeam;
-            txbEmail.CustomizableEdges = customizableEdges7;
+            txbEmail.CustomizableEdges = customizableEdges23;
             txbEmail.DefaultText = "Email";
             txbEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -249,14 +249,15 @@
             txbEmail.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbEmail.ForeColor = Color.Silver;
             txbEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbEmail.Location = new Point(170, 410);
+            txbEmail.Location = new Point(179, 275);
             txbEmail.Margin = new Padding(6, 5, 6, 5);
             txbEmail.Name = "txbEmail";
             txbEmail.PlaceholderText = "";
             txbEmail.SelectedText = "";
-            txbEmail.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txbEmail.ShadowDecoration.CustomizableEdges = customizableEdges24;
             txbEmail.Size = new Size(280, 50);
             txbEmail.TabIndex = 54;
+            txbEmail.Tag = "Email";
             txbEmail.Click += txbHeight_Click;
             txbEmail.Leave += txbHeight_Leave;
             txbEmail.MouseLeave += txbHeight_MouseLeave;
@@ -269,7 +270,7 @@
             txbNational.BorderColor = Color.FromArgb(52, 52, 116);
             txbNational.BorderRadius = 5;
             txbNational.Cursor = Cursors.IBeam;
-            txbNational.CustomizableEdges = customizableEdges9;
+            txbNational.CustomizableEdges = customizableEdges25;
             txbNational.DefaultText = "National";
             txbNational.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbNational.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -280,65 +281,73 @@
             txbNational.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbNational.ForeColor = Color.Silver;
             txbNational.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbNational.Location = new Point(170, 350);
+            txbNational.Location = new Point(179, 215);
             txbNational.Margin = new Padding(6);
             txbNational.Name = "txbNational";
             txbNational.PlaceholderText = "";
             txbNational.SelectedText = "";
-            txbNational.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txbNational.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txbNational.Size = new Size(280, 50);
             txbNational.TabIndex = 53;
+            txbNational.Tag = "National";
             txbNational.Click += txbNational_Click;
             txbNational.Leave += txbNational_Leave;
             txbNational.MouseLeave += txbNational_MouseLeave;
             txbNational.MouseHover += txbNational_MouseHover;
             // 
-            // picAvatar
+            // lblPhoneNumber
             // 
-            picAvatar.Anchor = AnchorStyles.Top;
-            picAvatar.CustomizableEdges = customizableEdges15;
-            picAvatar.ImageRotate = 0F;
-            picAvatar.Location = new Point(50, 90);
-            picAvatar.Name = "picAvatar";
-            picAvatar.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            picAvatar.Size = new Size(120, 120);
-            picAvatar.TabIndex = 43;
-            picAvatar.TabStop = false;
+            lblPhoneNumber.Anchor = AnchorStyles.Top;
+            lblPhoneNumber.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPhoneNumber.ForeColor = Color.White;
+            lblPhoneNumber.Location = new Point(24, 352);
+            lblPhoneNumber.Name = "lblPhoneNumber";
+            lblPhoneNumber.Size = new Size(146, 30);
+            lblPhoneNumber.TabIndex = 57;
+            lblPhoneNumber.Text = "Phone Number";
+            lblPhoneNumber.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // txbUpload
+            // txbPhone
             // 
-            txbUpload.Anchor = AnchorStyles.Top;
-            txbUpload.BorderRadius = 5;
-            txbUpload.CustomizableEdges = customizableEdges13;
-            txbUpload.DisabledState.BorderColor = Color.DarkGray;
-            txbUpload.DisabledState.CustomBorderColor = Color.DarkGray;
-            txbUpload.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            txbUpload.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            txbUpload.FillColor = Color.FromArgb(60, 211, 252);
-            txbUpload.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbUpload.ForeColor = Color.White;
-            txbUpload.Location = new Point(190, 135);
-            txbUpload.Name = "txbUpload";
-            txbUpload.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txbUpload.Size = new Size(140, 30);
-            txbUpload.TabIndex = 48;
-            txbUpload.Text = "Upload avatar";
-            txbUpload.Click += txbUpload_Click;
+            txbPhone.Anchor = AnchorStyles.Top;
+            txbPhone.BorderColor = Color.FromArgb(52, 52, 116);
+            txbPhone.BorderRadius = 5;
+            txbPhone.Cursor = Cursors.IBeam;
+            txbPhone.CustomizableEdges = customizableEdges27;
+            txbPhone.DefaultText = "PhoneNumber";
+            txbPhone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txbPhone.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txbPhone.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txbPhone.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txbPhone.FillColor = Color.FromArgb(52, 52, 116);
+            txbPhone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbPhone.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbPhone.ForeColor = Color.Silver;
+            txbPhone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbPhone.Location = new Point(179, 343);
+            txbPhone.Margin = new Padding(6, 5, 6, 5);
+            txbPhone.Name = "txbPhone";
+            txbPhone.PlaceholderText = "";
+            txbPhone.SelectedText = "";
+            txbPhone.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            txbPhone.Size = new Size(280, 50);
+            txbPhone.TabIndex = 58;
+            txbPhone.Tag = "PhoneNumber";
             // 
             // AddManagerForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(31, 70, 121);
-            ClientSize = new Size(500, 560);
+            ClientSize = new Size(500, 512);
+            Controls.Add(txbPhone);
+            Controls.Add(lblPhoneNumber);
             Controls.Add(lblEmail);
             Controls.Add(lblNational);
             Controls.Add(txbEmail);
             Controls.Add(txbNational);
-            Controls.Add(lblNumber);
-            Controls.Add(txbNumber);
-            Controls.Add(txbUpload);
-            Controls.Add(picAvatar);
+            Controls.Add(lblExpYear);
+            Controls.Add(txbExpYear);
             Controls.Add(btnSubmit);
             Controls.Add(btnCancel);
             Controls.Add(lblTitle);
@@ -349,7 +358,6 @@
             Name = "AddManagerForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddTeamForm";
-            ((System.ComponentModel.ISupportInitialize)picAvatar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -366,9 +374,9 @@
         private Label lblNational;
         private Guna.UI2.WinForms.Guna2TextBox txbEmail;
         private Guna.UI2.WinForms.Guna2TextBox txbNational;
-        private Label lblNumber;
-        private Guna.UI2.WinForms.Guna2TextBox txbNumber;
-        private Guna.UI2.WinForms.Guna2Button txbUpload;
-        private Guna.UI2.WinForms.Guna2PictureBox picAvatar;
+        private Label lblExpYear;
+        private Guna.UI2.WinForms.Guna2TextBox txbExpYear;
+        private Guna.UI2.WinForms.Guna2TextBox txbPhone;
+        private Label lblPhoneNumber;
     }
 }

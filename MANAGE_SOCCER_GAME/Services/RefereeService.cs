@@ -1,5 +1,4 @@
-﻿
-using MANAGE_SOCCER_GAME.Data;
+﻿using MANAGE_SOCCER_GAME.Data;
 using MANAGE_SOCCER_GAME.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -96,10 +95,10 @@ namespace MANAGE_SOCCER_GAME.Services
                 throw new ArgumentException("Referee must be at least 18 years old.", nameof(referee.DateOfBirth));
             }
 
-            var validPositions = new List<string> { "Main Referee", "Assistant Referee", "VAR", "Fourth Official" };
+            var validPositions = new List<string> { "Main Referee", "Assistant Referee", "VAR", "Line referee" };
             if (string.IsNullOrWhiteSpace(referee.Position) || !validPositions.Contains(referee.Position))
             {
-                throw new ArgumentException("Invalid or missing referee position.(\"Main Referee\", \"Assistant Referee\", \"VAR\", \"Fourth Official\")", nameof(referee.Position));
+                throw new ArgumentException("Invalid or missing referee position.(\"Main Referee\", \"Assistant Referee\", \"VAR\", \"Line referee\")", nameof(referee.Position));
             }
 
             if (string.IsNullOrWhiteSpace(referee.National))

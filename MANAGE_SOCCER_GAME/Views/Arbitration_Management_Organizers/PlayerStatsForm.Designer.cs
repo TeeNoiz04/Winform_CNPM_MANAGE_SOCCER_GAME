@@ -217,6 +217,7 @@
             btnRefresh.Size = new Size(80, 30);
             btnRefresh.TabIndex = 33;
             btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // lblSoDong
             // 
@@ -239,6 +240,7 @@
             cbbSoDong.Name = "cbbSoDong";
             cbbSoDong.Size = new Size(70, 26);
             cbbSoDong.TabIndex = 29;
+            cbbSoDong.SelectedIndexChanged += cbbSoDong_SelectedIndexChanged;
             // 
             // lblSoTrang
             // 
@@ -261,6 +263,7 @@
             btnTrangKe.TabIndex = 31;
             btnTrangKe.Text = "Next";
             btnTrangKe.UseVisualStyleBackColor = true;
+            btnTrangKe.Click += btnTrangKe_Click;
             // 
             // btnTrangTruoc
             // 
@@ -272,6 +275,7 @@
             btnTrangTruoc.TabIndex = 30;
             btnTrangTruoc.Text = "Previous";
             btnTrangTruoc.UseVisualStyleBackColor = true;
+            btnTrangTruoc.Click += btnTrangTruoc_Click;
             // 
             // dataGridView
             // 
@@ -333,33 +337,37 @@
             dataGridView.ThemeStyle.RowsStyle.Height = 22;
             dataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
             // Rank
             // 
+            Rank.DataPropertyName = "Rank";
             Rank.FillWeight = 66.1519F;
             Rank.HeaderText = "Rank";
             Rank.Name = "Rank";
             // 
             // Player
             // 
+            Player.DataPropertyName = "Player";
             Player.FillWeight = 66.1519F;
             Player.HeaderText = "Player";
             Player.Name = "Player";
             // 
             // Club
             // 
+            Club.DataPropertyName = "Club";
             Club.FillWeight = 66.1519F;
             Club.HeaderText = "Club";
             Club.Name = "Club";
             // 
             // Nationality
             // 
+            Nationality.DataPropertyName = "Nationality";
             Nationality.HeaderText = "Nationality";
             Nationality.Name = "Nationality";
             // 
             // Stat
             // 
+            Stat.DataPropertyName = "Stat";
             Stat.HeaderText = "Stat";
             Stat.Name = "Stat";
             // 
@@ -374,6 +382,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "PlayerStatsForm";
             Text = "OrdersForm";
+            Load += PlayerStatsForm_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             pnContent.ResumeLayout(false);
@@ -381,7 +390,6 @@
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion

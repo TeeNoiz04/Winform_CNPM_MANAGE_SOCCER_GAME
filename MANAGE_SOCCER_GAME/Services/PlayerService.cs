@@ -94,7 +94,7 @@ using Microsoft.EntityFrameworkCore;
             return player;
         }
 
-        public async Task<List<PlayerViewDTO>?> GetAllPlayersByTeamIdAsync(Guid id)
+        public async Task<List<PlayerViewDTO>?> GetAllPlayersDTOByTeamIdAsync(Guid id)
         {
             var players = await _context.Players.Include(x => x.SoccerGamesAsGoalscorer)
                                          .Include(x => x.PenaltyCards)
@@ -118,11 +118,18 @@ using Microsoft.EntityFrameworkCore;
             return dtos;
         }
 
+        public async Task<List<Player>> GetPlayersByTeamIdAsync(Guid id)
+        {
+            return await _context.Players.Include(x => x.SoccerGamesAsGoalscorer)
+                                         .Include(x => x.PenaltyCards)
+                                         .Where(x => x.IdTeam == id && !x.isDeleted).ToListAsync();
+        }
+
         public async Task<Player> CreatePlayerAsync(Player player)
         {
             await ValidatePlayerAsync(player);
 
-            if (await _context.Players.AnyAsync(t => t.Number == player.Number))
+            if (await _context.Players.AnyAsync(t => t.Number == player.Number && t.IdTeam == player.IdTeam))
             {
                 throw new ArgumentException("A player with the same Number already exists in this team.", nameof(player));
             }
@@ -147,7 +154,7 @@ using Microsoft.EntityFrameworkCore;
 
             await ValidatePlayerAsync(player);
 
-            if (await _context.Players.AnyAsync(t => t.Number == player.Number && t.Id != Id))
+            if (await _context.Players.AnyAsync(t => t.Number == player.Number && t.Id != Id && t.IdTeam == player.IdTeam))
             {
                 throw new ArgumentException("A player with the same Number already exists in this team.", nameof(player));
             }
@@ -244,5 +251,31 @@ using Microsoft.EntityFrameworkCore;
             }
 
         }
+
+        public async Task<List<PlayerStatDTO>> GetCurrentSeasonPlayerStatsAsync(Guid tournamentId)
+        {
+
+
+            var stats = await _context.Players
+                .Where(p => !p.isDeleted)
+                .Select(p => new PlayerStatDTO
+                {
+                    Player = p.Name,
+                    Club = p.Team != null ? p.Team.Name : "No Team",
+                    Nationality = p.National,
+                    Stat = p.SoccerGamesAsGoalscorer
+                        .Count(sg => sg.Game.Round.TournamentId == tournamentId)
+                })
+                .OrderByDescending(p => p.Stat)
+                .ToListAsync();
+
+            for (int i = 0; i < stats.Count; i++)
+            {
+                stats[i].Rank = i + 1;
+            }
+
+            return stats;
+        }
+
     }
 }

@@ -187,14 +187,18 @@ namespace MANAGE_SOCCER_GAME.Views.Arbitration_Management_Organizers
 
         private async void btnTimKiem_ClickAsync(object sender, EventArgs e)
         {
+            await GetAll();
             LoadData();
+            txbTimKiem.Clear();
         }
 
         private async void txbTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                await GetAll();
                 LoadData();
+                txbTimKiem.Clear();
             }
         }
 

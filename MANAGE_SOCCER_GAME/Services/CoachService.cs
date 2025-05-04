@@ -1,4 +1,5 @@
 ﻿using MANAGE_SOCCER_GAME.Data;
+using MANAGE_SOCCER_GAME.Dtos;
 using MANAGE_SOCCER_GAME.Models;
 using MANAGE_SOCCER_GAME.Utils.InputValidators;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,24 @@ namespace MANAGE_SOCCER_GAME.Services
             return await _context.Coaches.Where(x => x.IsDeleted == false).ToListAsync();
         }
 
+        public async Task<List<CoachDTO>> GetAllCoacheDTOsAsync()
+        {
+            var coaches = await _context.Coaches.Include(x => x.Team).Where(x => x.IsDeleted == false).ToListAsync();
+
+            if (!coaches.Any())
+                return new List<CoachDTO>();
+
+            var dtos = coaches.Select(c => new CoachDTO
+            {
+                Name = c.Name,
+                National = c.National,
+                TeamName = c.Team != null ? c.Team.Name : "No team",
+                PhoneNumber = c.PhoneNumber,
+            }).ToList();
+
+            return dtos;
+        }
+
         public async Task<Coach?> GetCoachByIdAsync(Guid id)
         {
             return await _context.Coaches.FindAsync(id);
@@ -27,6 +46,20 @@ namespace MANAGE_SOCCER_GAME.Services
         public async Task<Coach> CreateCoachAsync(Coach coach)
         {
             ValidateCoachAsync(coach);
+
+            if (await _context.Coaches.AnyAsync(x => x.Name == coach.Name))
+            {
+                throw new ArgumentException("Coach name already exists.", nameof(coach.Name));
+            }
+            if (await _context.Coaches.AnyAsync(x => x.PhoneNumber == coach.PhoneNumber))
+            {
+                throw new ArgumentException("Coach phone number already exists.", nameof(coach.PhoneNumber));
+            }
+
+            if (await _context.Coaches.AnyAsync(x => x.Email == coach.Email))
+            {
+                throw new ArgumentException("Coach email already exists.", nameof(coach.Email));
+            }
 
             coach.Id = Guid.NewGuid();
             coach.IsDeleted = false;
@@ -43,6 +76,21 @@ namespace MANAGE_SOCCER_GAME.Services
                 return null;
 
             ValidateCoachAsync(coach);
+
+
+            if (await _context.Coaches.AnyAsync(x => x.Name == coach.Name && x.Id != Id))
+            {
+                throw new ArgumentException("Coach name already exists.", nameof(coach.Name));
+            }
+            if (await _context.Coaches.AnyAsync(x => x.PhoneNumber == coach.PhoneNumber && x.Id != Id))
+            {
+                throw new ArgumentException("Coach phone number already exists.", nameof(coach.PhoneNumber));
+            }
+
+            if (await _context.Coaches.AnyAsync(x => x.Email == coach.Email && x.Id != Id))
+            {
+                throw new ArgumentException("Coach email already exists.", nameof(coach.Email));
+            }
 
             existingCoach.Name = coach.Name;
             existingCoach.National = coach.National;

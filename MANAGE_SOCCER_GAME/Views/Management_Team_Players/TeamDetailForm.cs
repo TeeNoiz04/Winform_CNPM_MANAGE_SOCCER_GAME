@@ -1,7 +1,4 @@
-﻿using CloudinaryDotNet;
-using MANAGE_SOCCER_GAME.Data;
-using MANAGE_SOCCER_GAME.Dtos;
-using MANAGE_SOCCER_GAME.Models;
+﻿using MANAGE_SOCCER_GAME.Dtos;
 using MANAGE_SOCCER_GAME.Services;
 using MANAGE_SOCCER_GAME.Utils.Routing;
 using System.Data;
@@ -15,7 +12,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
         private readonly Guid _id;
         private Router _router;
         private int curentPage = 1;
-        private int countLine = 10;
+        private int countLine = 0;
         private float totalPage = 0;
         private List<PlayerViewDTO> _allPlayers = new List<PlayerViewDTO>();
 
@@ -42,7 +39,7 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
 
         private async Task Getall()
         {
-            _allPlayers = await _playerService.GetAllPlayersByTeamIdAsync(_id);
+            _allPlayers = await _playerService.GetAllPlayersDTOByTeamIdAsync(_id);
         }
 
         private void LoadData()
@@ -82,18 +79,6 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             }
 
             dataGridView.AutoGenerateColumns = false;
-
-            //dataGridView.Columns["ID"].DataPropertyName = "MaHD";
-            //dataGridView.Columns["TimeStamp"].DataPropertyName = "NgayGD";
-            //dataGridView.Columns["PhuongThucGD"].DataPropertyName = "PhuongThucGD";
-            //dataGridView.Columns["Price"].DataPropertyName = "TongTien";
-            //dataGridView.Columns["Username"].DataPropertyName = "TenKH";
-            //dataGridView.Columns["IsCheck"].DataPropertyName = "IsCheck";
-            //dataGridView.Columns["Action"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            //dataGridView.Columns["Action2"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-            //dataGridView.Columns["Action"].Width = 100;
-            //dataGridView.Columns["Action2"].Width = 100;
-
             dataGridView.DataSource = _allPlayers.Skip(countLine * (curentPage - 1)).Take(countLine).ToList();
 
             if (countLine > count)
@@ -207,16 +192,20 @@ namespace MANAGE_SOCCER_GAME.Views.Management_Team_Players
             }    
         }
 
-        private void btnTimKiem_ClickAsync(object sender, EventArgs e)
+        private async void btnTimKiem_ClickAsync(object sender, EventArgs e)
         {
+            await Getall();
             LoadData();
+            txbTimKiem.Clear();
         }
 
-        private void txbTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        private async void txbTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                await Getall();
                 LoadData();
+                txbTimKiem.Clear();
             }
         }
 

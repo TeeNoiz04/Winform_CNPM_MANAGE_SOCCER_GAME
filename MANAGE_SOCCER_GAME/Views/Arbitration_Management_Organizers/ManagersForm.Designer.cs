@@ -62,7 +62,7 @@
             Manager = new DataGridViewTextBoxColumn();
             Club = new DataGridViewTextBoxColumn();
             Nationality = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
+            PhoneNumber = new DataGridViewTextBoxColumn();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
             pnFooter.SuspendLayout();
@@ -239,6 +239,7 @@
             btnRefresh.Size = new Size(80, 30);
             btnRefresh.TabIndex = 33;
             btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // lblSoDong
             // 
@@ -261,6 +262,7 @@
             cbbSoDong.Name = "cbbSoDong";
             cbbSoDong.Size = new Size(70, 26);
             cbbSoDong.TabIndex = 29;
+            cbbSoDong.SelectedIndexChanged += cbbSoDong_SelectedIndexChanged;
             // 
             // lblSoTrang
             // 
@@ -283,6 +285,7 @@
             btnTrangKe.TabIndex = 31;
             btnTrangKe.Text = "Next";
             btnTrangKe.UseVisualStyleBackColor = true;
+            btnTrangKe.Click += btnTrangKe_Click;
             // 
             // btnTrangTruoc
             // 
@@ -294,6 +297,7 @@
             btnTrangTruoc.TabIndex = 30;
             btnTrangTruoc.Text = "Previous";
             btnTrangTruoc.UseVisualStyleBackColor = true;
+            btnTrangTruoc.Click += btnTrangTruoc_Click;
             // 
             // dataGridView
             // 
@@ -309,7 +313,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Manager, Club, Nationality, Status });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Manager, Club, Nationality, PhoneNumber });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -359,25 +363,29 @@
             // 
             // Manager
             // 
+            Manager.DataPropertyName = "Name";
             Manager.FillWeight = 66.1519F;
             Manager.HeaderText = "Manager";
             Manager.Name = "Manager";
             // 
             // Club
             // 
+            Club.DataPropertyName = "TeamName";
             Club.FillWeight = 66.1519F;
             Club.HeaderText = "Club";
             Club.Name = "Club";
             // 
             // Nationality
             // 
+            Nationality.DataPropertyName = "National";
             Nationality.HeaderText = "Nationality";
             Nationality.Name = "Nationality";
             // 
-            // Status
+            // PhoneNumber
             // 
-            Status.HeaderText = "Status";
-            Status.Name = "Status";
+            PhoneNumber.DataPropertyName = "PhoneNumber";
+            PhoneNumber.HeaderText = "Phone Number";
+            PhoneNumber.Name = "PhoneNumber";
             // 
             // ManagersForm
             // 
@@ -390,6 +398,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManagersForm";
             Text = "OrdersForm";
+            Load += ManagersForm_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             pnContent.ResumeLayout(false);
@@ -397,7 +406,6 @@
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -418,10 +426,10 @@
         private Label lblSoTrang;
         private Button btnTrangKe;
         private Button btnTrangTruoc;
+        private Guna.UI2.WinForms.Guna2Button btnAddManager;
         private DataGridViewTextBoxColumn Manager;
         private DataGridViewTextBoxColumn Club;
         private DataGridViewTextBoxColumn Nationality;
-        private DataGridViewTextBoxColumn Status;
-        private Guna.UI2.WinForms.Guna2Button btnAddManager;
+        private DataGridViewTextBoxColumn PhoneNumber;
     }
 }

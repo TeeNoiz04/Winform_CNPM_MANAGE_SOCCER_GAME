@@ -32,10 +32,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -49,6 +51,7 @@
             cbbSapXep = new ComboBox();
             pnContent = new Guna.UI2.WinForms.Guna2Panel();
             pnFooter = new Panel();
+            btnAdd = new Guna.UI2.WinForms.Guna2Button();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             cbbSoDong = new ComboBox();
             lblSoDong = new Label();
@@ -56,12 +59,14 @@
             btnTrangKe = new Button();
             lblSoTrang = new Label();
             dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            TimeStamp = new DataGridViewTextBoxColumn();
-            PhuongThucGD = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            ViTri = new DataGridViewTextBoxColumn();
+            RefereeId = new DataGridViewTextBoxColumn();
+            GameId = new DataGridViewTextBoxColumn();
+            RoundName = new DataGridViewTextBoxColumn();
+            HomeTeam = new DataGridViewTextBoxColumn();
+            AwayTeam = new DataGridViewTextBoxColumn();
+            DateStart = new DataGridViewTextBoxColumn();
+            RefereeName = new DataGridViewTextBoxColumn();
+            Position = new DataGridViewTextBoxColumn();
             Action = new DataGridViewButtonColumn();
             pnHeader.SuspendLayout();
             pnContent.SuspendLayout();
@@ -181,15 +186,16 @@
             pnContent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnContent.Controls.Add(pnFooter);
             pnContent.Controls.Add(dataGridView);
-            pnContent.CustomizableEdges = customizableEdges7;
+            pnContent.CustomizableEdges = customizableEdges9;
             pnContent.Location = new Point(50, 60);
             pnContent.Name = "pnContent";
-            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            pnContent.ShadowDecoration.CustomizableEdges = customizableEdges10;
             pnContent.Size = new Size(1520, 600);
             pnContent.TabIndex = 25;
             // 
             // pnFooter
             // 
+            pnFooter.Controls.Add(btnAdd);
             pnFooter.Controls.Add(btnRefresh);
             pnFooter.Controls.Add(cbbSoDong);
             pnFooter.Controls.Add(lblSoDong);
@@ -202,10 +208,29 @@
             pnFooter.Size = new Size(1520, 40);
             pnFooter.TabIndex = 18;
             // 
+            // btnAdd
+            // 
+            btnAdd.BorderRadius = 5;
+            btnAdd.CustomizableEdges = customizableEdges5;
+            btnAdd.DisabledState.BorderColor = Color.DarkGray;
+            btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAdd.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAdd.FillColor = Color.FromArgb(60, 211, 252);
+            btnAdd.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(1406, 7);
+            btnAdd.Name = "btnAdd";
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAdd.Size = new Size(111, 30);
+            btnAdd.TabIndex = 35;
+            btnAdd.Text = "Add";
+            btnAdd.Click += btnAdd_Click;
+            // 
             // btnRefresh
             // 
             btnRefresh.BorderRadius = 5;
-            btnRefresh.CustomizableEdges = customizableEdges5;
+            btnRefresh.CustomizableEdges = customizableEdges7;
             btnRefresh.DisabledState.BorderColor = Color.DarkGray;
             btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -215,10 +240,11 @@
             btnRefresh.ForeColor = Color.White;
             btnRefresh.Location = new Point(449, 5);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnRefresh.Size = new Size(80, 30);
             btnRefresh.TabIndex = 34;
             btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // cbbSoDong
             // 
@@ -292,7 +318,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.ColumnHeadersHeight = 30;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TimeStamp, PhuongThucGD, Price, Username, ViTri, Action });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { RefereeId, GameId, RoundName, HomeTeam, AwayTeam, DateStart, RefereeName, Position, Action });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -340,40 +366,60 @@
             dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
-            // ID
+            // RefereeId
             // 
-            ID.HeaderText = "Vòng đấu";
-            ID.Name = "ID";
+            RefereeId.DataPropertyName = "RefereeId";
+            RefereeId.HeaderText = "RefereeId";
+            RefereeId.Name = "RefereeId";
+            RefereeId.Visible = false;
             // 
-            // TimeStamp
+            // GameId
             // 
-            TimeStamp.FillWeight = 66.1519F;
-            TimeStamp.HeaderText = "Đội nhà";
-            TimeStamp.Name = "TimeStamp";
+            GameId.DataPropertyName = "GameId";
+            GameId.HeaderText = "GameId";
+            GameId.Name = "GameId";
+            GameId.Visible = false;
             // 
-            // PhuongThucGD
+            // RoundName
             // 
-            PhuongThucGD.FillWeight = 66.1519F;
-            PhuongThucGD.HeaderText = "Đội khách";
-            PhuongThucGD.Name = "PhuongThucGD";
+            RoundName.DataPropertyName = "RoundName";
+            RoundName.HeaderText = "Round";
+            RoundName.Name = "RoundName";
             // 
-            // Price
+            // HomeTeam
             // 
-            Price.FillWeight = 66.1519F;
-            Price.HeaderText = "Ngày đấu";
-            Price.Name = "Price";
+            HomeTeam.DataPropertyName = "HomeTeam";
+            HomeTeam.FillWeight = 66.1519F;
+            HomeTeam.HeaderText = "Home Team";
+            HomeTeam.Name = "HomeTeam";
             // 
-            // Username
+            // AwayTeam
             // 
-            Username.FillWeight = 66.1519F;
-            Username.HeaderText = "Tên trọng tài";
-            Username.Name = "Username";
-            Username.Resizable = DataGridViewTriState.True;
+            AwayTeam.DataPropertyName = "AwayTeam";
+            AwayTeam.FillWeight = 66.1519F;
+            AwayTeam.HeaderText = "Away Team";
+            AwayTeam.Name = "AwayTeam";
             // 
-            // ViTri
+            // DateStart
             // 
-            ViTri.HeaderText = "Vị trí";
-            ViTri.Name = "ViTri";
+            DateStart.DataPropertyName = "DateStart";
+            DateStart.FillWeight = 66.1519F;
+            DateStart.HeaderText = "Date";
+            DateStart.Name = "DateStart";
+            // 
+            // RefereeName
+            // 
+            RefereeName.DataPropertyName = "RefereeName";
+            RefereeName.FillWeight = 66.1519F;
+            RefereeName.HeaderText = "Referee";
+            RefereeName.Name = "RefereeName";
+            RefereeName.Resizable = DataGridViewTriState.True;
+            // 
+            // Position
+            // 
+            Position.DataPropertyName = "Position";
+            Position.HeaderText = "Position";
+            Position.Name = "Position";
             // 
             // Action
             // 
@@ -382,7 +428,7 @@
             Action.Name = "Action";
             Action.Resizable = DataGridViewTriState.True;
             Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Thay đổi";
+            Action.Text = "Delete";
             Action.UseColumnTextForButtonValue = true;
             // 
             // AssignRefereeForm
@@ -396,6 +442,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AssignRefereeForm";
             Text = "OrdersForm";
+            Load += AssignRefereeForm_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             pnContent.ResumeLayout(false);
@@ -403,7 +450,6 @@
             pnFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -418,18 +464,21 @@
         private System.Windows.Forms.Panel pnFooter;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView;
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TimeStamp;
-        private DataGridViewTextBoxColumn PhuongThucGD;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Username;
-        private DataGridViewTextBoxColumn ViTri;
-        private DataGridViewButtonColumn Action;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private ComboBox cbbSoDong;
         private Label lblSoDong;
         private Button btnTrangTruoc;
         private Button btnTrangKe;
         private Label lblSoTrang;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private DataGridViewTextBoxColumn RefereeId;
+        private DataGridViewTextBoxColumn GameId;
+        private DataGridViewTextBoxColumn RoundName;
+        private DataGridViewTextBoxColumn HomeTeam;
+        private DataGridViewTextBoxColumn AwayTeam;
+        private DataGridViewTextBoxColumn DateStart;
+        private DataGridViewTextBoxColumn RefereeName;
+        private DataGridViewTextBoxColumn Position;
+        private DataGridViewButtonColumn Action;
     }
 }
