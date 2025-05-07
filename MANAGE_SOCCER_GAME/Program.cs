@@ -130,7 +130,9 @@ namespace MANAGE_SOCCER_GAME
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            // Add other services to the container as needed
+            var option = new DbContextOptionsBuilder<ManageSoccerGame>()
+                        .UseSqlServer("Data Source=TEENOIZ04;Initial Catalog=Manage_soccer_game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+            var context = new ManageSoccerGame(option.Options);
 
 
             Application.Run(AppService.ServiceProvider.GetRequiredService<MainForm>());

@@ -47,23 +47,9 @@ namespace MANAGE_SOCCER_GAME.Services
             return team;
         }
 
-        public async Task<List<TeamDTO>?> GetAllTeamByTournamentIdAsync(Guid id)
-        {
-            var teams = await _context.Teams.Include(x => x.Player)
-                                        .Include(x => x.Coach)
-                                        .Include(x => x.Tournament)
-                                        .Where(x => x.IdTournament == id && x.IsDeleted == false)
-                                        .ToListAsync();
-
-            var dtos = teams.Select(c => new TeamDTO
-            {
-                Id = c.Id,
-                Name = c.Name,
-                TotalPlayers = c.Player.Count(p => !p.isDeleted),
-                Stadium = c.Province
-            }).ToList();
-
-            return dtos;
+         public async Task<List<Team>> GetAllTeamAsync()
+       {
+            return await _context.Teams.Where(x => x.IsDeleted == false).Include(x => x.Coach).Include(x => x.Tournament).ToListAsync();
         }
 
         public async Task<Team?> GetTeamByIdAsync(Guid id)

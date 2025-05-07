@@ -16,5 +16,10 @@ namespace MANAGE_SOCCER_GAME.Views
         {
             InitializeComponent();
         }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

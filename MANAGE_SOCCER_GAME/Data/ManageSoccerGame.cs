@@ -37,7 +37,7 @@ namespace MANAGE_SOCCER_GAME.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=;Initial Catalog=Manage_soccer_game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+                optionsBuilder.UseSqlServer("Data Source=ELYSIA\\SQLEXPRESS;Initial Catalog=Manage_soccer_game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
             }
         }
         protected override void OnModelCreating(ModelBuilder builder)

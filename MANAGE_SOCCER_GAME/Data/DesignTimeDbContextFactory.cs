@@ -8,7 +8,7 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<ManageSocc
     public ManageSoccerGame CreateDbContext(string[] args)
     {
         var optionsBuilder = new DbContextOptionsBuilder<ManageSoccerGame>();
-        optionsBuilder.UseSqlServer("Data Source=ThanhDanh;Initial Catalog=Manage_soccer_game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+        optionsBuilder.UseSqlServer("Data Source=ELYSIA\\SQLEXPRESS;Initial Catalog=Manage_soccer_game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
 
         return new ManageSoccerGame(optionsBuilder.Options);
     }
