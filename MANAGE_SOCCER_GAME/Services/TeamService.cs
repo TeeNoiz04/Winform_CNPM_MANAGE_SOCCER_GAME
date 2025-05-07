@@ -165,5 +165,9 @@ namespace MANAGE_SOCCER_GAME.Services
                                         .ToListAsync();
         }
 
+        internal async Task<List<TeamDTO>> GetAllTeamByTournamentIdAsync(Guid tournamentId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

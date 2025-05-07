@@ -31,6 +31,5 @@ namespace MANAGE_SOCCER_GAME.Models
         public ICollection<MatchOfficials> MatchOfficials { get; set; }
         public ICollection<PenaltyCard> PenaltyCards { get; set; }
         public ICollection<SoccerGame> SoccerGames { get; set; }
-       
     }
 }

@@ -11,11 +11,17 @@ using Microsoft.EntityFrameworkCore;
     {
         private readonly ManageSoccerGame _context;
         private readonly TeamService _teamService;
+        private ManageSoccerGame context;
 
         public PlayerService(ManageSoccerGame context, TeamService teamService)
         {
             _context = context;
             _teamService = teamService;
+        }
+
+        public PlayerService(ManageSoccerGame context)
+        {
+            this.context = context;
         }
 
         public async Task<List<PlayerDTO>?> GetAllPlayersAsync()

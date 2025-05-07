@@ -9,5 +9,10 @@
         public Guid TournamentId { get; set; }
         public Tournament Tournament { get; set; }
         public ICollection<Game> Games { get; set; } = new List<Game>();
+
+        public static implicit operator Round(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
